@@ -469,6 +469,12 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
 .car-dot { width: 7px; height: 7px; padding: 0; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .85); background: transparent; cursor: pointer; }
 .car-dot.on { background: #fff; }
 @media (hover: none) { .car-arrow { width: 34px; height: 34px; } }
+/* нечётный последний короткий материал не оставляет пустую колонку: занимает всю ширину, снимок рядом с текстом */
+@media (min-width: 760px) {
+  .notes:not(.n3) > article:last-child:nth-child(odd) { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 40px; align-items: start; padding-right: 0; }
+  .notes:not(.n3) > article:last-child:nth-child(odd) > :first-child { grid-column: 2; grid-row: 1 / span 99; }
+  .notes:not(.n3) > article:last-child:nth-child(odd) > :not(:first-child) { grid-column: 1; }
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
