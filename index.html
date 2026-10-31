@@ -531,6 +531,25 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
 .np-flow h4 + p, .np-flow .np-head + p, .np-flow figure + p, .np-flow .np-inflow + p, .np-side-text h4 + p, .np-side-text > p:first-child, .np-flow p.np-editor { text-indent: 0; }
 .np-flow h4, .np-side-text h4 { line-height: var(--bl); margin: 0; padding: var(--bl) 0 0; }
 .np-flow > *, .np-story > *, .np-inflow > * { margin-top: 0 !important; }
+/* ЛИНЕЙКИ: единая система. Раздел: толстая линейка над названием. Между материалами: одна тонкая линейка,
+   по две строки сетки сверху и снизу. Внутри материала: тонкая линейка над подзаголовком, над врезкой «Редакция»
+   и под блоком во всю ширину. У диаграмм, цифр, источников и самих врезок снизу линеек нет; двух линеек подряд не бывает */
+@media screen {
+  section.page { border-bottom: 0 !important; padding-bottom: 0; margin-bottom: calc(var(--bl) * 4); }
+  .stories { gap: 0 !important; }
+  .stories > article + article, .stories > article + .notes, .stories > .notes + article, .theme-rest { border-top: 1px solid var(--hair) !important; margin-top: calc(var(--bl) * 2) !important; padding-top: calc(var(--bl) * 2) !important; }
+  .notes { row-gap: 0 !important; }
+  .notes > article:nth-child(n+3) { border-top: 1px solid var(--hair); margin-top: calc(var(--bl) * 2); padding-top: calc(var(--bl) * 2); }
+  .notes > article:nth-child(n+3)::before { top: calc(var(--bl) * 2); }
+  .fig, figure.fig { border-top: 0 !important; border-bottom: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+  .stats { border-bottom: 0 !important; }
+  .sources, details.sources { border-top: 0 !important; border-bottom: 0 !important; }
+  .editor { border-bottom: 0 !important; border-top: 1px solid var(--hair) !important; padding-top: calc(var(--bl) / 2) !important; padding-bottom: 0 !important; }
+  .digest { border-bottom: 0 !important; }
+  .lead .body > .span, .feature .body > .span { border-bottom: 1px solid var(--hair); padding-bottom: var(--bl); }
+  .body > .span + .editor, .body > .span + h4 { border-top: 0 !important; }
+  .body > .span:last-child, .body > .span + .sources, .body > .span:has(+ details.sources:last-child) { border-bottom: 0; }
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
