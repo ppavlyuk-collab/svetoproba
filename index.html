@@ -380,7 +380,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .np-imprint { border-top: 2.2pt solid #161411; border-bottom: .6pt solid #161411; margin-top: 2mm; padding: 1.4mm 0; display: flex; justify-content: space-between; gap: 6mm; font: 700 7.6pt var(--font-narrow); letter-spacing: .07em; text-transform: uppercase; }
 .np-imprint span:nth-child(2) { font-weight: 400; font-family: var(--font-head); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 9pt; }
 .np-lead { margin-top: 4mm; }
-.np-kicker { font: 700 7.4pt var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: #044389; margin-bottom: 1mm; }
+.np-kicker { font: 700 7.4pt var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--mark); margin-bottom: 1mm; }
 .np-kicker span { color: #6b6559; font-weight: 400; margin-left: 2mm; }
 .np-lead h1 { font: 900 40pt/0.98 var(--font-head); letter-spacing: -.01em; margin: 0 0 6mm; text-wrap: balance; }
 .np-dek { font: italic 400 13pt/1.3 var(--font-head); color: #2f2c27; margin: 0 0 3mm; }
@@ -403,7 +403,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .np-sec i { font: italic 400 8pt var(--font-head); color: #5a554c; }
 .np-story { margin-bottom: 4mm; }
 .np-story + .np-story { border-top: .5pt solid #b9b1a0; padding-top: 2.5mm; }
-.np-story h2 { font: 900 15pt/1.06 var(--font-head); margin: 0 0 1.5mm; break-after: avoid; text-wrap: balance; }
+.np-story h2 { font: 900 15pt/1.06 var(--font-head); margin: 0 0 1.5mm; break-after: avoid; text-wrap: balance; }  /* правило 53: оторванный заголовок сборщик PDF переносит точечно (hbrk), сплошной запрет разрыва раздувает номер на полосу */
 .np-feature h2 { font-size: 22pt; line-height: 1.03; margin-bottom: 2mm; }
 .np-feature .np-span .np-dek { font-size: 12pt; }
 
@@ -440,8 +440,11 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .np .video { margin: 2mm 0 3mm; } .np .video .vt { font-size: 9pt; } .np .video .vs { font-size: 6.8pt; } .np .video .play { width: 30px; height: 30px; margin: -15px 0 0 -15px; } .np .video .play::after { left: 11px; top: 8px; border-left-width: 10px; border-top-width: 6px; border-bottom-width: 6px; }
 .np .digest { display: block; } .np .digest li { padding: 1.5mm 0; } .np .digest a { font-size: 9.6pt; } .np .digest p { font-size: 8.4pt; }
 .np .chart svg { max-height: none; }
-.np-end { column-span: all; border-top: 2.2pt solid #161411; margin-top: 4mm; padding-top: 1.5mm; column-count: 4; column-gap: 6mm; column-rule: .3pt solid #c3b8a0; font: 400 6.8pt/1.4 var(--font-ui); color: #4a463f; }
-.np-end > div + div { margin-top: 1.5mm; }
+/* правило 54: выходные данные в PDF – четыре смысловых блока, каждый в своей колонке, без переносов и без перетекания между колонками */
+.np-end { column-span: all; border-top: 2.2pt solid #161411; margin-top: 4mm; padding-top: 1.5mm; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; font: 400 6.8pt/1.4 var(--font-ui); color: #4a463f; break-inside: avoid; hyphens: manual; -webkit-hyphens: manual; }
+.np-end > div { break-inside: avoid; }
+.np-end > div + div { border-left: .3pt solid #c3b8a0; padding-left: 3mm; margin-left: -3mm; }
+.np-end i { display: block; font: 700 6.4pt var(--font-ui); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--mark); margin-bottom: .8mm; }
 .np-head { break-inside: avoid; break-after: avoid; }
 .gallery-t { margin-top: 3mm; }
 .np-end b { font-weight: 400; color: inherit; }
@@ -522,7 +525,7 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
   .lead .body, .feature .body { margin-top: 8px; }
 }
 .np figure.illus { overflow: hidden; }
-/* ВЕРТИКАЛЬНАЯ СЕТКА: единица — строка основного текста (--bl). Абзацы, подзаголовки и отступы кратны строке,
+/* ВЕРТИКАЛЬНАЯ СЕТКА: единица равна строке основного текста (--bl). Абзацы, подзаголовки и отступы кратны строке,
    снимки, таблицы, врезки и заголовки материалов добираются до целого числа строк скриптом snapGrid() */
 :root { --bl: 1.65rem; }
 @media screen {
@@ -1023,7 +1026,11 @@ a *:not(svg):not(svg *) { color: inherit !important; }
         flow += storyP(s);
       });
     });
-    flow += '<div class="np-end"><div>_светопроба weekly, № ' + issue.no + " от " + longDate(issue.date) + ". Еженедельная газета о свете, архитектуре, городах, книгах и науке. Выходит по субботам. Главный редактор Павел Яковлев-Павлюк. Контакты редакции: p.pavlyuk@larcorchestra.com, Telegram @pavelpavlyuk. Канал: t.me/svetoproba. Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем.</div><div>Все права не защищены. Перепечатывайте, копируйте и распространяйте. Фотографии принадлежат авторам и источникам, указанным в подписях.</div></div>";
+    flow += '<div class="np-end">' +
+      "<div><i>Издание</i>_светопроба weekly, № " + issue.no + " от " + longDate(issue.date) + ". Еженедельная газета о свете, архитектуре, городах, книгах и науке. Выходит по субботам.</div>" +
+      '<div><i>Редакция</i>Главный редактор Павел Яковлев-Павлюк. Почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk">@pavelpavlyuk</a>, канал <a href="https://t.me/svetoproba">t.me/svetoproba</a>, сайт <a href="https://svetoproba.com">svetoproba.com</a>.</div>' +
+      "<div><i>Принципы</i>Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем.</div>" +
+      "<div><i>Права</i>Все права не защищены. Перепечатывайте, копируйте и распространяйте. Фотографии принадлежат авторам и источникам, указанным в подписях.</div></div>";
     var html = '<div class="np"><div class="np-mast"><div class="np-topline"><span>№ ' + issue.no + "</span><span>Москва</span><span>" + esc(wd) + ", " + longDate(issue.date) + '</span></div><div class="np-logo" id="np-logo">_светопроба<span class="daily">weekly</span></div>' +
       '<div class="np-imprint"><span>№ ' + issue.no + " " + DOT + " " + esc(wd) + ", " + longDate(issue.date) + "</span><span>Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</span><span>Выходит по субботам</span></div></div>" +
       edNote + '<div class="np-lead"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1>" +
@@ -1036,6 +1043,13 @@ a *:not(svg):not(svg *) { color: inherit !important; }
     var GAPS = {}, STORY = {}, USED = {};
     (new URLSearchParams(location.search).get("gaps") || "").split(",").forEach(function (g) { var a = g.split(":"); if (a.length === 2) GAPS[a[0]] = +a[1]; });
     pages.forEach(function (q) { q.stories.forEach(function (st) { STORY[st.id] = st; }); });
+    // правило 53: заголовок, оставшийся внизу колонки без начала материала, сборщик PDF передаёт ?hbrk=id,...;
+    // материал (вместе с заголовком раздела над ним) начинается со следующей колонки
+    (new URLSearchParams(location.search).get("hbrk") || "").split(",").forEach(function (id) {
+      var art = id && main.querySelector('[data-story="' + id + '"]'); if (!art) return;
+      var prev = art.previousElementSibling, t = prev && prev.classList.contains("np-sec") ? prev : art;
+      t.style.breakBefore = "column";
+    });
     function reserveHtml(sid, h) {
       var st = STORY[sid], list = (st && st.reserve) || [];
       USED[sid] = USED[sid] || 0;
@@ -1051,6 +1065,8 @@ a *:not(svg):not(svg *) { color: inherit !important; }
       var img = fg.querySelector("img"), cap = fg.querySelector("figcaption");
       if (!img || !cap || fg.classList.contains("np-reserve")) return;
       var key = img.getAttribute("src").split("/").pop().replace(/\.[a-z]+$/, "");
+      // правило 55: снимки последнего материала, которые одни открыли бы новую полосу, в печать не идут (на сайте они в карусели)
+      if ((new URLSearchParams(location.search).get("hide") || "").split(",").indexOf(key) >= 0) { fg.style.display = "none"; return; }
       if ((new URLSearchParams(location.search).get("brk") || "").split(",").indexOf(key) >= 0) { var blk = fg.closest(".np-inflow") || fg; blk.style.breakBefore = "column"; blk.style.display = "block"; }  // снимок, который печать резала на границе полос
       cap.insertAdjacentHTML("afterbegin", '<span class="np-mark">§F' + key + "§</span>");
       var art = fg.closest("[data-story]"), sid = art ? art.getAttribute("data-story") : lead.id;
