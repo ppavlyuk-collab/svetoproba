@@ -4,7 +4,7 @@
 <meta name="description" content="28 октября в Москве вручили Евразийскую премию «Золотой Фотон. Выбор умного города». Кто победил в девятом сезоне: проекты, светильники, управление, медиа и признание отрасли.">
 <meta property="og:type" content="article"><meta property="og:site_name" content="_светопроба weekly">
 <meta property="og:title" content="_светопроба weekly № 1: «Золотой Фотон» 2026: Ленинградский вокзал, набережная Камы и Лужники среди победителей"><meta property="og:description" content="28 октября в Москве вручили Евразийскую премию «Золотой Фотон. Выбор умного города». Кто победил в девятом сезоне: проекты, светильники, управление, медиа и признание отрасли.">
-<meta property="og:image" content="https://ppavlyuk-collab.github.io/svetoproba/cover-2026-10-31.jpg"><meta property="og:url" content="https://ppavlyuk-collab.github.io/svetoproba/#2026-10-31">
+<meta property="og:image" content="https://svetoproba.com/cover-2026-10-31.jpg"><meta property="og:url" content="https://svetoproba.com/#2026-10-31">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body><meta name="claude:viewport-fit-sides" content="cover">
@@ -267,7 +267,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .gallery figure { margin: 0 0 18px; break-inside: avoid; }
 .gallery img { height: auto; }
 .digest { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
-@media (min-width: 900px) { .digest { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 40px; } }
+@media (min-width: 900px) { .digest { display: block; columns: 2; column-gap: 40px; column-rule: 1px solid var(--rule); } .digest li { break-inside: avoid; } }
 .digest li { border-top: 1px solid var(--rule); padding: 20px 0 24px; break-inside: avoid; }
 .digest .src { font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
 .digest .src span { color: var(--muted); font-weight: 400; margin-left: 8px; }
@@ -297,6 +297,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .footer p { margin: 0 0 6px; font: 400 var(--tiny)/1.5 var(--font-ui); color: var(--muted); }
 .footer a { color: var(--muted); }
 .footer .contacts { color: var(--ink-2); }
+.footer b, .footer strong { font-weight: 400; }
 .footer .contacts a { color: var(--accent); user-select: all; }
 @page { size: A3 landscape; margin: 13mm 15mm 14mm; }
 @media print {
@@ -437,7 +438,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .np-end > div + div { margin-top: 1.5mm; }
 .np-head { break-inside: avoid; break-after: avoid; }
 .gallery-t { margin-top: 3mm; }
-.np-end b { color: #161411; }
+.np-end b { font-weight: 400; color: inherit; }
 /* Единый фотофильтр газеты: плёночный тон в духе Kodak Portra (приподнятые чёрные, холодноватые тени, тёплые света, приглушённый цвет) */
 figure img, .video .thumb img, .ed-note img { filter: url(#film); }
 .state { padding: 60px 0; color: var(--muted); font-family: var(--font-ui); }
@@ -478,6 +479,58 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
   .notes:not(.n3) > article:last-child:nth-child(odd) > :first-child { grid-column: 2; grid-row: 1 / span 99; }
   .notes:not(.n3) > article:last-child:nth-child(odd) > :not(:first-child) { grid-column: 1; }
 }
+.np .illus, .np .sketch-slot, .np figure svg, .np .anim, .np .fig { break-inside: avoid; }
+.feature-lead-text { margin-top: 18px; column-count: 1 !important; }
+.feature-lead-text .in-head { margin-top: 10px; }
+.feature-lead-text > p:first-of-type::first-letter { font: inherit; float: none; padding: 0; }
+/* МОДУЛЬ: четыре колонки, промежуток 40 px. Любой блок занимает 1, 2, 3 или 4 колонки; другой ширины нет */
+@media (min-width: 1000px) {
+  .front { grid-template-columns: calc(75% - 10px) minmax(0, 1fr); column-gap: 40px; }
+  .front > aside { border-left: 0; padding-left: 0; }
+  .notes { column-gap: 40px; }
+  .notes > article:nth-child(2n), .notes > article:nth-child(2n+1) { padding-left: 0; padding-right: 0; border-left: 0; }
+  .notes > article:nth-child(2n) { position: relative; } .notes > article:nth-child(2n)::before { content: ""; position: absolute; left: -20px; top: 0; bottom: 0; border-left: 1px solid var(--rule); }
+  .notes.n3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .notes.n3 > article { padding: 0; border-left: 0; }
+  .notes.n3 > article + article { border-left: 0; }
+  .gallery, .gallery.g3 { column-gap: 40px; }
+  .feature-top { column-gap: 40px; }
+  /* внутри главной полосы (три колонки модуля): заголовок в одной колонке, снимок в двух, текст в три колонки */
+  .front > div .feature .feature-top { grid-template-columns: calc((100% - 80px) / 3) minmax(0, 1fr); }
+  .front > div .feature .body, .front > div .lead .body { column-count: 3; column-gap: 40px; }
+  /* во всю ширину: текст большого материала и галереи по четыре колонки модуля */
+  .stories > .feature .body { column-count: 2; column-gap: 40px; }
+  .stories .gallery.g3, .theme-rest .gallery.g3 { columns: 4; }
+  .notes.n3 > article:nth-child(2n)::before { content: ""; position: absolute; left: -20px; top: 0; bottom: 0; border-left: 1px solid var(--rule); }
+  .notes.n3 > article:nth-child(2n) { position: relative; }
+}
+.np-flow figure.illus, .np-flow .gallery figure, .np-flow .np-inflow figure { display: inline-block; width: 100%; vertical-align: top; }
+/* воздух между блоками на сайте */
+@media screen {
+  .lead .dek, .feature .dek { margin-bottom: 36px; }
+  .lead .hl, .feature .hl, .lead h2, .feature h2 { margin-bottom: 18px; }
+  .lead .body > .span, .feature .body > .span { margin-top: 36px; margin-bottom: 36px; }
+  .lead .body > .stats, .feature .body > .stats { padding-top: 8px; }
+  .lead .body h4, .feature .body h4 { break-after: auto; margin-top: 1.8em; }
+  .body p { margin-bottom: 1.1em; }
+  .lead .body, .feature .body { margin-top: 8px; }
+}
+.np figure.illus { overflow: hidden; }
+/* ВЕРТИКАЛЬНАЯ СЕТКА: единица — строка основного текста (--bl). Абзацы, подзаголовки и отступы кратны строке,
+   снимки, таблицы, врезки и заголовки материалов добираются до целого числа строк скриптом snapGrid() */
+:root { --bl: 1.65rem; }
+@media screen {
+  .body p { line-height: var(--bl); margin: 0 0 var(--bl); }
+  .body h4 { line-height: var(--bl); margin: 0; padding: calc(var(--bl) - 1px) 0 0; border-top: 1px solid var(--hair); }
+  .body > h4:first-child, .lead .body > .span + h4, .feature .body > .span + h4, .feature-lead-text > h4:first-child { padding-top: 0; border-top: 0; }
+  .body h4 + p { margin-top: 0; }
+  .body > *, .feature-lead-text > * { margin-top: 0 !important; }
+}
+.np { --bl: 12.7pt; }
+.np-flow p, .np-side-text p { line-height: var(--bl); margin: 0; text-indent: 1.2em; }
+.np-flow h4 + p, .np-flow .np-head + p, .np-flow figure + p, .np-flow .np-inflow + p, .np-side-text h4 + p, .np-side-text > p:first-child, .np-flow p.np-editor { text-indent: 0; }
+.np-flow h4, .np-side-text h4 { line-height: var(--bl); margin: 0; padding: var(--bl) 0 0; }
+.np-flow > *, .np-story > *, .np-inflow > * { margin-top: 0 !important; }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
@@ -519,12 +572,12 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
   <div class="wrap">
     <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button></nav>
     <div>
-      <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</p>
+      <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам. Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем.</p>
     </div>
     <div>
-      <p>_светопроба weekly выходит раз в неделю, по субботам. Каждый материал сверен с первоисточником, ссылки в блоке «Источники». Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем.</p>
+      <p>_светопроба weekly выходит раз в неделю, по субботам. Каждый материал сверен с первоисточником, ссылки в блоке «Источники».</p>
       <p class="contacts">Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk" target="_blank" rel="noopener">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.</p>
-      <p>Постоянная ссылка номера: адрес газеты и дата после знака #. Канал: <a href="https://t.me/svetoproba" target="_blank" rel="noopener" style="color:var(--logo)">t.me/svetoproba</a></p>
+      <p>Ссылка на этот номер: <a id="issue-link" href="https://svetoproba.com/">svetoproba.com</a>. Канал: <a href="https://t.me/svetoproba" target="_blank" rel="noopener" style="color:var(--logo)">t.me/svetoproba</a></p>
     </div>
   </div>
 </footer>
@@ -616,6 +669,28 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
     if (PRINT) return [b.image].concat(b.more).map(figureHtml).join("");
     return visualHtml({ image: b.image, reserve: b.more });
   }
+  // добор блоков до целого числа строк сетки (по вертикали всё стоит на одной линейке)
+  function snapGrid() {
+    var probe = document.querySelector(PRINT ? ".np-flow p" : ".body p"); if (!probe) return;
+    var BL = parseFloat(getComputedStyle(probe).lineHeight); if (!BL) return;
+    var sel = PRINT ? ".np-flow > *:not(h4), .np-story > *:not(h4), .np-inflow, .np-side-text > *:not(h4), .np-front > div > *:not(.np-side-text)"
+                    : ".body > *:not(h4), .feature-lead-text > *:not(h4)";
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (!el.offsetHeight || el.closest(".carousel .car-track")) return;
+      if (window.ResizeObserver && !el._gridObs) { el._gridObs = new ResizeObserver(function () { snapOne(el); }); el._gridObs.observe(el); }
+      snapOne(el);
+    });
+    function snapOne(el) {
+      el.style.marginBottom = "";
+      var cs = getComputedStyle(el), mb = parseFloat(cs.marginBottom) || 0;
+      var h = el.getBoundingClientRect().height + (parseFloat(cs.marginTop) || 0) + mb;
+      var extra = Math.ceil(h / BL - 0.01) * BL - h;
+      el.style.marginBottom = (mb + extra) + "px";
+    }
+  }
+  window.addEventListener("load", function () { setTimeout(snapGrid, 300); setTimeout(snapGrid, 1500); });
+  window.addEventListener("resize", function () { setTimeout(snapGrid, 200); });
+  setTimeout(snapGrid, 800);
   function setupCarousels(root) {
     root.querySelectorAll("[data-carousel]").forEach(function (c) {
       var track = c.querySelector(".car-track"), dots = [].slice.call(c.querySelectorAll(".car-dot")), n = track.children.length, stage = c.querySelector(".car-stage");
@@ -903,7 +978,7 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
         flow += storyP(s);
       });
     });
-    flow += '<div class="np-end"><div><b>_светопроба weekly</b>, № ' + issue.no + " от " + longDate(issue.date) + ". Еженедельная газета о свете, архитектуре, городах, книгах и науке. Выходит по субботам. Главный редактор Павел Яковлев-Павлюк. Контакты редакции: p.pavlyuk@larcorchestra.com, Telegram @pavelpavlyuk. Канал: t.me/svetoproba.</div><div>Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем. Все права не защищены. Перепечатывайте, копируйте и распространяйте. Фотографии принадлежат авторам и источникам, указанным в подписях.</div></div>";
+    flow += '<div class="np-end"><div>_светопроба weekly, № ' + issue.no + " от " + longDate(issue.date) + ". Еженедельная газета о свете, архитектуре, городах, книгах и науке. Выходит по субботам. Главный редактор Павел Яковлев-Павлюк. Контакты редакции: p.pavlyuk@larcorchestra.com, Telegram @pavelpavlyuk. Канал: t.me/svetoproba. Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем.</div><div>Все права не защищены. Перепечатывайте, копируйте и распространяйте. Фотографии принадлежат авторам и источникам, указанным в подписях.</div></div>";
     var html = '<div class="np"><div class="np-mast"><div class="np-topline"><span>№ ' + issue.no + "</span><span>Москва</span><span>" + esc(wd) + ", " + longDate(issue.date) + '</span></div><div class="np-logo" id="np-logo">_светопроба<span class="daily">weekly</span></div>' +
       '<div class="np-imprint"><span>№ ' + issue.no + " " + DOT + " " + esc(wd) + ", " + longDate(issue.date) + "</span><span>Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</span><span>Выходит по субботам</span></div></div>" +
       edNote + '<div class="np-lead"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1>" +
@@ -965,6 +1040,25 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
     });
     if (PRINT) main.querySelectorAll("img[loading]").forEach(function (im) { im.loading = "eager"; });
     setupPdf(issue);
+    // большой материал: колонка с заголовком рядом с высоким снимком добирается первыми абзацами, чтобы под ней не было пустоты
+    function fillFeatures() {
+      if (PRINT || window.innerWidth < 900) return;
+      document.querySelectorAll("article.feature").forEach(function (a) {
+        var top = a.querySelector(".feature-top"), left = top && top.firstElementChild, vis = left && left.nextElementSibling, body = a.querySelector(".body");
+        if (!vis || !body || left.dataset.filled) return;
+        var img = vis.querySelector("img"); if (img && !img.complete) { img.addEventListener("load", fillFeatures, { once: true }); return; }
+        left.dataset.filled = "1";
+        var box = document.createElement("div"); box.className = "feature-lead-text body"; left.appendChild(box);
+        // сначала диаграмма материала встаёт в свободное место под заголовком, затем добор абзацами
+        var dia = body.querySelector(":scope > .fig, :scope > .anim, :scope > figure.anim, :scope > .stats");
+        if (dia) { box.appendChild(dia); if (left.offsetHeight > vis.offsetHeight + 80) { body.insertBefore(dia, body.firstChild.nextSibling); } else dia.classList.add("in-head"); }
+        while (body.firstElementChild && (body.firstElementChild.tagName === "P" || body.firstElementChild.classList.contains("quote")) && left.offsetHeight < vis.offsetHeight - 60) box.insertBefore(body.firstElementChild, dia && dia.parentNode === box ? dia : null);
+        if (left.offsetHeight > vis.offsetHeight + 40 && box.lastElementChild) body.insertBefore(box.lastElementChild, body.firstChild);
+      });
+    }
+    fillFeatures();
+    var il = document.getElementById("issue-link");  // постоянная ссылка на номер на основном адресе газеты
+    if (il) { il.href = "https://svetoproba.com/#" + issue.date; il.textContent = "svetoproba.com/#" + issue.date; }
     setupCarousels(document);
     // абзац начинается с числа: буквицей становится всё число целиком («27»), а не первая цифра
     document.querySelectorAll(".body > p:first-of-type").forEach(function (p) {

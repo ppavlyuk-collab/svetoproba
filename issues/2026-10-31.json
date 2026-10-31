@@ -972,18 +972,6 @@
        }
       },
       {
-       "video": {
-        "id": "4je1AnjoqYc",
-        "title": "Световой мастер-план города Мурманск",
-        "url": "https://www.youtube.com/watch?v=4je1AnjoqYc",
-        "thumb": "img/2026-10-31/yt-4je1AnjoqYc.webp",
-        "duration": "1:00",
-        "channel": "Svet Expert",
-        "date": "17.02.2022",
-        "about": "Архитектурное освещение основных улиц Мурманска в световом мастер-плане."
-       }
-      },
-      {
        "anim": "daylight",
        "title": "Продолжительность дня с ноября по январь, часы",
        "from": "2026-11-01",
@@ -1063,7 +1051,31 @@
        }
       },
       {
-       "p": "В Перми, по данным «Пермблагоустройства» на 30 сентября, с начала года подсветкой оборудовано 34 здания в центре, на 28 фасадах она уже включена."
+       "h": "Пермь: 34 здания на трёх улицах"
+      },
+      {
+       "p": "В Перми подсветку ставят в рамках благоустройства центральных улиц вместе с ремонтом проезжей части, тротуаров, фасадов и уличного освещения. По данным МКУ «Пермблагоустройство» на 30 сентября, с начала года подсветку смонтировали на 34 зданиях: на улице Ленина (дома 9–102), на Сибирской (от 4а до 63) и на Чернышевского, 23. На 28 фасадах она уже включена и работает в штатном режиме, ещё шесть зданий подключают к электроснабжению."
+      },
+      {
+       "p": "До конца года подсветку получат ещё три здания: Ленина, 52 и 52а и Сибирская, 1. Глава Перми Эдуард Соснин называет её элементом благоустройства, который подчёркивает исторический облик зданий и делает улицы безопаснее в тёмное время суток."
+      },
+      {
+       "image": {
+        "src": "img/2026-10-31/perm-2.webp",
+        "alt": "Фасад с подсвеченным карнизом и наличниками ночью",
+        "caption": "Пермь, улица Ленина, 83–85: архитектурно-художественная подсветка.",
+        "credit": "администрация Перми / Business Class",
+        "credit_url": "https://www.business-class.su/news/2026/09/30/s-nachala-goda-arhitekturnoi-podsvetkoi-oborudovali-34-zdaniya-v-centre-permi"
+       },
+       "more": [
+        {
+         "src": "img/2026-10-31/perm-1.webp",
+         "alt": "Многоэтажное здание с подсветкой фасада ночью",
+         "caption": "Пермь: здание в центре с архитектурной подсветкой.",
+         "credit": "администрация Перми / Business Class",
+         "credit_url": "https://www.business-class.su/news/2026/09/30/s-nachala-goda-arhitekturnoi-podsvetkoi-oborudovali-34-zdaniya-v-centre-permi"
+        }
+       ]
       },
       {
        "bars": {
@@ -1148,25 +1160,7 @@
       "caption": "Мурманск, подсветка фасада. Снимок из публикации «Вечернего Мурманска» от 27.10.2026.",
       "credit": "Вечерний Мурманск",
       "credit_url": "https://vmnews.ru/novosti/2026/10/27/gorod-stanovitsya-uyutnee-mer-murmanska-ocenil-effekt-ot-novoy-podsvetki-fasadov"
-     },
-     "reserve": [
-      {
-       "src": "img/2026-10-31/perm-1.webp",
-       "alt": "Многоэтажное здание с подсветкой фасада ночью",
-       "caption": "Пермь: здание в центре с архитектурной подсветкой.",
-       "credit": "администрация Перми / Business Class",
-       "credit_url": "https://www.business-class.su/news/2026/09/30/s-nachala-goda-arhitekturnoi-podsvetkoi-oborudovali-34-zdaniya-v-centre-permi",
-       "r": 1.499
-      },
-      {
-       "src": "img/2026-10-31/perm-2.webp",
-       "alt": "Фасад с розовой подсветкой ночью",
-       "caption": "Пермь, улица Ленина, 83–85: архитектурно-художественная подсветка.",
-       "credit": "администрация Перми / Business Class",
-       "credit_url": "https://www.business-class.su/news/2026/09/30/s-nachala-goda-arhitekturnoi-podsvetkoi-oborudovali-34-zdaniya-v-centre-permi",
-       "r": 1.499
-      }
-     ]
+     }
     },
     {
      "id": "interlight",
@@ -2209,6 +2203,33 @@
       },
       {
        "p": "Бюро основал Уильям Лэм в 1961 году, сейчас им руководит третье поколение партнёров."
+      },
+      {
+       "gallery": [
+        {
+         "src": "img/2026-10-31/lam-spread.webp",
+         "alt": "Раскрытая книга с ночной съёмкой здания",
+         "caption": "Разворот «The Many Ways of Light» с ночной съёмкой объекта бюро.",
+         "credit": "Lam Partners",
+         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/"
+        },
+        {
+         "src": "img/2026-10-31/lam-open.webp",
+         "alt": "Раскрытая книга с интерьерными фотографиями",
+         "caption": "Разворот с интерьерным проектом бюро.",
+         "credit": "Lam Partners",
+         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/"
+        },
+        {
+         "src": "img/2026-10-31/lam-spine.webp",
+         "alt": "Синяя книга в твёрдом переплёте, корешок",
+         "caption": "Монография в твёрдом синем переплёте.",
+         "credit": "Lam Partners",
+         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/"
+        }
+       ],
+       "print_only": true,
+       "row": true
       }
      ],
      "sources": [
@@ -2228,32 +2249,7 @@
       "credit": "Lam Partners",
       "credit_url": "https://www.lampartners.com/the-many-ways-of-light/"
      },
-     "reserve": [
-      {
-       "src": "img/2026-10-31/lam-spread.webp",
-       "alt": "Раскрытая книга с ночной съёмкой здания",
-       "caption": "Разворот «The Many Ways of Light» с ночной съёмкой объекта бюро.",
-       "credit": "Lam Partners",
-       "credit_url": "https://www.lampartners.com/the-many-ways-of-light/",
-       "r": 1.5
-      },
-      {
-       "src": "img/2026-10-31/lam-open.webp",
-       "alt": "Раскрытая книга с интерьерными фотографиями",
-       "caption": "Разворот с интерьерным проектом бюро.",
-       "credit": "Lam Partners",
-       "credit_url": "https://www.lampartners.com/the-many-ways-of-light/",
-       "r": 1.5
-      },
-      {
-       "src": "img/2026-10-31/lam-spine.webp",
-       "alt": "Синяя книга в твёрдом переплёте, корешок",
-       "caption": "Монография в твёрдом синем переплёте.",
-       "credit": "Lam Partners",
-       "credit_url": "https://www.lampartners.com/the-many-ways-of-light/",
-       "r": 1.5
-      }
-     ]
+     "reserve": []
     },
     {
      "id": "chromatic",
