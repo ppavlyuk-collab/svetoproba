@@ -135,6 +135,9 @@ article h3.hl { font-family: var(--font-head); font-weight: 900; line-height: 1.
 @media (min-width: 900px) {
   .lead .body, .feature .body { column-count: 2; column-gap: 40px; column-rule: 1px solid var(--rule); }
   .body .span { column-span: all; }
+  /* блок во всю ширину (галерея, таблица) отделён от колонок тонкой линией; колонки после него начинаются вровень */
+  .lead .body > .span, .feature .body > .span { border-bottom: 1px solid var(--hair); padding-bottom: 20px; margin-bottom: 26px; }
+  .lead .body > .span + h4, .feature .body > .span + h4, .lead .body > .span + p, .feature .body > .span + p { margin-top: 0; padding-top: 0; border-top: 0; }
 }
 @media (min-width: 1200px) { .lead .body { column-count: 3; } }
 figure { margin: 0 0 18px; break-inside: avoid; }
