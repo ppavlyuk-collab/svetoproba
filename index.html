@@ -447,7 +447,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 /* правило 54: выходные данные в PDF – три смысловых блока в первых трёх колонках, четвёртая пустая, без переносов и без перетекания между колонками */
 .np-end { column-span: all; border-top: 2.2pt solid #161411; margin-top: 4mm; padding-top: 1.5mm; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; font: 400 6.8pt/1.4 var(--font-ui); color: #4a463f; break-inside: avoid; hyphens: manual; -webkit-hyphens: manual; }
 .np-end > div { break-inside: avoid; }
-.np-end > div + div { border-left: .3pt solid #c3b8a0; padding-left: 3mm; margin-left: -3mm; }
+
 .np-end i { display: block; font: 700 6.4pt var(--font-ui); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--mark); margin-bottom: .8mm; }
 .np-head { break-inside: avoid; break-after: avoid; }
 .gallery-t { margin-top: 3mm; }
@@ -458,7 +458,8 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
 .table-wrap a.cell-link, .tl-l a.cell-link, h4 a.cell-link, .np-flow a.cell-link { color: inherit; text-decoration: underline; text-decoration-thickness: .5px; text-decoration-color: var(--hair, #c3b8a0); text-underline-offset: 2px; }
 .table-wrap a.cell-link:hover { text-decoration-color: currentColor; }
 .foot-nav { grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-bottom: 10px; border-bottom: 1px solid var(--hair); margin-bottom: 8px; }
-.np-mark { font-size: 1px; line-height: 0; color: #f4eedd; }
+.np-mark { font-size: 1px; line-height: 0; color: #f4eedd; position: absolute; }  /* служебная метка сборщика PDF не занимает места в строке */
+.np figcaption { text-indent: 0 !important; }  /* правило 56: подпись под снимком начинается от края, без отступа */
 .gallery.row { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; columns: auto; }
 .np .gallery.row { gap: 2mm; break-inside: avoid; } .np .gallery.row figcaption { font-size: 5.6pt; line-height: 1.25; }
 /* перечень, названный в заголовке числом, нумеруется крупной цифрой-буквицей */
@@ -583,6 +584,23 @@ a, a:visited, .index a, .digest a, .video, .arch-list a, .pager a, .footer .cont
 .table-wrap a.cell-link, .tl-l a.cell-link, h4 a.cell-link, .np-flow a.cell-link, .np a { color: var(--link) !important; text-decoration: none !important; }
 a:hover { opacity: .78; }
 a *:not(svg):not(svg *) { color: inherit !important; }
+
+/* правило 57: между любыми соседними блоками (абзац, снимок, галерея, цифры, врезка, видео, таблица) один и тот же зазор: одна строка сетки, на сайте и в PDF */
+@media screen {
+  .body figure, .body .fig, .body .video, .body .stats, .body .quote, .body .editor, .body .table-wrap, .body .tl, .body .chart, .body .gallery, .body .carousel, .body > .span { margin-top: 0 !important; margin-bottom: var(--bl) !important; }
+  .body .sources { margin-top: 0 !important; }
+  .body .gallery figure:last-child, .body .carousel figure { margin-bottom: 0 !important; }
+  /* блок во всю ширину после колонок: нижний отступ последнего абзаца на стыке то пропадает, то складывается, поэтому зазор даёт сам блок */
+  .body > *:has(+ .span) { margin-bottom: 0 !important; }
+  .body > .span:not(:first-child) { margin-top: var(--bl) !important; }
+}
+.np-flow figure, .np-flow .np-inflow, .np-flow .fig, .np-flow .video, .np-flow .stats, .np-flow .np-editor, .np-flow .np-quote, .np-side-text figure, .np-side-text .np-editor { margin-top: var(--bl) !important; margin-bottom: var(--bl) !important; }
+.np-flow .np-inflow figure, .np-flow .gallery figure { margin-top: 0 !important; }
+/* правило 58: горизонтальная линия только над блоком; под блоками линий нет нигде */
+.edition, .pager, .index h3, .index .ix-sec, .editor, .fig, .np-imprint, .np-editor, .np-ed-top, .np .fig, .foot-nav, .arch-list a, th, td, .table-wrap tr, .table-wrap thead th, .lead .body > .span, .feature .body > .span, .page { border-bottom: 0 !important; }
+tbody tr:first-child > td { border-top: 1px solid var(--hair); }
+.np tbody tr:first-child > td { border-top: .5pt solid #b9b1a0; }
+.arch-list li a { border-top: 1px solid var(--rule); }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
