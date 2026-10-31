@@ -299,7 +299,11 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 @media (max-width: 560px) { .arch-list a { grid-template-columns: 4em minmax(0, 1fr); } .arch-d { display: none; } }
 .footer { border-top: 1px solid var(--hair); margin-top: 60px; }
 .footer .wrap { padding-block: 22px 36px; display: grid; gap: 6px 40px; grid-template-columns: 1fr; }
-@media (min-width: 900px) { .footer .wrap { grid-template-columns: 1fr 1fr; } }
+/* правило 54: подвал из четырёх смысловых блоков, каждый в своей колонке, без переносов */
+@media (min-width: 600px) { .footer .wrap { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .footer .wrap { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.footer .foot-nav { grid-column: 1 / -1; }
+.footer p { hyphens: manual; -webkit-hyphens: manual; }
 .footer p { margin: 0 0 6px; font: 400 var(--tiny)/1.5 var(--font-ui); color: var(--muted); }
 .footer a { color: var(--muted); }
 .footer .contacts { color: var(--ink-2); }
@@ -620,12 +624,16 @@ a *:not(svg):not(svg *) { color: inherit !important; }
   <div class="wrap">
     <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button></nav>
     <div>
-      <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам. Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем.</p>
+      <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</p>
     </div>
     <div>
-      <p>_светопроба weekly выходит раз в неделю, по субботам. Каждый материал сверен с первоисточником, ссылки в блоке «Источники».</p>
+      <p>Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем. _светопроба weekly выходит раз в неделю, по субботам. Каждый материал сверен с первоисточником, ссылки в блоке «Источники».</p>
+    </div>
+    <div>
       <p class="contacts">Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk" target="_blank" rel="noopener">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.</p>
-      <p>Ссылка на этот номер: <a id="issue-link" href="https://svetoproba.com/">svetoproba.com</a>. Канал: <a href="https://t.me/svetoproba" target="_blank" rel="noopener" style="color:var(--logo)">t.me/svetoproba</a></p>
+    </div>
+    <div>
+      <p>Ссылка на этот номер: <a id="issue-link" href="https://svetoproba.com/">svetoproba.com</a>. Канал: <a href="https://t.me/svetoproba" target="_blank" rel="noopener">t.me/svetoproba</a></p>
     </div>
   </div>
 </footer>
@@ -1027,10 +1035,10 @@ a *:not(svg):not(svg *) { color: inherit !important; }
       });
     });
     flow += '<div class="np-end">' +
-      "<div><i>Издание</i>_светопроба weekly, № " + issue.no + " от " + longDate(issue.date) + ". Еженедельная газета о свете, архитектуре, городах, книгах и науке. Выходит по субботам.</div>" +
-      '<div><i>Редакция</i>Главный редактор Павел Яковлев-Павлюк. Почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk">@pavelpavlyuk</a>, канал <a href="https://t.me/svetoproba">t.me/svetoproba</a>, сайт <a href="https://svetoproba.com">svetoproba.com</a>.</div>' +
-      "<div><i>Принципы</i>Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем.</div>" +
-      "<div><i>Права</i>Все права не защищены. Перепечатывайте, копируйте и распространяйте. Фотографии принадлежат авторам и источникам, указанным в подписях.</div></div>";
+      "<div>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</div>" +
+      "<div>Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем. _светопроба weekly выходит раз в неделю, по субботам. Каждый материал сверен с первоисточником, ссылки в блоке «Источники».</div>" +
+      '<div>Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.</div>' +
+      '<div>Ссылка на этот номер: <a href="https://svetoproba.com/#' + esc(issue.date) + '">svetoproba.com/#' + esc(issue.date) + '</a>. Канал: <a href="https://t.me/svetoproba">t.me/svetoproba</a></div></div>';
     var html = '<div class="np"><div class="np-mast"><div class="np-topline"><span>№ ' + issue.no + "</span><span>Москва</span><span>" + esc(wd) + ", " + longDate(issue.date) + '</span></div><div class="np-logo" id="np-logo">_светопроба<span class="daily">weekly</span></div>' +
       '<div class="np-imprint"><span>№ ' + issue.no + " " + DOT + " " + esc(wd) + ", " + longDate(issue.date) + "</span><span>Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</span><span>Выходит по субботам</span></div></div>" +
       edNote + '<div class="np-lead"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1>" +
