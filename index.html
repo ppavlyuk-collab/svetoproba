@@ -299,7 +299,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 @media (max-width: 560px) { .arch-list a { grid-template-columns: 4em minmax(0, 1fr); } .arch-d { display: none; } }
 .footer { border-top: 1px solid var(--hair); margin-top: 60px; }
 .footer .wrap { padding-block: 22px 36px; display: grid; gap: 6px 40px; grid-template-columns: 1fr; }
-/* правило 54: подвал из четырёх смысловых блоков, каждый в своей колонке, без переносов */
+/* правило 54: подвал из трёх смысловых блоков в первых трёх колонках модуля, четвёртая пустая, без переносов */
 @media (min-width: 600px) { .footer .wrap { grid-template-columns: 1fr 1fr; } }
 @media (min-width: 900px) { .footer .wrap { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .footer .foot-nav { grid-column: 1 / -1; }
@@ -444,7 +444,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .np .video { margin: 2mm 0 3mm; } .np .video .vt { font-size: 9pt; } .np .video .vs { font-size: 6.8pt; } .np .video .play { width: 30px; height: 30px; margin: -15px 0 0 -15px; } .np .video .play::after { left: 11px; top: 8px; border-left-width: 10px; border-top-width: 6px; border-bottom-width: 6px; }
 .np .digest { display: block; } .np .digest li { padding: 1.5mm 0; } .np .digest a { font-size: 9.6pt; } .np .digest p { font-size: 8.4pt; }
 .np .chart svg { max-height: none; }
-/* правило 54: выходные данные в PDF – четыре смысловых блока, каждый в своей колонке, без переносов и без перетекания между колонками */
+/* правило 54: выходные данные в PDF – три смысловых блока в первых трёх колонках, четвёртая пустая, без переносов и без перетекания между колонками */
 .np-end { column-span: all; border-top: 2.2pt solid #161411; margin-top: 4mm; padding-top: 1.5mm; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; font: 400 6.8pt/1.4 var(--font-ui); color: #4a463f; break-inside: avoid; hyphens: manual; -webkit-hyphens: manual; }
 .np-end > div { break-inside: avoid; }
 .np-end > div + div { border-left: .3pt solid #c3b8a0; padding-left: 3mm; margin-left: -3mm; }
@@ -631,8 +631,6 @@ a *:not(svg):not(svg *) { color: inherit !important; }
     </div>
     <div>
       <p class="contacts">Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk" target="_blank" rel="noopener">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.</p>
-    </div>
-    <div>
       <p>Ссылка на этот номер: <a id="issue-link" href="https://svetoproba.com/">svetoproba.com</a>. Канал: <a href="https://t.me/svetoproba" target="_blank" rel="noopener">t.me/svetoproba</a></p>
     </div>
   </div>
@@ -1037,8 +1035,7 @@ a *:not(svg):not(svg *) { color: inherit !important; }
     flow += '<div class="np-end">' +
       "<div>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</div>" +
       "<div>Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем. _светопроба weekly выходит раз в неделю, по субботам. Каждый материал сверен с первоисточником, ссылки в блоке «Источники».</div>" +
-      '<div>Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.</div>' +
-      '<div>Ссылка на этот номер: <a href="https://svetoproba.com/#' + esc(issue.date) + '">svetoproba.com/#' + esc(issue.date) + '</a>. Канал: <a href="https://t.me/svetoproba">t.me/svetoproba</a></div></div>';
+      '<div>Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.<br>Ссылка на этот номер: <a href="https://svetoproba.com/#' + esc(issue.date) + '">svetoproba.com/#' + esc(issue.date) + '</a>. Канал: <a href="https://t.me/svetoproba">t.me/svetoproba</a></div></div>';
     var html = '<div class="np"><div class="np-mast"><div class="np-topline"><span>№ ' + issue.no + "</span><span>Москва</span><span>" + esc(wd) + ", " + longDate(issue.date) + '</span></div><div class="np-logo" id="np-logo">_светопроба<span class="daily">weekly</span></div>' +
       '<div class="np-imprint"><span>№ ' + issue.no + " " + DOT + " " + esc(wd) + ", " + longDate(issue.date) + "</span><span>Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</span><span>Выходит по субботам</span></div></div>" +
       edNote + '<div class="np-lead"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1>" +
