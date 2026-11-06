@@ -713,7 +713,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }
   function illusHtml(il) {
     if (!il || !il.src) return "";
-    return '<figure class="illus" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '"><div class="sketch-slot" style="aspect-ratio:3/2"></div><figcaption>' + esc(il.caption || "Иллюстрация редакции.") + "</figcaption></figure>";
+    return '<figure class="illus" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '"><div class="sketch-slot" style="aspect-ratio:3/2"></div><figcaption>' + esc(il.caption || "") + "</figcaption></figure>";
   }
   // снимки, добавленные в PDF к материалу (резерв, галереи и снимки «только для печати»), на сайте листаются каруселью у главного снимка;
   // если листать нечего, стоит один снимок, как раньше
@@ -964,7 +964,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     }).join("") + "</ol></details>";
   }
   function head(s) {
-    return '<div class="kicker"><span class="rubric">' + esc(s.rubric) + '</span><span class="why">' + esc(s.why) + "</span></div>" +
+    return '<div class="kicker"><span class="rubric">' + esc(s.rubric) + '</span>' + (s.why ? '<span class="why">' + esc(s.why) + "</span>" : "") + "</div>" +
       '<h3 class="hl">' + esc(s.title) + "</h3>" + (s.dek ? '<p class="dek">' + esc(s.dek) + "</p>" : "") + (s.dateline ? '<p class="dateline">' + esc(s.dateline) + "</p>" : "");
   }
   function bodyHtml(s) { return '<div class="body">' + s.body.map(block).join("") + sourcesHtml(s.sources) + "</div>"; }
@@ -1030,7 +1030,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       return block(b);
     }
     function storyP(s) {
-      var kick = '<div class="np-kicker">' + esc(s.rubric) + "<span>" + esc(s.why) + "</span></div>";
+      var kick = '<div class="np-kicker">' + esc(s.rubric) + (s.why ? "<span>" + esc(s.why) + "</span>" : "") + "</div>";
       var body = s.body.map(function (b) { return blockP(b, s); }).join("");
       if (s.kind === "feature") {
         return '<article class="np-story np-feature" data-story="' + esc(s.id) + '">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek">' + esc(s.dek) + "</p>" : "") + visualHtml(s) + body + "</article>";
