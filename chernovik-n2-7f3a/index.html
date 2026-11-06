@@ -684,7 +684,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   /* blocks */
   function block(b) {
     if (b.print_only && !PRINT) return "";  // материалы для заполнения полос PDF в веб-версию не идут
-    if (b.anim === "dark-map" || b.anim === "road-adapt") return animHtml(b);
+    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w") return animHtml(b);
     if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
     if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
     if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
@@ -862,6 +862,12 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       return '<figure class="fig span anim" data-anim="lens-aging"><p class="fig-t">Что доходит до сетчатки: видимый спектр и возраст</p><canvas aria-hidden="true"></canvas>' +
         '<div class="anim-row"><span>380 нм</span><span class="anim-age">возраст наблюдателя: 20 лет</span><span>780 нм</span></div>' + (b.caption ? "<figcaption>" + esc(b.caption) + "</figcaption>" : "") + "</figure>";
     }
+    if (b.anim === "mice-w") {
+      return '<figure class="fig span anim mice-w"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.series.map(function (m, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">Сутки ' + esc(m.name) + "</button>"; }).join("") + '</div><div class="mw-day" style="display:flex;height:18px;margin:6px 0 4px"><span class="mw-l" style="background:#f4d98b"></span><span class="mw-d" style="background:#2f3a55"></span></div><div class="mw-n" style="font:400 .9rem var(--font-ui);margin-bottom:8px"></div><svg class="mw-c" viewBox="0 0 1000 560" role="img" aria-label="' + esc(b.illus.alt) + '" style="display:block;width:100%;height:auto;background:#f7f1e3"></svg><label style="display:block;font:700 .95rem var(--font-ui);margin:12px 0 2px" class="mw-a"></label><input class="mw-r" type="range" min="9" max="160" value="65" aria-label="Возраст мыши, недели" style="width:100%"><div class="mw-o" style="font:400 1rem/1.5 var(--font-ui);margin-top:6px"></div><figcaption>' + esc(b.illus.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "cs-scale") {
+      return '<figure class="fig span anim cs-scale"><p class="fig-t">' + esc(b.title) + '</p><div class="cs-box" style="padding:18px 16px;border-radius:4px;"><div style="font:700 .9rem var(--font-ui);opacity:.8">Показатель CS</div><div class="cs-v" style="font:900 3.2rem/1 var(--font-head);margin:2px 0 10px">0,4</div><div class="cs-m" style="font:700 1.1rem/1.3 var(--font-ui)"></div><input class="cs-r" type="range" min="0" max="70" step="1" value="40" aria-label="Значение показателя CS" style="width:100%;margin:14px 0 4px"><div class="cs-s" style="font:400 .95rem/1.35 var(--font-ui);min-height:3em"></div></div><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
     if (b.anim === "road-adapt") {
       var poles = "", N = 7;
       for (var ri = 0; ri < N; ri++) { var rx = 50 + ri * 110; poles += '<g class="ra-p" data-x="' + rx + '"><polygon class="ra-c" points="' + (rx + 22) + ',62 ' + (rx - 28) + ',196 ' + (rx + 72) + ',196" fill="#f4d98b"/><line x1="' + rx + '" y1="196" x2="' + rx + '" y2="56" stroke="#8d8676" stroke-width="3"/><line x1="' + rx + '" y1="56" x2="' + (rx + 24) + '" y2="56" stroke="#8d8676" stroke-width="3"/><circle class="ra-l" cx="' + (rx + 22) + '" cy="60" r="5" fill="#fff2c4"/></g>'; }
@@ -1034,6 +1040,8 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       if (b.anim === "daylight") return daylightHtml(b);
       if (b.anim === "dark-map") return figureHtml(b.image);
       if (b.anim === "road-adapt") return illusHtml(b.illus);
+      if (b.anim === "cs-scale") return "";
+      if (b.anim === "mice-w") return illusHtml(b.illus);
       if (b.anim) return "";
       return block(b);
     }
@@ -1181,6 +1189,40 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       fetch(f.getAttribute("data-svg")).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
         if (t.indexOf("<svg") === 0) { var slot = f.querySelector(".sketch-slot"); var tmp = document.createElement("div"); tmp.innerHTML = t; var svg = tmp.querySelector("svg"); if (svg && slot) slot.replaceWith(svg); }
       }).catch(function () {});
+    });
+    main.querySelectorAll(".mice-w").forEach(function (f) {
+      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "mice-w") B = bb; }); }); });
+      var svg = f.querySelector(".mw-c"), r = f.querySelector(".mw-r"), btns = [].slice.call(f.querySelectorAll(".dm-b button")), sel = 0;
+      var X = function (w) { return 90 + w / 165 * 880; }, Y = function (g) { return 480 - (g - 20) / 20 * 440; };
+      var val = function (S, w) { var W = B.weeks, i = 0; while (i < W.length - 2 && W[i + 1] < w) i++; var t = Math.max(0, Math.min(1, (w - W[i]) / (W[i + 1] - W[i]))); return S.v[i] + (S.v[i + 1] - S.v[i]) * t; };
+      var fmt = function (x) { return x.toFixed(1).replace(".", ","); };
+      function paint() { var w = +r.value, h = "";
+        [20, 25, 30, 35, 40].forEach(function (g) { h += '<line x1="90" x2="970" y1="' + Y(g) + '" y2="' + Y(g) + '" stroke="#cfc6b2" stroke-width="1.5"/><text x="78" y="' + (Y(g) + 10) + '" font-size="30" text-anchor="end" fill="#222" font-family="Arial,sans-serif">' + g + "</text>"; });
+        [0, 50, 100, 150].forEach(function (a) { h += '<text x="' + X(a) + '" y="526" font-size="30" text-anchor="middle" fill="#222" font-family="Arial,sans-serif">' + a + "</text>"; });
+        B.series.forEach(function (S, i) { var on = i === sel; h += '<polyline points="' + B.weeks.map(function (a, k) { return X(a) + "," + Y(S.v[k]); }).join(" ") + '" fill="none" stroke="' + S.c + '" stroke-width="' + (on ? 9 : 4) + '" opacity="' + (on ? 1 : .4) + '" stroke-linejoin="round"/>'; });
+        h += '<line x1="' + X(w) + '" x2="' + X(w) + '" y1="30" y2="480" stroke="#222" stroke-width="2" stroke-dasharray="8 6"/>';
+        h += '<text x="96" y="26" font-size="28" fill="#222" font-family="Arial,sans-serif">вес, г</text><text x="965" y="556" font-size="28" text-anchor="end" fill="#222" font-family="Arial,sans-serif">возраст, недели</text>';
+        B.series.forEach(function (S, i) { h += '<circle cx="' + X(w) + '" cy="' + Y(val(S, w)) + '" r="' + (i === sel ? 13 : 8) + '" fill="' + S.c + '" stroke="#fff" stroke-width="3"/>'; });
+        svg.innerHTML = h;
+        var S = B.series[sel];
+        f.querySelector(".mw-l").style.width = (S.t / 26.4 * 50) + "%"; f.querySelector(".mw-d").style.width = (S.t / 26.4 * 50) + "%";
+        f.querySelector(".mw-n").textContent = "Цикл света и темноты: " + S.name + (sel === 1 ? ", как в природе" : sel === 0 ? ", на 10 % короче суток" : ", на 10 % длиннее суток");
+        f.querySelector(".mw-a").textContent = "Возраст мыши: " + w + " нед.";
+        var base = val(B.series[1], w), diff = val(S, w) - base;
+        f.querySelector(".mw-o").innerHTML = "<b>" + fmt(val(S, w)) + " г</b>" + (sel === 1 ? " при обычных сутках" : " при сутках " + esc(S.name) + ", это " + (diff >= 0 ? "на " + fmt(diff) + " г больше" : "на " + fmt(-diff) + " г меньше") + ", чем при 24 часах");
+      }
+      btns.forEach(function (b, i) { b.onclick = function () { sel = i; btns.forEach(function (o, k) { o.setAttribute("aria-pressed", String(k === i)); }); paint(); }; });
+      r.oninput = paint; paint();
+    });
+    main.querySelectorAll(".cs-scale").forEach(function (f) {
+      var r = f.querySelector(".cs-r"), box = f.querySelector(".cs-box");
+      function paint() { var v = +r.value / 100, t = Math.min(1, v / .7);
+        f.querySelector(".cs-v").textContent = v.toFixed(2).replace(".", ",").replace(/0$/, "");
+        f.querySelector(".cs-m").textContent = "Мелатонин ночью подавлен на " + Math.round(v * 100) + " % за час";
+        f.querySelector(".cs-s").textContent = v < .1 ? "Ниже порога: циркадная система на такой свет почти не отзывается." : v < .3 ? "Система уже откликается, воздействие пока слабое." : v < .4 ? "От 0,3: в опыте 2017 года утренний свет с таким показателем помогал сотрудникам офисов быстрее засыпать." : v < .5 ? "Около 0,4: такой свет днём получали жители домов престарелых в опыте ниже." : v < .7 ? "Сильное воздействие, но ещё не предел шкалы." : "Насыщение: дальше система уже не отзывается сильнее.";
+        var c1 = [32, 36, 58], c2 = [247, 214, 130], m = c1.map(function (a, i) { return Math.round(a + (c2[i] - a) * t); });
+        box.style.setProperty("background", "rgb(" + m.join(",") + ")", "important"); var tc = t > .5 ? "#17140f" : "#f4ecd9"; box.style.setProperty("color", tc, "important"); [].forEach.call(box.querySelectorAll("div"), function (e) { e.style.setProperty("color", tc, "important"); }); }
+      r.oninput = paint; paint();
     });
     main.querySelectorAll(".road-adapt").forEach(function (f) {
       var rb = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "road-adapt") rb = bb; }); }); });
