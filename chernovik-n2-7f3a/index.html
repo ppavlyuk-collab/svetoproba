@@ -862,7 +862,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
         '<div class="anim-row"><span>380 нм</span><span class="anim-age">возраст наблюдателя: 20 лет</span><span>780 нм</span></div>' + (b.caption ? "<figcaption>" + esc(b.caption) + "</figcaption>" : "") + "</figure>";
     }
     if (b.anim === "dark-map") {
-      return '<figure class="fig span anim dark-map"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.levels.map(function (l, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(l.name) + "</button>"; }).join("") + '</div><div class="dm-s"><img src="' + esc(b.image.src) + '" alt="' + esc(b.image.alt) + '">' + b.levels.map(function (l, i) { return '<img class="ov' + (i === 0 ? " on" : "") + '" src="' + esc(l.mask) + '" alt="">'; }).join("") + '</div><p class="dm-t">' + esc(b.levels[0].text) + '</p><figcaption>' + esc(b.image.caption) + ' <span class="credit">Фото: <a href="' + esc(safeUrl(b.image.credit_url)) + '" target="_blank" rel="noopener">' + esc(b.image.credit) + "</a></span></figcaption></figure>";
+      return '<figure class="fig span anim dark-map"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.levels.map(function (l, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(l.name) + "</button>"; }).join("") + '</div><div class="dm-s"><img src="' + esc(b.image.src) + '" alt="' + esc(b.image.alt) + '">' + b.levels.map(function (l, i) { return l.mask ? '<img class="ov" data-i="' + i + '" src="' + esc(l.mask) + '" alt="">' : ""; }).join("") + '</div><p class="dm-t">' + esc(b.levels[0].text) + '</p><figcaption>' + esc(b.image.caption) + ' <span class="credit">Фото: <a href="' + esc(safeUrl(b.image.credit_url)) + '" target="_blank" rel="noopener">' + esc(b.image.credit) + "</a></span></figcaption></figure>";
     }
     if (b.anim === "daylight") return daylightHtml(b);
     if (b.anim === "chip-scale") return chipHtml(b);
@@ -1178,7 +1178,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var iss = (issue.pages || []).reduce(function (o, p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "dark-map") o = bb; }); }); return o; }, null);
       f.querySelectorAll(".dm-b button").forEach(function (btn) { btn.onclick = function () { var i = +btn.dataset.i;
         f.querySelectorAll(".dm-b button").forEach(function (x, k) { x.setAttribute("aria-pressed", String(k === i)); });
-        f.querySelectorAll(".ov").forEach(function (x, k) { x.classList.toggle("on", k === i); });
+        f.querySelectorAll(".ov").forEach(function (x) { x.classList.toggle("on", +x.dataset.i === i); });
         f.querySelector(".dm-t").textContent = iss.levels[i].text; }; });
     });
     main.querySelectorAll('[data-anim="lens-aging"]').forEach(function (f) { stops.push(startLens(f)); });

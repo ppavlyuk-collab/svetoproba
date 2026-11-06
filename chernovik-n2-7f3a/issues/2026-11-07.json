@@ -612,25 +612,23 @@
      "why": "Практическая польза",
      "title": "«Меньше света, но лучшего качества»: карта темноты на границе Франции и Бельгии",
      "dek": "Бюро Concepto разделило бассейн реки Самбры на три зоны по значимости для биоразнообразия и для каждой предложило свои правила освещения.",
-     "image": {
-      "src": "img/2026-11-07/sambre.jpg",
-      "alt": "Лист бюро Concepto: карта бассейна Самбры с легендой из трёх градиентов темноты",
-      "caption": "Лист из проекта Concepto: чем темнее зона, тем она важнее для биоразнообразия.",
-      "credit": "Concepto / Light ZOOM Lumière",
-      "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/"
-     },
      "body": [
       {
        "anim": "dark-map",
-       "title": "Карта темноты бассейна Самбры: выберите зону",
+       "title": "Карта темноты бассейна Самбры",
        "image": {
         "src": "img/2026-11-07/sambre-map.jpg",
         "alt": "Карта бассейна Самбры: тёмные, серые и светлые зоны",
-        "caption": "Карта-схема Concepto, раскраска зон редакции.",
+        "caption": "Карта-схема Concepto, бассейн реки Самбры: чем темнее зона, тем она важнее для биоразнообразия.",
         "credit": "Concepto / Light ZOOM Lumière",
         "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/"
        },
        "levels": [
+        {
+         "name": "Вся карта",
+         "mask": "",
+         "text": "Три градиента темноты: чем темнее зона, тем выше её значимость для биоразнообразия. Кнопки выделяют каждую зону на карте."
+        },
         {
          "name": "Зона 1: высокая значимость",
          "mask": "img/2026-11-07/sambre-z1.png",
