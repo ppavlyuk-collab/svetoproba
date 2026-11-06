@@ -110,7 +110,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .index a.ix-card { display: grid; grid-template-columns: 64px 1fr 14px; gap: 12px; align-items: center; padding: 10px; margin: 8px 0; background: var(--paper-2); border-radius: 4px; }
 .index a.ix-card:hover { outline: 1px solid var(--accent); }
 .ix-th { width: 64px; height: 64px; object-fit: cover; display: block; border-radius: 2px; filter: none !important; }
-.ix-th-e { background: var(--rule); }
+.ix-th-e { background: var(--rule); } img.ix-th[src$=".svg"] { background: #f2ead8; }
 .ix-tx { min-width: 0; }
 .ix-k { display: block; font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--mark); margin-bottom: 2px; }
 .ix-go { font: 400 1.3rem/1 var(--font-ui); color: var(--muted); }
@@ -993,7 +993,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var lead = p.stories.filter(function (s) { return s.kind === "lead"; }), rest = p.stories.filter(function (s) { return s.kind !== "lead"; });
       var idx = '<nav class="index" aria-label="В номере"><h3>В номере</h3><ol>' + pages.map(function (q) {
         return '<li class="ix-sec"><div class="ix-head"><span class="ix-s">' + esc(q.title) + '</span><span class="ix-n">стр. ' + q.no + "</span></div>" + q.stories.map(function (st) {
-          var th = st.image && st.image.src ? st.image.src : (st.illus && st.illus.src && !/\.svg$/.test(st.illus.src) ? st.illus.src : "");
+          var th = st.image && st.image.src ? st.image.src : (st.illus && st.illus.src ? st.illus.src : "");
           var thumb = th ? '<img class="ix-th" src="' + esc(th) + '" alt="" loading="lazy">' : '<span class="ix-th ix-th-e" aria-hidden="true"></span>';
           return '<a class="ix-card" href="#' + esc(st.id) + '" data-jump="' + esc(st.id) + '">' + thumb + '<span class="ix-tx"><span class="ix-k">' + esc(st.rubric || "") + '</span><span class="ix-t">' + esc(st.title) + '</span></span><span class="ix-go" aria-hidden="true">›</span></a>';
         }).join("") + "</li>";
