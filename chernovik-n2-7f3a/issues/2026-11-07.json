@@ -99,7 +99,8 @@
        "url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/",
        "date": "06.11.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "cauchie",
@@ -171,7 +172,8 @@
        "url": "https://fr.wikipedia.org/wiki/Maison_Cauchie",
        "date": "год постройки"
       }
-     ]
+     ],
+     "head_first": true
     }
    ]
   },
@@ -242,7 +244,8 @@
        "url": "https://spbvedomosti.ru/news/gorod/svetotekhnikam-udalos-sdelat-aleksandrovskiy-park-eshche-bolee-prityagatelnym-dlya-progulok/",
        "date": "06.11.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "ippodrom",
@@ -279,7 +282,8 @@
        "url": "https://www.bfm.ru/news/618346",
        "date": "18.09.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "lahta",
@@ -314,7 +318,8 @@
        "url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/",
        "date": "02.11.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "rybinsk",
@@ -332,6 +337,9 @@
      "body": [
       {
        "p": "Этот мост зрители конкурса «Российский светодизайн 2026» выбрали сами: работа «Полёт чайки над Волгой» получила их приз. Екатеринбургская компания СТК МТ Электро установила на нём 1,7 тыс. светильников и проложила 15 км кабеля, а цветовые сценарии меняются программно, под городские события. Шоу начинается каждый вечер в 18:30 и длится 20 минут с понедельника по четверг и 40 минут с пятницы по воскресенье."
+      },
+      {
+       "editor": "Редакция: до 40 минут динамики над рекой каждый вечер. Хороший повод спросить, что такой свет делает с ночной Волгой."
       }
      ],
      "sources": [
@@ -345,7 +353,8 @@
        "url": "https://cie-russia.ru/news/rezultaty-konkursa--rossiyskiy-svetodizayn-2026-/",
        "date": "2026"
       }
-     ]
+     ],
+     "head_first": true
     }
    ]
   },
@@ -360,7 +369,7 @@
      "kind": "note",
      "rubric": "Обещали в № 1",
      "why": "",
-     "title": "«Золотой Фотон» в кадрах и на видео",
+     "title": "«Золотой Фотон»: кадры церемонии и вступительный фильм",
      "image": {
       "src": "img/2026-11-07/gf-1115.jpg",
       "alt": "Спикер у микрофона перед светодиодным задником премии, красная лестница с гостями",
@@ -371,14 +380,14 @@
      "body": [
       {
        "video": {
-        "title": "Открытие церемонии «Золотой Фотон» 2026",
+        "title": "Вступительный фильм церемонии «Золотой Фотон» 2026",
         "url": "https://t.me/goldenphoton/1112",
         "thumb": "img/2026-11-07/gf-video.jpg",
         "duration": "2:35",
         "channel": "канал «Золотой Фотон»",
         "date": "29.10.2026",
         "platform": "Telegram",
-        "about": "Инженерный центр ДКС, 28 октября.",
+        "about": "Организатор показал его на открытии 28 октября. Самой церемонии в ролике нет, она на снимках ниже",
         "src": "video/gf-1112.mp4"
        }
       },
@@ -434,7 +443,8 @@
        "url": "https://interlight-building.ru/",
        "date": "числа 2025 года"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "yls",
@@ -538,7 +548,8 @@
        "url": "https://marhi.ru/AMIT/2026/1kvart26/karpenko/karpenko.pdf",
        "date": "2026"
       }
-     ]
+     ],
+     "head_first": true
     }
    ]
   },
@@ -556,11 +567,9 @@
      "title": "Световое загрязнение: к 2052 году оно может охватить половину земной суши",
      "dek": "Берлинский институт IGB рассказал о большом научном обзоре: как искусственный свет ночью влияет на животных и растения и какие меры предлагают учёные.",
      "image": {
-      "src": "img/2026-11-07/igb.jpg",
-      "alt": "Подсвеченные цилиндры с водой ночью на озере под звёздным небом",
-      "caption": "Полевой опыт LakeLab на озере Штехлин: влияние ночного света на водные пищевые цепи.",
-      "credit": "Andreas Jechow / IGB",
-      "credit_url": "https://www.igb-berlin.de/en/news/mitigating-ecological-consequences-light-pollution"
+      "src": "img/2026-11-07/owl.jpg",
+      "alt": "Сова в солнцезащитных очках на ветке, позади огни города",
+      "caption": "Изображение создано нейросетью."
      },
      "body": [
       {
@@ -581,6 +590,15 @@
          "l": "половина суши под световым загрязнением, прогноз"
         }
        ]
+      },
+      {
+       "image": {
+        "src": "img/2026-11-07/igb.jpg",
+        "alt": "Подсвеченные цилиндры с водой ночью на озере под звёздным небом",
+        "caption": "Полевой опыт LakeLab на озере Штехлин: влияние ночного света на водные пищевые цепи.",
+        "credit": "Andreas Jechow / IGB",
+        "credit_url": "https://www.igb-berlin.de/en/news/mitigating-ecological-consequences-light-pollution"
+       }
       },
       {
        "p": "За десятилетие ночное небо светлело почти на 10 % в год. Если так пойдёт дальше, к 2052 году под световым загрязнением окажется половина земной суши: такой прогноз приводит обзор в Nature Reviews Biodiversity, вышедший 5 октября. Свет подавляет мелатонин* у всех групп позвоночных, от птиц до рыб, в среднем на 36 %. Городские деревья распускаются раньше и сбрасывают листву позже, причём к концу сезона свет удлиняет им вегетацию сильнее, чем температура воздуха."
@@ -606,7 +624,8 @@
        "url": "https://doi.org/10.1038/s44358-026-00206-5",
        "date": "05.10.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "sambre",
@@ -671,7 +690,8 @@
        "url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/",
        "date": "06.11.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "cie-258",
@@ -723,7 +743,8 @@
        "url": "https://www.lightnowblog.com/2026/11/cie-technical-report-on-adaptive-road-lighting-practices/",
        "date": "03.11.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "mice",
@@ -760,11 +781,10 @@
      ],
      "image": {
       "src": "img/2026-11-07/mouse.jpg",
-      "alt": "Небольшая мышь на тёмном фоне",
-      "caption": "Мышь. Снимок иллюстративный, в опыте участвовали лабораторные животные.",
-      "credit": "Nikolett Emmert / Unsplash",
-      "credit_url": "https://unsplash.com/photos/SiMygkv4pPc"
-     }
+      "alt": "Мышь в солнцезащитных очках",
+      "caption": "Изображение создано нейросетью."
+     },
+     "head_first": true
     }
    ]
   },
@@ -814,7 +834,8 @@
        "url": "https://www.dezeen.com/2026/11/05/swa-cool-connected-corridors-houston/",
        "date": "05.11.2026"
       }
-     ]
+     ],
+     "head_first": true
     }
    ]
   },
@@ -884,7 +905,8 @@
        "url": "https://www.dmflighting.com/product/true1/",
        "date": "сайт"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "velino",
@@ -930,7 +952,8 @@
        "url": "https://optique-lighting.com/products/?family=velino-0",
        "date": "сайт"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "flammen",
@@ -968,7 +991,8 @@
        "url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/",
        "date": "06.11.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "ies-lens",
@@ -1000,7 +1024,8 @@
        "url": "https://lens.ies.org/",
        "date": "06.11.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "talq",
@@ -1032,7 +1057,8 @@
        "url": "https://www.talq-consortium.org/1-benefits-for-smart-cities/talq-tender-template.html",
        "date": "сайт"
       }
-     ]
+     ],
+     "head_first": true
     }
    ]
   },
@@ -1089,7 +1115,7 @@
        "p": "«Справочная книга по светотехнике» появилась в 1983 году, Юлиан Борисович был в ней и автором, и научным редактором. Четвёртое издание он подготовил вместе с Георгием Боосом в 2019 году, когда ему было 88 лет. В 1992 году он основал в Нью-Йорке англоязычный журнал Light & Engineering, а в 1999-м перевёл его издание в Москву. Он же создал московский «Дом Света» и больше 20 лет руководил им: там прошли 35 курсов повышения квалификации для 650 слушателей."
       },
       {
-       "p": "Он заслуженный изобретатель России, в 90 лет получил медаль ордена «За заслуги перед Отечеством». Коллеги в юбилейной статье журнала вспоминают другое: он был вежлив со всеми, умел «находить приемлемые компромиссы в сложных ситуациях» и помогал в трудную минуту."
+       "p": "Он автор более 550 статей и 65 авторских свидетельств и патентов, заслуженный изобретатель России, в 90 лет получил медаль ордена «За заслуги перед Отечеством», входил в Экспертный совет премии «Золотой Фотон» и в 2021 году стал её лауреатом. Коллеги в юбилейной статье журнала вспоминают другое: он был вежлив со всеми, умел «находить приемлемые компромиссы в сложных ситуациях» и помогал в трудную минуту."
       }
      ],
      "sources": [
@@ -1127,9 +1153,15 @@
        "label": "ВНИСИ: медаль ордена",
        "url": "https://vnisi.ru/news/science/yu-b-ayzenberg-nagrazhdyen-medalyu-ordena-za-zaslugi-pered-otechestvom.html",
        "date": "12.10.2021"
+      },
+      {
+       "label": "«Золотой Фотон»: памяти Ю. Б. Айзенберга",
+       "url": "https://www.smartcity-award.com/news/ushel_iz_zhizni_yulian_borisovich_ayzenberg",
+       "date": "02.11.2026"
       }
      ],
-     "dates": true
+     "dates": true,
+     "head_first": true
     },
     {
      "id": "voices",
@@ -1219,7 +1251,8 @@
        "url": "https://everydaymatters.rpi.edu/tailored-lighting-improves-quality-of-life/",
        "date": "2016"
       }
-     ]
+     ],
+     "head_first": true
     }
    ]
   },
@@ -1276,7 +1309,8 @@
         }
        ]
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "orsman",
@@ -1344,7 +1378,8 @@
        "url": "https://www.miamilivingmagazine.com/post/nathan-orsman-illuminates-architecture",
        "date": "09.10.2026"
       }
-     ]
+     ],
+     "head_first": true
     },
     {
      "id": "michaelis",
@@ -1404,7 +1439,8 @@
        "url": "https://shop.michaelisboyd.com/products/new-natural-living-michaelis-boyd-architects",
        "date": "сайт"
       }
-     ]
+     ],
+     "head_first": true
     }
    ]
   }

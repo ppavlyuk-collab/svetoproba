@@ -688,7 +688,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
     if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
     if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
-    if (b.editor != null) return '<p class="editor">' + rich(String(b.editor).replace(/^Редакция:\s*/, "")) + "</p>";
+    if (b.editor != null) return '<p class="editor">' + rich(String(b.editor).replace(/^Редакция:\s*/, "").replace(/^./, function (c) { return c.toUpperCase(); })) + "</p>";
     if (b.stats) return statsHtml(b.stats);
     if (b.bars) return barsHtml(b.bars);
     if (b.timeline) return timelineHtml(b.timeline);
@@ -977,7 +977,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   function storyHtml(s) {
     if (s.kind === "lead") { var vis = visualHtml(s).replace('loading="lazy"', 'loading="eager" fetchpriority="high"'); return '<article class="lead" id="' + esc(s.id) + '">' + (PRINT ? head(s) + vis : vis + head(s)) + bodyHtml(s) + "</article>"; }
     if (s.kind === "feature") return '<article class="feature" id="' + esc(s.id) + '"><div class="feature-top"><div>' + head(s) + "</div>" + visualHtml(s) + "</div>" + bodyHtml(s) + "</article>";
-    return '<article class="note" id="' + esc(s.id) + '">' + visualHtml(s) + head(s) + bodyHtml(s) + "</article>";
+    return '<article class="note" id="' + esc(s.id) + '">' + (s.head_first ? head(s) + visualHtml(s) : visualHtml(s) + head(s)) + bodyHtml(s) + "</article>";
   }
 
   function normalize(issue) {
@@ -1000,6 +1000,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var idx = '<nav class="index" aria-label="В номере"><h3>В номере</h3><ol>' + pages.map(function (q) {
         return '<li class="ix-sec"><div class="ix-head"><span class="ix-s">' + esc(q.title) + '</span><span class="ix-n">стр. ' + q.no + "</span></div>" + q.stories.map(function (st) {
           var th = st.image && st.image.src ? st.image.src : (st.illus && st.illus.src ? st.illus.src : "");
+          if (!th) (st.body || []).forEach(function (bb) { if (!th && bb.anim === "dark-map") th = bb.image.src; if (!th && bb.anim === "road-adapt") th = bb.illus.src; });
           var thumb = th ? '<img class="ix-th" src="' + esc(th) + '" alt="" loading="lazy">' : '<span class="ix-th ix-th-e" aria-hidden="true"></span>';
           return '<a class="ix-card" href="#' + esc(st.id) + '" data-jump="' + esc(st.id) + '">' + thumb + '<span class="ix-tx"><span class="ix-k">' + esc(st.rubric || "") + '</span><span class="ix-t">' + esc(st.title) + '</span></span><span class="ix-go" aria-hidden="true">›</span></a>';
         }).join("") + "</li>";
@@ -1024,7 +1025,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
       if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
       if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
-      if (b.editor != null) return '<p class="np-editor">' + rich(String(b.editor).replace(/^Редакция:\s*/, "")) + "</p>";
+      if (b.editor != null) return '<p class="np-editor">' + rich(String(b.editor).replace(/^Редакция:\s*/, "").replace(/^./, function (c) { return c.toUpperCase(); })) + "</p>";
       if (b.quote) return '<div class="np-quote">«' + esc(b.quote.text) + "»<small>" + esc(b.quote.who) + "</small></div>";
       if (b.stats) return statsHtml(b.stats).replace(' span ', ' ');
       if (b.bars) return barsHtml(b.bars).replace(' span ', ' ');
