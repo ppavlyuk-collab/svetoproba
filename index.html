@@ -379,7 +379,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .np { color: #161411; font-family: var(--font-body); }
 .np-mast { text-align: center; }
 .np-topline { display: flex; justify-content: space-between; font: 400 7.6pt var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: #4a463f; padding-bottom: 1.5mm; }
-.np-logo { font-family: var(--font-logo); font-weight: 400; line-height: 1.12; padding-bottom: .14em; white-space: nowrap; color: #161411; text-shadow: 0.076em 0 0 #4f86d6; display: inline-block; }
+.np-logo { font-family: var(--font-logo); font-weight: 400; line-height: 1.12; padding-bottom: .14em; white-space: nowrap; color: #161411; text-shadow: 0.076em 0 0 var(--logo-shadow); display: inline-block; }
 .np-logo .daily { font-family: var(--font-narrow); font-weight: 700; font-size: .16em; letter-spacing: .24em; text-transform: uppercase; color: #044389; text-shadow: none; margin-left: .5em; vertical-align: .55em; }
 .np-imprint { border-top: 2.2pt solid #161411; border-bottom: .6pt solid #161411; margin-top: 2mm; padding: 1.4mm 0; display: flex; justify-content: space-between; gap: 6mm; font: 700 7.6pt var(--font-narrow); letter-spacing: .07em; text-transform: uppercase; }
 .np-imprint span:nth-child(2) { font-weight: 400; font-family: var(--font-head); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 9pt; }
@@ -1106,6 +1106,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }
 
   function render(issue) {
+    document.documentElement.style.setProperty("--logo-shadow", issue.logo_shadow || "#4f86d6");
     stops.forEach(function (f) { f(); }); stops = [];
     var pages = normalize(issue);
     PAGEOF = {}; pages.forEach(function (q) { q.stories.forEach(function (st) { PAGEOF[st.id] = q.no; }); });
