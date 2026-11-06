@@ -1105,7 +1105,8 @@
        "url": "https://vnisi.ru/news/science/yu-b-ayzenberg-nagrazhdyen-medalyu-ordena-za-zaslugi-pered-otechestvom.html",
        "date": "12.10.2021"
       }
-     ]
+     ],
+     "dates": true
     },
     {
      "id": "voices",

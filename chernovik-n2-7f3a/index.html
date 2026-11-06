@@ -110,6 +110,7 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .index a.ix-card { display: grid; grid-template-columns: 64px 1fr 14px; gap: 12px; align-items: center; padding: 10px; margin: 8px 0; background: var(--paper-2); border-radius: 4px; }
 .index a.ix-card:hover { outline: 1px solid var(--accent); }
 .ix-th { width: 64px; height: 64px; object-fit: cover; display: block; border-radius: 2px; filter: none !important; }
+.dates-frame { display: inline-block; font-style: normal !important; font-variant-numeric: lining-nums; letter-spacing: .02em; border: 1.5px solid currentColor !important; padding: 8px 14px; margin: 6px 0 14px; }
 .ix-th-e { background: var(--rule); } img.ix-th[src$=".svg"] { background: #f2ead8; }
 .ix-tx { min-width: 0; }
 .ix-k { display: block; font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--mark); margin-bottom: 2px; }
@@ -965,7 +966,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }
   function head(s) {
     return '<div class="kicker"><span class="rubric">' + esc(s.rubric) + '</span>' + (s.why ? '<span class="why">' + esc(s.why) + "</span>" : "") + "</div>" +
-      '<h3 class="hl">' + esc(s.title) + "</h3>" + (s.dek ? '<p class="dek">' + esc(s.dek) + "</p>" : "") + (s.dateline ? '<p class="dateline">' + esc(s.dateline) + "</p>" : "");
+      '<h3 class="hl">' + esc(s.title) + "</h3>" + (s.dek ? '<p class="dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + (s.dateline ? '<p class="dateline">' + esc(s.dateline) + "</p>" : "");
   }
   function bodyHtml(s) { return '<div class="body">' + s.body.map(block).join("") + sourcesHtml(s.sources) + "</div>"; }
   function storyHtml(s) {
@@ -1033,9 +1034,9 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var kick = '<div class="np-kicker">' + esc(s.rubric) + (s.why ? "<span>" + esc(s.why) + "</span>" : "") + "</div>";
       var body = s.body.map(function (b) { return blockP(b, s); }).join("");
       if (s.kind === "feature") {
-        return '<article class="np-story np-feature" data-story="' + esc(s.id) + '">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek">' + esc(s.dek) + "</p>" : "") + visualHtml(s) + body + "</article>";
+        return '<article class="np-story np-feature" data-story="' + esc(s.id) + '">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + visualHtml(s) + body + "</article>";
       }
-      return '<article class="np-story" data-story="' + esc(s.id) + '"><div class="np-head">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
+      return '<article class="np-story" data-story="' + esc(s.id) + '"><div class="np-head">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
     }
     var flow = "";
     var sideStats = "", leadBody = lead.body.slice();
