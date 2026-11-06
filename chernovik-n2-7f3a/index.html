@@ -684,7 +684,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   /* blocks */
   function block(b) {
     if (b.print_only && !PRINT) return "";  // материалы для заполнения полос PDF в веб-версию не идут
-    if (b.anim === "dark-map") return animHtml(b);
+    if (b.anim === "dark-map" || b.anim === "road-adapt") return animHtml(b);
     if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
     if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
     if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
@@ -862,6 +862,11 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       return '<figure class="fig span anim" data-anim="lens-aging"><p class="fig-t">Что доходит до сетчатки: видимый спектр и возраст</p><canvas aria-hidden="true"></canvas>' +
         '<div class="anim-row"><span>380 нм</span><span class="anim-age">возраст наблюдателя: 20 лет</span><span>780 нм</span></div>' + (b.caption ? "<figcaption>" + esc(b.caption) + "</figcaption>" : "") + "</figure>";
     }
+    if (b.anim === "road-adapt") {
+      var poles = "", N = 7;
+      for (var ri = 0; ri < N; ri++) { var rx = 50 + ri * 110; poles += '<g class="ra-p" data-x="' + rx + '"><polygon class="ra-c" points="' + (rx + 22) + ',62 ' + (rx - 28) + ',196 ' + (rx + 72) + ',196" fill="#f4d98b"/><line x1="' + rx + '" y1="196" x2="' + rx + '" y2="56" stroke="#8d8676" stroke-width="3"/><line x1="' + rx + '" y1="56" x2="' + (rx + 24) + '" y2="56" stroke="#8d8676" stroke-width="3"/><circle class="ra-l" cx="' + (rx + 22) + '" cy="60" r="5" fill="#fff2c4"/></g>'; }
+      return '<figure class="fig span anim road-adapt"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.modes.map(function (m, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(m.name) + "</button>"; }).join("") + '</div><svg viewBox="0 0 800 250" role="img" aria-label="' + esc(b.alt) + '" style="display:block;width:100%;height:auto;background:#10131a">' + poles + '<rect x="0" y="196" width="800" height="54" fill="#2b2a2b"/><line class="ra-m" x1="0" y1="223" x2="800" y2="223" stroke="#8d8676" stroke-width="2" stroke-dasharray="26 22"/><g class="ra-car"><rect x="-26" y="205" width="52" height="16" rx="5" fill="#d9d4c7"/><rect x="-14" y="197" width="28" height="11" rx="4" fill="#d9d4c7"/><polygon points="26,209 74,201 74,221 26,215" fill="#fff2c4" opacity=".55"/></g></svg><input class="ra-r" type="range" min="0" max="800" value="60" aria-label="Положение автомобиля" style="width:100%;margin:8px 0 2px"><p class="dm-t">' + esc(b.modes[0].text) + '</p><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
     if (b.anim === "dark-map") {
       return '<figure class="fig span anim dark-map"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.levels.map(function (l, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(l.name) + "</button>"; }).join("") + '</div><div class="dm-s"><img src="' + esc(b.image.src) + '" alt="' + esc(b.image.alt) + '">' + b.levels.map(function (l, i) { return l.mask ? '<img class="ov" data-i="' + i + '" src="' + esc(l.mask) + '" alt="">' : ""; }).join("") + '</div><p class="dm-t">' + esc(b.levels[0].text) + '</p><figcaption>' + esc(b.image.caption) + ' <span class="credit">Фото: <a href="' + esc(safeUrl(b.image.credit_url)) + '" target="_blank" rel="noopener">' + esc(b.image.credit) + "</a></span></figcaption></figure>";
     }
@@ -1027,6 +1032,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       if (b.timeline || b.table || b.gallery || b.digest) return '<div class="np-inflow">' + block(b) + "</div>";
       if (b.anim === "daylight") return daylightHtml(b);
       if (b.anim === "dark-map") return figureHtml(b.image);
+      if (b.anim === "road-adapt") return illusHtml(b.illus);
       if (b.anim) return "";
       return block(b);
     }
@@ -1174,6 +1180,21 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       fetch(f.getAttribute("data-svg")).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
         if (t.indexOf("<svg") === 0) { var slot = f.querySelector(".sketch-slot"); var tmp = document.createElement("div"); tmp.innerHTML = t; var svg = tmp.querySelector("svg"); if (svg && slot) slot.replaceWith(svg); }
       }).catch(function () {});
+    });
+    main.querySelectorAll(".road-adapt").forEach(function (f) {
+      var rb = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "road-adapt") rb = bb; }); }); });
+      var ps = [].slice.call(f.querySelectorAll(".ra-p")), car = f.querySelector(".ra-car"), range = f.querySelector(".ra-r"), btns = [].slice.call(f.querySelectorAll(".dm-b button")), txt = f.querySelector(".dm-t");
+      var mode = 0, x = 60, raf = 0, auto = !REDUCE, last = 0;
+      function paint() {
+        car.setAttribute("transform", "translate(" + x + " 0)"); car.style.display = mode === 1 ? "none" : "";
+        ps.forEach(function (g) { var px = +g.dataset.x + 22, d = Math.abs(px - x), lvl;
+          if (mode === 2) lvl = 1; else if (mode === 1) lvl = .18; else lvl = d < 110 ? 1 : d < 230 ? 1 - (d - 110) / 120 * .82 : .18;
+          g.querySelector(".ra-c").setAttribute("opacity", (lvl * .42).toFixed(3)); g.querySelector(".ra-l").setAttribute("opacity", (.25 + lvl * .75).toFixed(3)); });
+      }
+      function tick(t) { if (!f.isConnected) return; if (auto && mode === 0) { x += Math.min(40, t - last) * .09; if (x > 830) x = -30; range.value = x; paint(); } last = t; raf = requestAnimationFrame(tick); }
+      btns.forEach(function (b, i) { b.onclick = function () { mode = i; btns.forEach(function (o, k) { o.setAttribute("aria-pressed", String(k === i)); }); txt.textContent = rb.modes[i].text; range.disabled = i !== 0; paint(); }; });
+      range.oninput = function () { auto = false; x = +range.value; if (mode !== 0) btns[0].click(); paint(); };
+      paint(); raf = requestAnimationFrame(tick); stops.push(function () { cancelAnimationFrame(raf); });
     });
     main.querySelectorAll(".dark-map").forEach(function (f) {
       var iss = (issue.pages || []).reduce(function (o, p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "dark-map") o = bb; }); }); return o; }, null);
