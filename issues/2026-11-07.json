@@ -277,7 +277,8 @@
          "u": "",
          "l": "зданий получат подсветку фасадов"
         }
-       ]
+       ],
+       "web_only": true
       },
       {
        "h": "Почтамтская: два источника в одном фонаре"
@@ -424,42 +425,6 @@
      "dek": "Реставраторы нашли под побелкой цветные барельефы и подпись скульптора, а на главном здании включили архитектурную подсветку."
     },
     {
-     "id": "lahta",
-     "kind": "note",
-     "rubric": "Петербург",
-     "why": "Удовольствие от открытия",
-     "title": "«Проекции города» в «Лахта Центре»: памятники Петербурга в облаке точек лазерного сканирования, до 8 ноября",
-     "image": {
-      "src": "img/2026-11-07/lahta-1.webp",
-      "alt": "Силуэт человека в тёмном зале, белые лучи расходятся от яркого центра и отражаются в полу",
-      "caption": "Медиаинсталляция «Проекции города».",
-      "credit": "ПАО «Газпром» / СПб-гид",
-      "credit_url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/"
-     },
-     "reserve": [
-      {
-       "src": "img/2026-11-07/lahta-2.webp",
-       "alt": "Тёмный зал, люстра и орнамент собраны из точек света и отражаются в полу",
-       "caption": "Интерьер, собранный из данных лазерного сканирования.",
-       "credit": "ПАО «Газпром» / СПб-гид",
-       "credit_url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/"
-      }
-     ],
-     "body": [
-      {
-       "p": "В эти выходные в «Лахта Центре» можно пройти сквозь памятники Петербурга. Коллектив dreamlaser и медиахудожник Саша Коджо собрали их из данных лазерного 3D-сканирования, света и цифровой графики: Китайский дворец в Ораниенбауме со всеми 17 интерьерами, Лионский зал Екатерининского дворца, Кунсткамеру, Александринский театр, Троицкий мост. Николо-Богоявленский собор и дом Веге показаны в архитектурной подсветке. Инсталляция идёт в программе фестиваля «Друзья Петербурга», открыта с 10:00 до 17:30, вход бесплатный, нужна регистрация на [сайте фестиваля](https://spbfriends.ru/). Высотная улица, 1, метро «Беговая»."
-      }
-     ],
-     "sources": [
-      {
-       "label": "СПб-гид: медиаинсталляция «Проекции города»",
-       "url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/",
-       "date": "02.11.2026"
-      }
-     ],
-     "head_first": true
-    },
-    {
      "id": "rybinsk",
      "kind": "feature",
      "rubric": "Рыбинск",
@@ -545,6 +510,42 @@
      ],
      "head_first": true,
      "dek": "Приз зрителей конкурса «Российский светодизайн 2026» получила работа «Полёт чайки над Волгой». Смонтировали её меньше чем за пять месяцев."
+    },
+    {
+     "id": "lahta",
+     "kind": "note",
+     "rubric": "Петербург",
+     "why": "Удовольствие от открытия",
+     "title": "«Проекции города» в «Лахта Центре»: памятники Петербурга в облаке точек лазерного сканирования, до 8 ноября",
+     "image": {
+      "src": "img/2026-11-07/lahta-1.webp",
+      "alt": "Силуэт человека в тёмном зале, белые лучи расходятся от яркого центра и отражаются в полу",
+      "caption": "Медиаинсталляция «Проекции города».",
+      "credit": "ПАО «Газпром» / СПб-гид",
+      "credit_url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/"
+     },
+     "reserve": [
+      {
+       "src": "img/2026-11-07/lahta-2.webp",
+       "alt": "Тёмный зал, люстра и орнамент собраны из точек света и отражаются в полу",
+       "caption": "Интерьер, собранный из данных лазерного сканирования.",
+       "credit": "ПАО «Газпром» / СПб-гид",
+       "credit_url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/"
+      }
+     ],
+     "body": [
+      {
+       "p": "В эти выходные в «Лахта Центре» можно пройти сквозь памятники Петербурга. Коллектив dreamlaser и медиахудожник Саша Коджо собрали их из данных лазерного 3D-сканирования, света и цифровой графики: Китайский дворец в Ораниенбауме со всеми 17 интерьерами, Лионский зал Екатерининского дворца, Кунсткамеру, Александринский театр, Троицкий мост. Николо-Богоявленский собор и дом Веге показаны в архитектурной подсветке. Инсталляция идёт в программе фестиваля «Друзья Петербурга», открыта с 10:00 до 17:30, вход бесплатный, нужна регистрация на [сайте фестиваля](https://spbfriends.ru/). Высотная улица, 1, метро «Беговая»."
+      }
+     ],
+     "sources": [
+      {
+       "label": "СПб-гид: медиаинсталляция «Проекции города»",
+       "url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/",
+       "date": "02.11.2026"
+      }
+     ],
+     "head_first": true
     }
    ]
   },
@@ -1630,56 +1631,6 @@
    "desc": "Пресса и книги недели",
    "stories": [
     {
-     "id": "digest",
-     "kind": "feature",
-     "rubric": "Дайджест",
-     "why": "Практическая польза",
-     "title": "Что прочитать: четыре публикации недели",
-     "dek": "Выставка в Дании, охраняемые территории Кералы, конференция в Риме и вопросы к новому светодиоду.",
-     "image": {
-      "src": "img/2026-11-07/ordrup.webp",
-      "alt": "Зал музея Ордрупгор: мебель и лампы на подиумах рядом с живописью на стенах",
-      "caption": "Выставка краснодеревщиков в галереях Снёхетты, музей Ордрупгор.",
-      "credit": "Dezeen",
-      "credit_url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/"
-     },
-     "body": [
-      {
-       "digest": [
-        {
-         "source": "Dezeen",
-         "date": "06.11.2026",
-         "title": "Cabinetmakers' Autumn Exhibition",
-         "what": "Полный обзор датской выставки: 36 авторов показывают мебель и свет среди живописи XIX и XX веков.",
-         "url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/"
-        },
-        {
-         "source": "Mongabay India",
-         "date": "05.11.2026",
-         "title": "Artificial light at night in protected areas",
-         "what": "Как искусственное освещение распространяется на 21 охраняемую территорию Кералы: внутри освещены места вокруг культовых объектов, снаружи – дороги. Сильнее всего влияет пояс в 10–20 км от границы.",
-         "url": "https://india.mongabay.com/short-article/2026/11/new-study-examines-effect-of-artificial-light-at-night-in-protected-areas/"
-        },
-        {
-         "source": "Atmosfera Mag",
-         "date": "04.11.2026",
-         "title": "Progettare il Progettista",
-         "what": "Отчёт о 14-й конференции итальянских светодизайнеров APIL в Риме: нейронаука, психология среды и окно как инструмент проектировщика.",
-         "url": "https://www.atmosferamag.it/progettare-il-progettista-conference-report-2026/"
-        },
-        {
-         "source": "LightNOW",
-         "date": "02.11.2026",
-         "title": "Seoul Semi's WICOP 3 raises many questions",
-         "what": "Продолжение заметки из № 1: почему новый светодиод вызывает вопросы у специалистов.",
-         "url": "https://www.lightnowblog.com/2026/11/product-monday-seoul-semis-wicop-3-raises-many-questions/"
-        }
-       ]
-      }
-     ],
-     "head_first": true
-    },
-    {
      "id": "orsman",
      "kind": "feature",
      "rubric": "Новая книга",
@@ -1812,6 +1763,56 @@
       }
      ],
      "head_first": true
+    },
+    {
+     "id": "digest",
+     "kind": "feature",
+     "rubric": "Дайджест",
+     "why": "Практическая польза",
+     "title": "Что прочитать: четыре публикации недели",
+     "dek": "Выставка в Дании, охраняемые территории Кералы, конференция в Риме и вопросы к новому светодиоду.",
+     "image": {
+      "src": "img/2026-11-07/ordrup.webp",
+      "alt": "Зал музея Ордрупгор: мебель и лампы на подиумах рядом с живописью на стенах",
+      "caption": "Выставка краснодеревщиков в галереях Снёхетты, музей Ордрупгор.",
+      "credit": "Dezeen",
+      "credit_url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/"
+     },
+     "body": [
+      {
+       "digest": [
+        {
+         "source": "Dezeen",
+         "date": "06.11.2026",
+         "title": "Cabinetmakers' Autumn Exhibition",
+         "what": "Полный обзор датской выставки: 36 авторов показывают мебель и свет среди живописи XIX и XX веков.",
+         "url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/"
+        },
+        {
+         "source": "Mongabay India",
+         "date": "05.11.2026",
+         "title": "Artificial light at night in protected areas",
+         "what": "Как искусственное освещение распространяется на 21 охраняемую территорию Кералы: внутри освещены места вокруг культовых объектов, снаружи – дороги. Сильнее всего влияет пояс в 10–20 км от границы.",
+         "url": "https://india.mongabay.com/short-article/2026/11/new-study-examines-effect-of-artificial-light-at-night-in-protected-areas/"
+        },
+        {
+         "source": "Atmosfera Mag",
+         "date": "04.11.2026",
+         "title": "Progettare il Progettista",
+         "what": "Отчёт о 14-й конференции итальянских светодизайнеров APIL в Риме: нейронаука, психология среды и окно как инструмент проектировщика.",
+         "url": "https://www.atmosferamag.it/progettare-il-progettista-conference-report-2026/"
+        },
+        {
+         "source": "LightNOW",
+         "date": "02.11.2026",
+         "title": "Seoul Semi's WICOP 3 raises many questions",
+         "what": "Продолжение заметки из № 1: почему новый светодиод вызывает вопросы у специалистов.",
+         "url": "https://www.lightnowblog.com/2026/11/product-monday-seoul-semis-wicop-3-raises-many-questions/"
+        }
+       ]
+      }
+     ],
+     "head_first": true
     }
    ]
   }
@@ -1843,9 +1844,31 @@
   "aizenberg": 2,
   "voices": 2,
   "orsman": 2,
-  "michaelis": 2
+  "michaelis": 2,
+  "flammen": 2
  },
  "print_pair": [
-  "voices"
- ]
+  "voices",
+  "cauchie"
+ ],
+ "print_whole": [
+  "spb-park"
+ ],
+ "print_break": [
+  "cauchie",
+  "spb-park",
+  "ippodrom"
+ ],
+ "print_span": [
+  "il-gallery",
+  "angers-portal",
+  "il-grazing"
+ ],
+ "print_ratio": {
+  "angers-portal": 1.12
+ },
+ "print_last": [
+  "il-cs"
+ ],
+ "print_no_cover": true
 }
