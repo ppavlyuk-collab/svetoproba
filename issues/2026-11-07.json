@@ -468,11 +468,11 @@
       },
       {
        "image": {
-        "src": "img/2026-11-07/rybinsk-warm.webp",
-        "alt": "Мост с берега: тёплые линии на арках и фонари на проезжей части",
-        "caption": "Вид с берега: фонари проезжей части и линии на арках.",
-        "credit": "Яррег",
-        "credit_url": "https://yarreg.ru/articles/most-cherez-volgu-v-rybinske-ukrashayut-podsvetkoy/"
+        "src": "img/2026-11-07/rybinsk-river.webp",
+        "alt": "Мост ночью в тёплом белом свете, арки отражаются в реке",
+        "caption": "Тёплый белый режим: контур арок и подвески отражаются в Волге.",
+        "credit": "Правительство Ярославской области / YarNews",
+        "credit_url": "https://www.yarnews.net/news/show/yaroslavl-region/92209/v_rybinske_pokazali_svetovoe_shou_na_mostu_cherez_volgu.htm"
        }
       }
      ],
@@ -493,11 +493,6 @@
        "date": "22.12.2025"
       },
       {
-       "label": "Яррег: мост украшают подсветкой",
-       "url": "https://yarreg.ru/articles/most-cherez-volgu-v-rybinske-ukrashayut-podsvetkoy/",
-       "date": "01.12.2025"
-      },
-      {
        "label": "YarNews: световое шоу на мосту",
        "url": "https://www.yarnews.net/news/show/yaroslavl-region/92209/v_rybinske_pokazali_svetovoe_shou_na_mostu_cherez_volgu.htm",
        "date": "20.12.2025"
@@ -506,6 +501,11 @@
        "label": "SMI44: «Ростелеком» и подсветка моста",
        "url": "https://smi44.ru/news/tourism/rostelekom-ukrasil-arkhitekturnoy-podsvetkoy-most-v-rybinske/",
        "date": "12.2025"
+      },
+      {
+       "label": "Яррег: мост украшают подсветкой",
+       "url": "https://yarreg.ru/articles/most-cherez-volgu-v-rybinske-ukrashayut-podsvetkoy/",
+       "date": "01.12.2025"
       }
      ],
      "head_first": true,
