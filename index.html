@@ -472,7 +472,9 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
 .np-flow .np-wide { display: block !important; width: calc(200% + 6mm) !important; max-width: none !important; position: relative; z-index: 2; background: #f4eedd; break-inside: avoid; margin-bottom: 2mm; }  /* правило 95: снимок на две колонки, сборщик PDF ставит в соседней колонке распорку той же высоты */
 .np-flow .np-wide img { width: 100% !important; max-width: none !important; max-height: none !important; }
 .np-ws { display: block; break-inside: avoid; }
-.np-side .np-ed-top { column-count: 1 !important; border: 0 !important; margin: 0 0 4mm !important; padding: 0 0 4mm !important; box-shadow: 0 .6pt 0 #161411; }
+.np-top { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; align-items: start; }  /* слово редактора только в первой колонке, рядом заголовок */
+.np-top-head { grid-column: 2 / 5; border-left: .5pt solid #b9b1a0; padding-left: 3mm; margin-left: -3mm; }
+.np-top .np-ed-top { grid-column: 1 / 2; column-count: 1 !important; border: 0 !important; margin: 0 !important; padding: 0 !important; }
 .np-front .np-side { border-left: .5pt solid #b9b1a0; padding-left: 3mm; margin-left: -3mm; }  /* слово редактора только в четвёртой колонке */
 .np-mark { font-size: 1px; line-height: 0; color: #f4eedd; position: absolute; }  /* служебная метка сборщика PDF не занимает места в строке */
 .np figcaption { text-indent: 0 !important; }  /* правило 56: подпись под снимком начинается от края, без отступа */
@@ -1103,7 +1105,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       '<div>Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.<br>Ссылка на этот номер: <a href="https://svetoproba.com/#' + esc(issue.date) + '">svetoproba.com/#' + esc(issue.date) + '</a>. Канал: <a href="https://t.me/svetoproba">t.me/svetoproba</a></div></div>';
     var html = '<div class="np"><div class="np-mast"><div class="np-topline"><span>№ ' + issue.no + "</span><span>Москва</span><span>" + esc(wd) + ", " + longDate(issue.date) + '</span></div><div class="np-logo" id="np-logo">_светопроба<span class="daily">weekly</span></div>' +
       '<div class="np-imprint"><span>№ ' + issue.no + " " + DOT + " " + esc(wd) + ", " + longDate(issue.date) + "</span><span>Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</span><span>Выходит по субботам</span></div></div>" +
-      '<div class="np-lead"><div class="np-front"><div class="np-hero"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1>" + visualHtml(lead).replace('loading="lazy"', 'loading="eager"') + '</div><div class="np-side">' + edNote + (lead.dek ? '<p class="np-dek">' + esc(lead.dek) + "</p>" : "") + sideStats + '<div class="np-side-text">' + sideText + "</div></div></div></div>" +
+      '<div class="np-lead"><div class="np-top">' + edNote + '<div class="np-top-head"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1></div></div>" + '<div class="np-front"><div class="np-hero">' + visualHtml(lead).replace('loading="lazy"', 'loading="eager"') + '</div><div class="np-side">' + (lead.dek ? '<p class="np-dek">' + esc(lead.dek) + "</p>" : "") + sideStats + '<div class="np-side-text">' + sideText + "</div></div></div></div>" +
       '<div class="np-flow">' + flow + "</div></div>";
     var main = document.getElementById("issue"); main.innerHTML = html;
     main.querySelectorAll("img[loading]").forEach(function (im) { im.loading = "eager"; });
