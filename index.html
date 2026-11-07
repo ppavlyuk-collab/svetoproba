@@ -622,6 +622,11 @@ a *:not(svg):not(svg *) { color: inherit !important; }
 .edition, .pager, .index h3, .index .ix-sec, .editor, .fig, .np-imprint, .np-editor, .np-ed-top, .np .fig, .foot-nav, .arch-list a, th, td, .table-wrap tr, .table-wrap thead th, .lead .body > .span, .feature .body > .span, .page { border-bottom: 0 !important; }
 tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 .np tbody tr:first-child > td { border-top: .5pt solid #b9b1a0; }
+.mat-nav { position: fixed; right: max(12px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: flex; flex-direction: column; gap: 8px; }
+.mat-nav button { -webkit-appearance: none; appearance: none; width: 40px; height: 40px; padding: 0; display: grid; place-items: center; cursor: pointer; color: var(--ink); background: var(--paper); border: 1px solid var(--hair); border-radius: 50%; }
+.mat-nav button:disabled { opacity: .3; cursor: default; }
+.mat-nav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+@media print { .mat-nav { display: none !important; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
@@ -651,6 +656,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     </nav>
   </div>
 </div>
+<div class="mat-nav" id="mat-nav" hidden><button type="button" id="mat-up" aria-label="К началу предыдущего материала" title="Предыдущий материал"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 15V3M4 8l5-5 5 5"/></svg></button><button type="button" id="mat-down" aria-label="К началу следующего материала" title="Следующий материал"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M4 10l5 5 5-5"/></svg></button></div>
 <nav class="pager gut" aria-label="Полосы номера"><ol id="pager"></ol></nav>
 <main id="issue" class="gut"><div class="wrap"><p class="state">Загружаю номер…</p></div></main>
 <section class="archive gut" id="archive" aria-labelledby="arch-h">
@@ -727,11 +733,11 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   function figureHtml(im) {
     if (!im || !im.src) return "";
     var credit = im.credit ? ' <span class="credit">Фото: ' + (im.credit_url ? '<a href="' + esc(safeUrl(im.credit_url)) + '" target="_blank" rel="noopener">' + esc(im.credit) + "</a>" : esc(im.credit)) + "</span>" : "";
-    return '<figure><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '" loading="lazy" decoding="async"><figcaption>' + esc(im.caption || "") + credit + "</figcaption></figure>";
+    return '<figure><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '"' + (im.w && im.h ? ' width="' + (+im.w) + '" height="' + (+im.h) + '"' : "") + ' loading="lazy" decoding="async"><figcaption>' + esc(im.caption || "") + credit + "</figcaption></figure>";
   }
   function illusHtml(il) {
     if (!il || !il.src) return "";
-    return '<figure class="illus" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '"><div class="sketch-slot" style="aspect-ratio:3/2"></div><figcaption>' + esc(il.caption || "") + "</figcaption></figure>";
+    return '<figure class="illus" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '"><div class="sketch-slot" style="aspect-ratio:' + (+il.ar > 0 ? +il.ar : 1.5) + '"></div><figcaption>' + esc(il.caption || "") + "</figcaption></figure>";
   }
   // снимки, добавленные в PDF к материалу (резерв, галереи и снимки «только для печати»), на сайте листаются каруселью у главного снимка;
   // если листать нечего, стоит один снимок, как раньше
@@ -865,7 +871,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }
   function videoHtml(v) {
     if (v.src && !PRINT) return '<figure class="span"><video class="video-inline" controls preload="none" poster="' + esc(v.thumb || "") + '" src="' + esc(v.src) + '"></video><figcaption>' + esc(v.title) + (v.about ? ". " + esc(v.about) : "") + ' <span class="credit">Видео: <a href="' + esc(safeUrl(v.url)) + '" target="_blank" rel="noopener">' + esc(v.channel || "") + "</a></span></figcaption></figure>";
-    return '<a class="video" href="' + esc(safeUrl(v.url)) + '" target="_blank" rel="noopener"><span class="thumb"><img src="' + esc(v.thumb || "") + '" alt="Обложка видео: ' + esc(v.title) + '" loading="lazy"><span class="play" aria-hidden="true"></span>' +
+    return '<a class="video" href="' + esc(safeUrl(v.url)) + '" target="_blank" rel="noopener"><span class="thumb"><img src="' + esc(v.thumb || "") + '"' + (v.thumb_w && v.thumb_h ? ' width="' + (+v.thumb_w) + '" height="' + (+v.thumb_h) + '"' : "") + ' alt="Обложка видео: ' + esc(v.title) + '" loading="lazy"><span class="play" aria-hidden="true"></span>' +
       (v.duration ? '<span class="dur">' + esc(v.duration) + "</span>" : "") + '</span><span class="vt">' + esc(v.title) + '</span><span class="vs">' +
       (v.duration ? esc(v.duration) + (String(v.duration).split(":").length > 2 ? " ч" : " мин") + " " + DOT + " " : "") + esc(v.channel || "") + (v.date ? ", " + esc(v.date) : "") + " " + DOT + " " + esc(v.platform || "YouTube") + (v.about ? "<br>" + esc(v.about) : "") + "</span></a>";
   }
@@ -1354,21 +1360,53 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   function jumpTo(id) {
     var el = document.getElementById(id); if (!el) return;
     if (jumpStop) jumpStop();
-    var GAP = 16, main = document.getElementById("issue"), ro = null, t = 0;
+    var GAP = 16, root = document.documentElement, main = document.getElementById("issue"), ro = null, t = 0, EV = ["wheel", "touchmove", "keydown", "mousedown"];
+    root.style.scrollBehavior = "auto"; // Safari не везде понимает behavior: "instant"
     function place() {
       var y = el.getBoundingClientRect().top - GAP;
-      if (Math.abs(y) > 1) window.scrollTo({ top: window.pageYOffset + y, behavior: "instant" });
+      if (Math.abs(y) > 1) window.scrollTo(0, (window.pageYOffset || root.scrollTop) + y);
     }
+    function loaded(e) { if (e.target && e.target.tagName === "IMG") place(); }
     function stop() {
       if (ro) ro.disconnect(); clearTimeout(t);
-      ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (n) { window.removeEventListener(n, stop, true); });
-      jumpStop = null;
+      EV.forEach(function (n) { window.removeEventListener(n, stop, true); });
+      document.removeEventListener("load", loaded, true);
+      root.style.scrollBehavior = ""; jumpStop = null;
     }
     jumpStop = stop;
     place();
+    requestAnimationFrame(place);
     if (window.ResizeObserver && main) { ro = new ResizeObserver(place); ro.observe(main); }
-    t = setTimeout(stop, 8000);
-    ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (n) { window.addEventListener(n, stop, { capture: true, passive: true }); });
+    document.addEventListener("load", loaded, true);
+    t = setTimeout(stop, 15000);
+    EV.forEach(function (n) { window.addEventListener(n, stop, { capture: true, passive: true }); });
+  }
+  // стрелки: к началу предыдущего и следующего материала (правило 116); материалы рядом в одном ряду идут как один шаг
+  function matTops() {
+    return Array.prototype.map.call(document.querySelectorAll("#issue article[id]"), function (el) { return { id: el.id, top: el.getBoundingClientRect().top }; })
+      .sort(function (a, b) { return a.top - b.top; });
+  }
+  function matStep(dir) {
+    var list = matTops(), hit = null;
+    if (dir > 0) hit = list.filter(function (x) { return x.top > 24; })[0];
+    else { var u = list.filter(function (x) { return x.top < 8; }); hit = u[u.length - 1]; }
+    if (hit) jumpTo(hit.id);
+  }
+  function matSync() {
+    var list = matTops(), up = document.getElementById("mat-up"), dn = document.getElementById("mat-down");
+    if (!list.length || !up) return;
+    up.disabled = list[0].top >= 8;
+    dn.disabled = list[list.length - 1].top <= 24;
+  }
+  function matSetup() {
+    var box = document.getElementById("mat-nav");
+    if (PRINT || !box) return;
+    box.hidden = false;
+    document.getElementById("mat-up").addEventListener("click", function () { matStep(-1); });
+    document.getElementById("mat-down").addEventListener("click", function () { matStep(1); });
+    var tick = 0;
+    window.addEventListener("scroll", function () { if (!tick) tick = setTimeout(function () { tick = 0; matSync(); }, 120); }, { passive: true });
+    window.addEventListener("resize", matSync);
   }
   // счётчик читателей: без cookie и личных данных, читателю не виден; только на открытом сайте (правило 114)
   var STAT_ON = !PRINT && (/(^|\.)svetoproba\.com$/.test(location.hostname) || /[?&]stattest\b/.test(location.search)) && !(window.claude && window.claude.use);
@@ -1440,7 +1478,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     current = meta.date;
     try { history.replaceState(null, "", "#" + meta.date); } catch (e) {}
     fetch("issues/" + meta.date + ".json", { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (issue) { render(issue); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); })
+      .then(function (issue) { render(issue); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); matSync(); })
       .catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Номер за ' + esc(longDate(meta.date)) + " не загрузился. Обновите страницу.</p></div>"; });
   }
   function step(dir) { var i = issues.findIndex(function (x) { return x.date === current; }), j = i + dir; if (i >= 0 && j >= 0 && j < issues.length) openIssue(issues[j].date, true); }
@@ -1448,6 +1486,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   document.getElementById("b-next").addEventListener("click", function () { step(-1); });
   document.getElementById("b-arch").addEventListener("click", function () { document.getElementById("archive").scrollIntoView({ behavior: REDUCE ? "auto" : "smooth" }); });
   window.addEventListener("hashchange", function () { var h = location.hash.slice(1); if (h && h !== current && issues.some(function (x) { return x.date === h; })) openIssue(h, true); });
+  matSetup();
   fetch("issues/index.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (idx) {
     issues = visibleIssues(idx.issues || []);
     var h = location.hash.slice(1);

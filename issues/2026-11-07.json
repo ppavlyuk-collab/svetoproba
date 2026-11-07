@@ -28,7 +28,9 @@
       "parts": [
        "angers-2",
        "angers-4"
-      ]
+      ],
+      "w": 1600,
+      "h": 744
      },
      "body": [
       {
@@ -43,7 +45,9 @@
         "alt": "Тимпан портала собора в Анже с остатками многоцветной росписи: Христос в овале, вокруг символы евангелистов на синем фоне",
         "caption": "Ради этого построена галерея: тимпан портала с росписью XII и XVII веков.",
         "credit": "Thierry Bonnet / Ville d'Angers",
-        "credit_url": "https://www.lejournaldesarts.fr/patrimoine/la-cathedrale-dangers-devoile-sa-galerie-contemporaine-183457"
+        "credit_url": "https://www.lejournaldesarts.fr/patrimoine/la-cathedrale-dangers-devoile-sa-galerie-contemporaine-183457",
+        "w": 800,
+        "h": 600
        },
        "print_only": true
       },
@@ -81,7 +85,8 @@
        "illus": {
         "src": "img/2026-11-07/il-gallery.svg",
         "alt": "План галереи: два светильника в нишах освещают портал, зритель на площади их не видит",
-        "caption": "План галереи без масштаба: два светильника в нишах направляют мягкий свет на портал, а стены галереи закрывают их от зрителя на площади."
+        "caption": "План галереи без масштаба: два светильника в нишах направляют мягкий свет на портал, а стены галереи закрывают их от зрителя на площади.",
+        "ar": 1.5
        }
       },
       {
@@ -99,7 +104,9 @@
         "alt": "Портал собора в Анже виден сквозь белую арку галереи",
         "caption": "Портал XII века сквозь арку галереи.",
         "credit": "Paul Hamelin, Thierry Bonnet / Ville d'Angers",
-        "credit_url": "https://www.lejournaldesarts.fr/patrimoine/la-cathedrale-dangers-devoile-sa-galerie-contemporaine-183457"
+        "credit_url": "https://www.lejournaldesarts.fr/patrimoine/la-cathedrale-dangers-devoile-sa-galerie-contemporaine-183457",
+        "w": 800,
+        "h": 600
        },
        "print_only": true
       },
@@ -131,14 +138,18 @@
        "alt": "Тимпан портала собора в Анже с остатками многоцветной росписи: Христос в овале, вокруг символы евангелистов на синем фоне",
        "caption": "Ради этого построена галерея: тимпан портала с росписью XII и XVII веков.",
        "credit": "Thierry Bonnet / Ville d'Angers",
-       "credit_url": "https://www.lejournaldesarts.fr/patrimoine/la-cathedrale-dangers-devoile-sa-galerie-contemporaine-183457"
+       "credit_url": "https://www.lejournaldesarts.fr/patrimoine/la-cathedrale-dangers-devoile-sa-galerie-contemporaine-183457",
+       "w": 800,
+       "h": 600
       },
       {
        "src": "img/2026-11-07/angers-portal.webp",
        "alt": "Портал собора в Анже виден сквозь белую арку галереи",
        "caption": "Портал XII века сквозь арку галереи.",
        "credit": "Paul Hamelin, Thierry Bonnet / Ville d'Angers",
-       "credit_url": "https://www.lejournaldesarts.fr/patrimoine/la-cathedrale-dangers-devoile-sa-galerie-contemporaine-183457"
+       "credit_url": "https://www.lejournaldesarts.fr/patrimoine/la-cathedrale-dangers-devoile-sa-galerie-contemporaine-183457",
+       "w": 800,
+       "h": 600
       }
      ]
     },
@@ -154,7 +165,9 @@
       "alt": "Узкий фасад дома с росписью в тёплом свете на фоне тёмно-синего неба",
       "caption": "Дом Коши ночью. Свет: Light-To-Light.",
       "credit": "Cecilia Griva / Light ZOOM Lumière",
-      "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/"
+      "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/",
+      "w": 950,
+      "h": 1600
      },
      "body": [
       {
@@ -170,7 +183,8 @@
        "illus": {
         "src": "img/2026-11-07/il-grazing.svg",
         "alt": "Схема: слева прожектор светит издалека и рельеф плоский, справа светильник у самой стены и выступы отбрасывают тени",
-        "caption": "При освещении издалека поток направлен почти перпендикулярно стене, и теней нет. Прибор у самой плоскости направляет поток вдоль стены, и каждый выступ отбрасывает тень."
+        "caption": "При освещении издалека поток направлен почти перпендикулярно стене, и теней нет. Прибор у самой плоскости направляет поток вдоль стены, и каждый выступ отбрасывает тень.",
+        "ar": 1.3953
        }
       },
       {
@@ -194,7 +208,9 @@
         "alt": "Роспись верхней части фасада дома Коши в тёплом свете крупным планом",
         "caption": "Роспись в верхней части фасада.",
         "credit": "Cecilia Griva / Light ZOOM Lumière",
-        "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/"
+        "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/",
+        "w": 1000,
+        "h": 1600
        }
       },
       {
@@ -203,7 +219,9 @@
         "alt": "Дом Коши на тёмной улице среди соседних фасадов",
         "caption": "Дом в уличной застройке: соседние фасады освещены слабее.",
         "credit": "Cecilia Griva / Light ZOOM Lumière",
-        "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/"
+        "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/",
+        "w": 1294,
+        "h": 1600
        }
       },
       {
@@ -249,7 +267,9 @@
       "alt": "Чёрный чугунный фонарь с матовым стеклом на фоне светлого фасада и купола",
       "caption": "Новый декоративный фонарь с матовым рассеивателем.",
       "credit": "Дмитрий Соколов / Санкт-Петербургские ведомости",
-      "credit_url": "https://spbvedomosti.ru/news/gorod/svetotekhnikam-udalos-sdelat-aleksandrovskiy-park-eshche-bolee-prityagatelnym-dlya-progulok/"
+      "credit_url": "https://spbvedomosti.ru/news/gorod/svetotekhnikam-udalos-sdelat-aleksandrovskiy-park-eshche-bolee-prityagatelnym-dlya-progulok/",
+      "w": 1600,
+      "h": 1088
      },
      "body": [
       {
@@ -313,7 +333,9 @@
       "alt": "Главное здание Центрального московского ипподрома с башней в тёплой вечерней подсветке",
       "caption": "Главное здание ипподрома на Беговой улице.",
       "credit": "Денис Воронин / Агентство «Москва»",
-      "credit_url": "https://vm.ru/news/1362209-podsvetka-poyavilas-na-zdanii-centralnogo-moskovskogo-ippodroma"
+      "credit_url": "https://vm.ru/news/1362209-podsvetka-poyavilas-na-zdanii-centralnogo-moskovskogo-ippodroma",
+      "w": 1200,
+      "h": 675
      },
      "body": [
       {
@@ -325,7 +347,9 @@
         "alt": "Портик главного корпуса днём: горельеф во фронтоне, расписной фриз, квадрига на аттике",
         "caption": "Портик после реставрации: горельеф во фронтоне, квадрига на аттике.",
         "credit": "Градостроительный комплекс Москвы / Москва 24",
-        "credit_url": "https://www.m24.ru/special/ippodrom/"
+        "credit_url": "https://www.m24.ru/special/ippodrom/",
+        "w": 1600,
+        "h": 1065
        }
       },
       {
@@ -334,7 +358,9 @@
         "alt": "Колонны трибуны с красной и синей росписью капителей, вдали витраж с лошадьми",
         "caption": "Трибуны: восстановленная роспись капителей и один из 22 цветных витражей.",
         "credit": "Градостроительный комплекс Москвы / Москва 24",
-        "credit_url": "https://www.m24.ru/special/ippodrom/"
+        "credit_url": "https://www.m24.ru/special/ippodrom/",
+        "w": 1600,
+        "h": 1067
        }
       },
       {
@@ -343,7 +369,9 @@
         "alt": "Цветной барельеф: сиреневые кони у голубого потока под зелёным деревом, сверху лепной тимпан с вазой",
         "caption": "Барельеф «Кони на водопое», снимок 2018 года.",
         "credit": "АрхМарианна / Wikimedia Commons, CC BY-SA 4.0",
-        "credit_url": "https://commons.wikimedia.org/wiki/Category:Moscow_Hippodrome"
+        "credit_url": "https://commons.wikimedia.org/wiki/Category:Moscow_Hippodrome",
+        "w": 960,
+        "h": 873
        }
       },
       {
@@ -371,7 +399,8 @@
        "illus": {
         "src": "img/2026-11-07/il-relief.svg",
         "alt": "Схема: длина тени от барельефа и горельефа при луче под 15 и 45 градусов к стене",
-        "caption": "Расчёт для примера: длина тени зависит от выноса рельефа и угла луча."
+        "caption": "Расчёт для примера: длина тени зависит от выноса рельефа и угла луча.",
+        "ar": 3.0
        }
       },
       {
@@ -435,7 +464,9 @@
       "alt": "Ночной арочный мост с красной подсветкой ферм и отражением в реке",
       "caption": "Волжский мост в Рыбинске. Свет: СТК МТ Электро, генподрядчик: «Ростелеком».",
       "credit": "Михаил Евраев / Коммерсантъ",
-      "credit_url": "https://www.kommersant.ru/doc/9077506"
+      "credit_url": "https://www.kommersant.ru/doc/9077506",
+      "w": 1600,
+      "h": 1066
      },
      "body": [
       {
@@ -454,7 +485,8 @@
        "illus": {
         "src": "img/2026-11-07/il-bridge.svg",
         "alt": "Схема моста: линия света вдоль арок, вертикальные подвески, пролёты",
-        "caption": "Схема: где расположены линии света. Рисунок по снимкам моста, без масштаба."
+        "caption": "Схема: где расположены линии света. Рисунок по снимкам моста, без масштаба.",
+        "ar": 1.9355
        }
       },
       {
@@ -463,7 +495,9 @@
         "alt": "Мост в сине-белом цветном режиме над тёмной водой, на берегу зрители",
         "caption": "Цветной сценарий в день включения.",
         "credit": "Ростелеком / 76.ru",
-        "credit_url": "https://76.ru/text/gorod/2025/12/22/76183563/?erid=2SDnjeH5ugc"
+        "credit_url": "https://76.ru/text/gorod/2025/12/22/76183563/?erid=2SDnjeH5ugc",
+        "w": 1312,
+        "h": 875
        }
       },
       {
@@ -472,7 +506,9 @@
         "alt": "Мост ночью в тёплом белом свете, арки отражаются в реке",
         "caption": "Тёплый белый режим: контур арок и подвески отражаются в Волге.",
         "credit": "Правительство Ярославской области / YarNews",
-        "credit_url": "https://www.yarnews.net/news/show/yaroslavl-region/92209/v_rybinske_pokazali_svetovoe_shou_na_mostu_cherez_volgu.htm"
+        "credit_url": "https://www.yarnews.net/news/show/yaroslavl-region/92209/v_rybinske_pokazali_svetovoe_shou_na_mostu_cherez_volgu.htm",
+        "w": 1000,
+        "h": 666
        }
       }
      ],
@@ -522,7 +558,9 @@
       "alt": "Силуэт человека в тёмном зале, белые лучи расходятся от яркого центра и отражаются в полу",
       "caption": "Медиаинсталляция «Проекции города».",
       "credit": "ПАО «Газпром» / СПб-гид",
-      "credit_url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/"
+      "credit_url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/",
+      "w": 1600,
+      "h": 1066
      },
      "reserve": [
       {
@@ -530,7 +568,9 @@
        "alt": "Тёмный зал, люстра и орнамент собраны из точек света и отражаются в полу",
        "caption": "Интерьер, собранный из данных лазерного сканирования.",
        "credit": "ПАО «Газпром» / СПб-гид",
-       "credit_url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/"
+       "credit_url": "https://spb-gid.ru/sobytiya/mediainstalljacija-proekcii-goroda-v-lahta-centre/",
+       "w": 1600,
+       "h": 1066
       }
      ],
      "body": [
@@ -566,7 +606,9 @@
       "alt": "Спикер у микрофона перед светодиодным задником премии, красная лестница с гостями",
       "caption": "Церемония 28 октября, Инженерный центр ДКС.",
       "credit": "канал «Золотой Фотон»",
-      "credit_url": "https://t.me/goldenphoton/1115"
+      "credit_url": "https://t.me/goldenphoton/1115",
+      "w": 1600,
+      "h": 1066
      },
      "body": [
       {
@@ -579,7 +621,9 @@
         "date": "29.10.2026",
         "platform": "Telegram",
         "about": "Показан на открытии 28 октября",
-        "src": "video/gf-1112.mp4"
+        "src": "video/gf-1112.mp4",
+        "thumb_w": 848,
+        "thumb_h": 480
        }
       },
       {
@@ -589,35 +633,45 @@
          "alt": "Зал аплодирует на красной лестнице",
          "caption": "Зал на красной лестнице.",
          "credit": "канал «Золотой Фотон»",
-         "credit_url": "https://t.me/goldenphoton/1116"
+         "credit_url": "https://t.me/goldenphoton/1116",
+         "w": 1600,
+         "h": 1066
         },
         {
          "src": "img/2026-11-07/gf-1117.webp",
          "alt": "Вручение диплома и стеклянного приза у микрофона",
          "caption": "Вручение: диплом и стеклянный приз.",
          "credit": "канал «Золотой Фотон»",
-         "credit_url": "https://t.me/goldenphoton/1117"
+         "credit_url": "https://t.me/goldenphoton/1117",
+         "w": 1600,
+         "h": 1066
         },
         {
          "src": "img/2026-11-07/gf-1118.webp",
          "alt": "Лауреаты с дипломом и призом у микрофона",
          "caption": "Вручение наград.",
          "credit": "канал «Золотой Фотон»",
-         "credit_url": "https://t.me/goldenphoton/1118"
+         "credit_url": "https://t.me/goldenphoton/1118",
+         "w": 1600,
+         "h": 1066
         },
         {
          "src": "img/2026-11-07/gf-1119.webp",
          "alt": "Зал снизу, ведущая на подиуме перед светодиодным задником премии",
          "caption": "Общий вид зала и сцены.",
          "credit": "канал «Золотой Фотон»",
-         "credit_url": "https://t.me/goldenphoton/1119"
+         "credit_url": "https://t.me/goldenphoton/1119",
+         "w": 1600,
+         "h": 1066
         },
         {
          "src": "img/2026-11-07/gf-1120.webp",
          "alt": "Гости церемонии беседуют за столиком",
          "caption": "После церемонии.",
          "credit": "канал «Золотой Фотон»",
-         "credit_url": "https://t.me/goldenphoton/1120"
+         "credit_url": "https://t.me/goldenphoton/1120",
+         "w": 1600,
+         "h": 1066
         }
        ]
       },
@@ -660,7 +714,9 @@
       "alt": "Белый макет усадьбы с подсветкой фасада на тёмном фоне",
       "caption": "Макет усадьбы Быково: проект студентов МАрхИ проверяли освещением на белой модели.",
       "credit": "Д. Медведева, А. Иванова, Е. Певчина / МАрхИ",
-      "credit_url": "https://online.gefera.ru/contest/rldc-2026/works/?work_id=14527876"
+      "credit_url": "https://online.gefera.ru/contest/rldc-2026/works/?work_id=14527876",
+      "w": 1182,
+      "h": 665
      },
      "body": [
       {
@@ -675,7 +731,9 @@
         "alt": "Вечерняя визуализация фасада усадьбы с подбором светильников",
         "caption": "Подбор оборудования для фасада усадьбы.",
         "credit": "Д. Медведева, А. Иванова, Е. Певчина / МАрхИ",
-        "credit_url": "https://online.gefera.ru/contest/rldc-2026/works/?work_id=14527876"
+        "credit_url": "https://online.gefera.ru/contest/rldc-2026/works/?work_id=14527876",
+        "w": 1182,
+        "h": 665
        }
       },
       {
@@ -687,7 +745,9 @@
         "alt": "Два уличных светильника округлых форм: высокий с лепестком-отражателем и низкий боллард",
         "caption": "Серия «Метаморфоза»: высокий светильник и приземный боллард «Яйцо».",
         "credit": "Михаил Потапов / НИД",
-        "credit_url": "https://online.gefera.ru/contest/rldc-2026/works/?work_id=14527875"
+        "credit_url": "https://online.gefera.ru/contest/rldc-2026/works/?work_id=14527875",
+        "w": 981,
+        "h": 1400
        }
       },
       {
@@ -705,7 +765,9 @@
         "alt": "Виртуальная модель исторического фасада с белой подсветкой на фоне сумеречного неба",
         "caption": "Освещение фасада торгового дома во Владивостоке, смоделированное в VR.",
         "credit": "В. Е. Карпенко / AMIT",
-        "credit_url": "https://marhi.ru/AMIT/2026/1kvart26/karpenko/karpenko.pdf"
+        "credit_url": "https://marhi.ru/AMIT/2026/1kvart26/karpenko/karpenko.pdf",
+        "w": 551,
+        "h": 425
        }
       },
       {
@@ -714,7 +776,9 @@
         "alt": "Виртуальная световая инсталляция в подземном пространстве с кирпичными стенами",
         "caption": "Световая форма инсталляции в подземном пространстве, виртуальная модель.",
         "credit": "ДВФУ / AMIT",
-        "credit_url": "https://marhi.ru/AMIT/2026/1kvart26/karpenko/karpenko.pdf"
+        "credit_url": "https://marhi.ru/AMIT/2026/1kvart26/karpenko/karpenko.pdf",
+        "w": 642,
+        "h": 330
        }
       },
       {
@@ -773,7 +837,9 @@
       "alt": "Подсвеченные цилиндры с водой ночью на озере под звёздным небом",
       "caption": "Полевой опыт LakeLab на озере Штехлин: влияние ночного света на водные пищевые цепи.",
       "credit": "Andreas Jechow / IGB",
-      "credit_url": "https://www.igb-berlin.de/en/news/mitigating-ecological-consequences-light-pollution"
+      "credit_url": "https://www.igb-berlin.de/en/news/mitigating-ecological-consequences-light-pollution",
+      "w": 1600,
+      "h": 900
      },
      "body": [
       {
@@ -813,7 +879,9 @@
         "alt": "Засвеченное облачное небо над ночной Москвой, вид с высоты",
         "caption": "Засвеченное небо над Москвой, 2024 год.",
         "credit": "Ivtorov / Wikimedia Commons, CC BY 4.0",
-        "credit_url": "https://commons.wikimedia.org/wiki/File:2024_Light_pollution_in_Moscow.jpg"
+        "credit_url": "https://commons.wikimedia.org/wiki/File:2024_Light_pollution_in_Moscow.jpg",
+        "w": 1600,
+        "h": 1054
        },
        "print_only": true
       }
@@ -848,7 +916,9 @@
         "alt": "Карта бассейна Самбры: тёмные, серые и светлые зоны",
         "caption": "Карта-схема Concepto, бассейн реки Самбры: чем темнее зона, тем она важнее для биоразнообразия.",
         "credit": "Concepto / Light ZOOM Lumière",
-        "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/"
+        "credit_url": "https://www.lightzoomlumiere.fr/article/conception-lumiere-2026-palmares-prix-2026-acetylene-europe/",
+        "w": 1092,
+        "h": 756
        },
        "levels": [
         {
@@ -916,7 +986,8 @@
        "illus": {
         "src": "img/2026-11-07/il-road.svg",
         "alt": "Рисунок: дорога ночью, опоры у автомобиля светят сильнее, остальные слабее",
-        "caption": "Адаптивное дорожное освещение: уровень повышается там, где есть движение."
+        "caption": "Адаптивное дорожное освещение: уровень повышается там, где есть движение.",
+        "ar": 1.5
        },
        "caption": "Принципиальная схема. Насколько снижать уровень и на каком расстоянии, определяет проект.",
        "modes": [
@@ -946,7 +1017,9 @@
         "alt": "Опора со светильником над автомагистралью GC-1 в сумерках",
         "caption": "Автомагистраль GC-1, Гран-Канария: уличные светильники с дистанционным управлением. Система: Signify Interact City.",
         "credit": "Signify",
-        "credit_url": "https://www.signify.com/global/our-company/news/press-releases"
+        "credit_url": "https://www.signify.com/global/our-company/news/press-releases",
+        "w": 1600,
+        "h": 1067
        },
        "print_only": true
       }
@@ -981,7 +1054,8 @@
        "illus": {
         "src": "img/2026-11-07/il-mice-w.svg",
         "alt": "График веса мышей по неделям в трёх группах: с сутками 21,6 часа вес растёт быстрее",
-        "caption": "Средний вес мышей при сутках разной длины. Значения сняты с рис. 2B статьи."
+        "caption": "Средний вес мышей при сутках разной длины. Значения сняты с рис. 2B статьи.",
+        "ar": 1.5625
        },
        "weeks": [
         9,
@@ -1077,7 +1151,9 @@
      "image": {
       "src": "img/2026-11-07/mouse.webp",
       "alt": "Мышь в солнцезащитных очках",
-      "caption": ""
+      "caption": "",
+      "w": 1024,
+      "h": 688
      },
      "head_first": true
     }
@@ -1101,7 +1177,9 @@
       "alt": "Навес из двух лепестков-сеток на перекрёстке в Хьюстоне днём",
       "caption": "Теневой павильон Höweler + Yoon на Texas Avenue.",
       "credit": "Bill Tatham / Dezeen",
-      "credit_url": "https://www.dezeen.com/2026/11/05/swa-cool-connected-corridors-houston/"
+      "credit_url": "https://www.dezeen.com/2026/11/05/swa-cool-connected-corridors-houston/",
+      "w": 1600,
+      "h": 900
      },
      "reserve": [
       {
@@ -1109,7 +1187,9 @@
        "alt": "Улица с деревьями, новыми посадками и павильонами",
        "caption": "Отрезок Texas Avenue после работ.",
        "credit": "Bill Tatham / Dezeen",
-       "credit_url": "https://www.dezeen.com/2026/11/05/swa-cool-connected-corridors-houston/"
+       "credit_url": "https://www.dezeen.com/2026/11/05/swa-cool-connected-corridors-houston/",
+       "w": 1600,
+       "h": 1066
       }
      ],
      "body": [
@@ -1125,7 +1205,9 @@
         "alt": "Texas Avenue в сумерках: шарообразные светильники в кронах дубов, следы фар",
         "caption": "Шаровые светильники в кронах дубов на Texas Avenue. Ландшафтная архитектура: SWA, заказчик: Downtown Houston+.",
         "credit": "SWA",
-        "credit_url": "https://www.swagroup.com/projects/cool-connected-corridors/"
+        "credit_url": "https://www.swagroup.com/projects/cool-connected-corridors/",
+        "w": 1600,
+        "h": 900
        },
        "print_only": true
       },
@@ -1135,7 +1217,9 @@
         "alt": "Тень-арка из стали с синей сетчатой мембраной над тротуаром, велосипедисты",
         "caption": "Тень-арка из нержавеющей стали с сетчатой мембраной: днём затеняет тротуар, ночью подсвечена. Проект: SWA.",
         "credit": "SWA",
-        "credit_url": "https://www.swagroup.com/projects/cool-connected-corridors/"
+        "credit_url": "https://www.swagroup.com/projects/cool-connected-corridors/",
+        "w": 1600,
+        "h": 900
        },
        "print_only": true
       },
@@ -1177,7 +1261,9 @@
       "alt": "Комплект DMF True 1: корпус для потолка, модуль и детали на белом фоне",
       "caption": "Комплект True 1: монтажный корпус, световой модуль и сменные детали.",
       "credit": "DMF Lighting",
-      "credit_url": "https://www.dmflighting.com/product/true1/"
+      "credit_url": "https://www.dmflighting.com/product/true1/",
+      "w": 1600,
+      "h": 1600
      },
      "body": [
       {
@@ -1192,7 +1278,9 @@
         "alt": "Световой модуль True 1 в разобранном виде на чёрном фоне",
         "caption": "Световой модуль в разборе: источник, оптика и корпус снимаются снизу.",
         "credit": "DMF Lighting",
-        "credit_url": "https://www.dmflighting.com/product/true1/"
+        "credit_url": "https://www.dmflighting.com/product/true1/",
+        "w": 1600,
+        "h": 1600
        }
       },
       {
@@ -1204,7 +1292,9 @@
         "alt": "Повар у деревянной стойки, потолок с мелкими точечными светильниками",
         "caption": "True 1 в ресторанном интерьере.",
         "credit": "DMF Lighting / Edison Report",
-        "credit_url": "https://edisonreport.com/2026/11/05/dmf-lighting-announces-true-1-downlight-now-shipping-hosts-webinar-november-10/"
+        "credit_url": "https://edisonreport.com/2026/11/05/dmf-lighting-announces-true-1-downlight-now-shipping-hosts-webinar-november-10/",
+        "w": 1280,
+        "h": 1600
        }
       },
       {
@@ -1236,7 +1326,9 @@
       "alt": "Встроенный профиль Velino.0: перфорированный монтажный фланец и узкая светящаяся полоса, частично заштукатуренный",
       "caption": "Встраиваемая версия: фланец скрывается под шпаклёвкой, остаётся только линия света.",
       "credit": "Optique Lighting",
-      "credit_url": "https://optique-lighting.com/products/?family=velino-0&sub-family=recessed"
+      "credit_url": "https://optique-lighting.com/products/?family=velino-0&sub-family=recessed",
+      "w": 1500,
+      "h": 1000
      },
      "body": [
       {
@@ -1248,7 +1340,9 @@
         "alt": "Тонкая светящаяся линия в гладком белом потолке",
         "caption": "После отделки потолка видна только линия света.",
         "credit": "Optique Lighting",
-        "credit_url": "https://optique-lighting.com/products/?family=velino-0&sub-family=recessed"
+        "credit_url": "https://optique-lighting.com/products/?family=velino-0&sub-family=recessed",
+        "w": 1500,
+        "h": 1000
        }
       },
       {
@@ -1283,7 +1377,9 @@
       "alt": "Высокая белая свеча-торшер в латунном подсвечнике с ручкой",
       "caption": "Торшер Flammen высотой 1,8 м в форме подсвечника.",
       "credit": "Dezeen",
-      "credit_url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/"
+      "credit_url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/",
+      "w": 768,
+      "h": 1024
      },
      "body": [
       {
@@ -1295,7 +1391,9 @@
         "alt": "Две волнистые деревянные лампы Tenda разной высоты с дисками наверху",
         "caption": "Лампы Tenda из ясеня: диск наверху и включает свет, и регулирует его яркость.",
         "credit": "Dezeen",
-        "credit_url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/"
+        "credit_url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/",
+        "w": 768,
+        "h": 1024
        }
       },
       {
@@ -1320,7 +1418,8 @@
      "illus": {
       "src": "img/2026-11-07/il-lens.svg",
       "alt": "Рисунок: окно поиска со строкой вопроса об освещённости и текстом ответа",
-      "caption": ""
+      "caption": "",
+      "ar": 1.5
      },
      "body": [
       {
@@ -1364,7 +1463,9 @@
       "alt": "Юлиан Айзенберг с микрофоном и четвёртым изданием Справочной книги по светотехнике",
       "caption": "С четвёртым изданием «Справочной книги по светотехнике».",
       "credit": "журнал «Светотехника»",
-      "credit_url": "https://l-e-journal.com/news/pozdravlyaem-s-yubileem/"
+      "credit_url": "https://l-e-journal.com/news/pozdravlyaem-s-yubileem/",
+      "w": 490,
+      "h": 552
      },
      "body": [
       {
@@ -1380,7 +1481,8 @@
        "illus": {
         "src": "img/2026-11-07/il-guide.svg",
         "alt": "Схема полого щелевого световода: вынесенный источник на торце трубы, свет выходит через длинную щель",
-        "caption": "Принцип полого щелевого световода: источник вынесен за стену, свет выходит через щель."
+        "caption": "Принцип полого щелевого световода: источник вынесен за стену, свет выходит через щель.",
+        "ar": 1.8182
        }
       },
       {
@@ -1459,7 +1561,9 @@
       "alt": "Чёрно-белый портрет Рогира ван дер Хейде",
       "caption": "Рогир ван дер Хейде.",
       "credit": "Edison Report",
-      "credit_url": "https://edisonreport.com/2026/11/05/lighting-industry-challenges-18-influential-voices-weigh-in/"
+      "credit_url": "https://edisonreport.com/2026/11/05/lighting-industry-challenges-18-influential-voices-weigh-in/",
+      "w": 1600,
+      "h": 1600
      },
      "body": [
       {
@@ -1480,7 +1584,9 @@
         "alt": "Галерея почёта Рейксмузея: посетители идут к «Ночному дозору», деревянный пол, светлый свод",
         "caption": "Галерея почёта Рейксмузея, Амстердам. Свет: Рогир ван дер Хейде, приборы: Philips.",
         "credit": "Vasy / Wikimedia Commons, CC BY-SA 4.0",
-        "credit_url": "https://commons.wikimedia.org/wiki/File:Gallery_of_Honour_in_the_Rijksmuseum.jpg"
+        "credit_url": "https://commons.wikimedia.org/wiki/File:Gallery_of_Honour_in_the_Rijksmuseum.jpg",
+        "w": 1600,
+        "h": 1067
        },
        "print_only": true
       },
@@ -1490,7 +1596,9 @@
         "alt": "Стеклянная кровля центральной площади Калифорнийской академии наук",
         "caption": "Калифорнийская академия наук, Сан-Франциско. Архитектор: Ренцо Пьяно, свет: Arup Lighting, Рогир ван дер Хейде.",
         "credit": "Wikimedia Commons, CC BY-SA 3.0",
-        "credit_url": "https://en.wikipedia.org/wiki/California_Academy_of_Sciences"
+        "credit_url": "https://en.wikipedia.org/wiki/California_Academy_of_Sciences",
+        "w": 1600,
+        "h": 1200
        },
        "print_only": true
       },
@@ -1500,7 +1608,9 @@
         "alt": "Мост шейха Зайда ночью: арка в фиолетовой и жёлтой подсветке, отражение в реке",
         "caption": "Мост шейха Зайда, Абу-Даби. Архитектор: Заха Хадид, концепция света: Рогир ван дер Хейде (Hollands Licht), доработка: Arup.",
         "credit": "Dezeen",
-        "credit_url": "https://www.dezeen.com/2011/11/03/sheikh-zayed-bridge-by-zaha-hadid-architects/"
+        "credit_url": "https://www.dezeen.com/2011/11/03/sheikh-zayed-bridge-by-zaha-hadid-architects/",
+        "w": 468,
+        "h": 468
        },
        "print_only": true
       },
@@ -1510,7 +1620,9 @@
         "alt": "Портрет Марианы Фигейро",
         "caption": "Мариана Фигейро.",
         "credit": "Edison Report",
-        "credit_url": "https://edisonreport.com/2026/11/05/lighting-industry-challenges-18-influential-voices-weigh-in/"
+        "credit_url": "https://edisonreport.com/2026/11/05/lighting-industry-challenges-18-influential-voices-weigh-in/",
+        "w": 1600,
+        "h": 1600
        }
       },
       {
@@ -1537,7 +1649,8 @@
        "illus": {
         "src": "img/2026-11-07/il-cs.svg",
         "alt": "Шкала показателя CS от 0,1 до 0,7 с отметкой 0,4",
-        "caption": "Результаты опыта: дневной свет с CS 0,4 против обычного. Journal of Clinical Sleep Medicine, 2019."
+        "caption": "Результаты опыта: дневной свет с CS 0,4 против обычного. Journal of Clinical Sleep Medicine, 2019.",
+        "ar": 1.7857
        }
       },
       {
@@ -1613,7 +1726,9 @@
       "alt": "Обложка книги Light Натана Орсмана: дом в сумерках",
       "caption": "Обложка книги, Rizzoli, 2026.",
       "credit": "Rizzoli Bookstore",
-      "credit_url": "https://www.rizzolibookstore.com/product/light-illuminated-interiors-and-architecture"
+      "credit_url": "https://www.rizzolibookstore.com/product/light-illuminated-interiors-and-architecture",
+      "w": 1358,
+      "h": 1600
      },
      "body": [
       {
@@ -1625,7 +1740,9 @@
         "alt": "Длинный дом в сумерках с тёплым светом в окнах и тёмным лугом впереди",
         "caption": "Дом на побережье в сумерках: архитектура светится, луг остаётся тёмным.",
         "credit": "Orsman Design / Miami Living",
-        "credit_url": "https://www.miamilivingmagazine.com/post/nathan-orsman-illuminates-architecture"
+        "credit_url": "https://www.miamilivingmagazine.com/post/nathan-orsman-illuminates-architecture",
+        "w": 1600,
+        "h": 1067
        }
       },
       {
@@ -1634,7 +1751,9 @@
         "alt": "Чёрный гараж с классическими автомобилями и большими светящимися панелями на потолке",
         "caption": "Гараж Elle Mara в Сагапонаке: натяжные потолочные панели меняют свет от холодного белого к тёплому.",
         "credit": "Orsman Design / Wallpaper",
-        "credit_url": "https://www.wallpaper.com/design-interiors/orsman-design-garage-hamptons"
+        "credit_url": "https://www.wallpaper.com/design-interiors/orsman-design-garage-hamptons",
+        "w": 1600,
+        "h": 1200
        }
       },
       {
@@ -1643,7 +1762,9 @@
         "alt": "Кухня со столом, подвесными светильниками и синими сумерками за окнами",
         "caption": "Кухня: подвесные светильники освещают стол, а в окнах виден цвет сумеречного неба.",
         "credit": "Orsman Design / Miami Living",
-        "credit_url": "https://www.miamilivingmagazine.com/post/nathan-orsman-illuminates-architecture"
+        "credit_url": "https://www.miamilivingmagazine.com/post/nathan-orsman-illuminates-architecture",
+        "w": 1600,
+        "h": 1067
        }
       },
       {
@@ -1684,7 +1805,9 @@
       "alt": "Обложка книги New Natural Living: дом среди деревьев",
       "caption": "Обложка книги, Thames & Hudson, 2026.",
       "credit": "Thames & Hudson",
-      "credit_url": "https://www.thamesandhudson.com/products/new-natural-living"
+      "credit_url": "https://www.thamesandhudson.com/products/new-natural-living",
+      "w": 1600,
+      "h": 1200
      },
      "body": [
       {
@@ -1696,7 +1819,9 @@
         "alt": "Разворот книги: деревянные дома у воды на закате с отражением в озере",
         "caption": "Разворот книги: дома у воды.",
         "credit": "Thames & Hudson / Michaelis Boyd",
-        "credit_url": "https://shop.michaelisboyd.com/products/new-natural-living-michaelis-boyd-architects"
+        "credit_url": "https://shop.michaelisboyd.com/products/new-natural-living-michaelis-boyd-architects",
+        "w": 1200,
+        "h": 773
        }
       },
       {
@@ -1705,7 +1830,9 @@
         "alt": "Разворот книги: врытый в холм дом с тёплым вечерним светом",
         "caption": "Дом, врытый в холм: вечером подсвечена глубина дома.",
         "credit": "Thames & Hudson / Michaelis Boyd",
-        "credit_url": "https://shop.michaelisboyd.com/products/new-natural-living-michaelis-boyd-architects"
+        "credit_url": "https://shop.michaelisboyd.com/products/new-natural-living-michaelis-boyd-architects",
+        "w": 1200,
+        "h": 773
        }
       },
       {
@@ -1714,7 +1841,9 @@
         "alt": "Разворот книги: круглый деревянный дом в африканском пейзаже и слон",
         "caption": "Круглый дом в африканском пейзаже.",
         "credit": "Thames & Hudson / Michaelis Boyd",
-        "credit_url": "https://shop.michaelisboyd.com/products/new-natural-living-michaelis-boyd-architects"
+        "credit_url": "https://shop.michaelisboyd.com/products/new-natural-living-michaelis-boyd-architects",
+        "w": 1200,
+        "h": 773
        }
       },
       {
@@ -1747,7 +1876,9 @@
       "alt": "Зал музея Ордрупгор: мебель и лампы на подиумах рядом с живописью на стенах",
       "caption": "Выставка краснодеревщиков в галереях Снёхетты, музей Ордрупгор.",
       "credit": "Dezeen",
-      "credit_url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/"
+      "credit_url": "https://www.dezeen.com/2026/11/06/cabinetmakers-autumn-exhibition-2026-danish-furniture/",
+      "w": 1600,
+      "h": 1600
      },
      "body": [
       {

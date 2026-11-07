@@ -23,7 +23,9 @@
       "alt": "Ленинградский вокзал ночью, подсвеченный фасад с часовой башней",
       "caption": "Ленинградский вокзал, Москва: архитектурное освещение, «Элевел Инженер», победитель в номинации «Освещение фасадов».",
       "credit": "заявка участника, smartcity-award.com",
-      "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026"
+      "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026",
+      "w": 1600,
+      "h": 1069
      },
      "body": [
       {
@@ -140,7 +142,7 @@
           "Музейное освещение",
           "Спектр РС",
           {
-           "t": "«DeLorean \u2013 назад в будущее», МК УГМК, Верхняя Пышма",
+           "t": "«DeLorean – назад в будущее», МК УГМК, Верхняя Пышма",
            "url": "https://smartcity-award.com/nominations?nomination=471&id=2161"
           }
          ],
@@ -170,42 +172,54 @@
          "alt": "Стадион Лужники ночью: подсветка фасада и фонтаны",
          "caption": "Лужники, Москва: «Световая среда мирового уровня», «ТД Айпро», победитель в номинации «Создание единой светоцветовой среды».",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026"
+         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026",
+         "w": 1600,
+         "h": 900
         },
         {
          "src": "img/2026-10-31/gf-rybinsk.webp",
          "alt": "Арочный мост через Волгу ночью",
          "caption": "Волжский мост, Рыбинск: архитектурно-художественное освещение, «СТК МТ Электро».",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026"
+         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026",
+         "w": 1600,
+         "h": 899
         },
         {
          "src": "img/2026-10-31/gf-kama.webp",
          "alt": "Набережная Камы вечером со световой линией на подпорной стене",
          "caption": "Набережная Камы, Пермь: уличная световая инсталляция, «СТК МТ Электро».",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026"
+         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026",
+         "w": 1600,
+         "h": 1067
         },
         {
          "src": "img/2026-10-31/gf-tretyakov.webp",
          "alt": "Вход в здание Третьяковской галереи",
          "caption": "Третьяковская галерея: коллаборация МГК «Световые Технологии» и «Тринова».",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026"
+         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026",
+         "w": 1600,
+         "h": 1200
         },
         {
          "src": "img/2026-10-31/gf-kamal.webp",
          "alt": "Здание театра у воды ночью",
          "caption": "Татарский академический театр им. Г. Камала, Казань: спецприз жюри, «Сигнифай Евразия».",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026"
+         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026",
+         "w": 1600,
+         "h": 1200
         },
         {
          "src": "img/2026-10-31/gf-b612.webp",
          "alt": "Частный сад с ландшафтным освещением",
          "caption": "«Сценарий ночного сада»: ландшафтное освещение частного пространства, бюро b612.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026"
+         "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026",
+         "w": 1600,
+         "h": 1106
         }
        ]
       },
@@ -221,7 +235,9 @@
         "alt": "Садово-парковый светильник-столбик ночью на газоне",
         "caption": "Серия BRO, МГК «Световые Технологии»: победитель в номинации садово-паркового освещения.",
         "credit": "заявка участника, smartcity-award.com",
-        "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026"
+        "credit_url": "https://smartcity-award.com/winners?filter[year][]=2026",
+        "w": 1600,
+        "h": 900
        }
       },
       {
@@ -237,91 +253,117 @@
          "alt": "Угол Ленинградского вокзала с часовой башней снизу",
          "caption": "Ленинградский вокзал: угол с часовой башней. Карниз, пилястры и наличники выделены тёплым заливающим светом.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165",
+         "w": 1600,
+         "h": 1069
         },
         {
          "src": "img/2026-10-31/gfd-len-window.webp",
          "alt": "Арочное окно вокзала с подсвеченными пилястрами",
          "caption": "Ленинградский вокзал: арочное окно второго этажа. Пилястры подсвечены снизу, фонари у входа дополняют ритм.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165",
+         "w": 1069,
+         "h": 1600
         },
         {
          "src": "img/2026-10-31/gfd-len-arcade.webp",
          "alt": "Аркада первого этажа вокзала",
          "caption": "Ленинградский вокзал: аркада первого этажа, подсветка цоколя и простенков.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165",
+         "w": 1600,
+         "h": 1069
         },
         {
          "src": "img/2026-10-31/gfd-len-square.webp",
          "alt": "Вокзал на Комсомольской площади вечером",
          "caption": "Ленинградский вокзал в панораме Комсомольской площади.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165",
+         "w": 1600,
+         "h": 1071
         },
         {
          "src": "img/2026-10-31/gfd-ryb-arch.webp",
          "alt": "Арки моста в холодной подсветке",
          "caption": "Волжский мост, Рыбинск: арки в холодном белом свете, опоры в красном.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2168"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2168",
+         "w": 1600,
+         "h": 900
         },
         {
          "src": "img/2026-10-31/gfd-ryb-under.webp",
          "alt": "Вид из-под пролёта моста",
          "caption": "Волжский мост: подсветка конструкций пролёта и каменной опоры.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2168"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2168",
+         "w": 1600,
+         "h": 900
         },
         {
          "src": "img/2026-10-31/gfd-luz-column.webp",
          "alt": "Светящаяся колонна крупным планом",
          "caption": "Лужники: пиксельная поверхность светового столба вблизи.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097",
+         "w": 1600,
+         "h": 900
         },
         {
          "src": "img/2026-10-31/gfd-luz-fountain.webp",
          "alt": "Стадион Лужники за струями фонтана",
          "caption": "Лужники: медиафасад стадиона за струями фонтана.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097",
+         "w": 1600,
+         "h": 900
         },
         {
          "src": "img/2026-10-31/gfd-luz-install.webp",
          "alt": "Световая инсталляция у стадиона",
          "caption": "Лужники: медиаобъект в парке у стадиона.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097",
+         "w": 1600,
+         "h": 900
         },
         {
          "src": "img/2026-10-31/gfd-kama-fish.webp",
          "alt": "Подсвеченный рельеф рыбы на подпорной стене",
          "caption": "Набережная Камы, Пермь: рельеф с рыбой на подпорной стене в ночной подсветке.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=483&id=2081"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=483&id=2081",
+         "w": 1600,
+         "h": 1067
         },
         {
          "src": "img/2026-10-31/gfd-kama-relief.webp",
          "alt": "Посетители трогают рельеф днём",
          "caption": "Набережная Камы днём: рельеф подпорной стены, который вечером подсвечивается.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=483&id=2081"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=483&id=2081",
+         "w": 1600,
+         "h": 1066
         },
         {
          "src": "img/2026-10-31/gfd-kamal-detail.webp",
          "alt": "Фасад театра с металлическими гранями ночью",
          "caption": "Театр им. Г. Камала, Казань: грани металлического фасада в подсветке.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2065"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2065",
+         "w": 1448,
+         "h": 1086
         },
         {
          "src": "img/2026-10-31/gfd-kamal-aerial.webp",
          "alt": "Театр Камала на набережной ночью, вид сверху",
          "caption": "Театр им. Г. Камала: вид на здание и набережную с высоты.",
          "credit": "заявка участника, smartcity-award.com",
-         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2065"
+         "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2065",
+         "w": 1448,
+         "h": 1086
         }
        ],
        "title": "Ракурсы и детали",
@@ -355,7 +397,9 @@
        "caption": "Ленинградский вокзал: угол с часовой башней. Карниз, пилястры и наличники выделены тёплым заливающим светом.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165",
-       "r": 1.497
+       "r": 1.497,
+       "w": 1600,
+       "h": 1069
       },
       {
        "src": "img/2026-10-31/gfd-len-window.webp",
@@ -363,7 +407,9 @@
        "caption": "Ленинградский вокзал: арочное окно второго этажа. Пилястры подсвечены снизу, фонари у входа дополняют ритм.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165",
-       "r": 0.668
+       "r": 0.668,
+       "w": 1069,
+       "h": 1600
       },
       {
        "src": "img/2026-10-31/gfd-len-arcade.webp",
@@ -371,7 +417,9 @@
        "caption": "Ленинградский вокзал: аркада первого этажа, подсветка цоколя и простенков.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165",
-       "r": 1.497
+       "r": 1.497,
+       "w": 1600,
+       "h": 1069
       },
       {
        "src": "img/2026-10-31/gfd-len-square.webp",
@@ -379,7 +427,9 @@
        "caption": "Ленинградский вокзал в панораме Комсомольской площади.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2165",
-       "r": 1.494
+       "r": 1.494,
+       "w": 1600,
+       "h": 1071
       },
       {
        "src": "img/2026-10-31/gfd-ryb-arch.webp",
@@ -387,7 +437,9 @@
        "caption": "Волжский мост, Рыбинск: арки в холодном белом свете, опоры в красном.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2168",
-       "r": 1.778
+       "r": 1.778,
+       "w": 1600,
+       "h": 900
       },
       {
        "src": "img/2026-10-31/gfd-ryb-under.webp",
@@ -395,7 +447,9 @@
        "caption": "Волжский мост: подсветка конструкций пролёта и каменной опоры.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2168",
-       "r": 1.778
+       "r": 1.778,
+       "w": 1600,
+       "h": 900
       },
       {
        "src": "img/2026-10-31/gfd-luz-column.webp",
@@ -403,7 +457,9 @@
        "caption": "Лужники: пиксельная поверхность светового столба вблизи.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097",
-       "r": 1.778
+       "r": 1.778,
+       "w": 1600,
+       "h": 900
       },
       {
        "src": "img/2026-10-31/gfd-luz-fountain.webp",
@@ -411,7 +467,9 @@
        "caption": "Лужники: медиафасад стадиона за струями фонтана.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097",
-       "r": 1.778
+       "r": 1.778,
+       "w": 1600,
+       "h": 900
       },
       {
        "src": "img/2026-10-31/gfd-luz-install.webp",
@@ -419,7 +477,9 @@
        "caption": "Лужники: медиаобъект в парке у стадиона.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=468&id=2097",
-       "r": 1.778
+       "r": 1.778,
+       "w": 1600,
+       "h": 900
       },
       {
        "src": "img/2026-10-31/gfd-kama-fish.webp",
@@ -427,7 +487,9 @@
        "caption": "Набережная Камы, Пермь: рельеф с рыбой на подпорной стене в ночной подсветке.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=483&id=2081",
-       "r": 1.5
+       "r": 1.5,
+       "w": 1600,
+       "h": 1067
       },
       {
        "src": "img/2026-10-31/gfd-kama-relief.webp",
@@ -435,7 +497,9 @@
        "caption": "Набережная Камы днём: рельеф подпорной стены, который вечером подсвечивается.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=483&id=2081",
-       "r": 1.501
+       "r": 1.501,
+       "w": 1600,
+       "h": 1066
       },
       {
        "src": "img/2026-10-31/gfd-kamal-detail.webp",
@@ -443,7 +507,9 @@
        "caption": "Театр им. Г. Камала, Казань: грани металлического фасада в подсветке.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2065",
-       "r": 1.333
+       "r": 1.333,
+       "w": 1448,
+       "h": 1086
       },
       {
        "src": "img/2026-10-31/gfd-kamal-aerial.webp",
@@ -451,7 +517,9 @@
        "caption": "Театр им. Г. Камала: вид на здание и набережную с высоты.",
        "credit": "заявка участника, smartcity-award.com",
        "credit_url": "https://smartcity-award.com/nominations?nomination=466&id=2065",
-       "r": 1.333
+       "r": 1.333,
+       "w": 1448,
+       "h": 1086
       }
      ]
     },
@@ -465,7 +533,8 @@
      "illus": {
       "src": "img/2026-10-31/il-awards.svg",
       "alt": "Иллюстрация: календарь 2027 года с отмеченными датами и статуэтка премии",
-      "caption": "Иллюстрация редакции."
+      "caption": "Иллюстрация редакции.",
+      "ar": 1.5
      },
      "body": [
       {
@@ -507,7 +576,7 @@
          },
          {
           "l": "IES Illumination Awards",
-          "place": "1 декабря \u2013 11 февраля",
+          "place": "1 декабря – 11 февраля",
           "start": "2026-12-01",
           "end": "2027-02-11",
           "url": "https://ia.ies.org/"
@@ -568,7 +637,7 @@
           },
           "с 01.12.2026 по 11.02.2027",
           "20.08.2027, конференция IES27, Детройт",
-          "$265\u2013420 в зависимости от срока подачи и членства в IES"
+          "$265–420 в зависимости от срока подачи и членства в IES"
          ],
          [
           {
@@ -707,7 +776,9 @@
       "alt": "Люди внутри круглой световой инсталляции из вертикальных светящихся трубок ночью",
       "caption": "Инсталляция студии Calidos (Каталония) на Copenhagen Light Festival: круг из вертикальных светящихся трубок, внутри которого идут последовательности света, похожие на ранние анимационные аппараты.",
       "credit": "Stefan Szankowski / Unsplash",
-      "credit_url": "https://unsplash.com/photos/bql_ixLkqcY"
+      "credit_url": "https://unsplash.com/photos/bql_ixLkqcY",
+      "w": 1600,
+      "h": 1068
      },
      "body": [
       {
@@ -715,7 +786,7 @@
       },
       {
        "timeline": {
-        "title": "Фестивали света: ноябрь 2026 \u2013 февраль 2027",
+        "title": "Фестивали света: ноябрь 2026 – февраль 2027",
         "from": "2026-11-01",
         "to": "2027-02-28",
         "items": [
@@ -787,7 +858,7 @@
        }
       },
       {
-       "h": "GLOW Eindhoven, 7\u201314 ноября",
+       "h": "GLOW Eindhoven, 7–14 ноября",
        "url": "https://gloweindhoven.nl/en/"
       },
       {
@@ -797,24 +868,24 @@
        "p": "Названо несколько работ: Macchina дуэта Tom & Lien Dekyvere на 18 Septemberplein, инсталляция студии Nohlab высотой 13,5 м на Stadhuisplein, детский проект Fabellicht Хюго Врейдага. Впервые в истории города пройдёт шоу дронов: его ставят на стадионе Philips Stadion вместе с компанией TWOFIFTYK. Дата шоу и число дронов не объявлены."
       },
       {
-       "p": "У фестиваля новый директор \u2013 дизайнер и исследователь Philip Ross. Для него это первый сезон в роли художественного руководителя. Полного списка работ на сайте пока нет: приём материалов по конкурсу молодых авторов закрылся 23 октября, и программу, судя по всему, опубликуют ближе к открытию."
+       "p": "У фестиваля новый директор – дизайнер и исследователь Philip Ross. Для него это первый сезон в роли художественного руководителя. Полного списка работ на сайте пока нет: приём материалов по конкурсу молодых авторов закрылся 23 октября, и программу, судя по всему, опубликуют ближе к открытию."
       },
       {
-       "h": "Lumo Art & Tech, Оулу, 13\u201322 ноября",
+       "h": "Lumo Art & Tech, Оулу, 13–22 ноября",
        "url": "https://oulu2026.eu/en/programme/culture-programme/lumo-art-tech/"
       },
       {
-       "p": "Десятидневный фестиваль искусства и технологий входит в программу «Оулу \u2013 культурная столица Европы 2026». Главная световая работа, объявленная на сайте программы, \u2013 интерактивная инсталляция Flux польского художника, выступающего под именем Ksawery Komputery. Её покажут в зале Valve Hall. В день открытия, 13 ноября, в Оулу открывается и выставка Бьорк."
+       "p": "Десятидневный фестиваль искусства и технологий входит в программу «Оулу – культурная столица Европы 2026». Главная световая работа, объявленная на сайте программы, – интерактивная инсталляция Flux польского художника, выступающего под именем Ksawery Komputery. Её покажут в зале Valve Hall. В день открытия, 13 ноября, в Оулу открывается и выставка Бьорк."
       },
       {
-       "h": "Amsterdam Light Festival, 26 ноября \u2013 17 января",
+       "h": "Amsterdam Light Festival, 26 ноября – 17 января",
        "url": "https://amsterdamlightfestival.com/en"
       },
       {
        "p": "Пятнадцатый выпуск фестиваля продлится почти два месяца. Тема и список работ официально не объявлены: городской портал iamsterdam прямо пишет, что тема пятнадцатого выпуска ещё не названа. Тема прошлого сезона была Legacy. Туристические гиды уже называют 27 работ, но у организаторов подтверждения этой цифры нет."
       },
       {
-       "h": "Fête des Lumières, Лион, 5\u20138 декабря",
+       "h": "Fête des Lumières, Лион, 5–8 декабря",
        "url": "https://www.fetedeslumieres.lyon.fr/"
       },
       {
@@ -825,10 +896,10 @@
        "url": "https://www.spbmuseum.ru/events/events/56265/"
       },
       {
-       "p": "Фестиваль проекций на стенах крепости проводит Комитет по развитию туризма Петербурга, традиционно к Дню народного единства. Официальные даты 2026 года организатор на 31 октября не опубликовал. Городские афиши («Комсомольская правда», EventsInRussia) указывают 2\u20138 ноября 2026 года, вход свободный, тема программы не объявлена. В 2025 году фестиваль шёл 2\u20134 ноября с 19:00 до 22:30, вход со стороны Иоанновского моста."
+       "p": "Фестиваль проекций на стенах крепости проводит Комитет по развитию туризма Петербурга, традиционно к Дню народного единства. Официальные даты 2026 года организатор на 31 октября не опубликовал. Городские афиши («Комсомольская правда», EventsInRussia) указывают 2–8 ноября 2026 года, вход свободный, тема программы не объявлена. В 2025 году фестиваль шёл 2–4 ноября с 19:00 до 22:30, вход со стороны Иоанновского моста."
       },
       {
-       "h": "Фестиваль света в Кронштадте, 25 декабря \u2013 13 января",
+       "h": "Фестиваль света в Кронштадте, 25 декабря – 13 января",
        "url": "https://abn.agency/2026/10/15/peterburg-napravit-pochti-137-mln-rublej-na-festival-sveta-v-kronshtadte/"
       },
       {
@@ -841,7 +912,7 @@
        "p": "Сеульский фестиваль фонарей (서울빛초롱축제) пройдёт с 11 декабря 2026 по 31 января 2027 года, ежедневно с 18:00 до 23:00, вдоль ручья Чхонгечхон от площади Чхонгегванджан до моста Самильгё. Тема сезона «Романтика Сеула: симфония света», даты опубликовал Сеульский фонд туризма. В Харбине 28-й сезон Ice and Snow World займёт 1,25 млн м², на него пойдёт 400 000 м³ льда и снега, появится зона по мотивам «Холодного сердца», сделанная с Disney China. Парк обычно открывается во второй половине декабря, дата 2026 года пока не объявлена. Официальная церемония открытия городского фестиваля назначена на 5 января 2027 года. В японском Кобе 32-я Luminarie пройдёт с 29 января по 7 февраля 2027 года, десять вечеров подряд, ориентировочно с 17:30 до 21:30."
       },
       {
-       "editor": "Редакция: для профессионального взгляда в этом сезоне интереснее всего GLOW: новый художественный руководитель, выход в соседние города и первое шоу дронов на стадионе. Для поездки на один уикенд удобнее всего 13\u201314 ноября, когда работают и GLOW, и Lumo. Из России ближе всего Кронштадт с 25 декабря, а в Азии самый масштабный световой сезон начинается в Харбине 5 января."
+       "editor": "Редакция: для профессионального взгляда в этом сезоне интереснее всего GLOW: новый художественный руководитель, выход в соседние города и первое шоу дронов на стадионе. Для поездки на один уикенд удобнее всего 13–14 ноября, когда работают и GLOW, и Lumo. Из России ближе всего Кронштадт с 25 декабря, а в Азии самый масштабный световой сезон начинается в Харбине 5 января."
       }
      ],
      "sources": [
@@ -876,7 +947,7 @@
        "date": "15.10.2026"
       },
       {
-       "label": "China Highlights: Harbin Ice Festival 2026\u20132027",
+       "label": "China Highlights: Harbin Ice Festival 2026–2027",
        "url": "https://www.chinahighlights.com/festivals/harbin-ice-and-snow-festival.htm"
       },
       {
@@ -924,7 +995,7 @@
        "p": "Мэр Иван Лебедев объясняет решение тем, что подсветка украшает город и улучшает видимость вокруг зданий. Мнения горожан, собранные изданием, расходятся. Одни пишут, что зимой мягкий свет делает тёмный город уютнее. Другие опасаются, что свет с фасадов жилых домов попадёт в спальни, и замечают, что тротуары по-прежнему освещены хуже проезжей части."
       },
       {
-       "p": "Подсветка пришла в Мурманск не впервые. 8 октября мэр Иван Лебедев рассказал, что при капитальном ремонте «сталинок» в центре нашли крепления и арматуру подсветки 1970\u20131980-х годов. Тогда ставили лампы накаливания, и в Заполярье с его морозами, влажностью и перепадами температуры такая подсветка не прижилась. В январе 2022 года ТВ-21 сообщал, что работа по архитектурному освещению домов выйдет за пределы центра, в Ленинский и Первомайский районы."
+       "p": "Подсветка пришла в Мурманск не впервые. 8 октября мэр Иван Лебедев рассказал, что при капитальном ремонте «сталинок» в центре нашли крепления и арматуру подсветки 1970–1980-х годов. Тогда ставили лампы накаливания, и в Заполярье с его морозами, влажностью и перепадами температуры такая подсветка не прижилась. В январе 2022 года ТВ-21 сообщал, что работа по архитектурному освещению домов выйдет за пределы центра, в Ленинский и Первомайский районы."
       },
       {
        "gallery": [
@@ -933,28 +1004,36 @@
          "alt": "Угловое здание с подсвеченными арками и карнизом ночью",
          "caption": "Мурманск, подсветка углового здания с арочными окнами.",
          "credit": "Северпост",
-         "credit_url": "https://severpost.ru/read/215165/"
+         "credit_url": "https://severpost.ru/read/215165/",
+         "w": 1600,
+         "h": 900
         },
         {
          "src": "img/2026-10-31/murmansk-51.webp",
          "alt": "Фасад сталинского дома с подсветкой карниза в сумерках",
          "caption": "«Сталинка» в центре Мурманска: подсветка карниза и углов в сумерках.",
          "credit": "51.ру",
-         "credit_url": "https://51.ru/text/gorod/2026/10/08/76687688/"
+         "credit_url": "https://51.ru/text/gorod/2026/10/08/76687688/",
+         "w": 656,
+         "h": 437
         },
         {
          "src": "img/2026-10-31/murmansk-tv21.webp",
          "alt": "Ночная улица с подсвеченными фасадами",
          "caption": "Ночная улица в центре Мурманска с подсветкой фасадов.",
          "credit": "ТВ-21",
-         "credit_url": "https://www.tv21.ru/news/2026/10/08/sledy-proshlogo-neozhidannaya-nahodka-na-fasade-murmanskogo-doma"
+         "credit_url": "https://www.tv21.ru/news/2026/10/08/sledy-proshlogo-neozhidannaya-nahodka-na-fasade-murmanskogo-doma",
+         "w": 1280,
+         "h": 960
         },
         {
          "src": "img/2026-10-31/murmansk-soviet.webp",
          "alt": "Подсвеченный фасад в сумерках",
-         "caption": "Фасад в центре Мурманска. Снимок из публикации о следах подсветки 1970\u20131980-х годов.",
+         "caption": "Фасад в центре Мурманска. Снимок из публикации о следах подсветки 1970–1980-х годов.",
          "credit": "Вечерний Мурманск",
-         "credit_url": "https://vmnews.ru/novosti/2026/10/09/fonari-kotorye-ne-zazhgli-v-murmanske-nashli-sovetskie-detali-dlya-podsvetki"
+         "credit_url": "https://vmnews.ru/novosti/2026/10/09/fonari-kotorye-ne-zazhgli-v-murmanske-nashli-sovetskie-detali-dlya-podsvetki",
+         "w": 1200,
+         "h": 650
         }
        ],
        "print_only": true
@@ -968,7 +1047,9 @@
         "duration": "2:24",
         "channel": "ТВ-21",
         "date": "24.01.2022",
-        "about": "Сюжет о планах программы: подсветка домов в центре и проекты для Ленинского и Первомайского районов."
+        "about": "Сюжет о планах программы: подсветка домов в центре и проекты для Ленинского и Первомайского районов.",
+        "thumb_w": 1280,
+        "thumb_h": 720
        }
       },
       {
@@ -1005,7 +1086,9 @@
         "alt": "Монтаж светильников с автовышки на фасаде в центре Воронежа",
         "caption": "Воронеж, монтаж подсветки в центре города, 26.10.2026.",
         "credit": "Вести Воронеж",
-        "credit_url": "https://vestivrn.ru/news/2026/10/26/arkhitekturnuyu-podsvetku-nachali-ustanavlivat-na-zdaniyakh-v-centre-voronezha/"
+        "credit_url": "https://vestivrn.ru/news/2026/10/26/arkhitekturnuyu-podsvetku-nachali-ustanavlivat-na-zdaniyakh-v-centre-voronezha/",
+        "w": 1600,
+        "h": 897
        },
        "more": [
         {
@@ -1013,28 +1096,36 @@
          "alt": "Подсвеченный фасад с арочными окнами ночью",
          "caption": "Подсвеченный фасад в центре Воронежа. Кадр из сюжета «Вестей Воронеж».",
          "credit": "Вести Воронеж",
-         "credit_url": "https://vestivrn.ru/news/2026/10/26/arkhitekturnuyu-podsvetku-nachali-ustanavlivat-na-zdaniyakh-v-centre-voronezha/"
+         "credit_url": "https://vestivrn.ru/news/2026/10/26/arkhitekturnuyu-podsvetku-nachali-ustanavlivat-na-zdaniyakh-v-centre-voronezha/",
+         "w": 1280,
+         "h": 720
         },
         {
          "src": "img/2026-10-31/voronezh-night2.webp",
          "alt": "Вечерняя улица с подсвеченным зданием",
          "caption": "Вечерняя улица в центре Воронежа с подсвеченным зданием. Кадр из сюжета «Вестей Воронеж».",
          "credit": "Вести Воронеж",
-         "credit_url": "https://vestivrn.ru/news/2026/10/26/arkhitekturnuyu-podsvetku-nachali-ustanavlivat-na-zdaniyakh-v-centre-voronezha/"
+         "credit_url": "https://vestivrn.ru/news/2026/10/26/arkhitekturnuyu-podsvetku-nachali-ustanavlivat-na-zdaniyakh-v-centre-voronezha/",
+         "w": 1280,
+         "h": 720
         },
         {
          "src": "img/2026-10-31/voronezh-viz1.webp",
          "alt": "Здание со сферой на крыше, фасад в тёплой подсветке вечером",
          "caption": "Так здание в центре Воронежа будет выглядеть с подсветкой: визуализация из проектной документации.",
          "credit": "Вести Воронеж / проект документов",
-         "credit_url": "https://vestivrn.ru/news/2026/10/15/nochnaya-podsvetka-poyavitsya-na-eshyo-semi-zdaniyakh-v-voronezhe/"
+         "credit_url": "https://vestivrn.ru/news/2026/10/15/nochnaya-podsvetka-poyavitsya-na-eshyo-semi-zdaniyakh-v-voronezhe/",
+         "w": 1200,
+         "h": 673
         },
         {
          "src": "img/2026-10-31/voronezh-viz2.webp",
          "alt": "Пятиэтажное здание в тёплой подсветке вечером",
          "caption": "Вечерний вид здания с подсветкой: визуализация из документации закупки.",
          "credit": "Вести Воронеж / госзакупки",
-         "credit_url": "https://vestivrn.ru/news/2026/09/08/shest-zdanii-v-centre-voronezha-ukrasyat-dekorativnoi-podsvetkoi/"
+         "credit_url": "https://vestivrn.ru/news/2026/09/08/shest-zdanii-v-centre-voronezha-ukrasyat-dekorativnoi-podsvetkoi/",
+         "w": 1200,
+         "h": 673
         }
        ]
       },
@@ -1047,14 +1138,16 @@
         "channel": "Вести Воронеж",
         "date": "26.10.2026",
         "platform": "vestivrn.ru",
-        "about": "Монтаж светильников на первом здании проекта «Ночной Воронеж», улица Театральная."
+        "about": "Монтаж светильников на первом здании проекта «Ночной Воронеж», улица Театральная.",
+        "thumb_w": 1280,
+        "thumb_h": 720
        }
       },
       {
        "h": "Пермь: 34 здания на трёх улицах"
       },
       {
-       "p": "В Перми подсветку ставят в рамках благоустройства центральных улиц вместе с ремонтом проезжей части, тротуаров, фасадов и уличного освещения. По данным МКУ «Пермблагоустройство» на 30 сентября, с начала года подсветку смонтировали на 34 зданиях: на улице Ленина (дома 9\u2013102), на Сибирской (от 4а до 63) и на Чернышевского, 23. На 28 фасадах она уже включена и работает в штатном режиме, ещё шесть зданий подключают к электроснабжению."
+       "p": "В Перми подсветку ставят в рамках благоустройства центральных улиц вместе с ремонтом проезжей части, тротуаров, фасадов и уличного освещения. По данным МКУ «Пермблагоустройство» на 30 сентября, с начала года подсветку смонтировали на 34 зданиях: на улице Ленина (дома 9–102), на Сибирской (от 4а до 63) и на Чернышевского, 23. На 28 фасадах она уже включена и работает в штатном режиме, ещё шесть зданий подключают к электроснабжению."
       },
       {
        "p": "До конца года подсветку получат ещё три здания: Ленина, 52 и 52а и Сибирская, 1. Глава Перми Эдуард Соснин называет её элементом благоустройства, который подчёркивает исторический облик зданий и делает улицы безопаснее в тёмное время суток."
@@ -1063,9 +1156,11 @@
        "image": {
         "src": "img/2026-10-31/perm-2.webp",
         "alt": "Фасад с подсвеченным карнизом и наличниками ночью",
-        "caption": "Пермь, улица Ленина, 83\u201385: архитектурно-художественная подсветка.",
+        "caption": "Пермь, улица Ленина, 83–85: архитектурно-художественная подсветка.",
         "credit": "администрация Перми / Business Class",
-        "credit_url": "https://www.business-class.su/news/2026/09/30/s-nachala-goda-arhitekturnoi-podsvetkoi-oborudovali-34-zdaniya-v-centre-permi"
+        "credit_url": "https://www.business-class.su/news/2026/09/30/s-nachala-goda-arhitekturnoi-podsvetkoi-oborudovali-34-zdaniya-v-centre-permi",
+        "w": 1000,
+        "h": 667
        },
        "more": [
         {
@@ -1073,7 +1168,9 @@
          "alt": "Многоэтажное здание с подсветкой фасада ночью",
          "caption": "Пермь: здание в центре с архитектурной подсветкой.",
          "credit": "администрация Перми / Business Class",
-         "credit_url": "https://www.business-class.su/news/2026/09/30/s-nachala-goda-arhitekturnoi-podsvetkoi-oborudovali-34-zdaniya-v-centre-permi"
+         "credit_url": "https://www.business-class.su/news/2026/09/30/s-nachala-goda-arhitekturnoi-podsvetkoi-oborudovali-34-zdaniya-v-centre-permi",
+         "w": 805,
+         "h": 537
         }
        ]
       },
@@ -1129,7 +1226,7 @@
        "url": "https://severpost.ru/read/215165/"
       },
       {
-       "label": "51.ру: на «сталинках» нашли следы световых экспериментов 70\u201380-х",
+       "label": "51.ру: на «сталинках» нашли следы световых экспериментов 70–80-х",
        "url": "https://51.ru/text/gorod/2026/10/08/76687688/",
        "date": "08.10.2026"
       },
@@ -1159,7 +1256,9 @@
       "alt": "Угол исторического здания с тёплой подсветкой карниза ночью",
       "caption": "Мурманск, подсветка фасада. Снимок из публикации «Вечернего Мурманска» от 27.10.2026.",
       "credit": "Вечерний Мурманск",
-      "credit_url": "https://vmnews.ru/novosti/2026/10/27/gorod-stanovitsya-uyutnee-mer-murmanska-ocenil-effekt-ot-novoy-podsvetki-fasadov"
+      "credit_url": "https://vmnews.ru/novosti/2026/10/27/gorod-stanovitsya-uyutnee-mer-murmanska-ocenil-effekt-ot-novoy-podsvetki-fasadov",
+      "w": 1600,
+      "h": 866
      }
     },
     {
@@ -1170,7 +1269,7 @@
      "title": "Interlight 2026: четыре дня в «Крокус Экспо»",
      "body": [
       {
-       "p": "Международная выставка освещения Interlight прошла 27\u201330 октября в павильоне 1 «Крокус Экспо». Организатор \u2013 ООО «Гефера Медиа». Параллельно работала Smart City & Home: автоматизация зданий, KNX, умный дом. 28 октября в рамках выставки вручили премию «Золотой Фотон» ({стр:golden-photon}), 30 октября прошёл очный финал международного конкурса «Молодые светотехники». Результаты конкурса и общие итоги выставки на утро 31 октября не опубликованы."
+       "p": "Международная выставка освещения Interlight прошла 27–30 октября в павильоне 1 «Крокус Экспо». Организатор – ООО «Гефера Медиа». Параллельно работала Smart City & Home: автоматизация зданий, KNX, умный дом. 28 октября в рамках выставки вручили премию «Золотой Фотон» ({стр:golden-photon}), 30 октября прошёл очный финал международного конкурса «Молодые светотехники». Результаты конкурса и общие итоги выставки на утро 31 октября не опубликованы."
       },
       {
        "stats": [
@@ -1201,42 +1300,54 @@
          "alt": "Сухие злаки и коряга на песке в луче грунтового прожектора",
          "caption": "Композиция Design by Emikh на стенде SWG: злаки и коряга в свете грунтового прожектора.",
          "credit": "Interlight | Smart City & Home",
-         "credit_url": "https://t.me/interlightbuilding/1339"
+         "credit_url": "https://t.me/interlightbuilding/1339",
+         "w": 720,
+         "h": 1280
         },
         {
          "src": "img/2026-10-31/il-entrance.webp",
          "alt": "Экран выставки Interlight на фасаде Крокус Экспо",
          "caption": "«Крокус Экспо», павильон 1: экран выставки на фасаде.",
          "credit": "Interlight | Smart City & Home",
-         "credit_url": "https://t.me/interlightbuilding/1377"
+         "credit_url": "https://t.me/interlightbuilding/1377",
+         "w": 960,
+         "h": 1280
         },
         {
          "src": "img/2026-10-31/il-wall.webp",
          "alt": "Настенные линейные и садовые светильники на тёмной стене стенда",
          "caption": "Настенные и садовые светильники в разделе наружного освещения. Кадр из видео организатора.",
          "credit": "Interlight | Smart City & Home",
-         "credit_url": "https://t.me/interlightbuilding/1334"
+         "credit_url": "https://t.me/interlightbuilding/1334",
+         "w": 787,
+         "h": 1400
         },
         {
          "src": "img/2026-10-31/il-rings.webp",
          "alt": "Кольцевые подвесные светильники над стендом",
          "caption": "Кольцевые подвесы над стендом в зале 2. Кадр из видео организатора.",
          "credit": "Interlight | Smart City & Home",
-         "credit_url": "https://t.me/interlightbuilding/1334"
+         "credit_url": "https://t.me/interlightbuilding/1334",
+         "w": 787,
+         "h": 1400
         },
         {
          "src": "img/2026-10-31/il-denkirs.webp",
          "alt": "Стенд DENKIRS с трековыми светильниками",
          "caption": "Стенд DENKIRS с трековой системой Shine Prime. Кадр из видео организатора.",
          "credit": "Interlight | Smart City & Home",
-         "credit_url": "https://t.me/interlightbuilding/1334"
+         "credit_url": "https://t.me/interlightbuilding/1334",
+         "w": 787,
+         "h": 1400
         },
         {
          "src": "img/2026-10-31/il-ess.webp",
          "alt": "Зона форума с подвешенными шарами и баннером",
          "caption": "Зона международного форума «Единая светоцветовая среда». Кадр из видео организатора.",
          "credit": "Interlight | Smart City & Home",
-         "credit_url": "https://t.me/interlightbuilding/1334"
+         "credit_url": "https://t.me/interlightbuilding/1334",
+         "w": 787,
+         "h": 1400
         }
        ],
        "print_only": true,
@@ -1246,7 +1357,7 @@
        "p": "Для светодизайнеров работали Академия света и дизайна и тематические туры. Константин Цепелев (BRIGHT BURO) вёл тур для архитекторов и выступил с докладом «Биодинамическое освещение 2026». Ульяна Виноградова (INTILED) провела мастер-класс «Осветить нельзя темно», Игорь Ефимов (aledo) рассказал, как светом создают атмосферу ресторана. 29 октября прошёл круглый стол «В поисках общего языка: ландшафтная архитектура и светодизайн» с бюро ИСКРА, «Культура света», CORE, «Чехарда» и APEX, модератор Наталья Браславская («Гений места»). Два дня шёл международный форум «Единая светоцветовая среда»."
       },
       {
-       "p": "Следующий Interlight сменит площадку: 21\u201323 сентября 2027 года, новый КВЦ «ВДНХ Экспо»."
+       "p": "Следующий Interlight сменит площадку: 21–23 сентября 2027 года, новый КВЦ «ВДНХ Экспо»."
       },
       {
        "editor": "Редакция: цифры прошлого года взяты с сайта elec.ru. Когда организаторы опубликуют итоги 2026 года и победителей конкурсов, газета к ним вернётся."
@@ -1306,7 +1417,9 @@
       "alt": "Посетители у входа в стенд SWG со световой инсталляцией",
       "caption": "Стенд SWG в зале 2: очередь к световой инсталляции, 27 октября.",
       "credit": "Interlight | Smart City & Home",
-      "credit_url": "https://t.me/interlightbuilding/1338"
+      "credit_url": "https://t.me/interlightbuilding/1338",
+      "w": 1024,
+      "h": 1280
      }
     }
    ]
@@ -1330,7 +1443,9 @@
       "alt": "Цветные карандаши, разложенные в ряд по оттенкам",
       "caption": "Участники исследования проходили похожий тест: цветные образцы нужно было расставить по порядку оттенков.",
       "credit": "Jess Bailey / Unsplash",
-      "credit_url": "https://unsplash.com/photos/l3N9Q27zULw"
+      "credit_url": "https://unsplash.com/photos/l3N9Q27zULw",
+      "w": 1600,
+      "h": 1200
      },
      "body": [
       {
@@ -1430,7 +1545,8 @@
      "illus": {
       "src": "img/2026-10-31/il-helix.svg",
       "alt": "Иллюстрация: световой пучок, в котором по мере распространения возникают левые и правые спирали",
-      "caption": "Иллюстрация редакции, схема."
+      "caption": "Иллюстрация редакции, схема.",
+      "ar": 1.5
      },
      "body": [
       {
@@ -1474,7 +1590,9 @@
       "alt": "Кёльнский собор ночью, вид снизу на подсвеченные башни",
       "caption": "Кёльнский собор ночью.",
       "credit": "Vidar Nordli-Mathisen / Unsplash",
-      "credit_url": "https://unsplash.com/photos/zd0Ie1fxEGA"
+      "credit_url": "https://unsplash.com/photos/zd0Ie1fxEGA",
+      "w": 1600,
+      "h": 1254
      },
      "body": [
       {
@@ -1492,7 +1610,9 @@
         "duration": "1:23",
         "channel": "The IALD",
         "date": "11.03.2026",
-        "about": "Короткий ролик к награде IALD: собор ночью до и после, принцип «свет следует архитектуре»."
+        "about": "Короткий ролик к награде IALD: собор ночью до и после, принцип «свет следует архитектуре».",
+        "thumb_w": 1280,
+        "thumb_h": 720
        }
       }
      ],
@@ -1521,7 +1641,7 @@
      "dateline": "Открыто 26.06.2026, обзор Global Design News от 21.10.2026.",
      "body": [
       {
-       "p": "Ночное шоу Wonders of Our World: Ocean студии Moment Factory идёт во дворе и на фасаде National Geographic Museum of Exploration. Фасад площадью почти 3000 кв. футов (около 280 м²) сделан из «умного» стекла с регулируемой прозрачностью. За ним стоит светодиодный экран высотой 45 футов (около 13,7 м): пока стекло матовое, экран не виден. Основное шоу длится 17 минут, к нему добавлены интерактивные проекции на полу, реагирующие на движение зрителей, пространственный звук и динамический свет. Архитектор проекта \u2013 бюро Hickok Cole."
+       "p": "Ночное шоу Wonders of Our World: Ocean студии Moment Factory идёт во дворе и на фасаде National Geographic Museum of Exploration. Фасад площадью почти 3000 кв. футов (около 280 м²) сделан из «умного» стекла с регулируемой прозрачностью. За ним стоит светодиодный экран высотой 45 футов (около 13,7 м): пока стекло матовое, экран не виден. Основное шоу длится 17 минут, к нему добавлены интерактивные проекции на полу, реагирующие на движение зрителей, пространственный звук и динамический свет. Архитектор проекта – бюро Hickok Cole."
       },
       {
        "gallery": [
@@ -1530,14 +1650,18 @@
          "alt": "Фасад музея, стекло стало прозрачным, за ним синий экран",
          "caption": "Стекло переходит в прозрачный режим, за ним виден экран высотой около 13,7 м.",
          "credit": "Moment Factory / Global Design News",
-         "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/"
+         "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/",
+         "w": 1600,
+         "h": 1067
         },
         {
          "src": "img/2026-10-31/natgeo-a.webp",
          "alt": "Двор музея с проекциями на полу",
          "caption": "Интерактивные проекции на полу двора реагируют на движение зрителей.",
          "credit": "Moment Factory / Global Design News",
-         "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/"
+         "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/",
+         "w": 1600,
+         "h": 1067
         }
        ]
       },
@@ -1550,7 +1674,9 @@
         "duration": "4:42",
         "channel": "Moment Factory",
         "date": "02.09.2026",
-        "about": "Как студия превращала штаб-квартиру National Geographic в музей: фасад, двор, ночное шоу."
+        "about": "Как студия превращала штаб-квартиру National Geographic в музей: фасад, двор, ночное шоу.",
+        "thumb_w": 1280,
+        "thumb_h": 720
        }
       }
      ],
@@ -1566,7 +1692,9 @@
       "alt": "Стеклянный фасад National Geographic ночью, за стеклом экран с морской черепахой, во дворе зрители",
       "caption": "Фасад National Geographic Museum of Exploration во время шоу Wonders of Our World: Ocean.",
       "credit": "Moment Factory / Global Design News",
-      "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/"
+      "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/",
+      "w": 1600,
+      "h": 1067
      },
      "reserve": [
       {
@@ -1575,7 +1703,9 @@
        "caption": "Жёлтая рамка, знак National Geographic, у входа в музей.",
        "credit": "Moment Factory / Global Design News",
        "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/",
-       "r": 1.499
+       "r": 1.499,
+       "w": 1000,
+       "h": 667
       },
       {
        "src": "img/2026-10-31/natgeo-r2.webp",
@@ -1583,7 +1713,9 @@
        "caption": "Вход в музей: проекция на прозрачном стекле фасада.",
        "credit": "Moment Factory / Global Design News",
        "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/",
-       "r": 1.499
+       "r": 1.499,
+       "w": 1000,
+       "h": 667
       },
       {
        "src": "img/2026-10-31/natgeo-r3.webp",
@@ -1591,7 +1723,9 @@
        "caption": "Боковой фасад: изображение кита за стеклом.",
        "credit": "Moment Factory / Global Design News",
        "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/",
-       "r": 1.499
+       "r": 1.499,
+       "w": 1000,
+       "h": 667
       },
       {
        "src": "img/2026-10-31/natgeo-r4.webp",
@@ -1599,7 +1733,9 @@
        "caption": "Двор музея: рамка National Geographic и розовая подсветка деревьев.",
        "credit": "Moment Factory / Global Design News",
        "credit_url": "https://globaldesignnews.com/wonders-of-our-world-ocean-moment-factory-transforms-the-national-geographic-museum-into-an-immersive-underwater-experience/",
-       "r": 1.592
+       "r": 1.592,
+       "w": 1000,
+       "h": 628
       }
      ]
     }
@@ -1623,7 +1759,9 @@
       "alt": "Схема из пресс-релиза: обычный корпусной белый светодиод с люминофором и микрочип WICOP 3 без корпуса",
       "caption": "Схема из пресс-релиза Seoul Semiconductor: слева обычные корпусные белые светодиоды с редкоземельным люминофором, справа микрочип WICOP 3.",
       "credit": "Seoul Semiconductor",
-      "credit_url": "https://compoundsemiconductor.net/article/125731/Seoul_Semi_ends_need_for_rare_Earths_in_white_LEDs"
+      "credit_url": "https://compoundsemiconductor.net/article/125731/Seoul_Semi_ends_need_for_rare_Earths_in_white_LEDs",
+      "w": 1600,
+      "h": 1065
      },
      "body": [
       {
@@ -1687,7 +1825,9 @@
        "caption": "Яркость WICOP 3 в зависимости от размера кристалла, рисунок 2 пресс-релиза.",
        "credit": "Seoul Semiconductor",
        "credit_url": "https://www.bastillepost.com/global/article/6300166-seoul-semiconductor-ends-need-for-rare-earths-in-white-leds",
-       "r": 2.113
+       "r": 2.113,
+       "w": 1200,
+       "h": 568
       },
       {
        "src": "img/2026-10-31/wicop-r2.webp",
@@ -1695,7 +1835,9 @@
        "caption": "Развитие технологии WICOP: кристалл без корпуса, рисунок 4 пресс-релиза.",
        "credit": "Seoul Semiconductor",
        "credit_url": "https://www.bastillepost.com/global/article/6300166-seoul-semiconductor-ends-need-for-rare-earths-in-white-leds",
-       "r": 2.286
+       "r": 2.286,
+       "w": 1200,
+       "h": 525
       },
       {
        "src": "img/2026-10-31/wicop-r3.webp",
@@ -1703,7 +1845,9 @@
        "caption": "Массив кристаллов WICOP для оптической связи в системах ИИ, рисунок 5 пресс-релиза.",
        "credit": "Seoul Semiconductor",
        "credit_url": "https://www.bastillepost.com/global/article/6300166-seoul-semiconductor-ends-need-for-rare-earths-in-white-leds",
-       "r": 2.312
+       "r": 2.312,
+       "w": 1200,
+       "h": 519
       }
      ]
     },
@@ -1724,14 +1868,17 @@
         "alt": "Подвесной микролинейный светильник Pika на тросе",
         "caption": "Pika Suspended, подвесной вариант. Фото производителя.",
         "credit": "Pinnacle Architectural Lighting",
-        "credit_url": "https://www.pinnacle-ltg.com/product/pika-suspended"
+        "credit_url": "https://www.pinnacle-ltg.com/product/pika-suspended",
+        "w": 1600,
+        "h": 1066
        }
       },
       {
        "illus": {
         "src": "img/2026-10-31/il-linear.svg",
         "alt": "Схема сечения: прямой свет вниз и отражённый вверх",
-        "caption": "Схема редакции: как профиль делит прямой и отражённый свет."
+        "caption": "Схема редакции: как профиль делит прямой и отражённый свет.",
+        "ar": 1.5
        }
       },
       {
@@ -1765,7 +1912,9 @@
       "alt": "Настенный микролинейный светильник Pika, белый корпус",
       "caption": "Pika Wall/Ceiling, настенный вариант. Фото производителя.",
       "credit": "Pinnacle Architectural Lighting",
-      "credit_url": "https://www.pinnacle-ltg.com/product/pika-wallceiling"
+      "credit_url": "https://www.pinnacle-ltg.com/product/pika-wallceiling",
+      "w": 1600,
+      "h": 1066
      },
      "reserve": [
       {
@@ -1774,7 +1923,9 @@
        "caption": "Pika в библиотеке: подвесные линии над читальными столами. Визуализация из буклета.",
        "credit": "Pinnacle Architectural Lighting",
        "credit_url": "https://www.pinnacle-ltg.com/sites/default/files/2026-03/PikaBrochure.pdf",
-       "r": 1.493
+       "r": 1.493,
+       "w": 1400,
+       "h": 938
       },
       {
        "src": "img/2026-10-31/pika-r2.webp",
@@ -1782,7 +1933,9 @@
        "caption": "Pika в жилом интерьере. Визуализация из буклета.",
        "credit": "Pinnacle Architectural Lighting",
        "credit_url": "https://www.pinnacle-ltg.com/sites/default/files/2026-03/PikaBrochure.pdf",
-       "r": 1.423
+       "r": 1.423,
+       "w": 1400,
+       "h": 984
       },
       {
        "src": "img/2026-10-31/pika-r3.webp",
@@ -1790,7 +1943,9 @@
        "caption": "Pika в лаунж-зоне. Визуализация из буклета.",
        "credit": "Pinnacle Architectural Lighting",
        "credit_url": "https://www.pinnacle-ltg.com/sites/default/files/2026-03/PikaBrochure.pdf",
-       "r": 1.501
+       "r": 1.501,
+       "w": 1400,
+       "h": 933
       },
       {
        "src": "img/2026-10-31/pika-r4.webp",
@@ -1798,7 +1953,9 @@
        "caption": "Pika подсвечивает стену с росписью. Визуализация из буклета.",
        "credit": "Pinnacle Architectural Lighting",
        "credit_url": "https://www.pinnacle-ltg.com/sites/default/files/2026-03/PikaBrochure.pdf",
-       "r": 1.0
+       "r": 1.0,
+       "w": 1400,
+       "h": 1400
       }
      ]
     },
@@ -1813,7 +1970,9 @@
       "alt": "Три лампы Costanza с белыми абажурами на тёмном фоне",
       "caption": "Costanza, Luceplan. Фото производителя.",
       "credit": "Luceplan",
-      "credit_url": "https://www.luceplan.com/stories/costanza-40-years/"
+      "credit_url": "https://www.luceplan.com/stories/costanza-40-years/",
+      "w": 1600,
+      "h": 900
      },
      "body": [
       {
@@ -1831,7 +1990,9 @@
         "alt": "Фактуры трёх новых абажуров Costanza крупным планом",
         "caption": "Три юбилейных абажура: Pleated, Diamond и Striped. Фото производителя.",
         "credit": "Luceplan",
-        "credit_url": "https://www.luceplan.com/stories/costanza-40-years/"
+        "credit_url": "https://www.luceplan.com/stories/costanza-40-years/",
+        "w": 1600,
+        "h": 900
        }
       },
       {
@@ -1843,7 +2004,9 @@
         "duration": "0:52",
         "channel": "Luceplan",
         "date": "17.01.2014",
-        "about": "Архивный ролик Luceplan: как устроена и как собирается Costanza."
+        "about": "Архивный ролик Luceplan: как устроена и как собирается Costanza.",
+        "thumb_w": 1280,
+        "thumb_h": 720
        }
       }
      ],
@@ -1881,7 +2044,9 @@
       "alt": "Дорога между высокими деревьями ночью в свете уличных фонарей",
       "caption": "Адаптивное дорожное освещение снижает уровни в часы малой интенсивности движения. Этому посвящён CIE 258:2026.",
       "credit": "Lukas Stoermer / Unsplash",
-      "credit_url": "https://unsplash.com/photos/-0J8oBmqbRg"
+      "credit_url": "https://unsplash.com/photos/-0J8oBmqbRg",
+      "w": 1600,
+      "h": 1067
      },
      "body": [
       {
@@ -1938,7 +2103,8 @@
      "illus": {
       "src": "img/2026-10-31/il-plan3d.svg",
       "alt": "Иллюстрация: плоский план помещения превращается в объёмную модель",
-      "caption": "Иллюстрация редакции: план в PDF превращается в 3D-модель."
+      "caption": "Иллюстрация редакции: план в PDF превращается в 3D-модель.",
+      "ar": 1.5
      },
      "body": [
       {
@@ -1997,11 +2163,12 @@
        "illus": {
         "src": "img/2026-10-31/il-lamp.svg",
         "alt": "Схема лампы: конический абажур, стержень-выключатель",
-        "caption": "Схема редакции: из чего состоит Costanza."
+        "caption": "Схема редакции: из чего состоит Costanza.",
+        "ar": 1.5
        }
       },
       {
-       "p": "К 40-летию лампы Риццатто формулирует ту же мысль иначе. Современность вещи, по его словам, рождается из возвращения традиции с помощью сегодняшних инструментов, материалов и технологий. Проектирование он описывает как вычитание, в форме и в технике: лампа разбирается на части, поэтому её удобно производить серийно и чинить. Цель дизайна, говорит он, \u2013 сделать шаг вперёд от того, что уже существует, ближе к современному вкусу."
+       "p": "К 40-летию лампы Риццатто формулирует ту же мысль иначе. Современность вещи, по его словам, рождается из возвращения традиции с помощью сегодняшних инструментов, материалов и технологий. Проектирование он описывает как вычитание, в форме и в технике: лампа разбирается на части, поэтому её удобно производить серийно и чинить. Цель дизайна, говорит он, – сделать шаг вперёд от того, что уже существует, ближе к современному вкусу."
       },
       {
        "editor": "Редакция: Costanza живёт сорок лет, потому что в ней ничего лишнего: плоский лист поликарбоната, стержень-выключатель и силуэт, знакомый каждому. Этот метод вычитания годится и для архитектурного света."
@@ -2026,7 +2193,9 @@
       "alt": "Паоло Риццатто в мастерской среди светильников и прототипов",
       "caption": "Паоло Риццатто. Фото со страницы дизайнера на сайте Luceplan.",
       "credit": "Luceplan",
-      "credit_url": "https://www.luceplan.com/designers/paolo-rizzatto/"
+      "credit_url": "https://www.luceplan.com/designers/paolo-rizzatto/",
+      "w": 1216,
+      "h": 1600
      }
     }
    ]
@@ -2046,7 +2215,8 @@
      "illus": {
       "src": "img/2026-10-31/il-press.svg",
       "alt": "Иллюстрация: стопка журналов и газет, верхний раскрыт",
-      "caption": "Иллюстрация редакции."
+      "caption": "Иллюстрация редакции.",
+      "ar": 1.5
      },
      "body": [
       {
@@ -2099,7 +2269,9 @@
         "alt": "Обложка журнала «Современная светотехника» №5 2026",
         "caption": "«Современная светотехника» №5/2026: тема номера о российском светотехническом рынке, линейные светильники, четыре задачи освещения премиального ЖК, история лампы Luxo-1.",
         "credit": "«Современная светотехника»",
-        "credit_url": "https://russianelectronics.ru/vyshel-zhurnal-sovremennaya-svetotehnika-%E2%84%965-2026/"
+        "credit_url": "https://russianelectronics.ru/vyshel-zhurnal-sovremennaya-svetotehnika-%E2%84%965-2026/",
+        "w": 965,
+        "h": 1400
        },
        "cover_print_only": true
       }
@@ -2126,7 +2298,9 @@
       "alt": "Две монографии Luceplan. Shaping Light на тёмном столе",
       "caption": "«Luceplan. Shaping Light», Rizzoli Illustrati. Фото издателя.",
       "credit": "Luceplan",
-      "credit_url": "https://www.luceplan.com/stories/luceplan-shaping-light/"
+      "credit_url": "https://www.luceplan.com/stories/luceplan-shaping-light/",
+      "w": 1600,
+      "h": 1237
      },
      "body": [
       {
@@ -2144,7 +2318,7 @@
        "n": "II"
       },
       {
-       "p": "«Space for ideas». Кьяра Алесси прослеживает, как менялся подход Luceplan: в 1980\u20131990-х годах свет служил архитектуре, в 2000-х пришли новые технологии и новые поколения дизайнеров, в 2010-х подход стал декоративнее, в 2020-х лёгкие конструкции превращают свет в изменчивую скульптуру.",
+       "p": "«Space for ideas». Кьяра Алесси прослеживает, как менялся подход Luceplan: в 1980–1990-х годах свет служил архитектуре, в 2000-х пришли новые технологии и новые поколения дизайнеров, в 2010-х подход стал декоративнее, в 2020-х лёгкие конструкции превращают свет в изменчивую скульптуру.",
        "n": "III"
       },
       {
@@ -2166,21 +2340,27 @@
          "alt": "Три торшера Costanza на синем фоне",
          "caption": "Иллюстрация к главе I.",
          "credit": "Luceplan",
-         "credit_url": "https://www.luceplan.com/stories/luceplan-shaping-light/"
+         "credit_url": "https://www.luceplan.com/stories/luceplan-shaping-light/",
+         "w": 933,
+         "h": 1400
         },
         {
          "src": "img/2026-10-31/luceplan-ch3.webp",
          "alt": "Размытый зелёный свет, абстрактный кадр",
          "caption": "Иллюстрация к главе III.",
          "credit": "Luceplan",
-         "credit_url": "https://www.luceplan.com/stories/luceplan-shaping-light/"
+         "credit_url": "https://www.luceplan.com/stories/luceplan-shaping-light/",
+         "w": 933,
+         "h": 1400
         },
         {
          "src": "img/2026-10-31/luceplan-ch5.webp",
          "alt": "Подвесной светильник-панель с тёплым светом снизу",
          "caption": "Иллюстрация к главе V.",
          "credit": "Luceplan",
-         "credit_url": "https://www.luceplan.com/stories/luceplan-shaping-light/"
+         "credit_url": "https://www.luceplan.com/stories/luceplan-shaping-light/",
+         "w": 933,
+         "h": 1400
         }
        ],
        "row": true,
@@ -2208,7 +2388,7 @@
        "h": "Что внутри"
       },
       {
-       "p": "Основа книги \u2013 25 проектов последних лет: культурные, общественные, коммерческие, учебные, медицинские и транспортные. Среди них Институт мира США в Вашингтоне, музей Гуггенхайма в Бильбао, мемориал Яд ва-Шем в Иерусалиме, башня PNC Plaza в Питтсбурге, публичная библиотека Солт-Лейк-Сити и стадион SoFi в Лос-Анджелесе. Отдельный раздел отдан ранним работам и городской среде: вашингтонское метро и вокзал Юнион-стейшн, здание законодательного собрания Массачусетса, гостиница Marriott Marquis в Атланте."
+       "p": "Основа книги – 25 проектов последних лет: культурные, общественные, коммерческие, учебные, медицинские и транспортные. Среди них Институт мира США в Вашингтоне, музей Гуггенхайма в Бильбао, мемориал Яд ва-Шем в Иерусалиме, башня PNC Plaza в Питтсбурге, публичная библиотека Солт-Лейк-Сити и стадион SoFi в Лос-Анджелесе. Отдельный раздел отдан ранним работам и городской среде: вашингтонское метро и вокзал Юнион-стейшн, здание законодательного собрания Массачусетса, гостиница Marriott Marquis в Атланте."
       },
       {
        "p": "Каждый объект показан цветными фотографиями с подписями, у части проектов есть схемы и макеты. Комментарии объясняют принципы бюро и технические приёмы, которыми оно соединяет дневной и искусственный свет в зданиях и общественных пространствах: от этого сочетания у Lam Partners обычно и начинается проект."
@@ -2217,7 +2397,7 @@
        "h": "Бюро и его основатель"
       },
       {
-       "p": "Уильям Лэм (1924\u20132012) окончил архитектурный факультет MIT в 1949 году; к свету его привело общежитие Baker House, которое Алвар Аалто построил для MIT. В 1959 году он открыл консультационное бюро William Lam Associates, с 1980 года оно называется Lam Partners. Книга Лэма «Perception and Lighting as Formgivers for Architecture» (McGraw-Hill, 1977) стала одним из базовых пособий для архитекторов и светодизайнеров: Лэм спорил с нормами, которые сводят освещение к количеству люксов, и предлагал исходить из восприятия человека и архитектуры. Сейчас бюро руководит третье поколение партнёров."
+       "p": "Уильям Лэм (1924–2012) окончил архитектурный факультет MIT в 1949 году; к свету его привело общежитие Baker House, которое Алвар Аалто построил для MIT. В 1959 году он открыл консультационное бюро William Lam Associates, с 1980 года оно называется Lam Partners. Книга Лэма «Perception and Lighting as Formgivers for Architecture» (McGraw-Hill, 1977) стала одним из базовых пособий для архитекторов и светодизайнеров: Лэм спорил с нормами, которые сводят освещение к количеству люксов, и предлагал исходить из восприятия человека и архитектуры. Сейчас бюро руководит третье поколение партнёров."
       },
       {
        "gallery": [
@@ -2226,21 +2406,27 @@
          "alt": "Раскрытая книга с ночной съёмкой здания",
          "caption": "Разворот «The Many Ways of Light» с ночной съёмкой объекта бюро.",
          "credit": "Lam Partners",
-         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/"
+         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/",
+         "w": 1600,
+         "h": 1067
         },
         {
          "src": "img/2026-10-31/lam-open.webp",
          "alt": "Раскрытая книга с интерьерными фотографиями",
          "caption": "Разворот с интерьерным проектом бюро.",
          "credit": "Lam Partners",
-         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/"
+         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/",
+         "w": 1600,
+         "h": 1067
         },
         {
          "src": "img/2026-10-31/lam-spine.webp",
          "alt": "Синяя книга в твёрдом переплёте, корешок",
          "caption": "Монография в твёрдом синем переплёте.",
          "credit": "Lam Partners",
-         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/"
+         "credit_url": "https://www.lampartners.com/the-many-ways-of-light/",
+         "w": 1600,
+         "h": 1067
         }
        ],
        "print_only": true,
@@ -2257,7 +2443,7 @@
        "url": "https://www.accartbooks.com/us/book/lam-partners/datasheet/"
       },
       {
-       "label": "Architect Magazine: William Lam 1924\u20132012",
+       "label": "Architect Magazine: William Lam 1924–2012",
        "url": "https://www.architectmagazine.com/technology/lighting/william-lam-1924-2012_o/"
       }
      ],
@@ -2266,7 +2452,9 @@
       "alt": "Рука держит синюю книгу The Many Ways of Light",
       "caption": "Монография Lam Partners «The Many Ways of Light», Images Publishing, 2023.",
       "credit": "Lam Partners",
-      "credit_url": "https://www.lampartners.com/the-many-ways-of-light/"
+      "credit_url": "https://www.lampartners.com/the-many-ways-of-light/",
+      "w": 1600,
+      "h": 1067
      },
      "reserve": []
     },
@@ -2281,11 +2469,13 @@
       "alt": "Фасад Каса Батльо в Барселоне с цветной керамикой",
       "caption": "Каса Батльо в Барселоне, поздняя работа Гауди. В книге разобран его ранний дом Висенс, где цветная плитка задаёт весь облик.",
       "credit": "Zahra Ahmadpari / Unsplash",
-      "credit_url": "https://unsplash.com/photos/SGy8DNOtmOo"
+      "credit_url": "https://unsplash.com/photos/SGy8DNOtmOo",
+      "w": 1600,
+      "h": 1200
      },
      "body": [
       {
-       "p": "Адам Натаниэл Фурман и Кейт Мазейд собрали 34 примера цвета в архитектуре от Средних веков до наших дней, каждый с коротким описанием и фотографиями. Среди примеров \u2013 дом Висенс Антонио Гауди и Croydon Colonnade самого Фурмана в Лондоне. Отдельно разобраны материалы: пёстрый камень, плитка, иризирующие полимеры. RIBA Publishing, 208 страниц, 60 долларов. 19 октября Architectural Record опубликовал отрывок из введения: принцип «меньше значит больше» авторы называют культурным предубеждением."
+       "p": "Адам Натаниэл Фурман и Кейт Мазейд собрали 34 примера цвета в архитектуре от Средних веков до наших дней, каждый с коротким описанием и фотографиями. Среди примеров – дом Висенс Антонио Гауди и Croydon Colonnade самого Фурмана в Лондоне. Отдельно разобраны материалы: пёстрый камень, плитка, иризирующие полимеры. RIBA Publishing, 208 страниц, 60 долларов. 19 октября Architectural Record опубликовал отрывок из введения: принцип «меньше значит больше» авторы называют культурным предубеждением."
       },
       {
        "p": "Рецензент Architectural Record напоминает контекст. Адольф Лоос в 1910 году объявил орнамент преступлением, о цвете он ничего не сказал, и всё же белые объёмы стали нормой XX века. При этом у самих модернистов были цветные лоджии «Жилой единицы» Ле Корбюзье, зелёный мрамор и золотистый оникс Барселонского павильона Миса ван дер Роэ, красная входная дверь Баухауза."
@@ -2308,7 +2498,9 @@
        "caption": "Croydon Colonnade в Лондоне, работа автора книги Адама Натаниэла Фурмана: цвет оживляет общественное пространство.",
        "credit": "Gareth Gardner / Architectural Record",
        "credit_url": "https://www.architecturalrecord.com/articles/18462-a-kaleidoscopic-new-book-attempts-to-liberate-architects-from-lingering-hang-ups-about-hue",
-       "r": 1.778
+       "r": 1.778,
+       "w": 1129,
+       "h": 635
       },
       {
        "src": "img/2026-10-31/chromatic-vicens.webp",
@@ -2316,7 +2508,9 @@
        "caption": "Дом Висенс Антонио Гауди: разноцветная керамическая плитка задаёт модуль всего фасада.",
        "credit": "David Cardelús / Casa Vicens Gaudí",
        "credit_url": "https://www.architecturalrecord.com/articles/18462-a-kaleidoscopic-new-book-attempts-to-liberate-architects-from-lingering-hang-ups-about-hue",
-       "r": 1.5
+       "r": 1.5,
+       "w": 1200,
+       "h": 800
       },
       {
        "src": "img/2026-10-31/chromatic-cover.webp",
@@ -2324,7 +2518,9 @@
        "caption": "Обложка книги «Chromatic Architecture: The Craft of Colour in Design», RIBA Publishing.",
        "credit": "RIBA Publishing / Architectural Record",
        "credit_url": "https://www.architecturalrecord.com/articles/18462-a-kaleidoscopic-new-book-attempts-to-liberate-architects-from-lingering-hang-ups-about-hue",
-       "r": 0.824
+       "r": 0.824,
+       "w": 989,
+       "h": 1200
       }
      ]
     },
@@ -2339,7 +2535,9 @@
       "alt": "Обложка книги Barragán: His Library с подписью архитектора",
       "caption": "Обложка «Luis Barragán: His Library», RM и Фонд архитектуры Тапатия Луис Барраган, 2026.",
       "credit": "RM / D.A.P.",
-      "credit_url": "https://www.artbook.com/9788410290655.html"
+      "credit_url": "https://www.artbook.com/9788410290655.html",
+      "w": 708,
+      "h": 1000
      },
      "body": [
       {
@@ -2349,7 +2547,7 @@
        "p": "Библиотека сохранилась в доме-мастерской Баррагана в Мехико, где сейчас музей. Авторы прослеживают, какие книги, писатели и идеи повлияли на его архитектуру: искусство, религия, ландшафт, модернизм, а также ценности, которые он сам называл главными: тишина, уединение и покой. Фотограф Давид Хименес снял для книги визуальное эссе о пространствах дома, где Барраган соединил традиционную мексиканскую архитектуру с интернациональным модернизмом. Сам дом-мастерская с 2004 года входит в список Всемирного наследия ЮНЕСКО."
       },
       {
-       "p": "Для светодизайнера книга интересна тем, откуда берётся знаменитый баррагановский свет: окрашенные стены, узкие световые проёмы, отражённый свет в лестницах и патио. Луис Барраган (1902\u20131988) родился в Гвадалахаре, работал в основном в Мехико и в 1980 году получил Притцкеровскую премию."
+       "p": "Для светодизайнера книга интересна тем, откуда берётся знаменитый баррагановский свет: окрашенные стены, узкие световые проёмы, отражённый свет в лестницах и патио. Луис Барраган (1902–1988) родился в Гвадалахаре, работал в основном в Мехико и в 1980 году получил Притцкеровскую премию."
       },
       {
        "p": "Дом построен в 1948 году, Барраган жил в нём до смерти в 1988-м: 1161 м², два этажа и терраса на крыше. Днём дом обходится без искусственного света, кроме комнаты для завтраков; окна и проёмы расставлены так, чтобы впустить как можно больше дневного света. На улицу смотрят высокие глухие стены с редкими окнами, главное окно гостиной выходит в сад. Читальня и библиотека на первом этаже отделены от гостиной лестницами и складными ширмами, лестницы наверх и на террасу без перил: это характерный приём Баррагана. Музей хранит около 3000 изданий, личные бумаги и фотографии архитектора."
@@ -2360,7 +2558,9 @@
         "alt": "Лестница в доме Баррагана, свет на розовой стене и золотая картина",
         "caption": "Разворот книги: лестница в доме Баррагана, свет на окрашенной стене. Фото Давида Хименеса.",
         "credit": "David Jiménez / RM",
-        "credit_url": "https://www.artbook.com/9788410290655.html"
+        "credit_url": "https://www.artbook.com/9788410290655.html",
+        "w": 693,
+        "h": 1000
        },
        "more": [
         {
@@ -2368,35 +2568,45 @@
          "alt": "Библиотека в доме Баррагана: стеллажи с книгами, рабочий стол, высокое окно",
          "caption": "Библиотека в доме Баррагана: стеллажи во всю стену, свет из высокого окна над рабочим столом.",
          "credit": "Forgemind ArchiMedia, CC BY 2.0",
-         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barragan_-_Casa_Luis_Barragan_%E5%BC%B5%E5%9F%BA%E7%BE%A9%E8%80%81%E5%B8%AB%E6%8B%8D%E6%94%9D_039.jpg"
+         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barragan_-_Casa_Luis_Barragan_%E5%BC%B5%E5%9F%BA%E7%BE%A9%E8%80%81%E5%B8%AB%E6%8B%8D%E6%94%9D_039.jpg",
+         "w": 1024,
+         "h": 682
         },
         {
          "src": "img/2026-10-31/barragan-library-stair.webp",
          "alt": "Деревянная консольная лестница без перил вдоль белой стены",
          "caption": "Консольная лестница без перил в библиотеке дома.",
          "credit": "Francesco Bandarin / UNESCO, CC BY-SA 3.0 IGO",
-         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_and_Studio-115242.jpg"
+         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_and_Studio-115242.jpg",
+         "w": 1200,
+         "h": 1600
         },
         {
          "src": "img/2026-10-31/barragan-living.webp",
          "alt": "Гостиная с большим окном в сад",
          "caption": "Гостиная: двойная высота, деревянные балки, главное окно в сад.",
          "credit": "Forgemind ArchiMedia, CC BY 2.0",
-         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barragan_-_Casa_Luis_Barragan_%E5%BC%B5%E5%9F%BA%E7%BE%A9%E8%80%81%E5%B8%AB%E6%8B%8D%E6%94%9D_015.jpg"
+         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barragan_-_Casa_Luis_Barragan_%E5%BC%B5%E5%9F%BA%E7%BE%A9%E8%80%81%E5%B8%AB%E6%8B%8D%E6%94%9D_015.jpg",
+         "w": 1024,
+         "h": 682
         },
         {
          "src": "img/2026-10-31/barragan-roof.webp",
          "alt": "Терраса на крыше: стены красного, фуксии и серого цвета на фоне неба",
          "caption": "Терраса на крыше: высокие окрашенные стены закрывают город и оставляют только небо.",
          "credit": "Francesco Bandarin / UNESCO, CC BY-SA 3.0 IGO",
-         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_and_Studio-115240.jpg"
+         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_and_Studio-115240.jpg",
+         "w": 1600,
+         "h": 1200
         },
         {
          "src": "img/2026-10-31/barragan-yellow.webp",
          "alt": "Жёлтая решётка из стеклоблоков рядом с водоёмом во дворе",
          "caption": "Жёлтая решётка и водоём во дворе: дневной свет окрашивается, проходя сквозь проёмы.",
          "credit": "Francesco Bandarin / UNESCO, CC BY-SA 3.0 IGO",
-         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_and_Studio-115241.jpg"
+         "credit_url": "https://commons.wikimedia.org/wiki/File:Luis_Barrag%C3%A1n_House_and_Studio-115241.jpg",
+         "w": 1600,
+         "h": 1200
         }
        ]
       }
