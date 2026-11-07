@@ -1357,26 +1357,47 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 
   // переход к началу материала (правило 115): снимки выше цели догружаются и раздвигают страницу, поэтому
   // положение держим, пока вёрстка меняется; любое действие читателя останавливает удержание
-  var jumpStop = null;
-  function jumpTo(id) {
+  var jumpStop = null, flyDest = null;
+  // профиль стрелок: короткий разгон, затем долгое затухание скорости, как у прокрутки с инерцией (правило 116)
+  function flyEase(p) {
+    var a = 0.22, k = 3, v = 1 / (a / 2 + (1 - a) / (k + 1));
+    return p < a ? v * p * p / (2 * a) : 1 - v * (1 - a) / (k + 1) * Math.pow((1 - p) / (1 - a), k + 1);
+  }
+  function jumpTo(id, animate) {
     var el = document.getElementById(id); if (!el) return;
     if (jumpStop) jumpStop();
-    var GAP = 16, root = document.documentElement, main = document.getElementById("issue"), ro = null, t = 0, EV = ["wheel", "touchmove", "keydown", "mousedown"];
+    var GAP = 16, root = document.documentElement, main = document.getElementById("issue"), ro = null, t = 0, raf = 0, flying = false, EV = ["wheel", "touchmove", "keydown", "mousedown"];
     root.style.scrollBehavior = "auto"; // Safari не везде понимает behavior: "instant"
     function place() {
+      if (flying) return;
       var y = el.getBoundingClientRect().top - GAP;
       if (Math.abs(y) > 1) window.scrollTo(0, (window.pageYOffset || root.scrollTop) + y);
     }
     function loaded(e) { if (e.target && e.target.tagName === "IMG") place(); }
     function stop() {
       if (ro) ro.disconnect(); clearTimeout(t);
+      if (raf) cancelAnimationFrame(raf); flying = false;
       EV.forEach(function (n) { window.removeEventListener(n, stop, true); });
       document.removeEventListener("load", loaded, true);
       root.style.scrollBehavior = ""; jumpStop = null;
     }
     jumpStop = stop;
-    place();
-    requestAnimationFrame(place);
+    var dist = Math.abs(el.getBoundingClientRect().top - GAP);
+    if (animate && !REDUCE && dist > 2) {
+      // цель пересчитывается каждый кадр: снимок, догрузившийся по пути, не сбивает точку прибытия
+      var y0 = window.pageYOffset || root.scrollTop, t0 = 0, dur = Math.min(1400, 500 + dist * 0.09);
+      flying = true; flyDest = { id: id, until: Date.now() + dur };
+      raf = requestAnimationFrame(function frame(now) {
+        if (!t0) t0 = now;
+        var p = Math.min(1, (now - t0) / dur), goal = (window.pageYOffset || root.scrollTop) + el.getBoundingClientRect().top - GAP;
+        window.scrollTo(0, y0 + (goal - y0) * flyEase(p));
+        if (p < 1) { raf = requestAnimationFrame(frame); return; }
+        raf = 0; flying = false; flyDest = null; place();
+      });
+    } else {
+      place();
+      requestAnimationFrame(place);
+    }
     if (window.ResizeObserver && main) { ro = new ResizeObserver(place); ro.observe(main); }
     document.addEventListener("load", loaded, true);
     t = setTimeout(stop, 15000);
@@ -1388,10 +1409,13 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       .sort(function (a, b) { return a.top - b.top; });
   }
   function matStep(dir) {
-    var list = matTops(), hit = null;
-    if (dir > 0) hit = list.filter(function (x) { return x.top > 24; })[0];
-    else { var u = list.filter(function (x) { return x.top < 8; }); hit = u[u.length - 1]; }
-    if (hit) jumpTo(hit.id);
+    var list = matTops(), hit = null, base = 0, gone = flyDest && Date.now() < flyDest.until ? flyDest.id : null;
+    // нажатие на лету считается от той точки, куда страница уже едет
+    if (gone) list.forEach(function (x) { if (x.id === gone) base = x.top - 16; });
+    flyDest = null;
+    if (dir > 0) hit = list.filter(function (x) { return x.top - base > 24; })[0];
+    else { var u = list.filter(function (x) { return x.top - base < 8; }); hit = u[u.length - 1]; }
+    if (hit) jumpTo(hit.id, true);
   }
   function matSync() {
     var list = matTops(), up = document.getElementById("mat-up"), dn = document.getElementById("mat-down");
