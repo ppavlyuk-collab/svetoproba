@@ -1437,30 +1437,91 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     window.addEventListener("resize", matSync);
   }
   // счётчик читателей: без cookie и личных данных, читателю не виден; только на открытом сайте (правило 114)
-  var STAT_ON = !PRINT && (/(^|\.)svetoproba\.com$/.test(location.hostname) || /[?&]stattest\b/.test(location.search)) && !(window.claude && window.claude.use);
-  var STAT_NS = /[?&]stattest\b/.test(location.search) ? "svetoproba-weekly-test" : "svetoproba-weekly";
+  var STAT_TEST = /[?&]stattest\b/.test(location.search);
+  var STAT_ON = !PRINT && (/(^|\.)svetoproba\.com$/.test(location.hostname) || STAT_TEST) && !(window.claude && window.claude.use) && (STAT_TEST || !navigator.webdriver);
+  var STAT_NS = STAT_TEST ? "svetoproba-weekly-test" : "svetoproba-weekly";
   function statHit(key) {
     if (!STAT_ON) return;
     var mark = "sw:" + STAT_NS + ":" + key;
     try { if (localStorage.getItem(mark)) return; localStorage.setItem(mark, "1"); } catch (e) {}
     try { fetch("https://abacus.jasoncameron.dev/hit/" + STAT_NS + "/" + key, { mode: "cors", keepalive: true }).catch(function () {}); } catch (e) {}
   }
-  var statTimer = 0;
+  function statDevice() {
+    var ua = navigator.userAgent;
+    if (/iPad|Tablet/.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua)) || (/Android/.test(ua) && !/Mobile/.test(ua))) return "tablet";
+    return /Mobi|iPhone|Android/.test(ua) ? "phone" : "desktop";
+  }
+  function statSource() {
+    if (/[?&]s=tg\b/.test(location.search) || window.TelegramWebviewProxy || window.TelegramWebview || /Telegram/i.test(navigator.userAgent)) return "tg";
+    var host = "";
+    try { host = document.referrer ? new URL(document.referrer).hostname : ""; } catch (e) {}
+    if (!host) return "direct";
+    if (host === location.hostname) return "";
+    if (/(^|\.)(t\.me|telegram\.(org|me))$/.test(host)) return "tg";
+    return /google\.|yandex\.|bing\.|duckduckgo\.|mail\.ru$|ya\.ru$/.test(host) ? "search" : "other";
+  }
+  function statReturning(date) {
+    try {
+      var head = "sw:" + STAT_NS + ":web.";
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(head) === 0 && k.slice(head.length) < date) return true;
+      }
+    } catch (e) {}
+    return false;
+  }
+  var statTimer = 0, statDate = "", statLinks = false;
   function statIssue(date) {
     if (!STAT_ON) return;
+    statDate = date;
+    if (statReturning(date)) statHit("ret." + date);
     statHit("web." + date);
+    statHit("dev." + date + "." + statDevice());
+    var src = statSource(); if (src) statHit("src." + date + "." + src);
+    statHit("day." + date + "." + new Date(Date.now() + 3 * 3600000).toISOString().slice(0, 10));
+    if (!statLinks) {
+      statLinks = true;
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("#issue a[href]"); if (!a) return;
+        var art = a.closest("article[id]");
+        if (art && a.hostname && a.hostname !== location.hostname) statHit("out." + statDate + "." + art.id);
+      }, true);
+    }
     clearInterval(statTimer);
-    // полоса считается прочитанной, если стояла посреди экрана не меньше 5 секунд
-    var cur = "", sec = 0;
+    // считаем только экран, на котором читатель задержался: пролёт ссылкой или стрелкой глубину не даёт
+    var cur = "", sec = 0, active = 0, seen = {}, need = {}, deep = [];
     statTimer = setInterval(function () {
       if (document.hidden) return;
-      var mid = window.innerHeight / 2, id = "";
+      var mid = window.innerHeight / 2, id = "", main = document.getElementById("issue");
+      active++;
+      if (active === 60) statHit("time." + date + ".1");
+      if (active === 180) statHit("time." + date + ".3");
+      if (active === 600) statHit("time." + date + ".10");
+      if (main) {
+        var box = main.getBoundingClientRect();
+        deep.push((window.innerHeight - box.top) / (box.height || 1)); if (deep.length > 3) deep.shift();
+        if (deep.length === 3) {
+          var d = Math.min(deep[0], deep[1], deep[2]);
+          [25, 50, 75, 100].forEach(function (x) { if (d >= (x === 100 ? 0.98 : x / 100)) statHit("dep." + date + "." + x); });
+        }
+      }
       document.querySelectorAll("#issue section.page[id]").forEach(function (el) {
         var r = el.getBoundingClientRect();
         if (r.top <= mid && r.bottom > mid) id = el.id;
       });
       if (id !== cur) { cur = id; sec = 0; }
+      // полоса считается прочитанной, если стояла посреди экрана не меньше 5 секунд
       if (cur && ++sec === 5) statHit("page." + date + "." + cur);
+      // материал: увидел за 5 секунд; дочитал, если пробыл половину времени чтения (200 слов в минуту, не меньше 8 секунд)
+      document.querySelectorAll("#issue article[id]").forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (!(r.top <= mid && r.bottom > mid)) return;
+        var k = el.id;
+        if (!need[k]) need[k] = Math.max(8, Math.round((el.textContent || "").trim().split(/\s+/).length * 0.15));
+        seen[k] = (seen[k] || 0) + 1;
+        if (seen[k] === 5) statHit("mat." + date + "." + k);
+        if (seen[k] === need[k]) statHit("read." + date + "." + k);
+      });
     }, 1000);
   }
   function setupPdf(issue) {

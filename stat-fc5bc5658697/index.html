@@ -1,9 +1,325 @@
-<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Читатели</title><style>
-body{background:#f1ead9;color:#1d1b16;font:17px/1.45 Georgia,serif;margin:0;padding:24px 16px}main{max-width:640px;margin:auto}h1{font-size:30px;margin:0 0 4px}h2{font-size:22px;margin:32px 0 8px}
-.n{display:flex;gap:32px;flex-wrap:wrap}.n b{display:block;font-size:40px;line-height:1.1}table{border-collapse:collapse;width:100%;margin-top:14px}td{padding:4px 0;vertical-align:top}td:last-child{text-align:right;font-weight:bold;padding-left:16px}p{color:#6b6556;font-size:14px}</style></head><body><main><h1>Читатели</h1><p>Один браузер считается один раз. Веб: открыли номер. Полоса: простояла посреди экрана от 5 секунд. PDF: нажали кнопку на сайте или ссылку /pdf/ из поста. Счёт идёт с 07.11.2026.</p><div id="o">Считаю…</div></main><script>
-var D={"2026-10-31": {"no": 1, "pages": [{"id": "p1", "t": "Тема номера: премии и фестивали"}, {"id": "p2", "t": "Россия и города"}, {"id": "p3", "t": "Свет и наука"}, {"id": "p4", "t": "Проекты"}, {"id": "p5", "t": "Новинки производителей"}, {"id": "p6", "t": "Нормы и инструменты"}, {"id": "p7", "t": "Мастера"}, {"id": "p8", "t": "Обзор прессы"}, {"id": "p9", "t": "Книги"}]}, "2026-11-07": {"no": 2, "pages": [{"id": "p1", "t": "Тема номера: свет и наследие"}, {"id": "p2", "t": "Россия: памятник и город"}, {"id": "p3", "t": "Отрасль: люди и события"}, {"id": "p4", "t": "Ночное освещение: мера и последствия"}, {"id": "p5", "t": "Город"}, {"id": "p6", "t": "Новинки и инструменты"}, {"id": "p7", "t": "Мастера"}, {"id": "p8", "t": "Что читать"}]}},B="https://abacus.jasoncameron.dev/get/svetoproba-weekly/";
-function g(k){return fetch(B+k).then(function(r){return r.ok?r.json():{value:0}}).then(function(j){return j.value||0}).catch(function(){return "?"})}
-var ds=Object.keys(D).sort().reverse();Promise.all(ds.map(function(d){var P=D[d].pages;return Promise.all([g("web."+d),g("pdf."+d)].concat(P.map(function(x){return g("page."+d+"."+x.id)}))).then(function(v){
-var h="<h2>№ "+D[d].no+", "+d.split("-").reverse().join(".")+"</h2><div class=n><div><b>"+v[0]+"</b>веб-версия</div><div><b>"+v[1]+"</b>PDF</div></div><table>";
-P.forEach(function(x,i){h+="<tr><td>"+x.t.replace(/</g,"&lt;")+"</td><td>"+v[i+2]+"</td></tr>"});return h+"</table>"})})).then(function(a){document.getElementById("o").innerHTML=a.join("")});
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Статистика газеты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Serif:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root { color-scheme: light; --paper:#f1ead9; --card:#f8f3e7; --ink:#161514; --muted:#5f5849; --hair:#d6ccb6; --s1:#2f6fbf; --s2:#c2571f; --s3:#1f8a68; --s4:#a87a00; --track:#e5dcc7; }
+@media (prefers-color-scheme: dark) { :root { color-scheme: dark; --paper:#1e1c18; --card:#28251f; --ink:#f0ebdf; --muted:#b9b1a0; --hair:#454036; --s1:#5a96df; --s2:#d9693a; --s3:#2aa67b; --s4:#b58718; --track:#3a362d; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.45 "PT Sans","Helvetica Neue",Arial,sans-serif; }
+main { max-width:1080px; margin:0 auto; padding:24px 16px 56px; }
+h1 { font:700 30px/1.15 "PT Serif",Georgia,serif; margin:0 0 4px; }
+h2 { font:700 22px/1.2 "PT Serif",Georgia,serif; margin:40px 0 4px; padding-top:16px; border-top:1px solid var(--hair); }
+h3 { font-size:15px; margin:0 0 10px; }
+.sub { color:var(--muted); font-size:14px; margin:0 0 14px; max-width:760px; }
+.tabs { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0 20px; }
+.tabs button, .sorts button { font:inherit; font-size:14px; color:var(--ink); background:transparent; border:1px solid var(--hair); border-radius:18px; padding:6px 14px; min-height:36px; cursor:pointer; }
+.tabs button[aria-pressed=true], .sorts button[aria-pressed=true] { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.tiles { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+@media (max-width:640px) { .tiles { grid-template-columns:repeat(2,1fr); } }
+.tile { background:var(--card); border:1px solid var(--hair); border-radius:8px; padding:12px 14px; }
+.tile b { display:block; font:700 32px/1.1 "PT Serif",Georgia,serif; }
+.tile b.nd { font-size:18px; line-height:35px; color:var(--muted); font-weight:400; }
+.tile span { display:block; font-size:13px; color:var(--muted); margin-top:4px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(290px,1fr)); gap:12px; }
+.card { background:var(--card); border:1px solid var(--hair); border-radius:8px; padding:14px; min-width:0; }
+.none { color:var(--muted); font-size:14px; padding:8px 0; }
+.cols { display:flex; align-items:flex-end; gap:2px; height:150px; }
+.col { flex:1 1 0; min-width:0; max-width:64px; display:flex; flex-direction:column; justify-content:flex-end; align-items:center; height:100%; position:relative; }
+.col i { display:block; width:100%; max-width:40px; background:var(--s1); border-radius:4px 4px 0 0; min-height:2px; }
+.col em { font:normal 12px/1.2 "PT Sans",sans-serif; margin-bottom:3px; white-space:nowrap; }
+.axis { display:flex; gap:2px; border-top:1px solid var(--hair); padding-top:4px; }
+.axis span { flex:1 1 0; min-width:0; max-width:64px; text-align:center; font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; }
+.bar { display:grid; grid-template-columns:minmax(90px,42%) 1fr 74px; gap:8px; align-items:center; padding:4px 0; font-size:14px; }
+.bar .l { overflow-wrap:anywhere; line-height:1.25; }
+.bar .t { height:10px; background:var(--track); border-radius:0 4px 4px 0; }
+.bar .t i { display:block; height:100%; background:var(--s1); border-radius:0 4px 4px 0; min-width:2px; }
+.bar .v { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.stack { display:flex; gap:2px; height:16px; margin:2px 0 10px; }
+.stack i { display:block; min-width:2px; }
+.stack i:first-child { border-radius:4px 0 0 4px; } .stack i:last-child { border-radius:0 4px 4px 0; }
+.leg { display:flex; flex-wrap:wrap; gap:6px 14px; font-size:14px; }
+.leg u { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; text-decoration:none; }
+.wrap { overflow-x:auto; }
+table { border-collapse:collapse; width:100%; font-size:14px; }
+th { text-align:left; font-weight:700; color:var(--muted); font-size:13px; padding:6px 8px; border-bottom:1px solid var(--hair); white-space:nowrap; }
+td { padding:7px 8px; border-bottom:1px solid var(--hair); vertical-align:top; }
+td.n, th.n { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+td small { display:block; color:var(--muted); font-size:12px; }
+.few { color:var(--muted); }
+.sorts { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 10px; }
+.facts { margin:0; display:grid; grid-template-columns:minmax(150px,1fr) auto; gap:0; }
+.facts dt, .facts dd { margin:0; padding:7px 0; border-bottom:1px solid var(--hair); font-size:14px; }
+.facts dd { text-align:right; font-weight:700; padding-left:12px; }
+.list { margin:0; padding-left:18px; font-size:14px; max-width:780px; } .list li { margin:4px 0; }
+svg text { font:12px "PT Sans",sans-serif; fill:var(--muted); }
+#tip { position:fixed; z-index:9; pointer-events:none; background:var(--ink); color:var(--paper); font-size:13px; padding:5px 8px; border-radius:4px; max-width:260px; display:none; }
+</style></head>
+<body><main>
+<h1>Статистика _светопроба weekly</h1>
+<p class="sub" id="fresh">Загружаю данные…</p>
+<div class="sorts"><button type="button" id="refresh">Обновить счётчики сайта</button></div>
+<div class="tabs" id="tabs" role="group" aria-label="Номер"></div>
+<div class="tiles" id="tiles"></div>
+
+<h2>Номера рядом</h2><p class="sub">Сравнение выпусков. У каждого показателя своя шкала.</p>
+<div class="grid" id="across" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))"></div>
+
+<h2>Чтение номера</h2><p class="sub" id="read-sub"></p>
+<div class="grid" id="reading"></div>
+
+<h2>Материалы</h2><p class="sub">«Увидели»: материал стоял посреди экрана не меньше 5 с. «Дочитали»: читатель пробыл на нём половину расчётного времени чтения (200 слов в минуту, не меньше 8 с). Проценты при базе меньше 30 читателей серые: это ещё не вывод.</p>
+<div class="sorts" id="sorts" role="group" aria-label="Сортировка"></div>
+<div class="card wrap" id="mats"></div>
+
+<h2>Редакционная политика</h2><p class="sub">Что читают: полосы, форма и длина материала.</p>
+<div class="grid" id="policy"></div>
+
+<h2>Аудитория</h2><p class="sub">Откуда приходят, с чего читают, возвращаются ли.</p>
+<div class="grid" id="aud"></div>
+
+<h2>Для разговора о рекламе</h2><p class="sub">Сводка по всем номерам с данными.</p>
+<div class="grid"><div class="card"><dl class="facts" id="ads"></dl></div>
+<div class="card"><h3>Что говорить рекламодателю об этих цифрах</h3><ul class="list">
+<li>Счётчик собственный и без внешнего аудита: адрес записи открыт, цифру теоретически можно накрутить. Для договора нужна выгрузка статистики канала из Telegram.</li>
+<li>Читатель здесь один браузер на одном устройстве. Человек с телефона и компьютера считается дважды, блокировщик рекламы или приватное окно могут дать недоучёт.</li>
+<li>Пола, возраста, города и должности читателей счётчик не знает и знать не должен: личные данные не собираем.</li>
+</ul></div></div>
+
+<h2>Как считается</h2>
+<ul class="list">
+<li>Подробные замеры (материалы, глубина, время, устройства, источники, дни) идут с 07.11.2026, 14:10. Что было раньше, восстановить нельзя, поэтому такие графики показывают «нет данных», а не ноль.</li>
+<li>Без cookie и личных данных. Каждое событие один браузер засчитывает один раз, роботов браузерной автоматизации отсекаем.</li>
+<li>Глубина: доля длины номера, на которой читатель задержался не меньше 3 с. Пролёт по ссылке не считается.</li>
+<li>Время: сколько секунд вкладка была активна. Открытая и забытая на экране страница завышает эту цифру.</li>
+<li>PDF: считается только переход через сайт. В постах № 1 и № 2 ссылка прямая, скачивания оттуда сюда не попадают.</li>
+<li>Источник «Telegram» точно распознаётся у постов со ссылкой с меткой, начиная с № 3. В постах № 1 и № 2 метки нет, поэтому часть читателей из канала попадает в «напрямую».</li>
+<li>Цифры канала и подписчики обновляются только вместе со снимком данных. Просмотры поста Telegram считает сам, без разделения на людей.</li>
+</ul>
+</main><div id="tip"></div>
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var MIN = 30, META = {}, DATA = {}, cur = "", sortBy = "seen";
+  var qs = /[?&]d=([a-z0-9_.-]+)/.exec(location.search), FILE = qs ? qs[1] : "data.json";
+  function esc(s) { return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;"); }
+  function fmt(n) { return n == null ? "нет данных" : String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, " "); }
+  function pc(a, b) { return a == null || !b ? null : Math.round(100 * a / b); }
+  function dm(d) { var p = d.split("-"); return p[2] + "." + p[1]; }
+  function iss(d) { return (DATA.issues && DATA.issues[d]) || { c: {} }; }
+  function val(d, k) { var c = iss(d).c[k]; return c == null ? null : c; }
+  function none(t) { return '<div class="none">' + esc(t || "Нет данных") + "</div>"; }
+  function card(t, body, wide) { return '<div class="card"' + (wide ? ' style="grid-column:1/-1"' : "") + "><h3>" + esc(t) + "</h3>" + body + "</div>"; }
+
+  function cols(rows, every) {
+    rows = rows.filter(function (r) { return r.v != null || r.keep; });
+    if (!rows.some(function (r) { return r.v; })) return none();
+    var max = Math.max.apply(null, rows.map(function (r) { return r.v || 0; })) || 1, big = 0;
+    rows.forEach(function (r, i) { if ((r.v || 0) === max && !big) big = i + 1; });
+    var h = '<div class="cols">' + rows.map(function (r, i) {
+      var show = every || i === big - 1 || i === rows.length - 1;
+      return '<div class="col" tabindex="0" data-tip="' + esc(r.l + ": " + fmt(r.v)) + '">' + (show ? "<em" + (r.v == null ? ' class="few"' : "") + ">" + (r.v == null ? "нет" : fmt(r.v)) + "</em>" : "") + '<i style="height:' + Math.max(1, 82 * (r.v || 0) / max) + '%"></i></div>';
+    }).join("") + '</div><div class="axis">' + rows.map(function (r, i) {
+      return "<span>" + (rows.length <= 12 || i % 3 === 0 ? esc(r.l) : "") + "</span>";
+    }).join("") + "</div>";
+    return h;
+  }
+  function bars(rows, opt) {
+    opt = opt || {};
+    rows = rows.filter(function (r) { return r.v != null; });
+    if (!rows.length) return none(opt.empty);
+    var max = opt.max || Math.max.apply(null, rows.map(function (r) { return r.v; })) || 1;
+    return rows.map(function (r) {
+      return '<div class="bar" tabindex="0" data-tip="' + esc(r.tip || (r.l + ": " + fmt(r.v))) + '"><div class="l">' + esc(r.l) + '</div><div class="t"><i style="width:' + (100 * r.v / max) + '%"></i></div><div class="v' + (r.few ? " few" : "") + '">' + esc(r.txt || fmt(r.v)) + "</div></div>";
+    }).join("");
+  }
+  function stack(rows) {
+    rows = rows.filter(function (r) { return r.v; });
+    var sum = rows.reduce(function (a, r) { return a + r.v; }, 0);
+    if (!sum) return none();
+    return '<div class="stack">' + rows.map(function (r) {
+      return '<i tabindex="0" style="flex:' + r.v + " 1 0;background:var(" + r.c + ')" data-tip="' + esc(r.l + ": " + fmt(r.v) + ", " + pc(r.v, sum) + " %") + '"></i>';
+    }).join("") + '</div><div class="leg">' + rows.map(function (r) {
+      return '<span><u style="background:var(' + r.c + ')"></u>' + esc(r.l) + " " + pc(r.v, sum) + " % (" + fmt(r.v) + ")</span>";
+    }).join("") + (sum < MIN ? '<span class="few">мало данных</span>' : "") + "</div>";
+  }
+  function stories(d) {
+    return ((META[d] || {}).stories || []).map(function (s) {
+      var seen = val(d, "mat." + s.id), read = val(d, "read." + s.id), out = val(d, "out." + s.id);
+      return { id: s.id, t: s.t, r: s.r, k: s.k, p: s.p, w: s.w, ph: s.ph, seen: seen, read: read, out: out, pct: seen ? Math.min(100, pc(read || 0, seen)) : null };
+    });
+  }
+  function avg(list) {
+    var seen = 0, read = 0;
+    list.forEach(function (s) { if (s.seen) { seen += s.seen; read += s.read || 0; } });
+    return seen ? { v: Math.min(100, Math.round(100 * read / seen)), base: seen } : null;
+  }
+  function pctRow(label, a) { return a ? { l: label, v: a.v, txt: a.v + " %", few: a.base < MIN, tip: label + ": дочитали " + a.v + " % из " + a.base + " показов" } : { l: label, v: null }; }
+
+  function tabs() {
+    var ds = Object.keys(META).sort().reverse();
+    $("tabs").innerHTML = ds.map(function (d) { return '<button type="button" data-d="' + d + '" aria-pressed="' + (d === cur) + '">№ ' + META[d].no + ", " + dm(d) + "</button>"; }).join("");
+  }
+  function tiles() {
+    var d = cur, web = val(d, "web"), post = iss(d).post || {}, ch = DATA.channel || {};
+    var reach = post.views && ch.subs ? pc(post.views, ch.subs) : null;
+    var all = avg(stories(d));
+    var T = [[fmt(web), "читателей веб-версии", "web"], [fmt(val(d, "pdf")), "перешли к PDF через сайт", "pdf"],
+      [fmt(post.views), "просмотров поста в канале"], [reach == null ? "нет данных" : reach + " %", "просмотры поста к числу подписчиков"],
+      [web != null && post.views ? pc(web, post.views) + " %" : "нет данных", "читателей номера к просмотрам поста"],
+      [all ? all.v + " %" : "нет данных", "средняя дочитываемость материала"], [val(d, "dep.100") != null && web ? Math.min(100, pc(val(d, "dep.100"), web)) + " %" : "нет данных", "дошли до конца номера"], [fmt(ch.subs), "подписчиков канала сейчас"]];
+    $("tiles").innerHTML = T.map(function (t) { return '<div class="tile"' + (t[2] ? ' data-live="' + t[2] + '"' : "") + "><b" + (t[0] === "нет данных" ? ' class="nd"' : "") + ">" + t[0] + "</b><span>" + t[1] + "</span></div>"; }).join("");
+  }
+  function across() {
+    var ds = Object.keys(META).sort();
+    function row(f) { return ds.map(function (d) { return { l: "№ " + META[d].no, v: f(d), keep: 1 }; }); }
+    var subs = DATA.subs || [], sub;
+    if (subs.length >= 2) {
+      var W = 320, H = 150, P = 26, mn = Math.min.apply(null, subs.map(function (x) { return x[1]; })), mx = Math.max.apply(null, subs.map(function (x) { return x[1]; })); if (mx === mn) { mx += 1; mn -= 1; }
+      var X = function (i) { return P + (W - 2 * P) * i / (subs.length - 1); }, Y = function (v) { return H - 24 - (H - 40) * (v - mn) / (mx - mn); };
+      sub = '<svg viewBox="0 0 ' + W + " " + H + '" width="100%" role="img" aria-label="Подписчики по дням"><polyline fill="none" stroke="var(--s1)" stroke-width="2" points="' + subs.map(function (x, i) { return X(i) + "," + Y(x[1]); }).join(" ") + '"/>' +
+        subs.map(function (x, i) { return '<circle cx="' + X(i) + '" cy="' + Y(x[1]) + '" r="10" fill="transparent" tabindex="0" data-tip="' + dm(x[0]) + ": " + x[1] + '"/>'; }).join("") +
+        '<text x="' + P + '" y="' + (H - 6) + '">' + dm(subs[0][0]) + '</text><text x="' + (W - P) + '" y="' + (H - 6) + '" text-anchor="end">' + dm(subs[subs.length - 1][0]) + '</text><text x="' + X(subs.length - 1) + '" y="' + (Y(subs[subs.length - 1][1]) - 8) + '" text-anchor="end">' + subs[subs.length - 1][1] + "</text></svg>";
+    } else sub = none("График появится со второго дня замеров. Сейчас: " + fmt((DATA.channel || {}).subs) + ".");
+    $("across").innerHTML = card("Читатели веб-версии", cols(row(function (d) { return val(d, "web"); }), true)) +
+      card("Просмотры поста в канале", cols(row(function (d) { return (iss(d).post || {}).views; }), true)) +
+      card("Переходы к PDF через сайт", cols(row(function (d) { return val(d, "pdf"); }), true)) +
+      card("Подписчики канала", sub);
+  }
+  function reading() {
+    var d = cur, web = val(d, "web"), pa = (META[d].publish_at || d).slice(0, 10), days = [];
+    $("read-sub").textContent = "№ " + META[d].no + ", выход " + dm(pa) + ". Сколько людей дошло до какого места и как долго оставалось.";
+    for (var i = 0; i < 31; i++) {
+      var k = new Date(Date.parse(pa + "T12:00:00Z") + i * 864e5).toISOString().slice(0, 10), v = val(d, "day." + k);
+      if (k > (DATA.updated || "").slice(0, 10)) break;
+      days.push({ l: dm(k), v: v == null ? 0 : v, keep: 1, has: v != null });
+    }
+    while (days.length && !days[days.length - 1].has) days.pop();
+    var hasDays = days.some(function (x) { return x.has; });
+    function ratio(l, v) { return { l: l, v: v, txt: v == null ? "" : fmt(v) + (web ? " (" + Math.min(100, pc(v, web)) + " %)" : ""), few: !web || web < MIN }; }
+    var dep = [25, 50, 75, 100].map(function (x) { return ratio(x === 100 ? "до конца" : x + " % номера", val(d, "dep." + x)); });
+    var tim = [[1, "от 1 минуты"], [3, "от 3 минут"], [10, "от 10 минут"]].map(function (x) { return ratio(x[1], val(d, "time." + x[0])); });
+    $("reading").innerHTML = card("Новые читатели по дням", hasDays ? cols(days) : none()) +
+      card("Глубина чтения", bars(dep, { max: web || undefined })) + card("Время на странице", bars(tim, { max: web || undefined }));
+  }
+  function mats() {
+    var d = cur, S = stories(d), K = { seen: "seen", pct: "pct", out: "out", w: "w" }[sortBy];
+    S.sort(function (a, b) { return (b[K] == null ? -1 : b[K]) - (a[K] == null ? -1 : a[K]); });
+    var pt = {}; (META[d].pages || []).forEach(function (p) { pt[p.id] = p.t; });
+    $("mats").innerHTML = "<table><thead><tr><th>Материал</th><th class=n>Слов</th><th class=n>Увидели</th><th class=n>Дочитали</th><th class=n>Открыли источник</th></tr></thead><tbody>" + S.map(function (s) {
+      return "<tr><td>" + esc(s.t) + "<small>" + esc(pt[s.p] || "") + "</small></td><td class=n>" + fmt(s.w) + "</td><td class=n>" + (s.seen == null ? "–" : fmt(s.seen)) + '</td><td class="n' + ((s.seen || 0) < MIN ? " few" : "") + '">' + (s.pct == null ? "–" : s.pct + " %") + "</td><td class=n>" + (s.out == null ? "–" : fmt(s.out)) + "</td></tr>";
+    }).join("") + "</tbody></table>";
+    $("sorts").innerHTML = [["seen", "по показам"], ["pct", "по дочитыванию"], ["out", "по переходам"], ["w", "по длине"]].map(function (x) { return '<button type="button" data-s="' + x[0] + '" aria-pressed="' + (x[0] === sortBy) + '">' + x[1] + "</button>"; }).join("");
+  }
+  function scatter(S) {
+    var P = S.filter(function (s) { return s.seen >= 10; });
+    if (P.length < 3) return none("Появится, когда у трёх материалов наберётся хотя бы по 10 показов.");
+    var W = 480, H = 230, L = 36, R = 12, T = 10, B = 34, mx = Math.max.apply(null, P.map(function (s) { return s.w; })) * 1.05 || 1;
+    var x = function (v) { return L + (W - L - R) * v / mx; }, y = function (v) { return T + (H - T - B) * (1 - v / 100); };
+    var g = [0, 50, 100].map(function (v) { return '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="var(--hair)"/><text x="' + (L - 6) + '" y="' + (y(v) + 4) + '" text-anchor="end">' + v + "</text>"; }).join("");
+    return '<svg viewBox="0 0 ' + W + " " + H + '" width="100%" role="img" aria-label="Длина материала и дочитывание">' + g +
+      '<text x="' + L + '" y="' + (H - 6) + '">0 слов</text><text x="' + (W - R) + '" y="' + (H - 6) + '" text-anchor="end">' + Math.round(mx) + " слов</text>" +
+      P.map(function (s) { return '<circle cx="' + x(s.w) + '" cy="' + y(s.pct) + '" r="4.5" fill="var(--s1)" stroke="var(--card)" stroke-width="2"/><circle cx="' + x(s.w) + '" cy="' + y(s.pct) + '" r="13" fill="transparent" tabindex="0" data-tip="' + esc(s.t + ": " + s.w + " слов, дочитали " + s.pct + " %") + '"/>'; }).join("") + "</svg>";
+  }
+  function policy() {
+    var d = cur, S = stories(d), web = val(d, "web");
+    var pg = (META[d].pages || []).map(function (p) { var v = val(d, "page." + p.id); return { l: p.t, v: v, txt: v == null ? "" : fmt(v) + (web ? " (" + Math.min(100, pc(v, web)) + " %)" : ""), few: !web || web < MIN }; });
+    function pick(f) { return avg(S.filter(f)); }
+    var kinds = [pctRow("главный", pick(function (s) { return s.k === "lead"; })), pctRow("статья", pick(function (s) { return s.k === "feature"; })), pctRow("заметка", pick(function (s) { return s.k === "note"; }))];
+    var len = [pctRow("до 100 слов", pick(function (s) { return s.w < 100; })), pctRow("100–250 слов", pick(function (s) { return s.w >= 100 && s.w < 250; })), pctRow("от 250 слов", pick(function (s) { return s.w >= 250; }))];
+    var ph = [pctRow("со снимком", pick(function (s) { return s.ph; })), pctRow("без снимка", pick(function (s) { return !s.ph; }))];
+    var rub = {}; S.forEach(function (s) { if (s.r && s.seen) (rub[s.r] = rub[s.r] || []).push(s); });
+    var rr = Object.keys(rub).map(function (k) { return pctRow(k, avg(rub[k])); }).sort(function (a, b) { return b.v - a.v; }).slice(0, 8);
+    $("policy").innerHTML = card("Полосы: сколько читателей дошло", bars(pg, { max: web || undefined })) +
+      card("Длина и дочитывание, % по вертикали", scatter(S)) +
+      card("Дочитывание по форме", bars(kinds, { max: 100 })) + card("Дочитывание по длине", bars(len, { max: 100 })) +
+      card("Снимок в материале", bars(ph, { max: 100 })) + card("Рубрики, лучшие по дочитыванию", bars(rr, { max: 100 }));
+  }
+  function aud() {
+    var d = cur, web = val(d, "web"), ret = val(d, "ret");
+    var first = Object.keys(META).sort()[0] === d;
+    $("aud").innerHTML = card("Устройства", stack([{ l: "телефон", v: val(d, "dev.phone"), c: "--s1" }, { l: "компьютер", v: val(d, "dev.desktop"), c: "--s2" }, { l: "планшет", v: val(d, "dev.tablet"), c: "--s3" }])) +
+      card("Источники", stack([{ l: "Telegram", v: val(d, "src.tg"), c: "--s1" }, { l: "напрямую", v: val(d, "src.direct"), c: "--s2" }, { l: "поиск", v: val(d, "src.search"), c: "--s3" }, { l: "другие сайты", v: val(d, "src.other"), c: "--s4" }])) +
+      card("Вернулись от прошлых номеров", first ? none("Это первый номер, возвращаться пока неоткуда.") : ret == null ? none() : '<div class="tile" style="border:0;padding:0;background:none"><b>' + fmt(ret) + (web ? " (" + Math.min(100, pc(ret, web)) + " %)" : "") + "</b><span>читателей этого номера открывали предыдущие в том же браузере</span></div>");
+  }
+  function median(a) { a = a.filter(function (x) { return x != null; }).sort(function (x, y) { return x - y; }); return a.length ? a[Math.floor((a.length - 1) / 2)] : null; }
+  function ads() {
+    var ds = Object.keys(META), ch = DATA.channel || {};
+    var seen = 0, phone = 0, dev = 0, depth = 0, webSum = 0, ret = 0, retBase = 0, sorted = ds.slice().sort();
+    ds.forEach(function (d) {
+      var A = avg(stories(d)); if (A) seen += 1;
+      ["phone", "desktop", "tablet"].forEach(function (k) { dev += val(d, "dev." + k) || 0; }); phone += val(d, "dev.phone") || 0;
+      if (val(d, "dep.100") != null && val(d, "web")) { depth += val(d, "dep.100"); webSum += val(d, "web"); }
+      if (d !== sorted[0] && val(d, "ret") != null && val(d, "web")) { ret += val(d, "ret"); retBase += val(d, "web"); }
+    });
+    var S = []; ds.forEach(function (d) { S = S.concat(stories(d)); }); var A = avg(S);
+    var F = [["Подписчики канала", fmt(ch.subs)], ["Просмотры обычного поста, медиана по последним " + (ch.posts || 0), fmt(ch.median_views)],
+      ["Просмотры анонса номера, медиана", fmt(median(ds.map(function (d) { return (iss(d).post || {}).views; })))],
+      ["Читателей веб-версии на номер, медиана", fmt(median(ds.map(function (d) { return val(d, "web"); })))],
+      ["Дочитывание материала", A ? A.v + " %" : "нет данных"], ["Дошли до конца номера", webSum ? pc(depth, webSum) + " %" : "нет данных"],
+      ["Читают с телефона", dev ? pc(phone, dev) + " %" : "нет данных"], ["Возвращаются от номера к номеру", retBase ? pc(ret, retBase) + " %" : "нет данных"], ["Номеров с данными", String(ds.length)]];
+    $("ads").innerHTML = F.map(function (f) { return "<dt>" + esc(f[0]) + "</dt><dd>" + esc(f[1]) + "</dd>"; }).join("");
+  }
+  function all() { tabs(); tiles(); across(); reading(); mats(); policy(); aud(); ads(); }
+  function live() {
+    if (FILE !== "data.json") return;
+    ["web", "pdf"].forEach(function (k) {
+      fetch("https://abacus.jasoncameron.dev/get/svetoproba-weekly/" + k + "." + cur).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+        if (!j || j.value == null) return;
+        iss(cur).c[k] = j.value;
+        var el = document.querySelector('[data-live="' + k + '"] b'); if (el) el.textContent = fmt(j.value);
+      }).catch(function () {});
+    });
+  }
+  // счётчик принимает не больше 30 запросов за 10 с, поэтому читаем по одному, с паузой
+  function refresh(btn) {
+    var d = cur, m = META[d], keys = ["web", "pdf", "ret"], pa = (m.publish_at || d).slice(0, 10), done = 0, today = new Date(Date.now() + 3 * 3600000).toISOString().slice(0, 10);
+    ["phone", "desktop", "tablet"].forEach(function (x) { keys.push("dev." + x); });
+    ["tg", "direct", "search", "other"].forEach(function (x) { keys.push("src." + x); });
+    [25, 50, 75, 100].forEach(function (x) { keys.push("dep." + x); });
+    [1, 3, 10].forEach(function (x) { keys.push("time." + x); });
+    m.pages.forEach(function (p) { keys.push("page." + p.id); });
+    m.stories.forEach(function (s) { keys.push("mat." + s.id, "read." + s.id, "out." + s.id); });
+    for (var i = 0; i < 31; i++) { var k = new Date(Date.parse(pa + "T12:00:00Z") + i * 864e5).toISOString().slice(0, 10); if (k <= today) keys.push("day." + k); }
+    btn.disabled = true;
+    if (!DATA.issues[d]) DATA.issues[d] = { c: {} };
+    (function next() {
+      if (done >= keys.length) { btn.disabled = false; btn.textContent = "Обновить счётчики сайта"; DATA.updated = today + (DATA.updated || "T00:00").slice(10); all(); return; }
+      var k = keys[done++], p = k.split("."), full = [p[0], d].concat(p.slice(1)).join(".");
+      btn.textContent = "Обновляю: " + done + " из " + keys.length;
+      fetch("https://abacus.jasoncameron.dev/get/svetoproba-weekly/" + full).then(function (r) { return r.ok ? r.json() : null; }).then(function (j) {
+        if (j && j.value != null) DATA.issues[d].c[k] = Math.max(j.value, DATA.issues[d].c[k] || 0);
+      }).catch(function () {}).then(function () { setTimeout(next, 400); });
+    })();
+  }
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest && e.target.closest("button"); if (!b) return;
+    if (b.id === "refresh" && FILE === "data.json") { refresh(b); return; }
+    if (b.dataset.d) { cur = b.dataset.d; all(); live(); }
+    if (b.dataset.s) { sortBy = b.dataset.s; mats(); }
+  });
+  var tip = $("tip");
+  function showTip(e, t) {
+    tip.textContent = t; tip.style.display = "block";
+    var r = e.clientX == null || (!e.clientX && !e.clientY) ? e.target.getBoundingClientRect() : { left: e.clientX, top: e.clientY };
+    tip.style.left = Math.max(8, Math.min(innerWidth - tip.offsetWidth - 8, r.left + 10)) + "px";
+    tip.style.top = Math.max(8, r.top - tip.offsetHeight - 10) + "px";
+  }
+  ["mousemove", "focusin", "click"].forEach(function (n) {
+    document.addEventListener(n, function (e) {
+      var el = e.target.closest && e.target.closest("[data-tip]");
+      if (el) showTip(e, el.getAttribute("data-tip")); else tip.style.display = "none";
+    });
+  });
+  document.addEventListener("scroll", function () { tip.style.display = "none"; }, { passive: true });
+  Promise.all([fetch("meta.json?" + Date.now()).then(function (r) { return r.json(); }), fetch(FILE + "?" + Date.now()).then(function (r) { return r.ok ? r.json() : {}; }).catch(function () { return {}; })]).then(function (x) {
+    META = x[0]; DATA = x[1] || {}; DATA.issues = DATA.issues || {};
+    var now = new Date(Date.now() + 3 * 3600000).toISOString();
+    var ds = Object.keys(META).filter(function (d) { return (META[d].publish_at || d) <= now.slice(0, 19); }).sort();
+    cur = ds[ds.length - 1] || Object.keys(META).sort().pop();
+    if (DATA.updated) { var u = DATA.updated; $("fresh").textContent = "Снимок данных: " + dm(u.slice(0, 10)) + ", " + u.slice(11, 16) + " по Москве. Читатели и PDF у выбранного номера показаны в текущем значении, остальные счётчики сайта обновляет кнопка (около минуты), цифры канала обновляются при новом снимке."; }
+    else $("fresh").textContent = "Снимка данных пока нет.";
+    all(); live();
+  }).catch(function () { $("fresh").textContent = "Данные не загрузились."; });
+})();
 </script></body></html>
