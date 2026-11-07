@@ -626,6 +626,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 .mat-nav button { -webkit-appearance: none; appearance: none; width: 40px; height: 40px; padding: 0; display: grid; place-items: center; cursor: pointer; color: var(--ink); background: var(--paper); border: 1px solid var(--hair); border-radius: 50%; }
 .mat-nav button:disabled { opacity: .3; cursor: default; }
 .mat-nav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 900px) { .mat-nav { transition: opacity .25s; } .mat-nav.idle { opacity: 0; pointer-events: none; } }
 @media print { .mat-nav { display: none !important; } }
 </style>
 
@@ -1404,8 +1405,11 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     box.hidden = false;
     document.getElementById("mat-up").addEventListener("click", function () { matStep(-1); });
     document.getElementById("mat-down").addEventListener("click", function () { matStep(1); });
-    var tick = 0;
-    window.addEventListener("scroll", function () { if (!tick) tick = setTimeout(function () { tick = 0; matSync(); }, 120); }, { passive: true });
+    var tick = 0, idle = 0;
+    // на телефоне кнопки лежат поверх текста: видны при прокрутке, скрываются, когда читатель остановился (правило 116)
+    function matWake() { box.classList.remove("idle"); clearTimeout(idle); idle = setTimeout(function () { box.classList.add("idle"); }, 2500); }
+    matWake();
+    window.addEventListener("scroll", function () { matWake(); if (!tick) tick = setTimeout(function () { tick = 0; matSync(); }, 120); }, { passive: true });
     window.addEventListener("resize", matSync);
   }
   // счётчик читателей: без cookie и личных данных, читателю не виден; только на открытом сайте (правило 114)
