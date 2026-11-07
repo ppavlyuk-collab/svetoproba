@@ -53,6 +53,22 @@ td small { display:block; color:var(--muted); font-size:12px; }
 .facts dd { text-align:right; font-weight:700; padding-left:12px; }
 .list { margin:0; padding-left:18px; font-size:14px; max-width:780px; } .list li { margin:4px 0; }
 svg text { font:12px "PT Sans",sans-serif; fill:var(--muted); }
+.ctl { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 8px; align-items:center; }
+.ctl button { font:inherit; font-size:14px; color:var(--ink); background:transparent; border:1px solid var(--hair); border-radius:18px; padding:5px 12px; min-height:34px; cursor:pointer; }
+.ctl button[aria-pressed=true] { background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.ctl button:disabled { opacity:.35; cursor:default; }
+.ctl .per { font-weight:700; margin:0 6px; font-size:14px; }
+.kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:10px 0 12px; }
+@media (max-width:640px) { .kpis { grid-template-columns:repeat(2,1fr); } }
+.kpis .tile b { font-size:26px; }
+.up { color:var(--s3); } .down { color:var(--s2); }
+.ev { font-size:13px; color:var(--muted); }
+.spikes { margin:0; padding:0; list-style:none; font-size:14px; }
+.spikes li { padding:8px 0; border-bottom:1px solid var(--hair); }
+.spikes b { font-variant-numeric:tabular-nums; }
+.heat { display:grid; grid-template-columns:28px repeat(24,minmax(0,1fr)); gap:2px; font-size:11px; color:var(--muted); }
+.heat i { display:block; aspect-ratio:1; border-radius:2px; background:var(--track); }
+.heat span { text-align:center; }
 #tip { position:fixed; z-index:9; pointer-events:none; background:var(--ink); color:var(--paper); font-size:13px; padding:5px 8px; border-radius:4px; max-width:260px; display:none; }
 </style></head>
 <body><main>
@@ -61,6 +77,19 @@ svg text { font:12px "PT Sans",sans-serif; fill:var(--muted); }
 <div class="sorts"><button type="button" id="refresh">Обновить счётчики сайта</button></div>
 <div class="tabs" id="tabs" role="group" aria-label="Номер"></div>
 <div class="tiles" id="tiles"></div>
+
+<h2>Динамика</h2><p class="sub">Что происходило по часам, дням, неделям и месяцам. Отметки над столбцами: <u style="display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--s2)"></u> пост в канале, <u style="display:inline-block;width:9px;height:9px;background:var(--s3)"></u> выход номера. Наведите или нажмите на столбец, чтобы увидеть цифру и события.</p>
+<div class="ctl" id="metric" role="group" aria-label="Показатель"></div>
+<div class="ctl" id="period" role="group" aria-label="Период"></div>
+<div class="kpis" id="kpis"></div>
+<div class="card" id="dyn"></div>
+<div class="grid" style="margin-top:12px"><div class="card"><h3 id="spk-h">Всплески и провалы</h3><p class="ev" id="spk-sub"></p><ul class="spikes" id="spikes"></ul></div></div>
+
+<h2>Когда приходят</h2><p class="sub">Часы по Москве. Сайт: сколько посетителей было в каждом часу, сумма по всем дням журнала. Канал: сколько просмотров набирают посты в зависимости от времени выхода.</p>
+<div class="grid" id="when"></div>
+
+<h2>Канал</h2><p class="sub">Посты _светопроба и отклик на них. «К обычному»: просмотры поста, делённые на медиану десяти постов перед ним. Вовлечённость: реакции и пересылки на 100 просмотров.</p>
+<div class="grid" id="chan"></div>
 
 <h2>Номера рядом</h2><p class="sub">Сравнение выпусков. У каждого показателя своя шкала.</p>
 <div class="grid" id="across" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr))"></div>
@@ -95,6 +124,9 @@ svg text { font:12px "PT Sans",sans-serif; fill:var(--muted); }
 <li>PDF: считается только переход через сайт. В посте № 2 считаемая ссылка стоит с 07.11, около 14:30; в посте № 1 ссылка прямая, скачивания оттуда сюда не попадают.</li>
 <li>Источник «Telegram» точно распознаётся у постов со ссылкой с меткой, начиная с № 3. В постах № 1 и № 2 метки нет, поэтому часть читателей из канала попадает в «напрямую».</li>
 <li>Цифры канала и подписчики обновляются вместе со снимком данных, раз в 3 часа. Просмотры поста Telegram считает сам, без разделения на людей.</li>
+<li>Журнал сайта по суткам и часам (посетители, новые, открытия номеров, чтение от 3 минут, дочитанные материалы, PDF) ведётся с 08.11.2026. Посетитель суток или часа: браузер, который в эти сутки или этот час открыл сайт; «новый» значит, что раньше этот браузер сайт не открывал. За 07.11 есть только оценка числа посетителей по счётчикам номеров. Сутки и часы считаются по Москве.</li>
+<li>«Просмотры канала» за сутки: на сколько выросла сумма просмотров всех постов канала. Цифры снимаются раз в 3 часа, поэтому в разбивке по часам прирост стоит на часе снимка. «Подписчики: прирост» считается так же, отписки уже вычтены.</li>
+<li>Посты канала видны с первого поста 2023 года. «Просмотры постов по дню выхода» показывают, сколько просмотров набрали посты, вышедшие в этот день, к моменту снимка.</li>
 </ul>
 </main><div id="tip"></div>
 <script>
@@ -120,7 +152,7 @@ svg text { font:12px "PT Sans",sans-serif; fill:var(--muted); }
       var show = every || i === big - 1 || i === rows.length - 1;
       return '<div class="col" tabindex="0" data-tip="' + esc(r.l + ": " + fmt(r.v)) + '">' + (show ? "<em" + (r.v == null ? ' class="few"' : "") + ">" + (r.v == null ? "нет" : fmt(r.v)) + "</em>" : "") + '<i style="height:' + Math.max(1, 82 * (r.v || 0) / max) + '%"></i></div>';
     }).join("") + '</div><div class="axis">' + rows.map(function (r, i) {
-      return "<span>" + (rows.length <= 12 || i % 3 === 0 ? esc(r.l) : "") + "</span>";
+      return "<span>" + (rows.length <= 12 || i % (rows.length > 16 && innerWidth < 640 ? 6 : 3) === 0 ? esc(r.l) : "") + "</span>";
     }).join("") + "</div>";
     return h;
   }
@@ -260,7 +292,218 @@ svg text { font:12px "PT Sans",sans-serif; fill:var(--muted); }
       ["Читают с телефона", dev ? pc(phone, dev) + " %" : "нет данных"], ["Возвращаются от номера к номеру", retBase ? pc(ret, retBase) + " %" : "нет данных"], ["Номеров с данными", String(ds.length)]];
     $("ads").innerHTML = F.map(function (f) { return "<dt>" + esc(f[0]) + "</dt><dd>" + esc(f[1]) + "</dd>"; }).join("");
   }
-  function all() { tabs(); tiles(); across(); reading(); mats(); policy(); aud(); ads(); }
+  // ===== Динамика: сутки, неделя, месяц, год, всё время =====
+  var MET = [["v", "Посетители сайта"], ["n", "Новые посетители"], ["pv", "Открытия номеров"], ["t3", "Читали от 3 минут"], ["rd", "Дочитанные материалы"], ["p", "PDF"],
+    ["ch", "Просмотры канала"], ["sub", "Подписчики: прирост"], ["pviews", "Просмотры постов по дню выхода"], ["posts", "Посты в канале"]];
+  var PER = [["d", "Сутки по часам"], ["7", "7 дней"], ["28", "28 дней"], ["90", "90 дней"], ["y", "Год"], ["all", "Всё время"]];
+  var met = "v", per = "28", off = 0;
+  var SITE = { v: 1, n: 1, pv: 1, t3: 1, rd: 1, p: 1 };
+  var MONTHS = ["янв", "фев", "мар", "апр", "май", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"], WD = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
+  function today() { return new Date(Date.now() + 3 * 3600000).toISOString().slice(0, 10); }
+  function add(ds, n) { return new Date(Date.parse(ds + "T12:00:00Z") + n * 864e5).toISOString().slice(0, 10); }
+  function wd(ds) { return (new Date(ds + "T12:00:00Z").getUTCDay() + 6) % 7; }
+  function lastBy(series) { var m = {}; (series || []).forEach(function (x) { m[x[0].slice(0, 10)] = x[1]; }); return m; }
+  function posts() { return DATA.posts || []; }
+  // приращение накопительного ряда за сутки: последнее значение суток минус последнее значение предыдущих
+  function gain(series, ds) {
+    var m = lastBy(series), keys = Object.keys(m).sort(), i = keys.indexOf(ds);
+    if (i <= 0) return null;
+    var prev = keys[i - 1];
+    return prev === add(ds, -1) ? m[ds] - m[prev] : null;
+  }
+  function dayVal(m, ds) {
+    var D = DATA.daily || {};
+    if (SITE[m]) {
+      var r = D[ds]; if (!r) return null;
+      if (r.est) return m === "v" ? r.v : null;
+      return r[m] != null ? r[m] : (r.read_at ? 0 : null);
+    }
+    if (m === "ch") return gain(DATA.tv, ds);
+    if (m === "sub") return gain(DATA.subs_t && DATA.subs_t.length ? DATA.subs_t : DATA.subs, ds);
+    var P = posts(); if (!P.length || ds < firstDay(m)) return null;
+    var list = P.filter(function (p) { return p.t.slice(0, 10) === ds; });
+    return m === "posts" ? list.length : list.reduce(function (a, p) { return a + p.views; }, 0);
+  }
+  function hourVals(m, ds) {
+    var h = []; for (var i = 0; i < 24; i++) h.push(null);
+    if (m === "v") { var r = (DATA.daily || {})[ds]; if (r && r.h) r.h.forEach(function (v, i) { h[i] = v; }); return h; }
+    if (m === "posts" || m === "pviews") { if (!posts().length) return h; for (var j = 0; j < 24; j++) h[j] = 0; posts().forEach(function (p) { if (p.t.slice(0, 10) === ds) h[+p.t.slice(11, 13)] += m === "posts" ? 1 : p.views; }); return h; }
+    if (m === "ch" || m === "sub") {
+      var s = m === "ch" ? DATA.tv || [] : DATA.subs_t || [];
+      for (var k = 1; k < s.length; k++) if (s[k][0].slice(0, 10) === ds) { var hh = +s[k][0].slice(11, 13); h[hh] = (h[hh] || 0) + s[k][1] - s[k - 1][1]; }
+      return h;
+    }
+    return h;
+  }
+  function firstDay(m) {
+    if (SITE[m]) { var ks = Object.keys(DATA.daily || {}).filter(function (d) { return dayVal(m, d) != null; }).sort(); return ks[0] || today(); }
+    if (m === "ch") return (DATA.tv && DATA.tv[0] ? DATA.tv[0][0] : today()).slice(0, 10);
+    if (m === "sub") return ((DATA.subs_t && DATA.subs_t[0]) || (DATA.subs && DATA.subs[0]) || [today()])[0].slice(0, 10);
+    var P = posts(); return P.length ? P[P.length - 1].t.slice(0, 10) : today();
+  }
+  function sum(a) { var s = null; a.forEach(function (v) { if (v != null) s = (s || 0) + v; }); return s; }
+  // окно периода: список корзин {key, label, days[]}
+  function windowFor(p, o) {
+    var t = today(), B = [];
+    if (p === "d") return null;
+    if (p === "all" || p === "y") {
+      var start = p === "all" ? firstDay(met) : add(t, -364 - 364 * o), end = p === "all" ? t : add(t, -364 * o), gran = p === "all" ? (start < add(t, -400) ? "mo" : "w") : "w";
+      if (p === "all" && start > add(t, -60)) gran = "d";
+      for (var d = start; d <= end; d = add(d, 1)) {
+        var key = gran === "mo" ? d.slice(0, 7) : gran === "w" ? add(d, -wd(d)) : d;
+        if (!B.length || B[B.length - 1].key !== key) B.push({ key: key, days: [], label: gran === "mo" ? MONTHS[+d.slice(5, 7) - 1] + (d.slice(5, 7) === "01" || !B.length ? " " + d.slice(0, 4) : "") : dm(key) });
+        B[B.length - 1].days.push(d);
+      }
+      return { b: B, gran: gran, from: start, to: end };
+    }
+    var n = +p, endD = add(t, -n * o);
+    for (var i = n - 1; i >= 0; i--) { var dd = add(endD, -i); B.push({ key: dd, days: [dd], label: dm(dd) + (n <= 7 ? " " + WD[wd(dd)] : "") }); }
+    return { b: B, gran: "d", from: B[0].key, to: endD };
+  }
+  function eventsIn(from, to) {
+    var E = [];
+    posts().forEach(function (p) { var d = p.t.slice(0, 10); if (d >= from && d <= to) E.push({ d: d, t: p.t, k: "post", txt: p.t.slice(11) + " пост: " + (p.txt || "без текста, " + (p.kind || "медиа")) + " (" + fmt(p.views) + " просм.)" }); });
+    Object.keys(META).forEach(function (d) { var pa = (META[d].publish_at || d), day = pa.slice(0, 10); if (day >= from && day <= to) E.push({ d: day, t: pa.slice(0, 16).replace(" ", "T"), k: "issue", txt: (pa.slice(11, 16) || "") + " № " + META[d].no + " газеты открыт на сайте" }); });
+    return E.sort(function (a, b) { return a.t < b.t ? -1 : 1; });
+  }
+  function chart(rows) {
+    // ширина рисунка по ширине карточки: на телефоне подписи остаются 12 px
+    var W = Math.max(300, Math.min(1040, ($("dyn").clientWidth || 720) - 30)), H = W < 500 ? 200 : 230, L = 40, R = 8, T = 22, Bm = 30, n = rows.length;
+    var has = rows.some(function (r) { return r.v != null; });
+    if (!has) return none(SITE[met] && met !== "v" && per === "d" ? "По часам ведётся только число посетителей. Для этого показателя выберите период от 7 дней." : "За этот период данных нет. Журнал сайта по суткам ведётся с 08.11.2026, по 07.11 есть оценка числа посетителей; цифры канала по снимкам с 08.11, посты с 2023 года.");
+    var vals = rows.map(function (r) { return r.v || 0; }), mx = Math.max.apply(null, vals.concat([1])), mn = Math.min.apply(null, vals.concat([0]));
+    var bw = (W - L - R) / n, y = function (v) { return T + (H - T - Bm) * (1 - (v - mn) / (mx - mn || 1)); };
+    var g = '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(0) + '" y2="' + y(0) + '" stroke="var(--hair)"/><line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(mx) + '" y2="' + y(mx) + '" stroke="var(--hair)" stroke-dasharray="2 3"/><text x="' + (L - 6) + '" y="' + (y(mx) + 4) + '" text-anchor="end">' + fmt(mx) + '</text><text x="' + (L - 6) + '" y="' + (y(0) + 4) + '" text-anchor="end">0</text>';
+    var every = Math.ceil(n / Math.max(4, Math.floor(W / 60)));
+    var bars = rows.map(function (r, i) {
+      var x = L + i * bw, v = r.v, top = v == null ? y(0) : Math.min(y(v), y(0)), hgt = v == null ? 0 : Math.max(v ? 2 : 0, Math.abs(y(0) - y(v)));
+      var ev = r.ev || [], tipTxt = r.label + ": " + (v == null ? "нет данных" : fmt(v)) + (ev.length ? " | " + ev.map(function (e) { return e.txt; }).join(" | ") : "");
+      var mk = "", posts_ = ev.filter(function (e) { return e.k === "post"; }).length, iss_ = ev.some(function (e) { return e.k === "issue"; });
+      if (posts_) mk += '<circle cx="' + (x + bw / 2) + '" cy="8" r="' + Math.min(6, 3 + posts_) + '" fill="var(--s2)"/>';
+      if (iss_) mk += '<rect x="' + (x + bw / 2 - 4) + '" y="' + (posts_ ? 13 : 4) + '" width="8" height="8" fill="var(--s3)"/>';
+      return mk + (v == null ? '<rect x="' + (x + 1) + '" y="' + (y(0) - 2) + '" width="' + Math.max(1, bw - 2) + '" height="2" fill="var(--track)"/>' : '<rect x="' + (x + Math.min(1, bw * 0.1)) + '" y="' + top + '" width="' + Math.max(1, bw - Math.min(2, bw * 0.2)) + '" height="' + hgt + '" rx="' + Math.min(3, bw / 4) + '" fill="' + (v < 0 ? "var(--s2)" : "var(--s1)") + '"/>') +
+        '<rect x="' + x + '" y="0" width="' + bw + '" height="' + H + '" fill="transparent" tabindex="0" data-tip="' + esc(tipTxt) + '"/>' +
+        (i % every === 0 ? '<text x="' + (x + bw / 2) + '" y="' + (H - 10) + '" text-anchor="middle">' + esc(r.label) + "</text>" : "");
+    }).join("");
+    return '<svg viewBox="0 0 ' + W + " " + H + '" width="100%" role="img" aria-label="' + esc(mname()) + '">' + g + bars + "</svg>";
+  }
+  function mname() { return MET.filter(function (x) { return x[0] === met; })[0][1]; }
+  function perVal(p, o) {
+    if (p === "d") { var ds = add(today(), -o); return sum(hourVals(met, ds)) != null ? sum(hourVals(met, ds)) : dayVal(met, ds); }
+    var w = windowFor(p, o); var a = []; w.b.forEach(function (b) { b.days.forEach(function (d) { a.push(dayVal(met, d)); }); });
+    // сравнивать можно только с периодом, где данные есть хотя бы за 80 % дней
+    return a.filter(function (v) { return v != null; }).length >= 0.8 * a.length ? sum(a) : (o ? null : sum(a));
+  }
+  function change(cur_, prev) {
+    if (cur_ == null || prev == null) return "";
+    // на малых числах проценты обманчивы: показываем, сколько было
+    if (Math.abs(prev) < 10) return prev === cur_ ? "" : ' <small class="' + (cur_ > prev ? "up" : "down") + '">было ' + fmt(prev) + "</small>";
+    var c = Math.round(100 * (cur_ - prev) / Math.abs(prev));
+    return ' <small class="' + (c >= 0 ? "up" : "down") + '">' + (c >= 0 ? "+" : "−") + Math.abs(c) + " %</small>";
+  }
+  function dyn() {
+    $("metric").innerHTML = MET.map(function (x) { return '<button type="button" data-met="' + x[0] + '" aria-pressed="' + (x[0] === met) + '">' + x[1] + "</button>"; }).join("");
+    var label, rows;
+    if (per === "d") {
+      var ds = add(today(), -off), hv = hourVals(met, ds), E = eventsIn(ds, ds);
+      label = (off === 0 ? "сегодня, " : off === 1 ? "вчера, " : WD[wd(ds)] + ", ") + dm(ds);
+      rows = hv.map(function (v, i) { return { label: ("0" + i).slice(-2), v: v, ev: E.filter(function (e) { return +e.t.slice(11, 13) === i; }) }; });
+    } else {
+      var w = windowFor(per, off), E2 = eventsIn(w.from, w.to);
+      label = per === "all" ? "с " + dm(w.from) + "." + w.from.slice(0, 4) + (w.gran === "mo" ? ", по месяцам" : w.gran === "w" ? ", по неделям" : ", по дням") : dm(w.from) + "–" + dm(w.to) + (per === "y" ? ", по неделям" : "");
+      rows = w.b.map(function (b) { return { label: b.label, v: sum(b.days.map(function (d) { return dayVal(met, d); })), ev: E2.filter(function (e) { return b.days.indexOf(e.d) >= 0; }) }; });
+    }
+    $("period").innerHTML = PER.map(function (x) { return '<button type="button" data-per="' + x[0] + '" aria-pressed="' + (x[0] === per) + '">' + x[1] + "</button>"; }).join("") +
+      (per === "all" ? "" : '<button type="button" data-off="1" aria-label="Раньше">‹</button><span class="per">' + esc(label) + '</span><button type="button" data-off="-1" aria-label="Позже"' + (off === 0 ? " disabled" : "") + ">›</button>") +
+      (per === "all" ? '<span class="per">' + esc(label) + "</span>" : "");
+    $("dyn").innerHTML = "<h3>" + esc(mname()) + "</h3>" + chart(rows);
+    var t = today(), K = [["Сегодня", dayVal(met, t), dayVal(met, add(t, -7)), "к тому же дню неделю назад"], ["Вчера", dayVal(met, add(t, -1)), dayVal(met, add(t, -8)), "к тому же дню неделю назад"],
+      ["7 дней", perVal("7", 0), perVal("7", 1), "к прошлым 7 дням"], ["28 дней", perVal("28", 0), perVal("28", 1), "к прошлым 28 дням"]];
+    // свежие посты ещё набирают просмотры, с отстоявшимися их не сравниваем
+    if (met === "pviews") K.forEach(function (k) { k[2] = null; });
+    $("kpis").innerHTML = K.map(function (k) { return '<div class="tile"><b' + (k[1] == null ? ' class="nd"' : "") + ">" + (k[1] == null ? "нет данных" : fmt(k[1])) + change(k[1], k[2]) + "</b><span>" + k[0] + (k[1] != null && k[2] != null ? ", " + k[3] : "") + "</span></div>"; }).join("");
+    spikes();
+  }
+  function spikes() {
+    var out = [];
+    if (met === "posts" || met === "pviews") {
+      $("spk-h").textContent = "Посты выше и ниже обычного";
+      $("spk-sub").textContent = "Пост сравнивается с медианой десяти постов перед ним: от 1,8 раза выше это всплеск, вдвое ниже это провал.";
+      var P = posts().slice().reverse();
+      P.forEach(function (p, i) {
+        if (i < 5 || isYoung(p)) return;
+        var md = median(P.slice(Math.max(0, i - 10), i).map(function (x) { return x.views; }));
+        if (!md) return;
+        var r = p.views / md;
+        if (r >= 1.8 || r <= 0.5) out.push({ up: r >= 1.8, d: p.t, head: dm(p.t.slice(0, 10)) + "." + p.t.slice(2, 4) + ", " + p.t.slice(11) + ": " + fmt(p.views) + " просм., в " + String(Math.round(r * 10) / 10).replace(".", ",") + " раза к обычному (" + fmt(md) + ")", ctx: p.txt || "без текста, " + (p.kind || "медиа") });
+      });
+    } else {
+      $("spk-h").textContent = "Всплески и провалы: " + mname().toLowerCase();
+      $("spk-sub").textContent = "День сравнивается с медианой 14 дней перед ним (нужно не меньше 5 дней с данными): вдвое выше это всплеск, вдвое ниже это провал. Ниже то, что было в этот день и за двое суток до него.";
+      var start = firstDay(met), t = today(), days = [];
+      for (var d = start; d <= t; d = add(d, 1)) days.push([d, dayVal(met, d)]);
+      days.forEach(function (x, i) {
+        if (x[1] == null) return;
+        var prev = days.slice(Math.max(0, i - 14), i).map(function (y) { return y[1]; }).filter(function (v) { return v != null; });
+        if (prev.length < 5) return;
+        var md = median(prev), up = x[1] >= Math.max(2 * md, md + 5), down = md >= 4 && x[1] <= md / 2;
+        if (!up && !down) return;
+        var E = eventsIn(add(x[0], -2), x[0]);
+        out.push({ up: up, d: x[0], head: dm(x[0]) + " " + WD[wd(x[0])] + ": " + fmt(x[1]) + " при обычных " + fmt(md), ctx: E.length ? E.map(function (e) { return dm(e.d) + " " + e.txt; }).join("; ") : "событий в канале и выходов номера не было" });
+      });
+    }
+    out.sort(function (a, b) { return a.d < b.d ? 1 : -1; });
+    $("spikes").innerHTML = out.length ? out.slice(0, 12).map(function (s) { return '<li><b class="' + (s.up ? "up" : "down") + '">' + (s.up ? "▲ всплеск" : "▼ провал") + "</b> " + esc(s.head) + '<div class="ev">' + esc(s.ctx) + "</div></li>"; }).join("") :
+      '<li class="ev">Пока не найдено. Для сравнения нужно не меньше 5–6 дней журнала, первые выводы появятся к 14.11.</li>';
+  }
+  // ===== Когда приходят =====
+  function when() {
+    var D = DATA.daily || {}, M = [], n = 0, i, j;
+    for (i = 0; i < 7; i++) { M.push([]); for (j = 0; j < 24; j++) M[i].push(0); }
+    Object.keys(D).forEach(function (d) { var r = D[d]; if (r.est || !r.h) return; n++; r.h.forEach(function (v, h) { M[wd(d)][h] += v || 0; }); });
+    var mx = 0; M.forEach(function (r) { r.forEach(function (v) { mx = Math.max(mx, v); }); });
+    var heat = mx ? '<div class="heat"><span></span>' + Array.apply(null, Array(24)).map(function (_, h) { return "<span>" + (h % 3 === 0 ? h : "") + "</span>"; }).join("") +
+      M.map(function (r, w) { return "<span>" + WD[w] + "</span>" + r.map(function (v, h) { return '<i tabindex="0" style="background:' + (v ? "color-mix(in srgb, var(--s1) " + Math.round(15 + 85 * v / mx) + "%, var(--track))" : "var(--track)") + '" data-tip="' + WD[w] + ", " + ("0" + h).slice(-2) + ":00–" + ("0" + h).slice(-2) + ":59: " + v + ' посет."></i>'; }).join(""); }).join("") + "</div><p class=ev>Дней в журнале: " + n + ". Темнее значит больше посетителей.</p>" : none("Заполнится по мере посещений: журнал по часам ведётся с 08.11.2026.");
+    var byH = [], byW = [];
+    for (j = 0; j < 24; j++) byH.push({ label: ("0" + j).slice(-2), v: n ? M.reduce(function (a, r) { return a + r[j]; }, 0) : null });
+    var P = posts(), slots = [[0, 7, "00–07"], [7, 10, "07–10"], [10, 13, "10–13"], [13, 16, "13–16"], [16, 19, "16–19"], [19, 22, "19–22"], [22, 24, "22–24"]];
+    var ph = slots.map(function (s) { var L = P.filter(function (p) { var h = +p.t.slice(11, 13); return h >= s[0] && h < s[1]; }); return { l: s[2] + " (" + L.length + " пост.)", v: L.length ? median(L.map(function (p) { return p.views; })) : null }; });
+    var pw = WD.map(function (w, k) { var L = P.filter(function (p) { return wd(p.t.slice(0, 10)) === k; }); return { l: w + " (" + L.length + ")", v: L.length ? median(L.map(function (p) { return p.views; })) : null }; });
+    $("when").innerHTML = card("Сайт: день недели и час", heat, true) + card("Сайт: посетители по часам, все дни", n ? chartSimple(byH) : none("Нет данных по часам.")) +
+      card("Канал: медиана просмотров по времени выхода поста", bars(ph, { empty: "Постов нет." })) + card("Канал: медиана просмотров по дню недели выхода", bars(pw, { empty: "Постов нет." }));
+  }
+  function chartSimple(rows) { return cols(rows.map(function (r) { return { l: r.label, v: r.v, keep: 1 }; })); }
+  // пост младше 7 суток ещё набирает просмотры: с отстоявшимися его не сравниваем
+  function isYoung(p) { return Date.now() - Date.parse(p.t + ":00+03:00") < 7 * 864e5; }
+  // ===== Канал =====
+  function chan() {
+    var P = posts(), subs = (DATA.channel || {}).subs;
+    if (!P.length) { $("chan").innerHTML = card("Посты", none("Список постов появится со следующим снимком данных.")); return; }
+    var asc = P.slice().reverse(), idx = {};
+    asc.forEach(function (p, i) { var md = median(asc.slice(Math.max(0, i - 10), i).map(function (x) { return x.views; })); idx[p.id] = i >= 3 && md ? p.views / md : null; });
+    var rows = P.slice(0, 40).map(function (p) {
+      var er = p.views ? Math.round(1000 * (p.react + p.fwd) / p.views) / 10 : null, k = idx[p.id], young = isYoung(p);
+      return "<tr><td class=n>" + dm(p.t.slice(0, 10)) + "." + p.t.slice(2, 4) + "<small>" + p.t.slice(11) + " " + WD[wd(p.t.slice(0, 10))] + "</small></td><td style=\"min-width:220px\">" + esc(p.txt || "без текста, " + (p.kind || "медиа")) + "</td><td class=n>" + fmt(p.views) + '</td><td class="n' + (k == null || young ? " few" : k >= 1.8 ? " up" : k <= 0.5 ? " down" : "") + '">' + (k == null ? "–" : "×" + String(Math.round(k * 10) / 10).replace(".", ",")) + (young && k != null ? "<small>ещё набирает</small>" : "") + "</td><td class=n>" + fmt(p.react) + "</td><td class=n>" + fmt(p.fwd) + "</td><td class=n>" + (er == null ? "–" : String(er).replace(".", ",")) + "</td></tr>";
+    }).join("");
+    var table = "<div class=wrap><table><thead><tr><th>Выход</th><th>Пост</th><th class=n>Просмотры</th><th class=n>К обычному</th><th class=n>Реакции</th><th class=n>Пересылки</th><th class=n>На 100 просм.</th></tr></thead><tbody>" + rows + "</tbody></table></div><p class=ev>Последние 40 постов из " + P.length + ". Альбом считается одним постом. Охват подписчиков" + (subs ? " (" + fmt(subs) + " сейчас)" : "") + " у свежих постов растёт ещё несколько суток.</p>";
+    // набор просмотров свежими постами: часы после выхода
+    var S = DATA.pseries || {}, lines = Object.keys(S).filter(function (id) { return S[id].length >= 2; }).map(function (id) { var p = P.filter(function (x) { return String(x.id) === id; })[0]; return p ? { p: p, s: S[id] } : null; }).filter(Boolean).sort(function (a, b) { return a.p.t < b.p.t ? 1 : -1; }).slice(0, 4);
+    var curve;
+    if (lines.length) {
+      var W = 480, H = 220, L = 40, R = 10, T = 10, B = 28, xm = 1, ym = 1, C = ["--s1", "--s2", "--s3", "--s4"];
+      lines.forEach(function (l) { l.pts = l.s.map(function (x) { return [(Date.parse(x[0] + ":00+03:00") - Date.parse(l.p.t + ":00+03:00")) / 36e5, x[1]]; }).filter(function (x) { return x[0] >= 0; }); l.pts.forEach(function (x) { xm = Math.max(xm, x[0]); ym = Math.max(ym, x[1]); }); });
+      var X = function (v) { return L + (W - L - R) * v / xm; }, Y = function (v) { return T + (H - T - B) * (1 - v / ym); };
+      curve = '<svg viewBox="0 0 ' + W + " " + H + '" width="100%" role="img" aria-label="Набор просмотров"><line x1="' + L + '" x2="' + (W - R) + '" y1="' + Y(0) + '" y2="' + Y(0) + '" stroke="var(--hair)"/><text x="' + (L - 6) + '" y="' + (Y(ym) + 4) + '" text-anchor="end">' + fmt(ym) + '</text><text x="' + L + '" y="' + (H - 8) + '">выход</text><text x="' + (W - R) + '" y="' + (H - 8) + '" text-anchor="end">' + Math.round(xm) + " ч</text>" +
+        lines.map(function (l, i) { return '<polyline fill="none" stroke="var(' + C[i] + ')" stroke-width="2" points="' + l.pts.map(function (x) { return X(x[0]) + "," + Y(x[1]); }).join(" ") + '"/>' + l.pts.map(function (x) { return '<circle cx="' + X(x[0]) + '" cy="' + Y(x[1]) + '" r="9" fill="transparent" tabindex="0" data-tip="' + esc(dm(l.p.t.slice(0, 10)) + ", через " + Math.round(x[0]) + " ч: " + x[1] + " просм.") + '"/>'; }).join(""); }).join("") + "</svg>" +
+        '<div class="leg">' + lines.map(function (l, i) { return '<span><u style="background:var(' + C[i] + ')"></u>' + esc(dm(l.p.t.slice(0, 10)) + " " + (l.p.txt || l.p.kind || "").slice(0, 40)) + "</span>"; }).join("") + "</div>";
+    } else curve = none("Кривые появятся, когда у свежего поста накопится два снимка данных.");
+    var months = {}; P.forEach(function (p) { var k = p.t.slice(0, 7); (months[k] = months[k] || []).push(p); });
+    var mk = Object.keys(months).sort().slice(-24);
+    $("chan").innerHTML = card("Посты и отклик", table, true) + card("Набор просмотров свежими постами", curve) +
+      card("Постов в месяц, последние 24 месяца с постами", cols(mk.map(function (k) { return { l: MONTHS[+k.slice(5) - 1] + " " + k.slice(2, 4), v: months[k].length, keep: 1 }; }))) +
+      card("Медиана просмотров поста по месяцам", cols(mk.map(function (k) { return { l: MONTHS[+k.slice(5) - 1] + " " + k.slice(2, 4), v: median(months[k].map(function (p) { return p.views; })), keep: 1 }; })));
+  }
+  function all() { tabs(); tiles(); dyn(); when(); chan(); across(); reading(); mats(); policy(); aud(); ads(); }
   function live() {
     if (FILE !== "data.json") return;
     ["web", "pdf"].forEach(function (k) {
@@ -297,7 +540,12 @@ svg text { font:12px "PT Sans",sans-serif; fill:var(--muted); }
     if (b.id === "refresh" && FILE === "data.json") { refresh(b); return; }
     if (b.dataset.d) { cur = b.dataset.d; all(); live(); }
     if (b.dataset.s) { sortBy = b.dataset.s; mats(); }
+    if (b.dataset.met) { met = b.dataset.met; dyn(); }
+    if (b.dataset.per) { per = b.dataset.per; off = 0; dyn(); }
+    if (b.dataset.off) { off = Math.max(0, off + +b.dataset.off); dyn(); }
   });
+  var rsz = 0, lastW = innerWidth;
+  addEventListener("resize", function () { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rsz); rsz = setTimeout(function () { if (DATA.issues) dyn(); }, 200); });
   var tip = $("tip");
   function showTip(e, t) {
     tip.textContent = t; tip.style.display = "block";
