@@ -1,4 +1,5 @@
-<!doctype html><html lang=ru><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noindex,nofollow"></head><body><meta charset="utf-8">
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
 <script>document.documentElement.lang = "ru";</script>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>_светопроба weekly</title>
@@ -111,6 +112,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .index a.ix-card:hover { outline: 1px solid var(--accent); }
 .ix-th { width: 64px; height: 64px; object-fit: cover; display: block; border-radius: 2px; filter: none !important; }
 .dates-frame { display: inline-block; font-style: normal !important; font-variant-numeric: lining-nums; letter-spacing: .02em; border: 1.5px solid currentColor !important; padding: 8px 14px; margin: 6px 0 14px; }
+@media print { .np [data-story="cauchie"] figure img { max-height: 92mm; width: auto; max-width: 100%; margin: 0 auto; } }
+@media print { .np [data-story="angers"] .np-flow figure img, .np [data-story="angers"] figure img[src*="angers-2"] { max-height: 88mm; width: auto; max-width: 100%; margin: 0 auto; } .np [data-story="orsman"] > figure img { max-height: 72mm; width: auto; max-width: 100%; margin: 0 auto; } }
 .ix-th-e { background: var(--rule); } img.ix-th[src$=".svg"] { background: #f2ead8; }
 .ix-tx { min-width: 0; }
 .ix-k { display: block; font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--mark); margin-bottom: 2px; }
@@ -459,6 +462,9 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
 .table-wrap a.cell-link, .tl-l a.cell-link, h4 a.cell-link, .np-flow a.cell-link { color: inherit; text-decoration: underline; text-decoration-thickness: .5px; text-decoration-color: var(--hair, #c3b8a0); text-underline-offset: 2px; }
 .table-wrap a.cell-link:hover { text-decoration-color: currentColor; }
 .foot-nav { grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-bottom: 10px; border-bottom: 1px solid var(--hair); margin-bottom: 8px; }
+.np-flow .np-wide { display: block !important; width: calc(200% + 6mm) !important; max-width: none !important; position: relative; z-index: 2; background: #f4eedd; break-inside: avoid; margin-bottom: 2mm; }  /* правило 95: снимок на две колонки, сборщик PDF ставит в соседней колонке распорку той же высоты */
+.np-flow .np-wide img { width: 100% !important; max-width: none !important; max-height: none !important; }
+.np-ws { display: block; break-inside: avoid; }
 .np-mark { font-size: 1px; line-height: 0; color: #f4eedd; position: absolute; }  /* служебная метка сборщика PDF не занимает места в строке */
 .np figcaption { text-indent: 0 !important; }  /* правило 56: подпись под снимком начинается от края, без отступа */
 .gallery.row { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; columns: auto; }
@@ -854,7 +860,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }
   function digestHtml(list) {
     return '<ol class="digest span">' + list.map(function (d) {
-      return '<li><div class="src">' + esc(d.source) + (d.date ? "<span>" + esc(d.date) + "</span>" : "") + '</div><a href="' + esc(safeUrl(d.url)) + '" target="_blank" rel="noopener">' + esc(d.title) + "</a><p>" + esc(d.what) + "</p></li>";
+      return '<li><div class="src">' + esc(d.source) + (d.date ? "<span>" + esc(d.date) + "</span>" : "") + '</div><a href="' + esc(safeUrl(d.url)) + '" target="_blank" rel="noopener">' + esc(d.title) + "</a><p>" + rich(d.what) + "</p></li>";
     }).join("") + "</ol>";
   }
   function animHtml(b) {
@@ -1028,6 +1034,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     var wd = issue.weekday ? issue.weekday.charAt(0).toUpperCase() + issue.weekday.slice(1) : "";
     var lead = pages[0].stories.find(function (s) { return s.kind === "lead"; }) || pages[0].stories[0];
     function blockP(b, story) {
+      if (b.web_only) return "";
       if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
       if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
       if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
@@ -1049,7 +1056,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var kick = '<div class="np-kicker">' + esc(s.rubric) + (s.why ? "<span>" + esc(s.why) + "</span>" : "") + "</div>";
       var body = s.body.map(function (b) { return blockP(b, s); }).join("");
       if (s.kind === "feature") {
-        return '<article class="np-story np-feature" data-story="' + esc(s.id) + '">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + visualHtml(s) + body + "</article>";
+        return '<article class="np-story np-feature" data-story="' + esc(s.id) + '"><div class="np-head" style="break-inside:avoid;break-after:avoid">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
       }
       return '<article class="np-story" data-story="' + esc(s.id) + '"><div class="np-head">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
     }
@@ -1063,8 +1070,9 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     leadBody.forEach(function (b, i) {
       var next = leadBody[i + 1];
       // подзаголовок идёт туда же, куда его блок: перед таблицей или галереей он остаётся в потоке
-      var textual = b.p != null || b.image || (b.h != null && next && (next.p != null || next.image));
-      if (textual && side.length < 2) side.push(b); else rest.push(b);
+      var textual = b.p != null || b.foot != null || b.image || (b.h != null && next && (next.p != null || next.image));
+      var nP = side.filter(function (q) { return q.p != null; }).length;
+      if (textual && (nP < 1 || (b.foot != null && nP === 1 && !rest.length))) side.push(b); else rest.push(b);
     });
     // снимок в правых колонках обложки ставим после первого абзаца, чтобы он не оставлял пустоту внизу колонки
     var imgs = side.filter(function (b) { return b.image; }), txt = side.filter(function (b) { return !b.image; });
@@ -1125,6 +1133,60 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var art = fg.closest("[data-story]"), sid = art ? art.getAttribute("data-story") : lead.id;
       if (GAPS["a-" + key] >= 30) fg.insertAdjacentHTML("afterend", reserveHtml(sid, GAPS["a-" + key]));
       if (GAPS[key] >= 30) fg.insertAdjacentHTML("beforebegin", reserveHtml(sid, GAPS[key]));
+    });
+    main.querySelectorAll(".np-flow figure.illus").forEach(function (f) {
+      var cap = f.querySelector("figcaption"); if (cap) cap.insertAdjacentHTML("afterbegin", '<span class="np-mark">§F' + f.getAttribute("data-svg").split("/").pop().replace(/\.[a-z]+$/, "") + "§</span>");
+    });
+    // правило 95: сборщик PDF передаёт ?wide=ключ,... (снимок на две колонки), ?mv=ключ:n (снимок встаёт на n блоков позже, текст закрывает провал),
+    // ?ws=ключ~мм~буквы,... (распорка в соседней колонке перед строкой, начинающейся этими буквами)
+    var QS = new URLSearchParams(location.search);
+    function figBlock(key) {
+      var hit = null;
+      main.querySelectorAll(".np-flow figure img").forEach(function (im) {
+        if (!hit && im.getAttribute("src").split("/").pop().replace(/\.[a-z]+$/, "") === key) { var f = im.closest("figure"); hit = f.closest(".np-inflow") || f; }
+      });
+      if (!hit) main.querySelectorAll(".np-flow figure.illus").forEach(function (f) { if (!hit && f.getAttribute("data-svg").split("/").pop().replace(/\.[a-z]+$/, "") === key) hit = f; });
+      return hit;
+    }
+    (QS.get("mv") || "").split(",").forEach(function (m) {
+      var a = m.split(":"), blk = a[0] && figBlock(a[0]); if (!blk) return;
+      for (var i = 0; i < +a[1]; i++) { var nx = blk.nextElementSibling; if (!nx || nx.tagName === "H4") break; nx.insertAdjacentElement("afterend", blk); }
+    });
+    (QS.get("wide") || "").split(",").forEach(function (k) {
+      var blk = k && figBlock(k); if (blk) blk.classList.add("np-wide");
+    });
+    (QS.get("fit") || "").split(",").forEach(function (m) {
+      var a = m.split(":"), blk = a[0] && figBlock(a[0]); if (!blk) return;
+      var im = blk.querySelector("img"); if (im) { im.style.height = a[1] + "mm"; im.style.width = "100%"; im.style.objectFit = "cover"; im.style.maxHeight = "none"; }
+    });
+    var norm = function (t) { return t.toLowerCase().replace(/[^0-9a-zа-яё]/g, ""); };
+    (QS.get("ws") || "").split(",").forEach(function (w) {
+      var a = w.split("~"); if (a.length < 3) return;
+      var mm = +a[1], pre = decodeURIComponent(a[2]);
+      var sp = document.createElement("div"); sp.className = "np-ws"; sp.style.height = mm.toFixed(1) + "mm";
+      var from = figBlock(a[0]), started = false, done = false;
+      if (pre.indexOf("F:") === 0) { var b2 = figBlock(pre.slice(2)); if (b2) b2.insertAdjacentElement("beforebegin", sp); return; }
+      main.querySelectorAll(".np-flow p, .np-flow h4, .np-flow h2, .np-flow .np-sec").forEach(function (el) {
+        if (done) return;
+        if (from && !started) { if (from.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) started = true; else return; }
+        var full = norm(el.textContent), at = full.indexOf(pre); if (at < 0) return;
+        done = true;
+        if (at === 0 || el.tagName !== "P") { var t = el.closest(".np-head") || el; var art = t.classList && t.classList.contains("np-head") ? t.closest("article") : t; (art.previousElementSibling && art.previousElementSibling.classList.contains("np-sec") && art.tagName === "ARTICLE" ? art.previousElementSibling : art).insertAdjacentElement("beforebegin", sp); return; }
+        // абзац делится на две части ровно на нужной строке
+        var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), n, c = 0, node = null, off = 0;
+        while ((n = walker.nextNode())) {
+          for (var i = 0; i < n.data.length; i++) {
+            if (norm(n.data[i])) { if (c === at) { node = n; off = i; break; } c++; }
+          }
+          if (node) break;
+        }
+        if (!node) { el.insertAdjacentElement("beforebegin", sp); return; }
+        var r = document.createRange(); r.setStart(node, off); r.setEndAfter(el.lastChild);
+        var tail = r.extractContents(), p2 = el.cloneNode(false); p2.appendChild(tail);
+        var lastCh = el.textContent.slice(-1), firstCh = p2.textContent.charAt(0);
+        if (norm(lastCh) && norm(firstCh)) el.appendChild(document.createTextNode("-"));
+        el.style.marginBottom = "0"; el.insertAdjacentElement("afterend", sp); sp.insertAdjacentElement("afterend", p2);
+      });
     });
     function fitLogo() {
       var el = document.getElementById("np-logo"), box = el.parentNode.clientWidth, fs = 100;
@@ -1332,4 +1394,3 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }).catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Список номеров не загрузился. Обновите страницу.</p></div>'; });
 })();
 </script>
-</body></html>
