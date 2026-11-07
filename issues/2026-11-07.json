@@ -1343,39 +1343,6 @@
       }
      ],
      "head_first": true
-    },
-    {
-     "id": "talq",
-     "kind": "note",
-     "rubric": "Закупки",
-     "why": "Практическая польза",
-     "title": "TALQ: бесплатный шаблон тендера на умное уличное освещение",
-     "illus": {
-      "src": "img/2026-11-07/il-tender.svg",
-      "alt": "Рисунок: лист тендера с пятью строками требований и уличная опора рядом",
-      "caption": ""
-     },
-     "body": [
-      {
-       "p": "Техзадание на управляемое уличное освещение можно написать так, что требованиям будет соответствовать только один поставщик. Шаблон TALQ помогает этого избежать: он переводит цели вроде экономии энергии, защиты ночного неба и безопасности в технические требования с готовыми формулировками. В пятом издании пять профилей требований, два из них новые, для совместимости приборов и датчиков по DALI D4i и Zhaga*. Редактируемый файл на семи языках бесплатно доступен на [сайте консорциума](https://www.talq-consortium.org/1-benefits-for-smart-cities/talq-tender-template.html)."
-      },
-      {
-       "foot": "* DALI: цифровой протокол управления светильниками. Zhaga: стандарт, по которому датчики и светильники разных производителей подходят друг к другу."
-      }
-     ],
-     "sources": [
-      {
-       "label": "LED professional: релиз TALQ",
-       "url": "https://led-professional.com/press-release/talq-releases-edition-5-tender-template-for-smart-outdoor-lighting",
-       "date": "30.10.2026"
-      },
-      {
-       "label": "TALQ: шаблон тендера",
-       "url": "https://www.talq-consortium.org/1-benefits-for-smart-cities/talq-tender-template.html",
-       "date": "сайт"
-      }
-     ],
-     "head_first": true
     }
    ]
   },
@@ -1869,8 +1836,16 @@
   "il-grazing"
  ],
  "print_ratio": {
-  "angers-tympan": 1.15,
-  "cauchie-3": 1.12
+  "angers-tympan": 1.19,
+  "cauchie-3": 1.12,
+  "il-grazing": 1.15,
+  "ippodrom": 1.02,
+  "rybinsk": 1.08,
+  "true1-family": 1.03,
+  "flammen": 1.04,
+  "tenda": 1.04,
+  "orsman-garage": 1.06,
+  "orsman-kitchen": 1.06
  },
  "print_last": [
   "il-cs"
@@ -1880,15 +1855,16 @@
   "cauchie-4",
   "ippodrom-portik",
   "yls-vr-forma",
-  "yls-bykovo-pribor",
-  "il-tender"
+  "yls-bykovo-pribor"
  ],
  "print_spans": {
   "ippodrom": 3,
+  "rybinsk": 3,
   "il-relief": 1,
   "il-grazing": 2,
   "yls-bykovo-maket": 3,
-  "heide-rijks": 2
+  "heide-rijks": 2,
+  "mb-8": 2
  },
  "print_plan": [
   [
@@ -1925,8 +1901,7 @@
    [
     4,
     [
-     "rybinsk",
-     "cie-258"
+     "rybinsk"
     ]
    ]
   ],
@@ -1966,9 +1941,15 @@
     ]
    ],
    [
-    2,
+    1,
     [
      "mice"
+    ]
+   ],
+   [
+    1,
+    [
+     "cie-258"
     ]
    ]
   ],
@@ -2029,7 +2010,6 @@
     4,
     [
      "michaelis",
-     "talq",
      "_end"
     ]
    ]
@@ -2037,7 +2017,9 @@
  ],
  "print_cols": {
   "cauchie-3": 3,
-  "road-gc1": 1
+  "mb-8": 2,
+  "mb-9": 2,
+  "mb-2": 3
  },
  "print_shrink": {
   "yls": {
