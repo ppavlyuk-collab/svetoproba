@@ -1220,7 +1220,13 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     main.innerHTML = pages.map(function (p) { return pageHtml(issue, p, pages); }).join("");
     }
     document.querySelectorAll("[data-jump]").forEach(function (a) {
-      a.addEventListener("click", function (e) { e.preventDefault(); var el = document.getElementById(a.getAttribute("data-jump")); if (el) el.scrollIntoView({ behavior: REDUCE ? "auto" : "smooth", block: "start" }); });
+      a.addEventListener("click", function (e) { e.preventDefault(); jumpTo(a.getAttribute("data-jump")); });
+    });
+    // внутренняя ссылка в тексте на материал этого номера: [текст](#id материала)
+    document.querySelectorAll('#issue a[href^="#"]:not([data-jump])').forEach(function (a) {
+      var id = a.getAttribute("href").slice(1);
+      if (/^\d{4}-\d{2}-\d{2}$/.test(id) || !document.getElementById(id)) return;
+      a.addEventListener("click", function (e) { e.preventDefault(); jumpTo(id); });
     });
     if (PRINT) main.querySelectorAll("img[loading]").forEach(function (im) { im.loading = "eager"; });
     setupPdf(issue);
@@ -1342,8 +1348,30 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     });
   }
 
+  // переход к началу материала (правило 115): снимки выше цели догружаются и раздвигают страницу, поэтому
+  // положение держим, пока вёрстка меняется; любое действие читателя останавливает удержание
+  var jumpStop = null;
+  function jumpTo(id) {
+    var el = document.getElementById(id); if (!el) return;
+    if (jumpStop) jumpStop();
+    var GAP = 16, main = document.getElementById("issue"), ro = null, t = 0;
+    function place() {
+      var y = el.getBoundingClientRect().top - GAP;
+      if (Math.abs(y) > 1) window.scrollTo({ top: window.pageYOffset + y, behavior: "instant" });
+    }
+    function stop() {
+      if (ro) ro.disconnect(); clearTimeout(t);
+      ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (n) { window.removeEventListener(n, stop, true); });
+      jumpStop = null;
+    }
+    jumpStop = stop;
+    place();
+    if (window.ResizeObserver && main) { ro = new ResizeObserver(place); ro.observe(main); }
+    t = setTimeout(stop, 8000);
+    ["wheel", "touchstart", "keydown", "mousedown"].forEach(function (n) { window.addEventListener(n, stop, { capture: true, passive: true }); });
+  }
   // счётчик читателей: без cookie и личных данных, читателю не виден; только на открытом сайте (правило 114)
-  var STAT_ON = !PRINT && /(^|\.)svetoproba\.com$/.test(location.hostname) && !(window.claude && window.claude.use);
+  var STAT_ON = !PRINT && (/(^|\.)svetoproba\.com$/.test(location.hostname) || /[?&]stattest\b/.test(location.search)) && !(window.claude && window.claude.use);
   var STAT_NS = /[?&]stattest\b/.test(location.search) ? "svetoproba-weekly-test" : "svetoproba-weekly";
   function statHit(key) {
     if (!STAT_ON) return;
@@ -1351,22 +1379,23 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     try { if (localStorage.getItem(mark)) return; localStorage.setItem(mark, "1"); } catch (e) {}
     try { fetch("https://abacus.jasoncameron.dev/hit/" + STAT_NS + "/" + key, { mode: "cors", keepalive: true }).catch(function () {}); } catch (e) {}
   }
-  var statObs = null;
+  var statTimer = 0;
   function statIssue(date) {
     if (!STAT_ON) return;
     statHit("web." + date);
-    if (statObs) statObs.disconnect();
-    if (!window.IntersectionObserver) return;
+    clearInterval(statTimer);
     // полоса считается прочитанной, если стояла посреди экрана не меньше 5 секунд
-    var timers = {};
-    statObs = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        var id = e.target.id;
-        if (e.isIntersecting) { if (!timers[id]) timers[id] = setTimeout(function () { statHit("page." + date + "." + id); }, 5000); }
-        else if (timers[id]) { clearTimeout(timers[id]); timers[id] = 0; }
+    var cur = "", sec = 0;
+    statTimer = setInterval(function () {
+      if (document.hidden) return;
+      var mid = window.innerHeight / 2, id = "";
+      document.querySelectorAll("#issue section.page[id]").forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top <= mid && r.bottom > mid) id = el.id;
       });
-    }, { rootMargin: "-50% 0px -50% 0px" });
-    document.querySelectorAll("#issue section.page[id]").forEach(function (sec) { statObs.observe(sec); });
+      if (id !== cur) { cur = id; sec = 0; }
+      if (cur && ++sec === 5) statHit("page." + date + "." + cur);
+    }, 1000);
   }
   function setupPdf(issue) {
     // кнопка вверху у навигации и такая же справа в выходных данных внизу
