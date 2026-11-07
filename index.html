@@ -1,9 +1,9 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>_светопроба weekly</title>
-<meta name="description" content="Перед собором Сен-Морис встала белая галерея высотой 11 м. Её главная задача защитить редкую средневековую полихромию, поэтому светильники спрятаны внутрь.">
+<meta name="description" content="Перед собором Сен-Морис построена белая галерея высотой 11 м. Она защищает редкую средневековую роспись, поэтому светильники спрятаны внутри и не видны с площади.">
 <meta property="og:type" content="article"><meta property="og:site_name" content="_светопроба weekly">
-<meta property="og:title" content="_светопроба weekly № 2: Галерея Кенго Кумы в Анже: свет, который бережёт краску на портале XII века"><meta property="og:description" content="Перед собором Сен-Морис встала белая галерея высотой 11 м. Её главная задача защитить редкую средневековую полихромию, поэтому светильники спрятаны внутрь.">
+<meta property="og:title" content="_светопроба weekly № 2: Галерея Кенго Кумы в Анже: освещение, которое бережёт роспись портала XII века"><meta property="og:description" content="Перед собором Сен-Морис построена белая галерея высотой 11 м. Она защищает редкую средневековую роспись, поэтому светильники спрятаны внутри и не видны с площади.">
 <meta property="og:image" content="https://svetoproba.com/cover-2026-11-07.jpg"><meta property="og:url" content="https://svetoproba.com/#2026-11-07">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -113,7 +113,18 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .index a:hover .ix-t { color: var(--accent); }
 .ix-n { font: 400 var(--small) var(--font-ui); color: var(--muted); white-space: nowrap; }
 .ix-s { display: block; font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-.ix-t { font: 700 0.95rem/1.28 var(--font-head); }
+.ix-t { display: block; font: 700 0.95rem/1.28 var(--font-head); color: var(--ink); }
+/* правило 79: оглавление состоит из карточек: снимок, рубрика, заголовок, стрелка, между ними воздух */
+.index a.ix-card { display: grid; grid-template-columns: 64px 1fr 14px; gap: 12px; align-items: center; padding: 10px; margin: 8px 0; background: var(--paper-2); border-radius: 4px; }
+.index a.ix-card:hover { outline: 1px solid var(--accent); }
+.ix-th { width: 64px; height: 64px; object-fit: cover; display: block; border-radius: 2px; filter: none !important; }
+.dates-frame { display: inline-block; font-style: normal !important; font-variant-numeric: lining-nums; letter-spacing: .02em; border: 1.5px solid currentColor !important; padding: 8px 14px; margin: 6px 0 14px; }
+@media print { .np [data-story="cauchie"] figure img { max-height: 92mm; width: auto; max-width: 100%; margin: 0 auto; } }
+@media print { .np [data-story="angers"] .np-flow figure img, .np [data-story="angers"] figure img[src*="angers-2"] { max-height: 88mm; width: auto; max-width: 100%; margin: 0 auto; } .np [data-story="orsman"] > figure img { max-height: 72mm; width: auto; max-width: 100%; margin: 0 auto; } }
+.ix-th-e { background: var(--rule); } img.ix-th[src$=".svg"] { background: #f2ead8; }
+.ix-tx { min-width: 0; }
+.ix-k { display: block; font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--mark); margin-bottom: 2px; }
+.ix-go { font: 400 1.3rem/1 var(--font-ui); color: var(--muted); }
 
 /* Story furniture */
 article { min-width: 0; }
@@ -458,6 +469,9 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
 .table-wrap a.cell-link, .tl-l a.cell-link, h4 a.cell-link, .np-flow a.cell-link { color: inherit; text-decoration: underline; text-decoration-thickness: .5px; text-decoration-color: var(--hair, #c3b8a0); text-underline-offset: 2px; }
 .table-wrap a.cell-link:hover { text-decoration-color: currentColor; }
 .foot-nav { grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-bottom: 10px; border-bottom: 1px solid var(--hair); margin-bottom: 8px; }
+.np-flow .np-wide { display: block !important; width: calc(200% + 6mm) !important; max-width: none !important; position: relative; z-index: 2; background: #f4eedd; break-inside: avoid; margin-bottom: 2mm; }  /* правило 95: снимок на две колонки, сборщик PDF ставит в соседней колонке распорку той же высоты */
+.np-flow .np-wide img { width: 100% !important; max-width: none !important; max-height: none !important; }
+.np-ws { display: block; break-inside: avoid; }
 .np-mark { font-size: 1px; line-height: 0; color: #f4eedd; position: absolute; }  /* служебная метка сборщика PDF не занимает места в строке */
 .np figcaption { text-indent: 0 !important; }  /* правило 56: подпись под снимком начинается от края, без отступа */
 .gallery.row { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; columns: auto; }
@@ -541,8 +555,12 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
   .body > *, .feature-lead-text > * { margin-top: 0 !important; }
 }
 .np { --bl: 12.7pt; }
-.np-flow p, .np-side-text p { line-height: var(--bl); margin: 0; text-indent: 1.2em; }
-.np-flow h4 + p, .np-flow .np-head + p, .np-flow figure + p, .np-flow .np-inflow + p, .np-side-text h4 + p, .np-side-text > p:first-child, .np-flow p.np-editor { text-indent: 0; }
+.np-flow p, .np-side-text p { line-height: var(--bl); margin: 0 0 calc(var(--bl) * .5) !important; text-indent: 0; }  /* правило 72: абзацы только с пробелом между ними */
+.foot { font: 400 .78em/1.35 var(--font-ui); color: var(--muted); margin: .4em 0 1em !important; hyphens: none; }
+.video-inline { display: block; width: 100%; height: auto; background: #000; }
+.dm-b { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; } .dm-b button { font: 500 var(--tiny) var(--font-ui); padding: 6px 10px; border: 1px solid var(--rule); background: none; color: var(--ink); cursor: pointer; } .dm-b button[aria-pressed=true] { background: var(--ink); color: var(--paper); }
+.dm-s { position: relative; } .dm-s img { display: block; width: 100%; height: auto; filter: none !important; opacity: 1; mix-blend-mode: normal; } .dm-s .ov { position: absolute; inset: 0; opacity: 0 !important; transition: opacity .25s; } .dm-s .ov.on { opacity: 1 !important; }
+.dm-t { margin: 6px 0 0; min-height: 3.2em; }
 .np-flow h4, .np-side-text h4 { line-height: var(--bl); margin: 0; padding: var(--bl) 0 0; }
 .np-flow > *, .np-story > *, .np-inflow > * { margin-top: 0 !important; }
 /* ЛИНЕЙКИ: единая система. Раздел: толстая линейка над названием. Между материалами: одна тонкая линейка,
@@ -665,6 +683,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 
   var PAGEOF = {};
   function refs(s) { return String(s == null ? "" : s).replace(/\{стр:([\w-]+)\}/g, function (m, id) { return PAGEOF[id] ? "стр. " + PAGEOF[id] : ""; }); }
+  function rich(s) { return esc(s).replace(/\[([^\]]+)\]\((https?:[^)\s]+|#[^)\s]+)\)/g, function (m, t, u) { return /^#/.test(u) ? '<a href="' + u + '">' + t + "</a>" : '<a href="' + u + '" target="_blank" rel="noopener">' + t + "</a>"; }); }
   function esc(s) { return refs(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function safeUrl(u) { return /^https?:\/\//.test(u || "") ? u : "#"; }
   function ymd(s) { var p = s.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])); }
@@ -678,9 +697,11 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   /* blocks */
   function block(b) {
     if (b.print_only && !PRINT) return "";  // материалы для заполнения полос PDF в веб-версию не идут
-    if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + esc(b.p) + "</p>" : "<p>" + esc(b.p) + "</p>";
+    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w") return animHtml(b);
+    if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
+    if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
     if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
-    if (b.editor != null) return '<p class="editor">' + esc(String(b.editor).replace(/^Редакция:\s*/, "")) + "</p>";
+    if (b.editor != null) return '<p class="editor">' + rich(String(b.editor).replace(/^Редакция:\s*/, "").replace(/^./, function (c) { return c.toUpperCase(); })) + "</p>";
     if (b.stats) return statsHtml(b.stats);
     if (b.bars) return barsHtml(b.bars);
     if (b.timeline) return timelineHtml(b.timeline);
@@ -706,7 +727,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }
   function illusHtml(il) {
     if (!il || !il.src) return "";
-    return '<figure class="illus" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '"><div class="sketch-slot" style="aspect-ratio:3/2"></div><figcaption>' + esc(il.caption || "Иллюстрация редакции.") + "</figcaption></figure>";
+    return '<figure class="illus" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '"><div class="sketch-slot" style="aspect-ratio:3/2"></div><figcaption>' + esc(il.caption || "") + "</figcaption></figure>";
   }
   // снимки, добавленные в PDF к материалу (резерв, галереи и снимки «только для печати»), на сайте листаются каруселью у главного снимка;
   // если листать нечего, стоит один снимок, как раньше
@@ -839,19 +860,34 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       "</tr></thead><tbody>" + t.rows.map(function (r) { return "<tr>" + r.map(function (c, k) { return '<td data-l="' + esc(t.head[k] || "") + '">' + cellHtml(c) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
   }
   function videoHtml(v) {
+    if (v.src && !PRINT) return '<figure class="span"><video class="video-inline" controls preload="none" poster="' + esc(v.thumb || "") + '" src="' + esc(v.src) + '"></video><figcaption>' + esc(v.title) + (v.about ? ". " + esc(v.about) : "") + ' <span class="credit">Видео: <a href="' + esc(safeUrl(v.url)) + '" target="_blank" rel="noopener">' + esc(v.channel || "") + "</a></span></figcaption></figure>";
     return '<a class="video" href="' + esc(safeUrl(v.url)) + '" target="_blank" rel="noopener"><span class="thumb"><img src="' + esc(v.thumb || "") + '" alt="Обложка видео: ' + esc(v.title) + '" loading="lazy"><span class="play" aria-hidden="true"></span>' +
       (v.duration ? '<span class="dur">' + esc(v.duration) + "</span>" : "") + '</span><span class="vt">' + esc(v.title) + '</span><span class="vs">' +
       (v.duration ? esc(v.duration) + (String(v.duration).split(":").length > 2 ? " ч" : " мин") + " " + DOT + " " : "") + esc(v.channel || "") + (v.date ? ", " + esc(v.date) : "") + " " + DOT + " " + esc(v.platform || "YouTube") + (v.about ? "<br>" + esc(v.about) : "") + "</span></a>";
   }
   function digestHtml(list) {
     return '<ol class="digest span">' + list.map(function (d) {
-      return '<li><div class="src">' + esc(d.source) + (d.date ? "<span>" + esc(d.date) + "</span>" : "") + '</div><a href="' + esc(safeUrl(d.url)) + '" target="_blank" rel="noopener">' + esc(d.title) + "</a><p>" + esc(d.what) + "</p></li>";
+      return '<li><div class="src">' + esc(d.source) + (d.date ? "<span>" + esc(d.date) + "</span>" : "") + '</div><a href="' + esc(safeUrl(d.url)) + '" target="_blank" rel="noopener">' + esc(d.title) + "</a><p>" + rich(d.what) + "</p></li>";
     }).join("") + "</ol>";
   }
   function animHtml(b) {
     if (b.anim === "lens-aging") {
       return '<figure class="fig span anim" data-anim="lens-aging"><p class="fig-t">Что доходит до сетчатки: видимый спектр и возраст</p><canvas aria-hidden="true"></canvas>' +
         '<div class="anim-row"><span>380 нм</span><span class="anim-age">возраст наблюдателя: 20 лет</span><span>780 нм</span></div>' + (b.caption ? "<figcaption>" + esc(b.caption) + "</figcaption>" : "") + "</figure>";
+    }
+    if (b.anim === "mice-w") {
+      return '<figure class="fig span anim mice-w"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.series.map(function (m, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">Сутки ' + esc(m.name) + "</button>"; }).join("") + '</div><div class="mw-day" style="display:flex;height:18px;margin:6px 0 4px"><span class="mw-l" style="background:#f4d98b"></span><span class="mw-d" style="background:#2f3a55"></span></div><div class="mw-n" style="font:400 .9rem var(--font-ui);margin-bottom:8px"></div><svg class="mw-c" viewBox="0 0 1000 560" role="img" aria-label="' + esc(b.illus.alt) + '" style="display:block;width:100%;height:auto;background:#f7f1e3"></svg><label style="display:block;font:700 .95rem var(--font-ui);margin:12px 0 2px" class="mw-a"></label><input class="mw-r" type="range" min="9" max="160" value="65" aria-label="Возраст мыши, недели" style="width:100%"><div class="mw-o" style="font:400 1rem/1.5 var(--font-ui);margin-top:6px"></div><figcaption>' + esc(b.illus.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "cs-scale") {
+      return '<figure class="fig span anim cs-scale"><p class="fig-t">' + esc(b.title) + '</p><div class="cs-box" style="padding:18px 16px;border-radius:4px;"><div style="font:700 .9rem var(--font-ui);opacity:.8">Показатель CS</div><div class="cs-v" style="font:900 3.2rem/1 var(--font-head);margin:2px 0 10px">0,4</div><div class="cs-m" style="font:700 1.1rem/1.3 var(--font-ui)"></div><input class="cs-r" type="range" min="0" max="70" step="1" value="40" aria-label="Значение показателя CS" style="width:100%;margin:14px 0 4px"><div class="cs-s" style="font:400 .95rem/1.35 var(--font-ui);min-height:3em"></div></div><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "road-adapt") {
+      var poles = "", N = 7;
+      for (var ri = 0; ri < N; ri++) { var rx = 50 + ri * 110; poles += '<g class="ra-p" data-x="' + rx + '"><polygon class="ra-c" points="' + (rx + 22) + ',62 ' + (rx - 28) + ',196 ' + (rx + 72) + ',196" fill="#f4d98b"/><line x1="' + rx + '" y1="196" x2="' + rx + '" y2="56" stroke="#8d8676" stroke-width="3"/><line x1="' + rx + '" y1="56" x2="' + (rx + 24) + '" y2="56" stroke="#8d8676" stroke-width="3"/><circle class="ra-l" cx="' + (rx + 22) + '" cy="60" r="5" fill="#fff2c4"/></g>'; }
+      return '<figure class="fig span anim road-adapt"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.modes.map(function (m, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(m.name) + "</button>"; }).join("") + '</div><svg viewBox="0 0 800 250" role="img" aria-label="' + esc(b.alt) + '" style="display:block;width:100%;height:auto;background:#10131a">' + poles + '<rect x="0" y="196" width="800" height="54" fill="#2b2a2b"/><line class="ra-m" x1="0" y1="223" x2="800" y2="223" stroke="#8d8676" stroke-width="2" stroke-dasharray="26 22"/><g class="ra-car"><rect x="-26" y="205" width="52" height="16" rx="5" fill="#d9d4c7"/><rect x="-14" y="197" width="28" height="11" rx="4" fill="#d9d4c7"/><polygon points="26,209 74,201 74,221 26,215" fill="#fff2c4" opacity=".55"/></g></svg><input class="ra-r" type="range" min="0" max="800" value="60" aria-label="Положение автомобиля" style="width:100%;margin:8px 0 2px"><p class="dm-t">' + esc(b.modes[0].text) + '</p><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "dark-map") {
+      return '<figure class="fig span anim dark-map"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.levels.map(function (l, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(l.name) + "</button>"; }).join("") + '</div><div class="dm-s"><img src="' + esc(b.image.src) + '" alt="' + esc(b.image.alt) + '">' + b.levels.map(function (l, i) { return l.mask ? '<img class="ov" data-i="' + i + '" src="' + esc(l.mask) + '" alt="">' : ""; }).join("") + '</div><p class="dm-t">' + esc(b.levels[0].text) + '</p><figcaption>' + esc(b.image.caption) + ' <span class="credit">Фото: <a href="' + esc(safeUrl(b.image.credit_url)) + '" target="_blank" rel="noopener">' + esc(b.image.credit) + "</a></span></figcaption></figure>";
     }
     if (b.anim === "daylight") return daylightHtml(b);
     if (b.anim === "chip-scale") return chipHtml(b);
@@ -953,14 +989,14 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     }).join("") + "</ol></details>";
   }
   function head(s) {
-    return '<div class="kicker"><span class="rubric">' + esc(s.rubric) + '</span><span class="why">' + esc(s.why) + "</span></div>" +
-      '<h3 class="hl">' + esc(s.title) + "</h3>" + (s.dek ? '<p class="dek">' + esc(s.dek) + "</p>" : "") + (s.dateline ? '<p class="dateline">' + esc(s.dateline) + "</p>" : "");
+    return '<div class="kicker"><span class="rubric">' + esc(s.rubric) + '</span>' + (s.why ? '<span class="why">' + esc(s.why) + "</span>" : "") + "</div>" +
+      '<h3 class="hl">' + esc(s.title) + "</h3>" + (s.dek ? '<p class="dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + (s.dateline ? '<p class="dateline">' + esc(s.dateline) + "</p>" : "");
   }
   function bodyHtml(s) { return '<div class="body">' + s.body.map(block).join("") + sourcesHtml(s.sources) + "</div>"; }
   function storyHtml(s) {
-    if (s.kind === "lead") { var vis = visualHtml(s).replace('loading="lazy"', 'loading="eager" fetchpriority="high"'); return '<article class="lead" id="' + esc(s.id) + '">' + (PRINT ? head(s) + vis : vis + head(s)) + bodyHtml(s) + "</article>"; }
+    if (s.kind === "lead") { var vis = visualHtml(s).replace('loading="lazy"', 'loading="eager" fetchpriority="high"'); return '<article class="lead" id="' + esc(s.id) + '">' + (PRINT || s.head_first ? head(s) + vis : vis + head(s)) + bodyHtml(s) + "</article>"; }
     if (s.kind === "feature") return '<article class="feature" id="' + esc(s.id) + '"><div class="feature-top"><div>' + head(s) + "</div>" + visualHtml(s) + "</div>" + bodyHtml(s) + "</article>";
-    return '<article class="note" id="' + esc(s.id) + '">' + visualHtml(s) + head(s) + bodyHtml(s) + "</article>";
+    return '<article class="note" id="' + esc(s.id) + '">' + (s.head_first ? head(s) + visualHtml(s) : visualHtml(s) + head(s)) + bodyHtml(s) + "</article>";
   }
 
   function normalize(issue) {
@@ -982,7 +1018,10 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var lead = p.stories.filter(function (s) { return s.kind === "lead"; }), rest = p.stories.filter(function (s) { return s.kind !== "lead"; });
       var idx = '<nav class="index" aria-label="В номере"><h3>В номере</h3><ol>' + pages.map(function (q) {
         return '<li class="ix-sec"><div class="ix-head"><span class="ix-s">' + esc(q.title) + '</span><span class="ix-n">стр. ' + q.no + "</span></div>" + q.stories.map(function (st) {
-          return '<a href="#' + esc(st.id) + '" data-jump="' + esc(st.id) + '"><span class="ix-t">' + esc(st.title) + "</span></a>";
+          var th = st.image && st.image.src ? st.image.src : (st.illus && st.illus.src ? st.illus.src : "");
+          if (!th) (st.body || []).forEach(function (bb) { if (!th && bb.anim === "dark-map") th = bb.image.src; if (!th && bb.anim === "road-adapt") th = bb.illus.src; });
+          var thumb = th ? '<img class="ix-th" src="' + esc(th) + '" alt="" loading="lazy">' : '<span class="ix-th ix-th-e" aria-hidden="true"></span>';
+          return '<a class="ix-card" href="#' + esc(st.id) + '" data-jump="' + esc(st.id) + '">' + thumb + '<span class="ix-tx"><span class="ix-k">' + esc(st.rubric || "") + '</span><span class="ix-t">' + esc(st.title) + '</span></span><span class="ix-go" aria-hidden="true">›</span></a>';
         }).join("") + "</li>";
       }).join("") + "</ol></nav>";
       var ed = '<div class="ed-note"><img src="img/editor.jpg" alt="Павел Яковлев-Павлюк"><div><p class="who">От редакции</p><p>' + esc(issue.editor_note || "") + '</p><span class="sign">Павел Яковлев-Павлюк</span></div></div>';
@@ -1002,25 +1041,31 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     var wd = issue.weekday ? issue.weekday.charAt(0).toUpperCase() + issue.weekday.slice(1) : "";
     var lead = pages[0].stories.find(function (s) { return s.kind === "lead"; }) || pages[0].stories[0];
     function blockP(b, story) {
-      if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + esc(b.p) + "</p>" : "<p>" + esc(b.p) + "</p>";
+      if (b.web_only) return "";
+      if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
+      if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
       if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
-      if (b.editor != null) return '<p class="np-editor">' + esc(String(b.editor).replace(/^Редакция:\s*/, "")) + "</p>";
+      if (b.editor != null) return '<p class="np-editor">' + rich(String(b.editor).replace(/^Редакция:\s*/, "").replace(/^./, function (c) { return c.toUpperCase(); })) + "</p>";
       if (b.quote) return '<div class="np-quote">«' + esc(b.quote.text) + "»<small>" + esc(b.quote.who) + "</small></div>";
       if (b.stats) return statsHtml(b.stats).replace(' span ', ' ');
       if (b.bars) return barsHtml(b.bars).replace(' span ', ' ');
       if (b.gallery && b.fill) return "";  // ракурсы и детали в печать не идут: место в PDF добирается деталями внутри своего материала
       if (b.timeline || b.table || b.gallery || b.digest) return '<div class="np-inflow">' + block(b) + "</div>";
       if (b.anim === "daylight") return daylightHtml(b);
+      if (b.anim === "dark-map") return figureHtml(b.image);
+      if (b.anim === "road-adapt") return illusHtml(b.illus);
+      if (b.anim === "cs-scale") return "";
+      if (b.anim === "mice-w") return illusHtml(b.illus);
       if (b.anim) return "";
       return block(b);
     }
     function storyP(s) {
-      var kick = '<div class="np-kicker">' + esc(s.rubric) + "<span>" + esc(s.why) + "</span></div>";
+      var kick = '<div class="np-kicker">' + esc(s.rubric) + (s.why ? "<span>" + esc(s.why) + "</span>" : "") + "</div>";
       var body = s.body.map(function (b) { return blockP(b, s); }).join("");
       if (s.kind === "feature") {
-        return '<article class="np-story np-feature" data-story="' + esc(s.id) + '">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek">' + esc(s.dek) + "</p>" : "") + visualHtml(s) + body + "</article>";
+        return '<article class="np-story np-feature" data-story="' + esc(s.id) + '"><div class="np-head" style="break-inside:avoid;break-after:avoid">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
       }
-      return '<article class="np-story" data-story="' + esc(s.id) + '"><div class="np-head">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
+      return '<article class="np-story" data-story="' + esc(s.id) + '"><div class="np-head">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
     }
     var flow = "";
     var sideStats = "", leadBody = lead.body.slice();
@@ -1032,8 +1077,9 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     leadBody.forEach(function (b, i) {
       var next = leadBody[i + 1];
       // подзаголовок идёт туда же, куда его блок: перед таблицей или галереей он остаётся в потоке
-      var textual = b.p != null || b.image || (b.h != null && next && (next.p != null || next.image));
-      if (textual && side.length < 2) side.push(b); else rest.push(b);
+      var textual = b.p != null || b.foot != null || b.image || (b.h != null && next && (next.p != null || next.image));
+      var nP = side.filter(function (q) { return q.p != null; }).length;
+      if (textual && (nP < 1 || (b.foot != null && nP === 1 && !rest.length))) side.push(b); else rest.push(b);
     });
     // снимок в правых колонках обложки ставим после первого абзаца, чтобы он не оставлял пустоту внизу колонки
     var imgs = side.filter(function (b) { return b.image; }), txt = side.filter(function (b) { return !b.image; });
@@ -1094,6 +1140,56 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var art = fg.closest("[data-story]"), sid = art ? art.getAttribute("data-story") : lead.id;
       if (GAPS["a-" + key] >= 30) fg.insertAdjacentHTML("afterend", reserveHtml(sid, GAPS["a-" + key]));
       if (GAPS[key] >= 30) fg.insertAdjacentHTML("beforebegin", reserveHtml(sid, GAPS[key]));
+    });
+    main.querySelectorAll(".np-flow figure.illus").forEach(function (f) {
+      var cap = f.querySelector("figcaption"); if (cap) cap.insertAdjacentHTML("afterbegin", '<span class="np-mark">§F' + f.getAttribute("data-svg").split("/").pop().replace(/\.[a-z]+$/, "") + "§</span>");
+    });
+    // правило 95: сборщик PDF передаёт ?wide=ключ,... (снимок на две колонки), ?mv=ключ:n (снимок встаёт на n блоков позже, текст закрывает провал),
+    // ?ws=ключ~мм~буквы,... (распорка в соседней колонке перед строкой, начинающейся этими буквами)
+    var QS = new URLSearchParams(location.search);
+    function figBlock(key) {
+      var hit = null;
+      main.querySelectorAll(".np-flow figure img").forEach(function (im) {
+        if (!hit && im.getAttribute("src").split("/").pop().replace(/\.[a-z]+$/, "") === key) { var f = im.closest("figure"); hit = f.closest(".np-inflow") || f; }
+      });
+      if (!hit) main.querySelectorAll(".np-flow figure.illus").forEach(function (f) { if (!hit && f.getAttribute("data-svg").split("/").pop().replace(/\.[a-z]+$/, "") === key) hit = f; });
+      return hit;
+    }
+    (QS.get("mv") || "").split(",").forEach(function (m) {
+      var a = m.split(":"), blk = a[0] && figBlock(a[0]); if (!blk) return;
+      for (var i = 0; i < +a[1]; i++) { var nx = blk.nextElementSibling; if (!nx || nx.tagName === "H4") break; nx.insertAdjacentElement("afterend", blk); }
+    });
+    (QS.get("wide") || "").split(",").forEach(function (k) {
+      var blk = k && figBlock(k); if (blk) blk.classList.add("np-wide");
+    });
+    var norm = function (t) { return t.toLowerCase().replace(/[^0-9a-zа-яё]/g, ""); };
+    (QS.get("ws") || "").split(",").forEach(function (w) {
+      var a = w.split("~"); if (a.length < 3) return;
+      var mm = +a[1], pre = decodeURIComponent(a[2]);
+      var sp = document.createElement("div"); sp.className = "np-ws"; sp.style.height = mm.toFixed(1) + "mm";
+      var from = figBlock(a[0]), started = false, done = false;
+      if (pre.indexOf("F:") === 0) { var b2 = figBlock(pre.slice(2)); if (b2) b2.insertAdjacentElement("beforebegin", sp); return; }
+      main.querySelectorAll(".np-flow p, .np-flow h4, .np-flow h2, .np-flow .np-sec").forEach(function (el) {
+        if (done) return;
+        if (from && !started) { if (from.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) started = true; else return; }
+        var full = norm(el.textContent), at = full.indexOf(pre); if (at < 0) return;
+        done = true;
+        if (at === 0 || el.tagName !== "P") { var t = el.closest(".np-head") || el; var art = t.classList && t.classList.contains("np-head") ? t.closest("article") : t; (art.previousElementSibling && art.previousElementSibling.classList.contains("np-sec") && art.tagName === "ARTICLE" ? art.previousElementSibling : art).insertAdjacentElement("beforebegin", sp); return; }
+        // абзац делится на две части ровно на нужной строке
+        var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), n, c = 0, node = null, off = 0;
+        while ((n = walker.nextNode())) {
+          for (var i = 0; i < n.data.length; i++) {
+            if (norm(n.data[i])) { if (c === at) { node = n; off = i; break; } c++; }
+          }
+          if (node) break;
+        }
+        if (!node) { el.insertAdjacentElement("beforebegin", sp); return; }
+        var r = document.createRange(); r.setStart(node, off); r.setEndAfter(el.lastChild);
+        var tail = r.extractContents(), p2 = el.cloneNode(false); p2.appendChild(tail);
+        var lastCh = el.textContent.slice(-1), firstCh = p2.textContent.charAt(0);
+        if (norm(lastCh) && norm(firstCh)) el.appendChild(document.createTextNode("-"));
+        el.style.marginBottom = "0"; el.insertAdjacentElement("afterend", sp); sp.insertAdjacentElement("afterend", p2);
+      });
     });
     function fitLogo() {
       var el = document.getElementById("np-logo"), box = el.parentNode.clientWidth, fs = 100;
@@ -1158,6 +1254,62 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       fetch(f.getAttribute("data-svg")).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
         if (t.indexOf("<svg") === 0) { var slot = f.querySelector(".sketch-slot"); var tmp = document.createElement("div"); tmp.innerHTML = t; var svg = tmp.querySelector("svg"); if (svg && slot) slot.replaceWith(svg); }
       }).catch(function () {});
+    });
+    main.querySelectorAll(".mice-w").forEach(function (f) {
+      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "mice-w") B = bb; }); }); });
+      var svg = f.querySelector(".mw-c"), r = f.querySelector(".mw-r"), btns = [].slice.call(f.querySelectorAll(".dm-b button")), sel = 0;
+      var X = function (w) { return 90 + w / 165 * 880; }, Y = function (g) { return 480 - (g - 20) / 20 * 440; };
+      var val = function (S, w) { var W = B.weeks, i = 0; while (i < W.length - 2 && W[i + 1] < w) i++; var t = Math.max(0, Math.min(1, (w - W[i]) / (W[i + 1] - W[i]))); return S.v[i] + (S.v[i + 1] - S.v[i]) * t; };
+      var fmt = function (x) { return x.toFixed(1).replace(".", ","); };
+      function paint() { var w = +r.value, h = "";
+        [20, 25, 30, 35, 40].forEach(function (g) { h += '<line x1="90" x2="970" y1="' + Y(g) + '" y2="' + Y(g) + '" stroke="#cfc6b2" stroke-width="1.5"/><text x="78" y="' + (Y(g) + 10) + '" font-size="30" text-anchor="end" fill="#222" font-family="Arial,sans-serif">' + g + "</text>"; });
+        [0, 50, 100, 150].forEach(function (a) { h += '<text x="' + X(a) + '" y="526" font-size="30" text-anchor="middle" fill="#222" font-family="Arial,sans-serif">' + a + "</text>"; });
+        B.series.forEach(function (S, i) { var on = i === sel; h += '<polyline points="' + B.weeks.map(function (a, k) { return X(a) + "," + Y(S.v[k]); }).join(" ") + '" fill="none" stroke="' + S.c + '" stroke-width="' + (on ? 9 : 4) + '" opacity="' + (on ? 1 : .4) + '" stroke-linejoin="round"/>'; });
+        h += '<line x1="' + X(w) + '" x2="' + X(w) + '" y1="30" y2="480" stroke="#222" stroke-width="2" stroke-dasharray="8 6"/>';
+        h += '<text x="96" y="26" font-size="28" fill="#222" font-family="Arial,sans-serif">вес, г</text><text x="965" y="556" font-size="28" text-anchor="end" fill="#222" font-family="Arial,sans-serif">возраст, недели</text>';
+        B.series.forEach(function (S, i) { h += '<circle cx="' + X(w) + '" cy="' + Y(val(S, w)) + '" r="' + (i === sel ? 13 : 8) + '" fill="' + S.c + '" stroke="#fff" stroke-width="3"/>'; });
+        svg.innerHTML = h;
+        var S = B.series[sel];
+        f.querySelector(".mw-l").style.width = (S.t / 26.4 * 50) + "%"; f.querySelector(".mw-d").style.width = (S.t / 26.4 * 50) + "%";
+        f.querySelector(".mw-n").textContent = "Цикл света и темноты: " + S.name + (sel === 1 ? ", как в природе" : sel === 0 ? ", на 10 % короче суток" : ", на 10 % длиннее суток");
+        f.querySelector(".mw-a").textContent = "Возраст мыши: " + w + " нед.";
+        var base = val(B.series[1], w), diff = val(S, w) - base;
+        f.querySelector(".mw-o").innerHTML = "<b>" + fmt(val(S, w)) + " г</b>" + (sel === 1 ? " при обычных сутках" : " при сутках " + esc(S.name) + ", это " + (diff >= 0 ? "на " + fmt(diff) + " г больше" : "на " + fmt(-diff) + " г меньше") + ", чем при 24 часах");
+      }
+      btns.forEach(function (b, i) { b.onclick = function () { sel = i; btns.forEach(function (o, k) { o.setAttribute("aria-pressed", String(k === i)); }); paint(); }; });
+      r.oninput = paint; paint();
+    });
+    main.querySelectorAll(".cs-scale").forEach(function (f) {
+      var r = f.querySelector(".cs-r"), box = f.querySelector(".cs-box");
+      function paint() { var v = +r.value / 100, t = Math.min(1, v / .7);
+        f.querySelector(".cs-v").textContent = v.toFixed(2).replace(".", ",").replace(/0$/, "");
+        f.querySelector(".cs-m").textContent = "Мелатонин ночью подавлен на " + Math.round(v * 100) + " % за час";
+        f.querySelector(".cs-s").textContent = v < .1 ? "Ниже порога: циркадная система на такой свет почти не отзывается." : v < .3 ? "Система уже откликается, воздействие пока слабое." : v < .4 ? "От 0,3: в опыте 2017 года утренний свет с таким показателем помогал сотрудникам офисов быстрее засыпать." : v < .5 ? "Около 0,4: такой свет днём получали жители домов престарелых в опыте ниже." : v < .7 ? "Сильное воздействие, но ещё не предел шкалы." : "Насыщение: дальше система уже не отзывается сильнее.";
+        var c1 = [32, 36, 58], c2 = [247, 214, 130], m = c1.map(function (a, i) { return Math.round(a + (c2[i] - a) * t); });
+        box.style.setProperty("background", "rgb(" + m.join(",") + ")", "important"); var tc = t > .5 ? "#17140f" : "#f4ecd9"; box.style.setProperty("color", tc, "important"); [].forEach.call(box.querySelectorAll("div"), function (e) { e.style.setProperty("color", tc, "important"); }); }
+      r.oninput = paint; paint();
+    });
+    main.querySelectorAll(".road-adapt").forEach(function (f) {
+      var rb = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "road-adapt") rb = bb; }); }); });
+      var ps = [].slice.call(f.querySelectorAll(".ra-p")), car = f.querySelector(".ra-car"), range = f.querySelector(".ra-r"), btns = [].slice.call(f.querySelectorAll(".dm-b button")), txt = f.querySelector(".dm-t");
+      var mode = 0, x = 60, raf = 0, auto = !REDUCE, last = 0;
+      function paint() {
+        car.setAttribute("transform", "translate(" + x + " 0)"); car.style.display = mode === 1 ? "none" : "";
+        ps.forEach(function (g) { var px = +g.dataset.x + 22, d = Math.abs(px - x), lvl;
+          if (mode === 2) lvl = 1; else if (mode === 1) lvl = .18; else lvl = d < 110 ? 1 : d < 230 ? 1 - (d - 110) / 120 * .82 : .18;
+          g.querySelector(".ra-c").setAttribute("opacity", (lvl * .42).toFixed(3)); g.querySelector(".ra-l").setAttribute("opacity", (.25 + lvl * .75).toFixed(3)); });
+      }
+      function tick(t) { if (!f.isConnected) return; if (auto && mode === 0) { x += Math.min(40, t - last) * .09; if (x > 830) x = -30; range.value = x; paint(); } last = t; raf = requestAnimationFrame(tick); }
+      btns.forEach(function (b, i) { b.onclick = function () { mode = i; btns.forEach(function (o, k) { o.setAttribute("aria-pressed", String(k === i)); }); txt.textContent = rb.modes[i].text; range.disabled = i !== 0; paint(); }; });
+      range.oninput = function () { auto = false; x = +range.value; if (mode !== 0) btns[0].click(); paint(); };
+      paint(); raf = requestAnimationFrame(tick); stops.push(function () { cancelAnimationFrame(raf); });
+    });
+    main.querySelectorAll(".dark-map").forEach(function (f) {
+      var iss = (issue.pages || []).reduce(function (o, p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "dark-map") o = bb; }); }); return o; }, null);
+      f.querySelectorAll(".dm-b button").forEach(function (btn) { btn.onclick = function () { var i = +btn.dataset.i;
+        f.querySelectorAll(".dm-b button").forEach(function (x, k) { x.setAttribute("aria-pressed", String(k === i)); });
+        f.querySelectorAll(".ov").forEach(function (x) { x.classList.toggle("on", +x.dataset.i === i); });
+        f.querySelector(".dm-t").textContent = iss.levels[i].text; }; });
     });
     main.querySelectorAll('[data-anim="lens-aging"]').forEach(function (f) { stops.push(startLens(f)); });
     main.querySelectorAll("[data-chart]").forEach(wireChart);
