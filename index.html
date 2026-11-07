@@ -1342,6 +1342,32 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     });
   }
 
+  // счётчик читателей: без cookie и личных данных, читателю не виден; только на открытом сайте (правило 114)
+  var STAT_ON = !PRINT && /(^|\.)svetoproba\.com$/.test(location.hostname) && !(window.claude && window.claude.use);
+  var STAT_NS = /[?&]stattest\b/.test(location.search) ? "svetoproba-weekly-test" : "svetoproba-weekly";
+  function statHit(key) {
+    if (!STAT_ON) return;
+    var mark = "sw:" + STAT_NS + ":" + key;
+    try { if (localStorage.getItem(mark)) return; localStorage.setItem(mark, "1"); } catch (e) {}
+    try { fetch("https://abacus.jasoncameron.dev/hit/" + STAT_NS + "/" + key, { mode: "cors", keepalive: true }).catch(function () {}); } catch (e) {}
+  }
+  var statObs = null;
+  function statIssue(date) {
+    if (!STAT_ON) return;
+    statHit("web." + date);
+    if (statObs) statObs.disconnect();
+    if (!window.IntersectionObserver) return;
+    // полоса считается прочитанной, если стояла посреди экрана не меньше 5 секунд
+    var timers = {};
+    statObs = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        var id = e.target.id;
+        if (e.isIntersecting) { if (!timers[id]) timers[id] = setTimeout(function () { statHit("page." + date + "." + id); }, 5000); }
+        else if (timers[id]) { clearTimeout(timers[id]); timers[id] = 0; }
+      });
+    }, { rootMargin: "-50% 0px -50% 0px" });
+    document.querySelectorAll("#issue section.page[id]").forEach(function (sec) { statObs.observe(sec); });
+  }
   function setupPdf(issue) {
     // кнопка вверху у навигации и такая же справа в выходных данных внизу
     var btns = ["b-pdf", "b-pdf-foot"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
@@ -1350,7 +1376,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     if (!window.claude || !window.claude.use) {
       // открытая версия сайта (GitHub Pages, larcorchestra.com): обычная ссылка на файл PDF
       show(true);
-      btns.forEach(function (b) { b.onclick = function () { window.location.href = issue.pdf; }; });
+      btns.forEach(function (b) { b.onclick = function () { statHit("pdf." + issue.date); setTimeout(function () { window.location.href = issue.pdf; }, 150); }; });
       return;
     }
     window.claude.use("downloads").then(function (dl) {
@@ -1385,7 +1411,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     current = meta.date;
     try { history.replaceState(null, "", "#" + meta.date); } catch (e) {}
     fetch("issues/" + meta.date + ".json", { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (issue) { render(issue); if (scrollTop) window.scrollTo({ top: 0 }); })
+      .then(function (issue) { render(issue); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); })
       .catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Номер за ' + esc(longDate(meta.date)) + " не загрузился. Обновите страницу.</p></div>"; });
   }
   function step(dir) { var i = issues.findIndex(function (x) { return x.date === current; }), j = i + dir; if (i >= 0 && j >= 0 && j < issues.length) openIssue(issues[j].date, true); }
