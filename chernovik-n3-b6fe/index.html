@@ -1,0 +1,1675 @@
+<!doctype html><html lang=ru><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noindex,nofollow"></head><body><meta charset="utf-8">
+<script>document.documentElement.lang = "ru";</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>_светопроба weekly</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400&family=PT+Sans:wght@400;700&family=PT+Sans+Narrow:wght@400;700&family=Caveat:wght@600&display=swap">
+<style>
+/* Layout: a broadsheet set as numbered pages. Dark nameplate with the _светопроба logo,
+   each page opens with a running head (folio) and a large section title, long stories run in
+   two or three columns with column rules, short notes sit in a ruled grid. */
+:root {
+  --paper: #f1ead9;
+  --paper-2: #e4dbc6;
+  --ink: #161514;
+  --ink-2: #3b3936;
+  --muted: #6a6253;
+  --rule: #d6ccb6;
+  --hair: #c3b8a0;
+  --accent: #044389;
+  --accent-2: #fe9f4d;
+  --link: #2a6fc9; --mark: #8a6a2f;
+  --plate: #24211d;
+  --on-plate: #e9dfca;
+  --on-plate-2: #b8ad97;
+  --logo: #fff6b6;
+  --logo-shadow: #4f86d6;
+  --cyan: #00b8e0;
+  --font-logo: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-head: "Playfair Display", "PT Serif", Georgia, serif;
+  --font-body: "PT Serif", Georgia, "Times New Roman", serif;
+  --font-ui: "PT Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-narrow: "PT Sans Narrow", "Arial Narrow", "PT Sans", sans-serif;
+  --font-hand: "Caveat", "Marck Script", cursive;
+  --text: 1.075rem;
+  --small: 0.86rem;
+  --tiny: 0.74rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #1f1d1a; --paper-2: #2a2723; --ink: #e9dfca; --ink-2: #d3c9b4; --muted: #a59b88; --rule: #3a3631; --hair: #4a453e;
+    --accent: #9db8ef; --accent-2: #f2a968; --link: #9db8ef; --mark: #c8ad74; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #1f1d1a; --paper-2: #2a2723; --ink: #e9dfca; --ink-2: #d3c9b4; --muted: #a59b88; --rule: #3a3631; --hair: #4a453e;
+  --accent: #9db8ef; --accent-2: #f2a968; --link: #9db8ef; --mark: #c8ad74; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: var(--text); line-height: 1.55; -webkit-font-smoothing: antialiased; padding-block: 0 0; }
+.gut { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 1240px; margin: 0 auto; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Nameplate */
+.plate { color: var(--ink); }
+.plate .wrap { padding-block: 18px 14px; }
+.plate-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; font: 400 var(--tiny)/1.4 var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.logo { margin: 10px 0 2px; font-family: var(--font-logo); font-weight: 400; font-size: clamp(3rem, 13vw, 8.4rem); line-height: 1; letter-spacing: -0.01em; color: var(--ink); text-shadow: 0.076em 0 0 var(--logo-shadow); white-space: nowrap; }
+.logo .daily { font-family: var(--font-narrow); font-weight: 700; font-size: 0.2em; letter-spacing: 0.24em; text-transform: uppercase; color: var(--mark); text-shadow: none; margin-left: 0.6em; vertical-align: 0.35em; }
+.byline-main { font: italic 400 1.05rem/1.4 var(--font-head); color: var(--ink-2); margin: 6px 0 0; }
+.spec { height: 2px; margin-top: 14px; opacity: .85; background: linear-gradient(90deg, #5b0f8f 0%, #3a1fd1 9%, #0060ff 20%, #00b7e8 31%, #00c46a 43%, #8fd400 54%, #f3d400 63%, #ff9a00 74%, #ff3b00 86%, #9e0000 100%); }
+
+/* Edition bar and page index */
+.edition { border-bottom: 1px solid var(--hair); }
+.edition .wrap { display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: space-between; align-items: center; padding-block: 10px; font: 700 var(--small)/1.3 var(--font-narrow); letter-spacing: 0.06em; text-transform: uppercase; }
+.nav { display: flex; gap: 6px; }
+.nav button { font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); background: transparent; border: 1px solid var(--hair); padding: 6px 10px; min-height: 32px; cursor: pointer; }
+.nav button:disabled { opacity: 0.3; cursor: default; }
+.pager { overflow-x: auto; border-bottom: 1px solid var(--rule); }
+.nav .pdf { border-color: var(--accent); color: var(--accent); }
+.pager ol { list-style: none; margin: 0 auto; padding: 8px 0; display: flex; gap: 2px; max-width: 1240px; white-space: nowrap; }
+.pager a { display: inline-flex; gap: 8px; align-items: baseline; padding: 4px 12px; font: 400 var(--small) var(--font-ui); color: var(--ink-2); text-decoration: none; border-right: 1px solid var(--rule); }
+.pager a b { font: 400 var(--tiny) var(--font-ui); color: var(--muted); }
+.pager a:hover { color: var(--accent); }
+
+/* Pages */
+.page { padding-block: 40px 104px; border-bottom: 1px solid var(--hair); scroll-margin-top: 8px; }
+.page + .page { margin-top: 40px; }
+.folio { text-align: right; font: 400 var(--tiny)/1.3 var(--font-ui); letter-spacing: 0.06em; color: var(--muted); }
+.sec-head { border-top: 5px solid var(--ink); margin-top: 18px; padding-top: 14px; margin-bottom: 48px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 22px; }
+.sec-head h2 { font: 900 clamp(2.3rem, 7.2vw, 4.6rem)/0.98 var(--font-head); letter-spacing: -0.015em; margin: 0; }
+.sec-head p { margin: 0; font: italic 400 1.05rem var(--font-head); color: var(--muted); }
+
+/* Front page grid */
+.front { display: grid; grid-template-columns: 1fr; gap: 36px; padding-top: 26px; }
+.front > div, .front > aside, .stories > *, .theme-rest > * { min-width: 0; }
+@media (max-width: 999px) { .front > aside { order: -1; } }
+@media (min-width: 1000px) { .front { grid-template-columns: minmax(0, 1fr) 300px; gap: 44px; } .front > aside { border-left: 1px solid var(--rule); padding-left: 32px; } }
+.ed-note { margin-bottom: 28px; display: flow-root; }
+.ed-note img { float: left; width: 76px; height: 76px; border-radius: 50%; margin: 2px 12px 6px 0; }
+.ed-note .who { font: 700 var(--tiny)/1.3 var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+.ed-note p { margin: 0; font-size: 0.98rem; line-height: 1.5; font-style: italic; }
+.ed-note p.who { font-style: normal; }
+.ed-note .sign { font: 400 var(--tiny)/1.3 var(--font-ui); letter-spacing: 0.06em; color: var(--muted); margin-top: 8px; display: block; }
+.index h3 { font: 700 var(--small) var(--font-ui); letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--rule); padding: 8px 0; margin: 0; }
+.index ol { list-style: none; margin: 0; padding: 0; }
+.index .ix-sec { padding: 12px 0 10px; border-bottom: 1px solid var(--rule); }
+.index .ix-head { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; margin-bottom: 4px; }
+.index a { display: block; padding: 3px 0; color: var(--ink); text-decoration: none; }
+.index a:hover .ix-t { color: var(--accent); }
+.ix-n { font: 400 var(--small) var(--font-ui); color: var(--muted); white-space: nowrap; }
+.ix-s { display: block; font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.ix-t { display: block; font: 700 0.95rem/1.28 var(--font-head); color: var(--ink); }
+/* правило 79: оглавление состоит из карточек: снимок, рубрика, заголовок, стрелка, между ними воздух */
+.index a.ix-card { display: grid; grid-template-columns: 64px 1fr 14px; gap: 12px; align-items: center; padding: 10px; margin: 8px 0; background: var(--paper-2); border-radius: 4px; }
+.index a.ix-card:hover { outline: 1px solid var(--accent); }
+.ix-th { width: 64px; height: 64px; object-fit: cover; display: block; border-radius: 2px; filter: none !important; }
+.dates-frame { display: inline-block; font-style: normal !important; font-variant-numeric: lining-nums; letter-spacing: .02em; border: 1.5px solid currentColor !important; padding: 8px 14px; margin: 6px 0 14px; }
+@media print { .np [data-story="cauchie"] figure img { max-height: 92mm; width: auto; max-width: 100%; margin: 0 auto; } }
+@media print { .np [data-story="angers"] .np-flow figure img, .np [data-story="angers"] figure img[src*="angers-2"] { max-height: 88mm; width: auto; max-width: 100%; margin: 0 auto; } .np [data-story="orsman"] > figure img { max-height: 72mm; width: auto; max-width: 100%; margin: 0 auto; } }
+.ix-th-e { background: var(--rule); } img.ix-th[src$=".svg"] { background: #f2ead8; }
+.ix-tx { min-width: 0; }
+.ix-k { display: block; font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--mark); margin-bottom: 2px; }
+.ix-go { font: 400 1.3rem/1 var(--font-ui); color: var(--muted); }
+
+/* Story furniture */
+article { min-width: 0; }
+.kicker { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: baseline; font: 700 var(--tiny)/1.3 var(--font-ui); letter-spacing: 0.1em; text-transform: uppercase; }
+.rubric { color: var(--mark); }
+.why { color: var(--muted); font-weight: 400; }
+.why::before { content: "/"; margin-right: 12px; color: var(--rule); }
+article h3.hl { font-family: var(--font-head); font-weight: 900; line-height: 1.05; letter-spacing: -0.01em; text-wrap: balance; margin: 8px 0 12px; }
+.lead h3.hl { font-size: clamp(2.2rem, 5.6vw, 4.2rem); }
+.feature h3.hl { font-size: clamp(1.9rem, 4.4vw, 3.1rem); max-width: 22ch; }
+.note h3.hl { font-size: clamp(1.35rem, 2.6vw, 1.7rem); font-weight: 700; }
+.dek { font: italic 400 clamp(1.1rem, 2.2vw, 1.4rem)/1.4 var(--font-head); color: var(--ink-2); margin: 0 0 18px; max-width: 46ch; }
+.dateline { font: 400 var(--small)/1.4 var(--font-ui); color: var(--muted); border-left: 3px solid var(--accent-2); padding-left: 10px; margin: 0 0 18px; max-width: 70ch; }
+.body p { margin: 0 0 1em; text-align: left; hyphens: auto; -webkit-hyphens: auto; orphans: 3; widows: 3; }
+/* правило 51: только флажок влево, переносы по правилам языка */
+body { hyphens: auto; -webkit-hyphens: auto; hyphenate-limit-chars: 6 3 3; }
+h1, h2, h3, h4, .dek, figcaption, a { hyphens: manual; -webkit-hyphens: manual; }
+.body > p:first-of-type::first-letter { font: 900 3.4em/0.8 var(--font-head); float: left; padding: 0.06em 0.08em 0 0; color: var(--ink); }
+.note .body > p:first-of-type::first-letter { font: inherit; float: none; padding: 0; }
+.body > p.nodrop::first-letter { font: inherit; float: none; padding: 0; }
+.body h4 { font: 700 1.2rem/1.25 var(--font-head); margin: 2.4em 0 0.6em; padding-top: 1em; border-top: 1px solid var(--hair); break-after: avoid; }
+.body > h4:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.editor { font: italic 400 1rem/1.5 var(--font-body); border-top: 1px solid var(--hair); border-bottom: 1px solid var(--hair); padding: 10px 0; margin: 1em 0; text-align: left !important; break-inside: avoid; }
+.editor::before { content: "Редакция"; display: block; font: 700 var(--tiny) var(--font-ui); font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-2); margin-bottom: 4px; }
+@media (min-width: 900px) {
+  .lead .body, .feature .body { column-count: 2; column-gap: 40px; column-rule: 1px solid var(--rule); }
+  .body .span { column-span: all; }
+  /* блок во всю ширину (галерея, таблица) отделён от колонок тонкой линией; колонки после него начинаются вровень */
+  .lead .body > .span, .feature .body > .span { border-bottom: 1px solid var(--hair); padding-bottom: 20px; margin-bottom: 26px; }
+  .lead .body > .span + h4, .feature .body > .span + h4, .lead .body > .span + p, .feature .body > .span + p { margin-top: 0; padding-top: 0; border-top: 0; }
+}
+@media (min-width: 1200px) { .lead .body { column-count: 3; } }
+figure { margin: 0 0 18px; break-inside: avoid; }
+figure img { display: block; width: 100%; height: auto; max-width: 100%; background: var(--paper-2); }
+.sketch { display: block; width: 100%; height: auto; max-width: 100%; color: var(--ink); }
+.sketch .wash { mix-blend-mode: multiply; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .sketch .wash { mix-blend-mode: screen; opacity: .7; } }
+:root[data-theme="dark"] .sketch .wash { mix-blend-mode: screen; opacity: .7; }
+.lead > figure img { height: auto; }
+figcaption { font: 400 var(--small)/1.4 var(--font-ui); color: var(--muted); margin-top: 7px; }
+figcaption .credit { font-size: var(--tiny); letter-spacing: 0.03em; text-transform: uppercase; overflow-wrap: anywhere; }
+figcaption, .sources, .digest p, .video .vs { overflow-wrap: anywhere; }
+/* Низкий горизонтальный экран (телефон, повёрнутый боком): компактная шапка, чтобы текст был виден сразу */
+@media (orientation: landscape) and (max-height: 540px) {
+  .plate .wrap { padding-block: 8px 6px; }
+  .logo { font-size: clamp(2rem, 7vh + 2vw, 3.4rem); margin: 4px 0 0; }
+  .byline-main { font-size: .9rem; margin-top: 2px; }
+  .spec { margin-top: 6px; }
+  .edition .wrap { padding-block: 6px; }
+  .nav button { min-height: 28px; padding: 3px 8px; }
+  .lead h3.hl { font-size: clamp(1.6rem, 4.2vw, 2.4rem); }
+  .sec-head h2 { font-size: clamp(1.8rem, 5vw, 2.8rem); }
+}
+
+.feature-top { display: grid; grid-template-columns: 1fr; gap: 24px; margin-bottom: 18px; }
+@media (min-width: 900px) { .feature-top { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px; align-items: start; } }
+.sources { margin-top: 14px; font: 400 var(--small)/1.45 var(--font-ui); color: var(--muted); break-inside: avoid; }
+.sources summary { cursor: pointer; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: var(--tiny); }
+.sources ol { margin: 8px 0 0; padding-left: 1.2em; display: grid; gap: 4px; }
+.sources a { overflow-wrap: anywhere; }
+.stories { display: grid; grid-template-columns: 1fr; gap: 88px; }
+.ed-top { max-width: 900px; padding: 22px 0 6px; }
+.ed-top .ed-note { margin-bottom: 0; }
+.theme-head { border-top: 5px solid var(--ink); margin-top: 18px; padding-top: 12px; font: 900 clamp(1.6rem, 4.2vw, 2.6rem)/1.05 var(--font-head); }
+.theme-rest { margin-top: 88px; border-top: 1px solid var(--hair); padding-top: 56px; }
+.stories > article + article, .stories > article + .notes { border-top: 1px solid var(--hair); padding-top: 56px; }
+.notes { display: grid; grid-template-columns: 1fr; gap: 64px 0; }
+@media (min-width: 760px) { .notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } .notes > article:nth-child(2n) { border-left: 1px solid var(--rule); padding-left: 32px; } .notes > article:nth-child(2n+1) { padding-right: 32px; } }
+@media (min-width: 1150px) { .notes.n3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .notes.n3 > article { border-left: 0; padding: 0 26px; } .notes.n3 > article + article { border-left: 1px solid var(--rule); } .notes.n3 > article:first-child { padding-left: 0; } }
+
+/* Infographics */
+.fig { padding: 14px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--rule); margin: 10px 0 28px; break-inside: avoid; }
+.fig-t { font: 700 var(--small)/1.3 var(--font-ui); letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 12px; text-align: left !important; }
+.stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 20px; margin: 10px 0 22px; break-inside: avoid; }
+@media (min-width: 640px) { .stats.s4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } .stats.s3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.note .stats.s3, .note .stats.s4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.stat { border-top: 1px solid var(--hair); padding-top: 6px; min-width: 0; }
+.stat-v { font: 900 clamp(1.5rem, 3.4vw, 2.1rem)/1.05 var(--font-head); font-variant-numeric: tabular-nums lining-nums; }
+.stat-v small { font: 700 0.8rem var(--font-ui); margin-left: 4px; color: var(--muted); }
+.stat-l { font: 400 var(--small)/1.3 var(--font-ui); color: var(--muted); margin-top: 4px; }
+.bar-row { display: grid; grid-template-columns: minmax(0, 1fr) 5em; gap: 4px 12px; align-items: center; margin-bottom: 16px; }
+.bar-l { grid-column: 1 / -1; font: 400 var(--small)/1.3 var(--font-ui); }
+.bar-l em { font-style: normal; color: var(--muted); }
+.bar-track { height: 12px; background: var(--paper-2); position: relative; overflow: hidden; }
+.bar-fill { position: absolute; inset: 0 auto 0 0; background: var(--mark); transform-origin: left; }
+.bar-row.alt .bar-fill { background: var(--accent-2); }
+.bar-v { font: 700 var(--small) var(--font-ui); text-align: right; font-variant-numeric: tabular-nums; }
+.tl-months { position: relative; height: 18px; font: 400 var(--tiny) var(--font-ui); color: var(--muted); }
+.tl-months span { position: absolute; top: 0; height: 100%; padding-left: 5px; border-left: 1px solid var(--rule); white-space: nowrap; }
+.tl-row { margin: 20px 0 0; }
+.tl-l { font: 700 var(--small)/1.3 var(--font-ui); }
+.tl-l span { display: block; font-weight: 400; color: var(--muted); }
+.tl-track { position: relative; height: 12px; background: var(--paper-2); margin-top: 5px; }
+.tl-grid { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--rule); }
+.tl-bar { position: absolute; top: 0; bottom: 0; background: var(--mark); transform-origin: left; }
+.tl-bar.b1 { background: var(--accent-2); }
+.anim canvas { width: 100%; height: 120px; display: block; }
+.anim-row { display: flex; justify-content: space-between; gap: 12px; font: 400 var(--tiny) var(--font-ui); color: var(--muted); margin-top: 6px; }
+.anim-age { color: var(--ink); font-weight: 700; font-variant-numeric: tabular-nums; }
+.chart svg, .chip svg { width: 100%; height: auto; display: block; overflow: visible; }
+.chart .ax { stroke: var(--rule); }
+.chart .tk { fill: var(--muted); font: 400 11px var(--font-ui); }
+.chart .ln { fill: none; stroke-width: 2.6; stroke-linejoin: round; }
+.chart .lb { font: 700 12px var(--font-ui); }
+.chart .cur { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 3 3; }
+.chart .readout { font: 700 12px var(--font-ui); fill: var(--ink); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font: 400 var(--small) var(--font-ui); margin-top: 8px; }
+.legend i { display: inline-block; width: 14px; height: 3px; vertical-align: middle; margin-right: 6px; }
+.chip .frame { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+.chip .big { fill: var(--paper-2); stroke: var(--ink); stroke-width: 1.5; }
+.chip .small { fill: var(--accent-2); }
+.chip .t { fill: var(--ink); font: 700 12px var(--font-ui); }
+.chip .tm { fill: var(--muted); font: 400 11px var(--font-ui); }
+.chip .zoom { transform-box: view-box; }
+.chip-grid { display: grid; grid-template-columns: minmax(0, 260px) minmax(0, 1fr); gap: 18px; align-items: center; }
+@media (max-width: 520px) { .chip-grid { grid-template-columns: 1fr; } .chip-view { max-width: 260px; } }
+.chip-view { overflow: hidden; border: 1px solid var(--rule); }
+.chip-view svg { overflow: hidden; }
+.chip-legend p { margin: 0 0 8px; font: 400 var(--small)/1.4 var(--font-ui); text-align: left !important; }
+@keyframes chipzoom { 0%, 18% { transform: scale(1); } 48%, 78% { transform: scale(22); } 100% { transform: scale(1); } }
+@keyframes chipfade { 0%, 30% { opacity: 0; } 48%, 78% { opacity: 1; } 92%, 100% { opacity: 0; } }
+.chip.run .zoom { animation: chipzoom 9s ease-in-out infinite; }
+.chip.run .zlabel { animation: chipfade 9s ease-in-out infinite; }
+.chip .zlabel { opacity: 0; }
+.table-wrap { overflow-x: auto; margin: 14px 0; }
+table { border-collapse: collapse; width: 100%; font: 400 var(--small)/1.45 var(--font-ui); }
+th, td { text-align: left; vertical-align: top; padding: 8px 10px 8px 0; border-bottom: 1px solid var(--rule); }
+th { font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: var(--tiny); color: var(--muted); border-bottom: 1px solid var(--hair); }
+td:first-child { font-weight: 700; white-space: nowrap; }
+@media (max-width: 640px) {
+  .table-wrap { overflow: visible; }
+  .table-wrap table, .table-wrap tbody, .table-wrap tr, .table-wrap td { display: block; width: 100%; }
+  .table-wrap thead { display: none; }
+  .table-wrap tr { border-bottom: 1px solid var(--rule); padding: 10px 0; }
+  .table-wrap td { border: 0; padding: 2px 0; white-space: normal; }
+  .table-wrap td:first-child { white-space: normal; }
+  .table-wrap td + td::before { content: attr(data-l) ": "; color: var(--muted); font-size: var(--tiny); letter-spacing: .04em; text-transform: uppercase; }
+}
+.quote { margin: 4px 0 20px; padding: 0; break-inside: avoid; }
+.quote p { font: italic 700 clamp(1.6rem, 3.6vw, 2.4rem)/1.2 var(--font-head); margin: 0; text-align: left !important; }
+.quote p::before { content: "«"; color: var(--accent-2); }
+.quote p::after { content: "»"; color: var(--accent-2); }
+.quote cite { display: block; margin-top: 8px; font: 400 var(--small) var(--font-ui); font-style: normal; color: var(--muted); }
+.video { display: block; text-decoration: none; color: var(--ink); margin: 14px 0 18px; break-inside: avoid; }
+.video .thumb { position: relative; display: block; background: var(--plate); overflow: hidden; }
+.video .thumb img { width: 100%; height: auto; display: block; }
+
+.video .play { position: absolute; left: 50%; top: 50%; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(26,26,26,.78); border: 2px solid #fff6b6; }
+.video .play::after { content: ""; position: absolute; left: 25px; top: 19px; border-left: 20px solid #fff6b6; border-top: 12px solid transparent; border-bottom: 12px solid transparent; }
+.video .dur { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,.82); color: #fff; font: 700 0.8rem var(--font-ui); padding: 3px 7px; letter-spacing: 0.03em; }
+.video .vt { display: block; font: 700 1.05rem/1.3 var(--font-head); margin-top: 8px; }
+.video:hover .vt { color: var(--accent); }
+.video .vs { display: block; font: 400 var(--small)/1.4 var(--font-ui); color: var(--muted); margin-top: 3px; }
+.gallery { columns: 2; column-gap: 18px; margin: 10px 0 26px; }
+@media (min-width: 900px) { .gallery.g3 { columns: 3; } }
+@media (max-width: 520px) { .gallery { columns: 1; } }
+.gallery figure { margin: 0 0 18px; break-inside: avoid; }
+.gallery img { height: auto; }
+.digest { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
+@media (min-width: 900px) { .digest { display: block; columns: 2; column-gap: 40px; column-rule: 1px solid var(--rule); } .digest li { break-inside: avoid; } }
+.digest li { border-top: 1px solid var(--rule); padding: 20px 0 24px; break-inside: avoid; }
+.digest .src { font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mark); }
+.digest .src span { color: var(--muted); font-weight: 400; margin-left: 8px; }
+.digest a { display: block; font: 700 1.08rem/1.3 var(--font-head); color: var(--ink); text-decoration: none; margin: 4px 0; }
+.digest a:hover { color: var(--accent); }
+.digest p { margin: 0; font-size: 0.98rem; text-align: left; }
+.press .feature .body { column-count: 1; }
+
+/* Motion: only elements that start below the fold are armed */
+.armed .bar-fill, .armed .tl-bar { transform: scaleX(0); }
+.armed.in .bar-fill, .armed.in .tl-bar { transform: scaleX(1); transition: transform 1.1s cubic-bezier(.2,.7,.2,1); }
+.armed.in .bar-row:nth-child(3) .bar-fill { transition-delay: .12s; } .armed.in .bar-row:nth-child(4) .bar-fill { transition-delay: .24s; } .armed.in .bar-row:nth-child(5) .bar-fill { transition-delay: .36s; }
+.armed .chart .ln { stroke-dasharray: var(--len); stroke-dashoffset: var(--len); }
+.armed.in .chart .ln { stroke-dashoffset: 0; transition: stroke-dashoffset 2.4s ease-out; }
+
+/* Archive and footer */
+.archive { padding-block: 40px 20px; }
+.archive h2 { font: 900 2rem var(--font-head); margin: 0 0 12px; border-top: 5px solid var(--ink); padding-top: 12px; }
+.arch-list { list-style: none; margin: 0; padding: 0; }
+.arch-list a { display: grid; grid-template-columns: 4.5em 10em minmax(0, 1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); font-family: var(--font-ui); }
+.arch-list a[aria-current="page"] { color: var(--accent); }
+.arch-no, .arch-d { font-size: var(--small); color: var(--muted); }
+@media (max-width: 560px) { .arch-list a { grid-template-columns: 4em minmax(0, 1fr); } .arch-d { display: none; } }
+.footer { border-top: 1px solid var(--hair); margin-top: 60px; }
+.footer .wrap { padding-block: 22px 36px; display: grid; gap: 6px 40px; grid-template-columns: 1fr; }
+/* правило 54: подвал из трёх смысловых блоков в первых трёх колонках модуля, четвёртая пустая, без переносов */
+@media (min-width: 600px) { .footer .wrap { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 900px) { .footer .wrap { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+.footer .foot-nav { grid-column: 1 / -1; }
+.footer p { hyphens: manual; -webkit-hyphens: manual; }
+.footer p { margin: 0 0 6px; font: 400 var(--tiny)/1.5 var(--font-ui); color: var(--muted); }
+.footer a { color: var(--muted); }
+.footer .contacts { color: var(--ink-2); }
+.footer b, .footer strong { font-weight: 400; }
+.footer .contacts a { color: var(--accent); user-select: all; }
+@page { size: A3 landscape; margin: 13mm 15mm 14mm; }
+@media print {
+  :root { --text: 9.6pt; --small: 8.2pt; --tiny: 7.2pt; color-scheme: light; --paper: transparent; --paper-2: #e9e2d0; --ink: #141311; --ink-2: #33312d; --muted: #66625b; --rule: #d2cdc3; --hair: #bdb7ac; --accent: #044389; --accent-2: #d9772a; --link: #2a6fc9; --mark: #8a6a2f; }
+  html, body { background: transparent !important; }
+  .edition, .pager, .archive, .sources, .anim canvas, .anim-row, .chip-view { display: none !important; }
+  .gut { padding-left: 0; padding-right: 0; }
+  .plate { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .plate .wrap { padding: 0 0 4mm; }
+  .logo { font-size: 88pt; }
+  .wrap { max-width: none; }
+  .page { break-before: auto; padding-block: 0; border: 0; margin: 0 0 6mm; }
+  .page + .page { margin-top: 0; }
+  .folio { display: none; }
+  #p1 { padding-top: 2mm; }
+  .front { display: block; padding-top: 4mm; }
+  .front > aside { display: block; border: 0; padding: 0 0 4mm; margin-bottom: 5mm; border-bottom: 0.5pt solid var(--hair); }
+  .front > aside .index { display: none !important; }
+  .ed-note { max-width: 150mm; }
+  .front > aside .ed-note { margin: 0; }
+
+
+  .lead .body, .feature .body { column-count: 5; column-gap: 6mm; column-rule: 0.5pt solid var(--hair); }
+  .note .body { column-count: 2; column-gap: 5mm; column-rule: 0.5pt solid var(--hair); }
+  .body .span { column-span: all; }
+  .ed-note p { font-size: 8.6pt; }
+  .notes, .notes.n3 { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10mm 0; }
+  .notes > article { border-left: 0 !important; padding: 0 5mm !important; }
+  .notes > article + article { border-left: 0.5pt solid var(--hair) !important; }
+  .notes > article:first-child { padding-left: 0 !important; }
+
+  .stories { gap: 5mm; }
+  .stories > article + article, .stories > article + .notes { padding-top: 5mm; }
+  .sec-head { margin: 4mm 0 4mm; padding-top: 2mm; break-after: avoid; }
+  .notes, .notes.n3 { gap: 5mm 0 !important; }
+  .fig { margin: 2mm 0 4mm; padding: 2mm 0; }
+  .body p { margin-bottom: 0.6em; }
+  .body h4 { margin: 1.2em 0 0.4em; padding-top: 0.6em; }
+  figure { margin-bottom: 3mm; }
+  .dek { margin-bottom: 3mm; } article h3.hl { margin: 2mm 0 3mm; }
+  .feature-top { margin-bottom: 3mm; }
+  .sources { display: none; }
+  .footer { margin-top: 4mm; }
+  .sec-head h2 { font-size: 44pt; }
+  .lead h3.hl { font-size: 42pt; } .feature h3.hl { font-size: 30pt; } .note h3.hl { font-size: 18pt; }
+  .dek { font-size: 13pt; max-width: none; }
+  .feature-top { grid-template-columns: 1fr 1.3fr; gap: 8mm; }
+  figure, .stats, .video, .quote, .gallery figure, .chart, .tl, .bar-row, tr { break-inside: avoid; }
+  .fig { break-inside: auto; }
+  figure img, .video .thumb img, .ed-note img { filter: none !important; }
+  .gallery { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 4mm; }
+  .lead > figure { float: right; width: 60%; margin: 0 0 5mm 8mm; }
+
+  .lead .body { column-count: 3 !important; }
+  .lead::after { content: ""; display: block; clear: both; }
+  .chart svg { max-height: 70mm; } .fig.chart, .fig.anim, .fig.chip { max-width: 62%; }
+  .tl, .fig:not(.chart):not(.anim):not(.chip) { max-width: 100%; }
+  .feature-top { align-items: start; } .feature-top figure img { max-height: 95mm; width: auto; max-width: 100%; }
+  .logo { font-size: 72pt; }
+
+  .video .thumb { max-height: 50mm; }
+  .footer { margin-top: 8mm; break-inside: avoid; }
+  .folio { position: static; }
+  a { color: inherit; text-decoration: none; }
+  .armed .bar-fill, .armed .tl-bar { transform: none !important; }
+  .armed .chart .ln { stroke-dashoffset: 0 !important; }
+}
+/* Печатный макет (?print=1): газетная полоса A3 альбом, шапка во всю ширину, выходные данные, единый поток в пять колонок */
+.np { color: #161411; font-family: var(--font-body); }
+.np-mast { text-align: center; }
+.np-topline { display: flex; justify-content: space-between; font: 400 7.6pt var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: #4a463f; padding-bottom: 1.5mm; }
+.np-logo { font-family: var(--font-logo); font-weight: 400; line-height: 1.12; padding-bottom: .14em; white-space: nowrap; color: #161411; text-shadow: 0.076em 0 0 var(--logo-shadow); display: inline-block; }
+.np-logo .daily { font-family: var(--font-narrow); font-weight: 700; font-size: .16em; letter-spacing: .24em; text-transform: uppercase; color: #044389; text-shadow: none; margin-left: .5em; vertical-align: .55em; }
+.np-imprint { border-top: 2.2pt solid #161411; border-bottom: .6pt solid #161411; margin-top: 2mm; padding: 1.4mm 0; display: flex; justify-content: space-between; gap: 6mm; font: 700 7.6pt var(--font-narrow); letter-spacing: .07em; text-transform: uppercase; }
+.np-imprint span:nth-child(2) { font-weight: 400; font-family: var(--font-head); font-style: italic; text-transform: none; letter-spacing: 0; font-size: 9pt; }
+.np-lead { margin-top: 4mm; }
+.np-kicker { font: 700 7.4pt var(--font-ui); letter-spacing: .1em; text-transform: uppercase; color: var(--mark); margin-bottom: 1mm; }
+.np-kicker span { color: #6b6559; font-weight: 400; margin-left: 2mm; }
+.np-lead h1 { font: 900 46pt/0.98 var(--font-head); letter-spacing: -.01em; margin: 0 0 6mm; text-wrap: balance; }
+.np-dek { font: italic 400 13pt/1.3 var(--font-head); color: #2f2c27; margin: 0 0 3mm; }
+.np figure { margin: 0 0 3mm; break-inside: avoid; }
+.np figure img { display: block; width: 100%; height: auto; }
+.np figcaption { font: 400 6.8pt/1.3 var(--font-ui); color: #5a554c; margin-top: 1mm; }
+.np figcaption .credit { text-transform: uppercase; letter-spacing: .03em; font-size: 6.2pt; }
+.np-front { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; align-items: start; margin-bottom: 4mm; }
+.np-front .np-hero { grid-column: 1 / 4; } .np-front .np-side { grid-column: 4 / 5; }
+.np-front .np-side .stats { column-gap: 6mm; }
+.np-side-text { font-size: 8.8pt; line-height: 1.28; }
+.np-side-text h4 { break-after: avoid; }
+.np-front .np-side { font-size: 9.2pt; line-height: 1.38; }
+.np-front .np-side .np-dek { font-size: 12pt; }
+.np-flow { column-count: 4; column-gap: 6mm; column-rule: .5pt solid #b9b1a0; column-fill: balance; font-size: 9.2pt; line-height: 1.38; }
+.np-flow p { margin: 0 0 .55em; text-align: left; hyphens: auto; -webkit-hyphens: auto; orphans: 2; widows: 2; }
+.np-span { column-span: all; margin: 2mm 0 4mm; }
+.np-sec { border-top: 3.5pt solid #161411; padding-top: 1.2mm; margin: 4mm 0 2mm; break-after: avoid; break-inside: avoid; }
+.np-sec b { font: 900 15pt/1.05 var(--font-head); display: block; }
+.np-sec i { font: italic 400 8pt var(--font-head); color: #5a554c; }
+.np-story { margin-bottom: 4mm; }
+.np-story + .np-story { border-top: .5pt solid #b9b1a0; padding-top: 2.5mm; }
+.np-story h2 { font: 900 15pt/1.06 var(--font-head); margin: 0 0 1.5mm; break-after: avoid; text-wrap: balance; }  /* правило 53: оторванный заголовок сборщик PDF переносит точечно (hbrk), сплошной запрет разрыва раздувает номер на полосу */
+.np-feature h2 { font-size: 22pt; line-height: 1.03; margin-bottom: 2mm; }
+.np-feature .np-span .np-dek { font-size: 12pt; }
+
+.np-inflow { margin: 2mm 0 3mm; }
+.np-inflow .gallery, .np .gallery.g3 { display: block; columns: auto; }
+.np .gallery figure, .np figure { break-inside: avoid; }
+.digest-cover img { width: 260px; max-width: 100%; }
+.np .digest-cover img { width: 60%; }
+.np .gallery figure { margin: 0 0 2.5mm; }
+.np-inflow table { font-size: 6.6pt; } .np-inflow td:first-child { white-space: normal; }
+.np-story .np-dek { font-size: 9.6pt; }
+.np-story h4 { font: 700 10.5pt/1.2 var(--font-head); margin: 2.5mm 0 1mm; padding-top: 1.5mm; border-top: .5pt solid #b9b1a0; break-after: avoid; }
+.np-editor { font-style: italic; border-top: .5pt solid #161411; border-bottom: .5pt solid #161411; padding: 1.5mm 0; margin: 2mm 0; break-inside: avoid; }
+.np-editor::before { content: "Редакция"; display: block; font: 700 6.6pt var(--font-ui); font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: #b35d16; }
+.np-ed-top { border-top: 0 !important; border-bottom: .6pt solid #161411; margin: 2.5mm 0 3mm !important; padding: 0 0 2.5mm !important; column-count: 4; column-gap: 6mm; column-rule: .3pt solid #c3b8a0; font-size: 9pt; line-height: 1.35; }
+.np-ed.np-ed-top small { display: inline; margin: 0 0 0 2mm; white-space: nowrap; }
+.np-ed.np-ed-top img { width: 13mm; height: 13mm; }
+.np-side-text p { margin: 0 0 .55em; text-align: left; hyphens: auto; }
+.np-ed { break-inside: avoid; border-top: 3.5pt solid #161411; padding-top: 1.5mm; margin-bottom: 4mm; font-style: italic; }
+.np-ed img { float: left; width: 16mm; height: 16mm; border-radius: 50%; margin: 1mm 2.5mm 1mm 0; }
+.np-ed b { font: 700 6.8pt var(--font-ui); font-style: normal; letter-spacing: .1em; text-transform: uppercase; display: block; margin-bottom: 1mm; }
+.np-ed small { display: block; font: 400 6.8pt var(--font-ui); font-style: normal; color: #5a554c; margin-top: 1mm; }
+.np-quote { font: italic 700 15pt/1.18 var(--font-head); margin: 2mm 0 3mm; break-inside: avoid; }
+.np-quote small { display: block; font: 400 6.8pt var(--font-ui); font-style: normal; color: #5a554c; margin-top: 1mm; }
+.np .stats { grid-template-columns: 1fr 1fr !important; gap: 2mm 3mm; margin: 2mm 0 3mm; }
+.np .stat-v { font-size: 15pt; } .np .stat-l { font-size: 6.8pt; }
+.np .fig { border-top: .5pt solid #161411; border-bottom: .5pt solid #b9b1a0; margin: 2mm 0 3mm; padding: 1.5mm 0; }
+.np .fig-t { font-size: 6.8pt; }
+.np .bar-l, .np .bar-v, .np .tl-l { font-size: 7pt; } .np .bar-row { margin-bottom: 2mm; } .np .tl-row { margin-top: 2mm; }
+.np table { font-size: 7.4pt; } .np th, .np td { padding: 1mm 2mm 1mm 0; }
+.np .gallery { display: block; columns: 1; margin: 0; }
+.np .gallery.g3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+.np .gallery img { height: auto; }
+.np .video { margin: 2mm 0 3mm; } .np .video .vt { font-size: 9pt; } .np .video .vs { font-size: 6.8pt; } .np .video .play { width: 30px; height: 30px; margin: -15px 0 0 -15px; } .np .video .play::after { left: 11px; top: 8px; border-left-width: 10px; border-top-width: 6px; border-bottom-width: 6px; }
+.np .digest { display: block; } .np .digest li { padding: 1.5mm 0; } .np .digest a { font-size: 9.6pt; } .np .digest p { font-size: 8.4pt; }
+.np .chart svg { max-height: none; }
+/* правило 54: выходные данные в PDF – три смысловых блока в первых трёх колонках, четвёртая пустая, без переносов и без перетекания между колонками */
+.np-end { column-span: all; border-top: 2.2pt solid #161411; margin-top: 4mm; padding-top: 1.5mm; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; font: 400 6.8pt/1.4 var(--font-ui); color: #4a463f; break-inside: avoid; hyphens: manual; -webkit-hyphens: manual; }
+.np-end > div { break-inside: avoid; }
+
+.np-end i { display: block; font: 700 6.4pt var(--font-ui); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--mark); margin-bottom: .8mm; }
+.np-head { break-inside: avoid; break-after: avoid; }
+.gallery-t { margin-top: 3mm; }
+.np-end b { font-weight: 400; color: inherit; }
+/* Единый фотофильтр газеты: плёночный тон в духе Kodak Portra (приподнятые чёрные, холодноватые тени, тёплые света, приглушённый цвет) */
+figure img, .video .thumb img, .ed-note img { filter: url(#film); }
+.state { padding: 60px 0; color: var(--muted); font-family: var(--font-ui); }
+.table-wrap a.cell-link, .tl-l a.cell-link, h4 a.cell-link, .np-flow a.cell-link { color: inherit; text-decoration: underline; text-decoration-thickness: .5px; text-decoration-color: var(--hair, #c3b8a0); text-underline-offset: 2px; }
+.table-wrap a.cell-link:hover { text-decoration-color: currentColor; }
+.foot-nav { grid-column: 1 / -1; display: flex; justify-content: flex-end; padding-bottom: 10px; border-bottom: 1px solid var(--hair); margin-bottom: 8px; }
+.np-flow .np-wide { display: block !important; width: calc(200% + 6mm) !important; max-width: none !important; position: relative; z-index: 2; background: #f4eedd; break-inside: avoid; margin-bottom: 2mm; }  /* правило 95: снимок на две колонки, сборщик PDF ставит в соседней колонке распорку той же высоты */
+.np-flow .np-wide img { width: 100% !important; max-width: none !important; max-height: none !important; }
+.np-ws { display: block; break-inside: avoid; }
+.np-top { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; align-items: start; }  /* слово редактора только в первой колонке, рядом заголовок */
+.np-top-head { grid-column: 2 / 5; border-left: .5pt solid #b9b1a0; padding-left: 3mm; margin-left: -3mm; }
+.np-top .np-ed-top { grid-column: 1 / 2; column-count: 1 !important; border: 0 !important; margin: 0 !important; padding: 0 !important; }
+.np-front .np-side { border-left: .5pt solid #b9b1a0; padding-left: 3mm; margin-left: -3mm; }  /* слово редактора только в четвёртой колонке */
+.np-mark { font-size: 1px; line-height: 0; color: #f4eedd; position: absolute; }  /* служебная метка сборщика PDF не занимает места в строке */
+.np figcaption { text-indent: 0 !important; }  /* правило 56: подпись под снимком начинается от края, без отступа */
+.gallery.row { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; columns: auto; }
+.np .gallery.row { gap: 2mm; break-inside: avoid; } .np .gallery.row figcaption { font-size: 5.6pt; line-height: 1.25; }
+/* перечень, названный в заголовке числом, нумеруется крупной цифрой-буквицей */
+.digest { counter-reset: dg; }
+.digest li { counter-increment: dg; display: grid; grid-template-columns: auto minmax(0, 1fr); column-gap: 12px; }
+.digest li > * { grid-column: 2; }
+.digest li::before { content: counter(dg); grid-column: 1; grid-row: 1 / span 3; font: 900 2.6rem/0.85 var(--font-head); color: var(--ink); min-width: 1.1em; }
+.dropnum { float: left; font: 900 2.4em/0.82 var(--font-head); margin: 0.06em 0.18em 0 0; color: var(--ink); }
+.num-p { overflow: hidden; }
+.dropnum-lead { font-size: 3.4em; line-height: 0.8; margin: 0.06em 0.1em 0 0; }
+.np .digest li { column-gap: 2.5mm; } .np .digest li::before { font-size: 20pt; }
+.carousel { position: relative; margin: 0 0 18px; }
+.car-stage { position: relative; }
+.car-track { display: flex; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; align-items: flex-start; -webkit-overflow-scrolling: touch; }
+.car-track::-webkit-scrollbar { display: none; }
+.car-track > figure { flex: 0 0 100%; min-width: 0; scroll-snap-align: start; margin: 0; }
+.car-badge { position: absolute; top: 10px; right: 10px; display: flex; align-items: center; gap: 4px; padding: 4px 7px; color: #fff; background: rgba(20, 18, 15, .55); border-radius: 3px; font: 700 var(--tiny)/1 var(--font-ui); pointer-events: none; }
+.car-arrow { position: absolute; top: calc(var(--car-h, 80%) / 2); transform: translateY(-50%); width: 38px; height: 38px; border: 0; border-radius: 50%; background: rgba(241, 234, 217, .88); color: #161411; font: 400 1.6rem/1 var(--font-head); cursor: pointer; display: grid; place-items: center; padding: 0 0 3px; }
+.car-prev { left: 8px; } .car-next { right: 8px; }
+.car-arrow:disabled { opacity: 0; pointer-events: none; }
+.carousel.framed .car-track > figure img { display: block; width: 100%; height: var(--car-h); object-fit: contain; }
+.carousel.framed .car-track > figure .sketch-slot, .carousel.framed .car-track > figure > svg, .carousel.framed .car-track > figure .sketch-slot svg { height: var(--car-h); width: 100%; }
+/* точки внутри кадра, у нижнего края текущего снимка */
+.car-dots { position: absolute; left: 50%; top: calc(var(--car-h, 60%) - 12px); transform: translate(-50%, -100%); display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: calc(100% - 100px); padding: 5px 8px; background: rgba(20, 18, 15, .45); border-radius: 10px; }
+.car-dot { width: 7px; height: 7px; padding: 0; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .85); background: transparent; cursor: pointer; }
+.car-dot.on { background: #fff; }
+@media (hover: none) { .car-arrow { width: 34px; height: 34px; } }
+/* нечётный последний короткий материал не оставляет пустую колонку: занимает всю ширину, снимок рядом с текстом */
+@media (min-width: 760px) {
+  .notes:not(.n3) > article:last-child:nth-child(odd) { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 40px; align-items: start; padding-right: 0; }
+  .notes:not(.n3) > article:last-child:nth-child(odd) > :first-child { grid-column: 2; grid-row: 1 / span 99; }
+  .notes:not(.n3) > article:last-child:nth-child(odd) > :not(:first-child) { grid-column: 1; }
+}
+.np .illus, .np .sketch-slot, .np figure svg, .np .anim, .np .fig { break-inside: avoid; }
+.feature-lead-text { margin-top: 18px; column-count: 1 !important; }
+.feature-lead-text .in-head { margin-top: 10px; }
+.feature-lead-text > p:first-of-type::first-letter { font: inherit; float: none; padding: 0; }
+/* МОДУЛЬ: четыре колонки, промежуток 40 px. Любой блок занимает 1, 2, 3 или 4 колонки; другой ширины нет */
+@media (min-width: 1000px) {
+  .front { grid-template-columns: calc(75% - 10px) minmax(0, 1fr); column-gap: 40px; }
+  .front > aside { border-left: 0; padding-left: 0; }
+  .notes { column-gap: 40px; }
+  .notes > article:nth-child(2n), .notes > article:nth-child(2n+1) { padding-left: 0; padding-right: 0; border-left: 0; }
+  .notes > article:nth-child(2n) { position: relative; } .notes > article:nth-child(2n)::before { content: ""; position: absolute; left: -20px; top: 0; bottom: 0; border-left: 1px solid var(--rule); }
+  .notes.n3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .notes.n3 > article { padding: 0; border-left: 0; }
+  .notes.n3 > article + article { border-left: 0; }
+  .gallery, .gallery.g3 { column-gap: 40px; }
+  .feature-top { column-gap: 40px; }
+  /* внутри главной полосы (три колонки модуля): заголовок в одной колонке, снимок в двух, текст в три колонки */
+  .front > div .feature .feature-top { grid-template-columns: calc((100% - 80px) / 3) minmax(0, 1fr); }
+  .front > div .feature .body, .front > div .lead .body { column-count: 3; column-gap: 40px; }
+  /* во всю ширину: текст большого материала и галереи по четыре колонки модуля */
+  .stories > .feature .body { column-count: 2; column-gap: 40px; }
+  .stories .gallery.g3, .theme-rest .gallery.g3 { columns: 4; }
+  .notes.n3 > article:nth-child(2n)::before { content: ""; position: absolute; left: -20px; top: 0; bottom: 0; border-left: 1px solid var(--rule); }
+  .notes.n3 > article:nth-child(2n) { position: relative; }
+}
+.np-flow figure.illus, .np-flow .gallery figure, .np-flow .np-inflow figure { display: inline-block; width: 100%; vertical-align: top; }
+/* воздух между блоками на сайте */
+@media screen {
+  .lead .dek, .feature .dek { margin-bottom: 36px; }
+  .lead .hl, .feature .hl, .lead h2, .feature h2 { margin-bottom: 18px; }
+  .lead .body > .span, .feature .body > .span { margin-top: 36px; margin-bottom: 36px; }
+  .lead .body > .stats, .feature .body > .stats { padding-top: 8px; }
+  .lead .body h4, .feature .body h4 { break-after: auto; margin-top: 1.8em; }
+  .body p { margin-bottom: 1.1em; }
+  .lead .body, .feature .body { margin-top: 8px; }
+}
+.np figure.illus { overflow: hidden; }
+/* ВЕРТИКАЛЬНАЯ СЕТКА: единица равна строке основного текста (--bl). Абзацы, подзаголовки и отступы кратны строке,
+   снимки, таблицы, врезки и заголовки материалов добираются до целого числа строк скриптом snapGrid() */
+:root { --bl: 1.65rem; }
+@media screen {
+  .body p { line-height: var(--bl); margin: 0 0 var(--bl); }
+  .body h4 { line-height: var(--bl); margin: 0; padding: calc(var(--bl) - 1px) 0 0; border-top: 1px solid var(--hair); }
+  .body > h4:first-child, .lead .body > .span + h4, .feature .body > .span + h4, .feature-lead-text > h4:first-child { padding-top: 0; border-top: 0; }
+  .body h4 + p { margin-top: 0; }
+  .body > *, .feature-lead-text > * { margin-top: 0 !important; }
+}
+.np { --bl: 12.7pt; }
+.np-flow p, .np-side-text p { line-height: var(--bl); margin: 0 0 calc(var(--bl) * .5) !important; text-indent: 0; }  /* правило 72: абзацы только с пробелом между ними */
+.foot { font: 400 .78em/1.35 var(--font-ui); color: var(--muted); margin: .4em 0 1em !important; hyphens: none; }
+.video-inline { display: block; width: 100%; height: auto; background: #000; }
+.dm-b { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0; } .dm-b button { font: 500 var(--tiny) var(--font-ui); padding: 6px 10px; border: 1px solid var(--rule); background: none; color: var(--ink); cursor: pointer; } .dm-b button[aria-pressed=true] { background: var(--ink); color: var(--paper); }
+.dm-s { position: relative; } .dm-s img { display: block; width: 100%; height: auto; filter: none !important; opacity: 1; mix-blend-mode: normal; } .dm-s .ov { position: absolute; inset: 0; opacity: 0 !important; transition: opacity .25s; } .dm-s .ov.on { opacity: 1 !important; }
+.dm-t { margin: 6px 0 0; min-height: 3.2em; }
+.np-flow h4, .np-side-text h4 { line-height: var(--bl); margin: 0; padding: var(--bl) 0 0; }
+.np-flow > *, .np-story > *, .np-inflow > * { margin-top: 0 !important; }
+/* ЛИНЕЙКИ: единая система. Раздел: толстая линейка над названием. Между материалами: одна тонкая линейка,
+   по две строки сетки сверху и снизу. Внутри материала: тонкая линейка над подзаголовком, над врезкой «Редакция»
+   и под блоком во всю ширину. У диаграмм, цифр, источников и самих врезок снизу линеек нет; двух линеек подряд не бывает */
+@media screen {
+  section.page { border-bottom: 0 !important; padding-bottom: 0; margin-bottom: calc(var(--bl) * 4); }
+  .stories { gap: 0 !important; }
+  .stories > article + article, .stories > article + .notes, .stories > .notes + article, .theme-rest { border-top: 1px solid var(--hair) !important; margin-top: calc(var(--bl) * 2) !important; padding-top: calc(var(--bl) * 2) !important; }
+  .notes { row-gap: 0 !important; }
+  .notes > article:nth-child(n+3) { border-top: 1px solid var(--hair); margin-top: calc(var(--bl) * 2); padding-top: calc(var(--bl) * 2); }
+  .notes > article:nth-child(n+3)::before { top: calc(var(--bl) * 2); }
+  .fig, figure.fig { border-top: 0 !important; border-bottom: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+  .stats { border-bottom: 0 !important; }
+  .sources, details.sources { border-top: 0 !important; border-bottom: 0 !important; }
+  .editor { border-bottom: 0 !important; border-top: 1px solid var(--hair) !important; padding-top: calc(var(--bl) / 2) !important; padding-bottom: 0 !important; }
+  .digest { border-bottom: 0 !important; }
+  .lead .body > .span, .feature .body > .span { border-bottom: 1px solid var(--hair); padding-bottom: var(--bl); }
+  .body > .span + .editor, .body > .span + h4 { border-top: 0 !important; }
+  .body > .span:last-child, .body > .span + .sources, .body > .span:has(+ details.sources:last-child) { border-bottom: 0; }
+}
+/* МИНИМУМ ЛИНЕЕК: внутри оглавления, цифр, перечней и таблиц линеек нет, порядок держится воздухом и сеткой */
+@media screen {
+  .foot-nav { border-bottom: 0 !important; padding-bottom: 0 !important; }
+  .footer .wrap > div + div { border: 0 !important; }
+  .ix-sec, aside li, aside ol, aside ul, .index li { border: 0 !important; }
+  aside .ix-sec + .ix-sec { margin-top: var(--bl); }
+  .stat { border-top: 0 !important; padding-top: 0 !important; }
+  .digest li { border-top: 0 !important; }
+  .digest li + li { margin-top: calc(var(--bl) / 2); }
+  .table-wrap td, .table-wrap th { border-top: 0 !important; border-bottom: 0 !important; }
+  .table-wrap thead th { border-bottom: 1px solid var(--hair) !important; }
+  .table-wrap tbody tr:nth-child(even) td { background: transparent; }
+  .notes > article:nth-child(2n)::before, .notes.n3 > article:nth-child(2n)::before { content: none; }
+}
+
+/* правило 52: всё, что ссылка, голубое (--link) и без подчёркивания; голубой не используется для не-ссылок (для них --mark) */
+a, a:visited, .index a, .digest a, .video, .arch-list a, .pager a, .footer .contacts a,
+.table-wrap a.cell-link, .tl-l a.cell-link, h4 a.cell-link, .np-flow a.cell-link, .np a { color: var(--link) !important; text-decoration: none !important; }
+a:hover { opacity: .78; }
+a *:not(svg):not(svg *) { color: inherit !important; }
+
+/* правило 57: между любыми соседними блоками (абзац, снимок, галерея, цифры, врезка, видео, таблица) один и тот же зазор: одна строка сетки, на сайте и в PDF */
+@media screen {
+  .body figure, .body .fig, .body .video, .body .stats, .body .quote, .body .editor, .body .table-wrap, .body .tl, .body .chart, .body .gallery, .body .carousel, .body > .span { margin-top: 0 !important; margin-bottom: var(--bl) !important; }
+  .body .sources { margin-top: 0 !important; }
+  .body .gallery figure:last-child, .body .carousel figure { margin-bottom: 0 !important; }
+  /* блок во всю ширину после колонок: нижний отступ последнего абзаца на стыке то пропадает, то складывается, поэтому зазор даёт сам блок */
+  .body > *:has(+ .span) { margin-bottom: 0 !important; }
+  .body > .span:not(:first-child) { margin-top: var(--bl) !important; }
+}
+.np-flow figure, .np-flow .np-inflow, .np-flow .fig, .np-flow .video, .np-flow .stats, .np-flow .np-editor, .np-flow .np-quote, .np-side-text figure, .np-side-text .np-editor { margin-top: var(--bl) !important; margin-bottom: var(--bl) !important; }
+.np-flow .np-inflow figure, .np-flow .gallery figure { margin-top: 0 !important; }
+/* правило 58: горизонтальная линия только над блоком; под блоками линий нет нигде */
+.edition, .pager, .index h3, .index .ix-sec, .editor, .fig, .np-imprint, .np-editor, .np-ed-top, .np .fig, .foot-nav, .arch-list a, th, td, .table-wrap tr, .table-wrap thead th, .lead .body > .span, .feature .body > .span, .page { border-bottom: 0 !important; }
+tbody tr:first-child > td { border-top: 1px solid var(--hair); }
+.np tbody tr:first-child > td { border-top: .5pt solid #b9b1a0; }
+.mat-nav { position: fixed; right: max(12px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); z-index: 20; display: flex; flex-direction: column; gap: 8px; }
+.mat-nav button { -webkit-appearance: none; appearance: none; width: 40px; height: 40px; padding: 0; display: grid; place-items: center; cursor: pointer; color: var(--ink); background: var(--paper); border: 1px solid var(--hair); border-radius: 50%; }
+.mat-nav button:disabled { opacity: .3; cursor: default; }
+.mat-nav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+@media (max-width: 900px) { .mat-nav { transition: opacity .25s; } .mat-nav.idle { opacity: 0; pointer-events: none; } }
+@media print { .mat-nav { display: none !important; } }
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
+  <feComponentTransfer>
+    <feFuncR type="table" tableValues="0.045 0.27 0.53 0.78 0.985"/>
+    <feFuncG type="table" tableValues="0.045 0.26 0.51 0.755 0.955"/>
+    <feFuncB type="table" tableValues="0.085 0.275 0.485 0.71 0.905"/>
+  </feComponentTransfer>
+  <feColorMatrix type="saturate" values="0.88"/>
+</filter></svg>
+<header class="plate gut">
+  <div class="wrap">
+    <div class="plate-top"><span id="m-no">№ …</span><span id="m-date"></span></div>
+    <div class="logo" aria-label="_светопроба weekly">_светопроба<span class="daily">weekly</span></div>
+    <p class="byline-main">Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</p>
+    <div class="spec" aria-hidden="true"></div>
+  </div>
+</header>
+<div class="edition gut">
+  <div class="wrap">
+    <span id="m-meta">Свет · архитектура · города · книги · наука</span>
+    <nav class="nav" aria-label="Номера">
+      <button id="b-prev" type="button">‹ Раньше</button>
+      <button id="b-arch" type="button">Архив</button>
+      <button id="b-next" type="button">Позже ›</button>
+      <button id="b-pdf" class="pdf" type="button" hidden>Скачать PDF</button>
+    </nav>
+  </div>
+</div>
+<div class="mat-nav" id="mat-nav" hidden><button type="button" id="mat-up" aria-label="К началу предыдущего материала" title="Предыдущий материал"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 15V3M4 8l5-5 5 5"/></svg></button><button type="button" id="mat-down" aria-label="К началу следующего материала" title="Следующий материал"><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 3v12M4 10l5 5 5-5"/></svg></button></div>
+<nav class="pager gut" aria-label="Полосы номера"><ol id="pager"></ol></nav>
+<main id="issue" class="gut"><div class="wrap"><p class="state">Загружаю номер…</p></div></main>
+<section class="archive gut" id="archive" aria-labelledby="arch-h">
+  <div class="wrap">
+    <h2 id="arch-h">Архив номеров</h2>
+    <ul class="arch-list" id="arch-list"></ul>
+  </div>
+</section>
+<footer class="footer gut">
+  <div class="wrap">
+    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button></nav>
+    <div>
+      <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</p>
+    </div>
+    <div>
+      <p>Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем. _светопроба weekly выходит раз в неделю, по субботам. Каждый материал сверен с первоисточником, ссылки в блоке «Источники».</p>
+    </div>
+    <div>
+      <p class="contacts">Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk" target="_blank" rel="noopener">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.</p>
+      <p>Ссылка на этот номер: <a id="issue-link" href="https://svetoproba.com/">svetoproba.com</a>. Канал: <a href="https://t.me/svetoproba" target="_blank" rel="noopener">t.me/svetoproba</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var MONTHS = ["января","февраля","марта","апреля","мая","июня","июля","августа","сентября","октября","ноября","декабря"];
+  var MS = ["янв","фев","мар","апр","май","июн","июл","авг","сен","окт","ноя","дек"];
+  var DASH = "–", DOT = "·";
+  var PRINT = /[?&]print\b/.test(location.search); var FILL = (function () { var v = new URLSearchParams(location.search).get("fill"); return v == null ? -1 : +v; })();
+  var REDUCE = PRINT || (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var issues = [], current = null, stops = [], observer = null;
+
+  var PAGEOF = {};
+  function refs(s) { return String(s == null ? "" : s).replace(/\{стр:([\w-]+)\}/g, function (m, id) { return PAGEOF[id] ? "стр. " + PAGEOF[id] : ""; }); }
+  function rich(s) { return esc(s).replace(/\[([^\]]+)\]\((https?:[^)\s]+|#[^)\s]+)\)/g, function (m, t, u) { return /^#/.test(u) ? '<a href="' + u + '">' + t + "</a>" : '<a href="' + u + '" target="_blank" rel="noopener">' + t + "</a>"; }); }
+  function esc(s) { return refs(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function safeUrl(u) { return /^https?:\/\//.test(u || "") ? u : "#"; }
+  function ymd(s) { var p = s.split("-"); return new Date(Date.UTC(+p[0], +p[1] - 1, +p[2])); }
+  function longDate(s) { var d = ymd(s); return d.getUTCDate() + " " + MONTHS[d.getUTCMonth()] + " " + d.getUTCFullYear(); }
+  function fmtNum(v) { return String(v).replace(".", ","); }
+  function visibleIssues(list) {
+    var now = Date.now();
+    return list.filter(function (it) { return !it.publish_at || Date.parse(it.publish_at) <= now; }).sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+  }
+
+  /* blocks */
+  function block(b) {
+    if (b.print_only && !PRINT) return "";  // материалы для заполнения полос PDF в веб-версию не идут
+    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w" || b.anim === "flavin-mix" || b.anim === "curve-slider") return animHtml(b);
+    if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
+    if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
+    if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
+    if (b.editor != null) return '<p class="editor">' + rich(String(b.editor).replace(/^Редакция:\s*/, "").replace(/^./, function (c) { return c.toUpperCase(); })) + "</p>";
+    if (b.stats) return statsHtml(b.stats);
+    if (b.bars) return barsHtml(b.bars);
+    if (b.timeline) return timelineHtml(b.timeline);
+    if (b.table) return '<div class="span">' + tableHtml(b.table) + "</div>";
+    if (b.video) return videoHtml(b.video);
+    if (b.quote) return '<blockquote class="quote"><p>' + esc(b.quote.text) + "</p><cite>" + esc(b.quote.who) + "</cite></blockquote>";
+    if (b.digest) return digestHtml(b.digest) + (b.cover && (PRINT || !b.cover_print_only) ? figureHtml(b.cover).replace("<figure>", '<figure class="digest-cover">') : "");
+    if (b.image) return b.more && b.more.length ? moreImageHtml(b) : figureHtml(b.image);
+    if (b.illus) return illusHtml(b.illus);
+    if (b.gallery) {
+      // галерея «fill» добирает полосы PDF: сборщик передаёт ?fill=N, в печать идут первые N снимков
+      var gl = b.fill && PRINT && FILL >= 0 ? b.gallery.slice(0, FILL) : b.gallery;
+      if (!gl.length) return "";
+      return (b.title ? '<p class="fig-t gallery-t">' + esc(b.title) + "</p>" : "") + '<div class="gallery span' + (gl.length >= 3 ? " g3" : "") + (b.row ? " row" : "") + '">' + gl.map(figureHtml).join("") + "</div>";
+    }
+    if (b.anim) return animHtml(b);
+    return "";
+  }
+  function figureHtml(im) {
+    if (!im || !im.src) return "";
+    var credit = im.credit ? ' <span class="credit">Фото: ' + (im.credit_url ? '<a href="' + esc(safeUrl(im.credit_url)) + '" target="_blank" rel="noopener">' + esc(im.credit) + "</a>" : esc(im.credit)) + "</span>" : "";
+    return '<figure><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '"' + (im.w && im.h ? ' width="' + (+im.w) + '" height="' + (+im.h) + '"' : "") + ' loading="lazy" decoding="async"><figcaption>' + esc(im.caption || "") + credit + "</figcaption></figure>";
+  }
+  function illusHtml(il) {
+    if (!il || !il.src) return "";
+    return '<figure class="illus" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '"><div class="sketch-slot" style="aspect-ratio:' + (+il.ar > 0 ? +il.ar : 1.5) + '"></div><figcaption>' + esc(il.caption || "") + "</figcaption></figure>";
+  }
+  // снимки, добавленные в PDF к материалу (резерв, галереи и снимки «только для печати»), на сайте листаются каруселью у главного снимка;
+  // если листать нечего, стоит один снимок, как раньше
+  function extrasOf(s) {
+    var ex = [], seen = {};
+    if (s.image && s.image.src) seen[s.image.src] = 1;
+    (s.body || []).forEach(function (b) {  // снимки, которые уже стоят в тексте материала, в карусель не берём
+      if (b.image && !b.print_only) seen[b.image.src] = 1;
+      if (b.gallery && !b.print_only) b.gallery.forEach(function (g) { seen[g.src] = 1; });
+    });
+    function add(f) { if (f && f.src && !seen[f.src]) { seen[f.src] = 1; ex.push(f); } }
+    (s.body || []).forEach(function (b) {
+      if (b.print_only && b.gallery) b.gallery.forEach(add);
+      if (b.print_only && b.image) add(b.image);
+      if (b.cover && b.cover_print_only) add(b.cover);
+    });
+    (s.reserve || []).forEach(add);
+    return ex;
+  }
+  function visualHtml(s) {
+    var main = s.illus ? illusHtml(s.illus) : figureHtml(s.image), ex = PRINT ? [] : extrasOf(s);
+    if (!ex.length) return main;  // листать нечего: один снимок без карусели
+    var n = ex.length + 1, dots = "";
+    for (var i = 0; i < n; i++) dots += '<button type="button" class="car-dot" aria-label="Снимок ' + (i + 1) + ' из ' + n + '"></button>';
+    return '<div class="carousel" data-carousel><div class="car-stage"><div class="car-track">' + main.replace('loading="lazy"', 'loading="eager"') + ex.map(figureHtml).join("") + "</div>" +
+      '<span class="car-badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="18" height="18"><rect x="7" y="3" width="13" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 7v12.5c0 .8.7 1.5 1.5 1.5H17" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><b>' + n + "</b></span>" +
+      '<button type="button" class="car-arrow car-prev" aria-label="Предыдущий снимок">‹</button><button type="button" class="car-arrow car-next" aria-label="Следующий снимок">›</button>' +
+      '<div class="car-dots">' + dots + "</div></div></div>";
+  }
+  function moreImageHtml(b) {
+    if (PRINT) return [b.image].concat(b.more).map(figureHtml).join("");
+    return visualHtml({ image: b.image, reserve: b.more });
+  }
+  // добор блоков до целого числа строк сетки (по вертикали всё стоит на одной линейке)
+  function snapGrid() {
+    var probe = document.querySelector(PRINT ? ".np-flow p" : ".body p"); if (!probe) return;
+    var BL = parseFloat(getComputedStyle(probe).lineHeight); if (!BL) return;
+    var sel = PRINT ? ".np-flow > *:not(h4), .np-story > *:not(h4), .np-inflow, .np-side-text > *:not(h4), .np-front > div > *:not(.np-side-text)"
+                    : ".body > *:not(h4), .feature-lead-text > *:not(h4)";
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (!el.offsetHeight || el.closest(".carousel .car-track")) return;
+      if (window.ResizeObserver && !el._gridObs) { el._gridObs = new ResizeObserver(function () { snapOne(el); }); el._gridObs.observe(el); }
+      snapOne(el);
+    });
+    function snapOne(el) {
+      el.style.marginBottom = "";
+      var cs = getComputedStyle(el), mb = parseFloat(cs.marginBottom) || 0;
+      var h = el.getBoundingClientRect().height + (parseFloat(cs.marginTop) || 0) + mb;
+      var extra = Math.ceil(h / BL - 0.01) * BL - h;
+      el.style.marginBottom = (mb + extra) + "px";
+    }
+  }
+  window.addEventListener("load", function () { setTimeout(snapGrid, 300); setTimeout(snapGrid, 1500); });
+  window.addEventListener("resize", function () { setTimeout(snapGrid, 200); });
+  setTimeout(snapGrid, 800);
+  function setupCarousels(root) {
+    root.querySelectorAll("[data-carousel]").forEach(function (c) {
+      var track = c.querySelector(".car-track"), dots = [].slice.call(c.querySelectorAll(".car-dot")), n = track.children.length, stage = c.querySelector(".car-stage");
+      function idx() { return Math.round(track.scrollLeft / Math.max(1, track.clientWidth)); }
+      function go(i) { track.scrollTo({ left: i * track.clientWidth, behavior: "smooth" }); }
+      // высота кадра постоянная: её задаёт главный снимок, остальные вписываются в кадр целиком, без обрезки
+      function frame() {
+        // высоту кадра задаёт первый слайд: фото по его пропорциям, рисунок редакции по его высоте
+        var first = track.children[0], im = first && first.querySelector("img"), h = 0;
+        if (im) { if (im.naturalWidth) h = track.clientWidth * im.naturalHeight / im.naturalWidth; }
+        else { var v = first && first.querySelector("svg, .sketch-slot"); if (v) h = v.getBoundingClientRect().height; }
+        if (h > 40) { c.style.setProperty("--car-h", Math.round(h) + "px"); c.classList.add("framed"); }
+      }
+      function upd() {
+        var i = idx();
+        dots.forEach(function (d, k) { d.classList.toggle("on", k === i); });
+        c.querySelector(".car-prev").disabled = i <= 0; c.querySelector(".car-next").disabled = i >= n - 1;
+      }
+      c.querySelector(".car-prev").onclick = function () { go(Math.max(0, idx() - 1)); };
+      c.querySelector(".car-next").onclick = function () { go(Math.min(n - 1, idx() + 1)); };
+      dots.forEach(function (d, k) { d.onclick = function () { go(k); }; });
+      track.addEventListener("scroll", function () { window.requestAnimationFrame(upd); }, { passive: true });
+      var firstImg = track.children[0] && track.children[0].querySelector("img");
+      if (firstImg) firstImg.addEventListener("load", function () { frame(); });
+      frame();
+      // полоса со скрытой каруселью открывается позже: пересчитываем кадр, когда у ленты и первого слайда появляется размер
+      if (window.ResizeObserver) {
+        var lastW = 0;
+        new ResizeObserver(function () { var w = track.clientWidth; if (w && w !== lastW) { lastW = w; frame(); } }).observe(track);
+        var f0 = track.children[0] && track.children[0].querySelector(".sketch-slot, svg");
+        if (f0) new ResizeObserver(function () { if (!c.classList.contains("framed")) frame(); }).observe(f0);
+      } else window.addEventListener("resize", frame);
+      upd();
+    });
+  }
+
+  function statsHtml(list) {
+    return '<div class="stats span s' + list.length + '" data-count>' + list.map(function (s) {
+      return '<div class="stat"><div class="stat-v" data-v="' + esc(s.v) + '">' + esc(s.v) + (s.u ? "<small>" + esc(s.u) + "</small>" : "") + '</div><div class="stat-l">' + esc(s.l) + "</div></div>";
+    }).join("") + "</div>";
+  }
+  function barsHtml(c) {
+    var max = c.max || Math.max.apply(null, c.items.map(function (i) { return i.v; }));
+    var rows = c.items.map(function (i, n) {
+      var w = Math.max(0, Math.min(100, i.v / max * 100));
+      return '<div class="bar-row' + (n >= 2 ? " alt" : "") + '"><div class="bar-l">' + esc(i.l) + (i.note ? " <em>(" + esc(i.note) + ")</em>" : "") +
+        '</div><div class="bar-track"><div class="bar-fill" style="width:' + w.toFixed(1) + '%"></div></div><div class="bar-v">' + fmtNum(i.v) + " " + esc(c.unit || "") + "</div></div>";
+    }).join("");
+    return '<figure class="fig span motion"><p class="fig-t">' + esc(c.title) + "</p>" + rows + (c.caption ? "<figcaption>" + esc(c.caption) + "</figcaption>" : "") + "</figure>";
+  }
+  function timelineHtml(t) {
+    var a = ymd(t.from).getTime(), z = ymd(t.to).getTime() + 864e5, span = z - a;
+    function pct(s, end) { return Math.max(0, Math.min(100, (ymd(s).getTime() + (end ? 864e5 : 0) - a) / span * 100)); }
+    var months = "", grid = "", d = ymd(t.from);
+    while (d.getTime() < z) {
+      var p = ((d.getTime() - a) / span * 100).toFixed(2);
+      months += '<span style="left:' + p + '%">' + MS[d.getUTCMonth()] + " " + d.getUTCFullYear() + "</span>";
+      grid += '<i class="tl-grid" style="left:' + p + '%"></i>';
+      d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1));
+    }
+    var rows = t.items.map(function (it, n) {
+      var x1 = pct(it.start), x2 = pct(it.end, true), s = ymd(it.start), e = ymd(it.end);
+      var range = s.getUTCDate() + " " + MS[s.getUTCMonth()] + " " + DASH + " " + e.getUTCDate() + " " + MS[e.getUTCMonth()];
+      return '<div class="tl-row"><div class="tl-l">' + (it.url ? cellHtml({ t: it.l, url: it.url }) : esc(it.l)) + "<span>" + esc(range + ", " + (it.place || "")) + '</span></div><div class="tl-track">' + grid +
+        '<i class="tl-bar b' + (n % 2) + '" style="left:' + x1.toFixed(2) + "%;width:" + Math.max(1, x2 - x1).toFixed(2) + '%"></i></div></div>';
+    }).join("");
+    return '<figure class="fig span motion"><p class="fig-t">' + esc(t.title) + '</p><div class="tl-months" aria-hidden="true">' + months + "</div>" + rows + (t.caption ? "<figcaption>" + esc(t.caption) + "</figcaption>" : "") + "</figure>";
+  }
+  function cellHtml(c) {
+    if (c && typeof c === "object") return '<a class="cell-link" href="' + esc(c.url) + '" target="_blank" rel="noopener">' + esc(c.t) + "</a>";
+    return esc(c);
+  }
+  function tableHtml(t) {
+    return '<div class="table-wrap"><table><thead><tr>' + t.head.map(function (h) { return "<th>" + esc(h) + "</th>"; }).join("") +
+      "</tr></thead><tbody>" + t.rows.map(function (r) { return "<tr>" + r.map(function (c, k) { return '<td data-l="' + esc(t.head[k] || "") + '">' + cellHtml(c) + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
+  }
+  function videoHtml(v) {
+    if (v.src && !PRINT) return '<figure class="span"><video class="video-inline" controls preload="none" poster="' + esc(v.thumb || "") + '" src="' + esc(v.src) + '"></video><figcaption>' + esc(v.title) + (v.about ? ". " + esc(v.about) : "") + ' <span class="credit">Видео: <a href="' + esc(safeUrl(v.url)) + '" target="_blank" rel="noopener">' + esc(v.channel || "") + "</a></span></figcaption></figure>";
+    return '<a class="video" href="' + esc(safeUrl(v.url)) + '" target="_blank" rel="noopener"><span class="thumb"><img src="' + esc(v.thumb || "") + '"' + (v.thumb_w && v.thumb_h ? ' width="' + (+v.thumb_w) + '" height="' + (+v.thumb_h) + '"' : "") + ' alt="Обложка видео: ' + esc(v.title) + '" loading="lazy"><span class="play" aria-hidden="true"></span>' +
+      (v.duration ? '<span class="dur">' + esc(v.duration) + "</span>" : "") + '</span><span class="vt">' + esc(v.title) + '</span><span class="vs">' +
+      (v.duration ? esc(v.duration) + (String(v.duration).split(":").length > 2 ? " ч" : " мин") + " " + DOT + " " : "") + esc(v.channel || "") + (v.date ? ", " + esc(v.date) : "") + " " + DOT + " " + esc(v.platform || "YouTube") + (v.about ? "<br>" + esc(v.about) : "") + "</span></a>";
+  }
+  function digestHtml(list) {
+    return '<ol class="digest span">' + list.map(function (d) {
+      return '<li><div class="src">' + esc(d.source) + (d.date ? "<span>" + esc(d.date) + "</span>" : "") + '</div><a href="' + esc(safeUrl(d.url)) + '" target="_blank" rel="noopener">' + esc(d.title) + "</a><p>" + rich(d.what) + "</p></li>";
+    }).join("") + "</ol>";
+  }
+
+  /* № 3: угол комнаты с двумя трубками Флавина и кривая с ползунком; картинка строится строкой, в PDF статичный кадр */
+  function hexRgb(h) { h = h.replace("#", ""); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; }
+  function mixName(rgb) {
+    var r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255, mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, h = 0;
+    if (mx === 0 || d / mx < 0.18) return "почти белый";
+    if (mx === r) h = ((g - b) / d) % 6; else if (mx === g) h = (b - r) / d + 2; else h = (r - g) / d + 4;
+    h = (h * 60 + 360) % 360; var s = d / mx;
+    var n = h < 15 ? "красный" : h < 40 ? "оранжевый" : h < 65 ? "жёлтый" : h < 90 ? "жёлто-зелёный" : h < 150 ? "зелёный" : h < 185 ? "бирюзовый" : h < 215 ? "голубой" : h < 255 ? "синий" : h < 290 ? "фиолетовый" : h < 330 ? "пурпурный" : "розовый";
+    return s < 0.45 ? "бледно-" + n : n;
+  }
+  function flavinSvg(cl, cr) {
+    var L = hexRgb(cl), R = hexRgb(cr), S0 = [L[0] + R[0], L[1] + R[1], L[2] + R[2]], K = 255 / Math.max(1, S0[0], S0[1], S0[2]), M = S0.map(function (v) { return Math.round(v * K); });
+    var mx = "rgb(" + M.join(",") + ")";
+    var s = '<svg viewBox="0 0 1000 600" role="img" style="display:block;width:100%;height:auto" xmlns="http://www.w3.org/2000/svg"><defs>' +
+      '<radialGradient id="fgL" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="' + cl + '" stop-opacity=".95"/><stop offset=".55" stop-color="' + cl + '" stop-opacity=".45"/><stop offset="1" stop-color="' + cl + '" stop-opacity="0"/></radialGradient>' +
+      '<radialGradient id="fgR" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="' + cr + '" stop-opacity=".95"/><stop offset=".55" stop-color="' + cr + '" stop-opacity=".45"/><stop offset="1" stop-color="' + cr + '" stop-opacity="0"/></radialGradient>' +
+      '<clipPath id="fgRoom"><rect x="0" y="0" width="1000" height="600"/></clipPath></defs>' +
+      '<rect width="1000" height="600" fill="#1f1c19"/>' +
+      '<polygon points="40,10 500,70 500,470 40,580" fill="#3a3530"/><polygon points="500,70 960,10 960,580 500,470" fill="#34302b"/><polygon points="40,580 500,470 960,580 1000,600 0,600" fill="#2a2622"/>' +
+      '<g clip-path="url(#fgRoom)" style="isolation:isolate"><ellipse cx="560" cy="290" rx="430" ry="330" fill="url(#fgL)" style="mix-blend-mode:screen"/><ellipse cx="440" cy="290" rx="430" ry="330" fill="url(#fgR)" style="mix-blend-mode:screen"/></g>' +
+      '<line x1="500" y1="70" x2="500" y2="470" stroke="#000" stroke-opacity=".25" stroke-width="2"/>' +
+      '<rect x="452" y="110" width="12" height="330" rx="6" fill="#fff" stroke="' + cl + '" stroke-width="4"/><rect x="536" y="110" width="12" height="330" rx="6" fill="#fff" stroke="' + cr + '" stroke-width="4"/>' +
+      '<rect x="444" y="440" width="28" height="14" fill="#cfcfcf"/><rect x="528" y="440" width="28" height="14" fill="#cfcfcf"/>' +
+      '<g font-family="Arial,sans-serif" font-size="24" fill="#f1ead9"><text x="70" y="70">левая трубка 244 см</text><text x="930" y="70" text-anchor="end">правая трубка 244 см</text>' +
+      '<line x1="458" y1="96" x2="300" y2="80" stroke="#f1ead9" stroke-width="1.5"/><line x1="542" y1="96" x2="700" y2="80" stroke="#f1ead9" stroke-width="1.5"/>' +
+      '<rect x="380" y="510" width="40" height="40" fill="' + mx + '" stroke="#f1ead9" stroke-width="1.5"/><text x="432" y="540">в углу: ' + esc(mixName(M)) + '</text></g></svg>';
+    return { svg: s, name: mixName(M) };
+  }
+  function curveSvg(B, x) {
+    var xs = B.x, ys = B.y, x0 = xs[0], x1 = xs[xs.length - 1], y0 = B.ymin, y1 = B.ymax;
+    var X = function (v) { return 110 + (v - x0) / (x1 - x0) * 840; }, Y = function (v) { return 470 - (v - y0) / (y1 - y0) * 420; };
+    var at = function (v) { var i = 0; while (i < xs.length - 2 && xs[i + 1] < v) i++; var t = Math.max(0, Math.min(1, (v - xs[i]) / (xs[i + 1] - xs[i]))); return ys[i] + (ys[i + 1] - ys[i]) * t; };
+    var h = '<svg viewBox="0 0 1000 560" role="img" style="display:block;width:100%;height:auto;background:#f7f1e3" xmlns="http://www.w3.org/2000/svg"><g font-family="Arial,sans-serif" font-size="26" fill="#222">';
+    (B.yticks || []).forEach(function (g) { h += '<line x1="110" x2="950" y1="' + Y(g) + '" y2="' + Y(g) + '" stroke="#cfc6b2" stroke-width="1.5"/><text x="98" y="' + (Y(g) + 9) + '" text-anchor="end">' + String(g).replace(".", ",").replace("-", "−") + "</text>"; });
+    (B.xticks || []).forEach(function (a) { h += '<text x="' + X(a) + '" y="510" text-anchor="middle">' + String(a).replace(".", ",") + "</text>"; });
+    if (B.band) h += '<rect x="' + X(B.band[0]) + '" y="50" width="' + (X(B.band[1]) - X(B.band[0])) + '" height="420" fill="#8a6a2f" fill-opacity=".10"/><text x="' + ((X(B.band[0]) + X(B.band[1])) / 2) + '" y="76" text-anchor="middle" font-size="22" fill="#8a6a2f">' + esc(B.band_label || "") + "</text>";
+    h += '<polyline points="' + xs.map(function (a, k) { return X(a) + "," + Y(ys[k]); }).join(" ") + '" fill="none" stroke="#8a6a2f" stroke-width="7" stroke-linejoin="round"/>';
+    h += '<line x1="' + X(x) + '" x2="' + X(x) + '" y1="50" y2="470" stroke="#222" stroke-width="2" stroke-dasharray="8 6"/><circle cx="' + X(x) + '" cy="' + Y(at(x)) + '" r="12" fill="#8a6a2f" stroke="#fff" stroke-width="3"/>';
+    h += '<text x="116" y="34" font-size="24">' + esc(B.ylabel) + '</text><text x="950" y="548" font-size="24" text-anchor="end">' + esc(B.xlabel) + "</text></g></svg>";
+    return { svg: h, y: at(x) };
+  }
+  function animHtml(b) {
+    if (b.anim === "flavin-mix") {
+      var P0 = b.palette;
+      return '<figure class="fig span anim flavin-mix"><p class="fig-t">' + esc(b.title) + '</p>' + ["Левая", "Правая"].map(function (side, k) { return '<div class="dm-b fm-' + k + '"><span style="font:700 var(--tiny) var(--font-ui);align-self:center;margin-right:4px">' + side + ' трубка:</span>' + P0.map(function (c, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === b.start[k]) + '"><span style="display:inline-block;width:10px;height:10px;margin-right:6px;background:' + esc(c.c) + ';border:1px solid var(--rule)"></span>' + esc(c.name) + "</button>"; }).join("") + "</div>"; }).join("") + '<div class="fm-v">' + flavinSvg(P0[b.start[0]].c, P0[b.start[1]].c).svg + '</div><div class="fm-o" style="font:400 1rem/1.5 var(--font-ui);margin-top:8px"></div><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "curve-slider") {
+      return '<figure class="fig span anim curve-slider"><p class="fig-t">' + esc(b.title) + '</p><div class="cv-v">' + curveSvg(b, b.start).svg + '</div><label class="cv-a" style="display:block;font:700 .95rem var(--font-ui);margin:12px 0 2px"></label><input class="cv-r" type="range" min="' + b.x[0] + '" max="' + b.x[b.x.length - 1] + '" step="' + (b.step || 0.5) + '" value="' + b.start + '" aria-label="' + esc(b.xlabel) + '" style="width:100%"><div class="cv-o" style="font:400 1rem/1.5 var(--font-ui);margin-top:6px"></div><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "lens-aging") {
+      return '<figure class="fig span anim" data-anim="lens-aging"><p class="fig-t">Что доходит до сетчатки: видимый спектр и возраст</p><canvas aria-hidden="true"></canvas>' +
+        '<div class="anim-row"><span>380 нм</span><span class="anim-age">возраст наблюдателя: 20 лет</span><span>780 нм</span></div>' + (b.caption ? "<figcaption>" + esc(b.caption) + "</figcaption>" : "") + "</figure>";
+    }
+    if (b.anim === "mice-w") {
+      return '<figure class="fig span anim mice-w"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.series.map(function (m, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">Сутки ' + esc(m.name) + "</button>"; }).join("") + '</div><div class="mw-day" style="display:flex;height:18px;margin:6px 0 4px"><span class="mw-l" style="background:#f4d98b"></span><span class="mw-d" style="background:#2f3a55"></span></div><div class="mw-n" style="font:400 .9rem var(--font-ui);margin-bottom:8px"></div><svg class="mw-c" viewBox="0 0 1000 560" role="img" aria-label="' + esc(b.illus.alt) + '" style="display:block;width:100%;height:auto;background:#f7f1e3"></svg><label style="display:block;font:700 .95rem var(--font-ui);margin:12px 0 2px" class="mw-a"></label><input class="mw-r" type="range" min="9" max="160" value="65" aria-label="Возраст мыши, недели" style="width:100%"><div class="mw-o" style="font:400 1rem/1.5 var(--font-ui);margin-top:6px"></div><figcaption>' + esc(b.illus.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "cs-scale") {
+      return '<figure class="fig span anim cs-scale"><p class="fig-t">' + esc(b.title) + '</p><div class="cs-box" style="padding:18px 16px;border-radius:4px;"><div style="font:700 .9rem var(--font-ui);opacity:.8">Показатель CS</div><div class="cs-v" style="font:900 3.2rem/1 var(--font-head);margin:2px 0 10px">0,4</div><div class="cs-m" style="font:700 1.1rem/1.3 var(--font-ui)"></div><input class="cs-r" type="range" min="0" max="70" step="1" value="40" aria-label="Значение показателя CS" style="width:100%;margin:14px 0 4px"><div class="cs-s" style="font:400 .95rem/1.35 var(--font-ui);min-height:3em"></div></div><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "road-adapt") {
+      var poles = "", N = 7;
+      for (var ri = 0; ri < N; ri++) { var rx = 50 + ri * 110; poles += '<g class="ra-p" data-x="' + rx + '"><polygon class="ra-c" points="' + (rx + 22) + ',62 ' + (rx - 28) + ',196 ' + (rx + 72) + ',196" fill="#f4d98b"/><line x1="' + rx + '" y1="196" x2="' + rx + '" y2="56" stroke="#8d8676" stroke-width="3"/><line x1="' + rx + '" y1="56" x2="' + (rx + 24) + '" y2="56" stroke="#8d8676" stroke-width="3"/><circle class="ra-l" cx="' + (rx + 22) + '" cy="60" r="5" fill="#fff2c4"/></g>'; }
+      return '<figure class="fig span anim road-adapt"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.modes.map(function (m, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(m.name) + "</button>"; }).join("") + '</div><svg viewBox="0 0 800 250" role="img" aria-label="' + esc(b.alt) + '" style="display:block;width:100%;height:auto;background:#10131a">' + poles + '<rect x="0" y="196" width="800" height="54" fill="#2b2a2b"/><line class="ra-m" x1="0" y1="223" x2="800" y2="223" stroke="#8d8676" stroke-width="2" stroke-dasharray="26 22"/><g class="ra-car"><rect x="-26" y="205" width="52" height="16" rx="5" fill="#d9d4c7"/><rect x="-14" y="197" width="28" height="11" rx="4" fill="#d9d4c7"/><polygon points="26,209 74,201 74,221 26,215" fill="#fff2c4" opacity=".55"/></g></svg><input class="ra-r" type="range" min="0" max="800" value="60" aria-label="Положение автомобиля" style="width:100%;margin:8px 0 2px"><p class="dm-t">' + esc(b.modes[0].text) + '</p><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "dark-map") {
+      return '<figure class="fig span anim dark-map"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.levels.map(function (l, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(l.name) + "</button>"; }).join("") + '</div><div class="dm-s"><img src="' + esc(b.image.src) + '" alt="' + esc(b.image.alt) + '">' + b.levels.map(function (l, i) { return l.mask ? '<img class="ov" data-i="' + i + '" src="' + esc(l.mask) + '" alt="">' : ""; }).join("") + '</div><p class="dm-t">' + esc(b.levels[0].text) + '</p><figcaption>' + esc(b.image.caption) + ' <span class="credit">Фото: <a href="' + esc(safeUrl(b.image.credit_url)) + '" target="_blank" rel="noopener">' + esc(b.image.credit) + "</a></span></figcaption></figure>";
+    }
+    if (b.anim === "daylight") return daylightHtml(b);
+    if (b.anim === "chip-scale") return chipHtml(b);
+    return "";
+  }
+
+  /* daylight chart: day length computed from latitude */
+  function dayLength(lat, date) {
+    var start = Date.UTC(date.getUTCFullYear(), 0, 0), n = (date.getTime() - start) / 864e5;
+    var decl = -23.44 * Math.cos(2 * Math.PI / 365 * (n + 10)) * Math.PI / 180, phi = lat * Math.PI / 180, h0 = -0.833 * Math.PI / 180;
+    var c = (Math.sin(h0) - Math.sin(phi) * Math.sin(decl)) / (Math.cos(phi) * Math.cos(decl));
+    if (c >= 1) return 0; if (c <= -1) return 24;
+    return 2 * Math.acos(c) * 180 / Math.PI / 15;
+  }
+  var SERIES = ["#044389", "#3f9fd8", "#fe9f4d", "#8b9099"];
+  function daylightHtml(b) {
+    var W = 640, H = 280, L = 34, R = 12, T = 10, B = 26, a = ymd(b.from), z = ymd(b.to), days = Math.round((z - a) / 864e5);
+    var ymax = 10, x = function (i) { return L + i / days * (W - L - R); }, y = function (h) { return T + (1 - h / ymax) * (H - T - B); };
+    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(b.title) + '">';
+    for (var h = 0; h <= ymax; h += 2) svg += '<line class="ax" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(h) + '" y2="' + y(h) + '"/><text class="tk" x="' + (L - 6) + '" y="' + (y(h) + 4) + '" text-anchor="end">' + h + "</text>";
+    var d = new Date(a.getTime());
+    while (d <= z) { if (d.getUTCDate() === 1) { var xi = x(Math.round((d - a) / 864e5)); svg += '<line class="ax" x1="' + xi + '" x2="' + xi + '" y1="' + T + '" y2="' + (H - B) + '"/><text class="tk" x="' + (xi + 4) + '" y="' + (H - 8) + '">' + MS[d.getUTCMonth()] + "</text>"; } d = new Date(d.getTime() + 864e5); }
+    var data = b.cities.map(function (c) { var arr = []; for (var i = 0; i <= days; i++) arr.push(dayLength(c.lat, new Date(a.getTime() + i * 864e5))); return arr; });
+    data.forEach(function (arr, k) {
+      var dd = arr.map(function (v, i) { return (i ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1); }).join("");
+      svg += '<path class="ln" d="' + dd + '" stroke="' + SERIES[k % 4] + '"/>';
+    });
+    svg += '<line class="cur" x1="0" x2="0" y1="' + T + '" y2="' + (H - B) + '" style="display:none"/><text class="readout" x="0" y="' + (T + 12) + '" style="display:none"></text></svg>';
+    var legend = '<div class="legend">' + b.cities.map(function (c, k) { return '<span><i style="background:' + SERIES[k % 4] + '"></i>' + esc(c.name) + "</span>"; }).join("") + "</div>";
+    var cfg = esc(JSON.stringify({ from: b.from, days: days, L: L, R: R, W: W, cities: b.cities }));
+    return '<figure class="fig span chart motion" data-chart="' + cfg + '"><p class="fig-t">' + esc(b.title) + "</p>" + svg + legend + (b.caption ? "<figcaption>" + esc(b.caption) + "</figcaption>" : "") + "</figure>";
+  }
+  function wireChart(fig) {
+    var cfg = JSON.parse(fig.getAttribute("data-chart")), svg = fig.querySelector("svg"), cur = svg.querySelector(".cur"), ro = svg.querySelector(".readout");
+    svg.querySelectorAll(".ln").forEach(function (p) { try { p.style.setProperty("--len", Math.ceil(p.getTotalLength())); } catch (e) {} });
+    function show(clientX) {
+      var r = svg.getBoundingClientRect(), vx = (clientX - r.left) / r.width * cfg.W;
+      var i = Math.round((vx - cfg.L) / (cfg.W - cfg.L - cfg.R) * cfg.days); if (i < 0 || i > cfg.days) return;
+      var dt = new Date(ymd(cfg.from).getTime() + i * 864e5), xx = cfg.L + i / cfg.days * (cfg.W - cfg.L - cfg.R);
+      cur.setAttribute("x1", xx); cur.setAttribute("x2", xx); cur.style.display = "";
+      var parts = cfg.cities.map(function (c) { var h = dayLength(c.lat, dt), hh = Math.floor(h), mm = Math.round((h - hh) * 60); if (mm === 60) { hh++; mm = 0; } return c.name + " " + hh + ":" + (mm < 10 ? "0" : "") + mm; });
+      ro.textContent = dt.getUTCDate() + " " + MS[dt.getUTCMonth()] + ": " + parts.join("  ");
+      ro.setAttribute("x", Math.min(Math.max(xx + 6, cfg.L), cfg.W - 330)); ro.style.display = "";
+    }
+    svg.addEventListener("pointermove", function (e) { show(e.clientX); });
+    svg.addEventListener("pointerleave", function () { cur.style.display = "none"; ro.style.display = "none"; });
+  }
+
+  /* chip scale */
+  function chipHtml(b) {
+    var s = 240, k = s / 1000, cw = 25 * k, ch = 10 * k, cx = 30 + s / 2, cy = 30 + s / 2;
+    var svg = '<svg viewBox="0 0 300 300" role="img" aria-label="Сравнение масштаба кристаллов">' +
+      '<g class="zoom" style="transform-origin:' + (cx + cw / 2) + "px " + (cy + ch / 2) + 'px">' +
+      '<rect class="big" x="30" y="30" width="' + s + '" height="' + s + '"/><rect class="small" x="' + cx + '" y="' + cy + '" width="' + cw.toFixed(2) + '" height="' + ch.toFixed(2) + '"/></g></svg>';
+    var legend = '<div class="chip-legend"><p><b>Серый квадрат:</b> обычный кристалл 1000 × 1000 мкм, около 50 лм.</p><p><b>Оранжевая точка в центре:</b> WICOP 3, 25 × 10 мкм, 0,015 лм белого света. По площади в 4000 раз меньше.</p><p class="zlabel"><b>Сейчас:</b> увеличение в 22 раза.</p></div>';
+    return '<figure class="fig span chip motion"><p class="fig-t">Масштаб: обычный кристалл и микрочип WICOP 3</p><div class="chip-grid"><div class="chip-view">' + svg + "</div>" + legend + "</div>" + (b.caption ? "<figcaption>" + esc(b.caption) + "</figcaption>" : "") + "</figure>";
+  }
+
+  /* lens aging canvas */
+  function wlRGB(wl) {
+    var r = 0, g = 0, b = 0;
+    if (wl < 440) { r = -(wl - 440) / 60; b = 1; } else if (wl < 490) { g = (wl - 440) / 50; b = 1; } else if (wl < 510) { g = 1; b = -(wl - 510) / 20; }
+    else if (wl < 580) { r = (wl - 510) / 70; g = 1; } else if (wl < 645) { r = 1; g = -(wl - 645) / 65; } else { r = 1; }
+    var f = wl < 420 ? 0.3 + 0.7 * (wl - 380) / 40 : wl > 700 ? 0.3 + 0.7 * (780 - wl) / 80 : 1;
+    return [r * f, g * f, b * f];
+  }
+  function startLens(fig) {
+    var cv = fig.querySelector("canvas"), label = fig.querySelector(".anim-age"), ctx = cv.getContext("2d"), running = true, t0 = performance.now(), last = -1;
+    function draw(age) {
+      var dpr = window.devicePixelRatio || 1, w = cv.clientWidth, h = cv.clientHeight; if (!w || !h) return;
+      if (cv.width !== Math.round(w * dpr)) { cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr); }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, w, h);
+      var k = Math.max(0, (age - 20) / 65);
+      for (var px = 0; px < w; px++) {
+        var wl = 380 + px / w * 400, c = wlRGB(wl), tr = 1 - 0.85 * k * Math.exp(-(wl - 380) / 55);
+        ctx.fillStyle = "rgb(" + Math.round(255 * c[0] * tr) + "," + Math.round(255 * c[1] * tr) + "," + Math.round(255 * c[2] * tr) + ")";
+        ctx.fillRect(px, 0, 1, h * 0.58); var bh = h * 0.34 * tr; ctx.fillRect(px, h - bh, 1, bh);
+      }
+      var a = Math.round(age); if (a !== last) { label.textContent = "возраст наблюдателя: " + a + " лет"; last = a; }
+    }
+    function frame(now) { if (!running) return; var ph = ((now - t0) / 7000) % 1; draw(20 + 65 * (0.5 - 0.5 * Math.cos(ph * 2 * Math.PI))); requestAnimationFrame(frame); }
+    if (REDUCE) { draw(85); return function () {}; }
+    requestAnimationFrame(frame); return function () { running = false; };
+  }
+
+  /* count-up */
+  function countUp(el) {
+    var raw = el.getAttribute("data-v"); if (!/^[≈]?[\d\s]+(,\d+)?$/.test(raw)) return;
+    var pre = raw.charAt(0) === "≈" ? "≈" : "", num = parseFloat(raw.replace(/[≈\s]/g, "").replace(",", ".")), dec = (raw.split(",")[1] || "").length;
+    var small = el.querySelector("small"), suffix = small ? small.outerHTML : "", t0 = performance.now();
+    function fmt(v) { var s = v.toFixed(dec).replace(".", ","); var p = s.split(","); p[0] = p[0].replace(/\B(?=(\d{3})+(?!\d))/g, " "); return pre + p.join(","); }
+    (function step(now) { var t = Math.min(1, (now - t0) / 1200), e = 1 - Math.pow(1 - t, 3); el.innerHTML = esc(fmt(num * e)) + suffix; if (t < 1) requestAnimationFrame(step); else el.innerHTML = esc(raw) + suffix; })(t0);
+  }
+
+  function sourcesHtml(list) {
+    if (!list || !list.length) return "";
+    return '<details class="sources span"><summary>Источники (' + list.length + ")</summary><ol>" + list.map(function (r) {
+      return '<li><a href="' + esc(safeUrl(r.url)) + '" target="_blank" rel="noopener">' + esc(r.label) + "</a>" + (r.date ? ", " + esc(r.date) : "") + "</li>";
+    }).join("") + "</ol></details>";
+  }
+  function head(s) {
+    return '<div class="kicker"><span class="rubric">' + esc(s.rubric) + '</span>' + (s.why ? '<span class="why">' + esc(s.why) + "</span>" : "") + "</div>" +
+      '<h3 class="hl">' + esc(s.title) + "</h3>" + (s.dek ? '<p class="dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + (s.dateline ? '<p class="dateline">' + esc(s.dateline) + "</p>" : "");
+  }
+  function bodyHtml(s) { return '<div class="body">' + s.body.map(block).join("") + sourcesHtml(s.sources) + "</div>"; }
+  function storyHtml(s) {
+    if (s.kind === "lead") { var vis = visualHtml(s).replace('loading="lazy"', 'loading="eager" fetchpriority="high"'); return '<article class="lead" id="' + esc(s.id) + '">' + (PRINT || s.head_first ? head(s) + vis : vis + head(s)) + bodyHtml(s) + "</article>"; }
+    if (s.kind === "feature") return '<article class="feature" id="' + esc(s.id) + '"><div class="feature-top"><div>' + head(s) + "</div>" + visualHtml(s) + "</div>" + bodyHtml(s) + "</article>";
+    return '<article class="note" id="' + esc(s.id) + '">' + (s.head_first ? head(s) + visualHtml(s) : visualHtml(s) + head(s)) + bodyHtml(s) + "</article>";
+  }
+
+  function normalize(issue) {
+    if (issue.pages) return issue.pages;
+    return [{ no: 1, id: "front", title: "Первая полоса", stories: issue.stories || [] }];
+  }
+  function wordCount(pages) {
+    var n = 0;
+    (function walk(v, k) {
+      if (typeof v === "string") { if (["src", "url", "credit_url", "id", "alt", "thumb"].indexOf(k) < 0) n += v.split(/\s+/).length; }
+      else if (Array.isArray(v)) v.forEach(function (x) { walk(x, k); });
+      else if (v && typeof v === "object") Object.keys(v).forEach(function (key) { walk(v[key], key); });
+    })(pages);
+    return n;
+  }
+  function folio(issue, p) { return '<div class="folio">стр. ' + p.no + "</div>"; }
+  function pageHtml(issue, p, pages) {
+    if (p.id === "front") {
+      var lead = p.stories.filter(function (s) { return s.kind === "lead"; }), rest = p.stories.filter(function (s) { return s.kind !== "lead"; });
+      var idx = '<nav class="index" aria-label="В номере"><h3>В номере</h3><ol>' + pages.map(function (q) {
+        return '<li class="ix-sec"><div class="ix-head"><span class="ix-s">' + esc(q.title) + '</span><span class="ix-n">стр. ' + q.no + "</span></div>" + q.stories.map(function (st) {
+          var th = st.image && st.image.src ? st.image.src : (st.illus && st.illus.src ? st.illus.src : "");
+          if (!th) (st.body || []).forEach(function (bb) { if (!th && bb.anim === "dark-map") th = bb.image.src; if (!th && bb.anim === "road-adapt") th = bb.illus.src; });
+          var thumb = th ? '<img class="ix-th" src="' + esc(th) + '" alt="" loading="lazy">' : '<span class="ix-th ix-th-e" aria-hidden="true"></span>';
+          return '<a class="ix-card" href="#' + esc(st.id) + '" data-jump="' + esc(st.id) + '">' + thumb + '<span class="ix-tx"><span class="ix-k">' + esc(st.rubric || "") + '</span><span class="ix-t">' + esc(st.title) + '</span></span><span class="ix-go" aria-hidden="true">›</span></a>';
+        }).join("") + "</li>";
+      }).join("") + "</ol></nav>";
+      var ed = '<div class="ed-note"><img src="img/editor.jpg" alt="Павел Яковлев-Павлюк"><div><p class="who">От редакции</p><p>' + esc(issue.editor_note || "") + '</p><span class="sign">Павел Яковлев-Павлюк</span></div></div>';
+      var main1 = "<div>" + lead.map(storyHtml).join("") + (rest.length ? '<div class="stories theme-rest">' + rest.map(storyHtml).join("") + "</div>" : "") + "</div>";
+      var side = "<aside>" + idx + "</aside>";
+      return '<section class="page" id="p1"><div class="wrap">' + folio(issue, p) + (PRINT ? "" : '<div class="ed-top">' + ed + "</div>") + (p.title && p.title !== "Первая полоса" ? '<div class="theme-head">' + esc(p.title) + "</div>" : "") + '<div class="front">' + (PRINT ? side + main1 : main1 + side) + "</div></div></section>";
+    }
+    var big = p.stories.filter(function (s) { return s.kind !== "note"; }), notes = p.stories.filter(function (s) { return s.kind === "note"; });
+    return '<section class="page ' + esc(p.id) + '" id="p' + p.no + '"><div class="wrap">' + folio(issue, p) +
+      '<div class="sec-head"><h2>' + esc(p.title) + "</h2>" + (p.desc ? "<p>" + esc(p.desc) + "</p>" : "") + "</div>" +
+      '<div class="stories">' + big.map(storyHtml).join("") + (notes.length ? '<div class="notes' + (notes.length >= 3 ? " n3" : "") + '">' + notes.map(storyHtml).join("") + "</div>" : "") + "</div></div></section>";
+  }
+
+  function renderPrint(issue, pages) {
+    document.body.classList.add("np-mode");
+    ["header.plate", ".edition", ".pager", "#archive", "footer.footer"].forEach(function (q) { var e = document.querySelector(q); if (e) e.style.display = "none"; });
+    var wd = issue.weekday ? issue.weekday.charAt(0).toUpperCase() + issue.weekday.slice(1) : "";
+    var lead = pages[0].stories.find(function (s) { return s.kind === "lead"; }) || pages[0].stories[0];
+    function blockP(b, story) {
+      if (b.web_only) return "";
+      if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
+      if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
+      if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
+      if (b.editor != null) return '<p class="np-editor">' + rich(String(b.editor).replace(/^Редакция:\s*/, "").replace(/^./, function (c) { return c.toUpperCase(); })) + "</p>";
+      if (b.quote) return '<div class="np-quote">«' + esc(b.quote.text) + "»<small>" + esc(b.quote.who) + "</small></div>";
+      if (b.stats) return statsHtml(b.stats).replace(' span ', ' ');
+      if (b.bars) return barsHtml(b.bars).replace(' span ', ' ');
+      if (b.gallery && b.fill) return "";  // ракурсы и детали в печать не идут: место в PDF добирается деталями внутри своего материала
+      if (b.timeline || b.table || b.gallery || b.digest) return '<div class="np-inflow">' + block(b) + "</div>";
+      if (b.anim === "daylight") return daylightHtml(b);
+      if (b.anim === "dark-map") return figureHtml(b.image);
+      if (b.anim === "road-adapt") return illusHtml(b.illus);
+      if (b.anim === "cs-scale") return "";
+      if (b.anim === "mice-w") return illusHtml(b.illus);
+      if (b.anim === "flavin-mix") return '<figure class="illus"><p class="fig-t">' + esc(b.title) + "</p>" + flavinSvg(b.palette[b.start[0]].c, b.palette[b.start[1]].c).svg + "<figcaption>" + esc(b.print_caption || b.caption) + "</figcaption></figure>";
+      if (b.anim === "curve-slider") return '<figure class="illus"><p class="fig-t">' + esc(b.title) + "</p>" + curveSvg(b, b.print_x != null ? b.print_x : b.start).svg + "<figcaption>" + esc(b.print_caption || b.caption) + "</figcaption></figure>";
+      if (b.anim) return "";
+      return block(b);
+    }
+    function storyP(s) {
+      var kick = '<div class="np-kicker">' + esc(s.rubric) + (s.why ? "<span>" + esc(s.why) + "</span>" : "") + "</div>";
+      var body = s.body.map(function (b) { return blockP(b, s); }).join("");
+      if (s.kind === "feature") {
+        return '<article class="np-story np-feature" data-story="' + esc(s.id) + '"><div class="np-head" style="break-inside:avoid;break-after:avoid">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
+      }
+      return '<article class="np-story" data-story="' + esc(s.id) + '"><div class="np-head">' + kick + "<h2>" + esc(s.title) + "</h2>" + (s.dek ? '<p class="np-dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + "</div>" + visualHtml(s) + body + "</article>";
+    }
+    var flow = "";
+    var sideStats = "", leadBody = lead.body.slice();
+    var si = leadBody.findIndex(function (b) { return b.stats; });
+    if (si >= 0) { sideStats = statsHtml(leadBody[si].stats).replace(" span ", " "); leadBody.splice(si, 1); }
+    var edNote = '<div class="np-ed np-ed-top"><img src="img/editor.jpg" alt=""><b>От редакции</b>' + esc(issue.editor_note || "") + "<small>Павел Яковлев-Павлюк</small></div>";
+    // правые две колонки модуля на обложке: текст материала, его подзаголовки и снимок; таблицы и галереи идут в поток
+    var sideText = "", rest = [], side = [];
+    leadBody.forEach(function (b, i) {
+      var next = leadBody[i + 1];
+      // подзаголовок идёт туда же, куда его блок: перед таблицей или галереей он остаётся в потоке
+      var textual = b.p != null || b.foot != null || b.image || (b.h != null && next && (next.p != null || next.image));
+      var nP = side.filter(function (q) { return q.p != null; }).length;
+      if ((b.p != null && nP < 2) || (textual && (nP < 1 || (b.foot != null && nP === 1 && !rest.length)))) side.push(b); else rest.push(b);
+    });
+    // снимок в правых колонках обложки ставим после первого абзаца, чтобы он не оставлял пустоту внизу колонки
+    var imgs = side.filter(function (b) { return b.image; }), txt = side.filter(function (b) { return !b.image; });
+    side = txt.slice(0, 1).concat(imgs, txt.slice(1));
+    side.forEach(function (b) { sideText += blockP(b, lead); });
+    leadBody = rest;
+    flow += leadBody.map(function (b) { return blockP(b, lead); }).join("");
+    pages[0].stories.filter(function (s) { return s !== lead; }).forEach(function (s) { flow += storyP(s); });
+    pages.slice(1).forEach(function (q) {
+      var first = true;
+      q.stories.forEach(function (s) {
+        if (first) { flow += '<div class="np-sec"><b>' + esc(q.title) + "</b>" + (q.desc ? "<i>" + esc(q.desc) + "</i>" : "") + "</div>"; first = false; }
+        flow += storyP(s);
+      });
+    });
+    flow += '<div class="np-end">' +
+      "<div>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</div>" +
+      "<div>Выводы редакции отмечены словом «Редакция». Публикуя проекты освещения, редакция не всегда считает их выдающимися примерами и оставляет оценку за читателем. _светопроба weekly выходит раз в неделю, по субботам. Каждый материал сверен с первоисточником, ссылки в блоке «Источники».</div>" +
+      '<div>Контакты редакции: почта <a href="mailto:p.pavlyuk@larcorchestra.com">p.pavlyuk@larcorchestra.com</a>, Telegram <a href="https://t.me/pavelpavlyuk">@pavelpavlyuk</a>. Пишите: темы, новости, исправления.<br>Ссылка на этот номер: <a href="https://svetoproba.com/#' + esc(issue.date) + '">svetoproba.com/#' + esc(issue.date) + '</a>. Канал: <a href="https://t.me/svetoproba">t.me/svetoproba</a></div></div>';
+    var html = '<div class="np"><div class="np-mast"><div class="np-topline"><span>№ ' + issue.no + "</span><span>Москва</span><span>" + esc(wd) + ", " + longDate(issue.date) + '</span></div><div class="np-logo" id="np-logo">_светопроба<span class="daily">weekly</span></div>' +
+      '<div class="np-imprint"><span>№ ' + issue.no + " " + DOT + " " + esc(wd) + ", " + longDate(issue.date) + "</span><span>Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</span><span>Выходит по субботам</span></div></div>" +
+      '<div class="np-lead"><div class="np-top">' + edNote + '<div class="np-top-head"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1></div></div>" + '<div class="np-front"><div class="np-hero">' + visualHtml(lead).replace('loading="lazy"', 'loading="eager"') + '</div><div class="np-side">' + (lead.dek ? '<p class="np-dek">' + esc(lead.dek) + "</p>" : "") + sideStats + '<div class="np-side-text">' + sideText + "</div></div></div></div>" +
+      '<div class="np-flow">' + flow + "</div></div>";
+    var main = document.getElementById("issue"); main.innerHTML = html;
+    main.querySelectorAll("img[loading]").forEach(function (im) { im.loading = "eager"; });
+    // добивка провалов: сборщик PDF передаёт ?gaps=ключ:мм,...; в провал встаёт другой снимок того же материала из резерва (reserve),
+    // ширина подбирается под высоту провала, без обрезки; повторять снимки номера нельзя
+    var GAPS = {}, STORY = {}, USED = {};
+    (new URLSearchParams(location.search).get("gaps") || "").split(",").forEach(function (g) { var a = g.split(":"); if (a.length === 2) GAPS[a[0]] = +a[1]; });
+    pages.forEach(function (q) { q.stories.forEach(function (st) { STORY[st.id] = st; }); });
+    // правило 53: заголовок, оставшийся внизу колонки без начала материала, сборщик PDF передаёт ?hbrk=id,...;
+    // материал (вместе с заголовком раздела над ним) начинается со следующей колонки
+    (new URLSearchParams(location.search).get("hbrk") || "").split(",").forEach(function (id) {
+      var art = id && main.querySelector('[data-story="' + id + '"]'); if (!art) return;
+      var prev = art.previousElementSibling, t = prev && prev.classList.contains("np-sec") ? prev : art;
+      t.style.breakBefore = "column";
+    });
+    function reserveHtml(sid, h) {
+      var st = STORY[sid], list = (st && st.reserve) || [];
+      USED[sid] = USED[sid] || 0;
+      while (USED[sid] < list.length) {
+        var r = list[USED[sid]++], w = Math.min(96, (h - 12) * (r.r || 1.5));
+        if (w < 40) continue;
+        return '<figure class="np-reserve"><img src="' + esc(r.src) + '" alt="' + esc(r.alt || "") + '" style="width:' + w.toFixed(1) + 'mm"><figcaption>' + esc(r.caption || "") +
+          (r.credit ? ' <span class="credit">Фото: ' + (r.credit_url ? '<a href="' + esc(safeUrl(r.credit_url)) + '">' + esc(r.credit) + "</a>" : esc(r.credit)) + "</span>" : "") + "</figcaption></figure>";
+      }
+      return "";
+    }
+    main.querySelectorAll(".np-flow figure").forEach(function (fg) {
+      var img = fg.querySelector("img"), cap = fg.querySelector("figcaption");
+      if (!img || !cap || fg.classList.contains("np-reserve")) return;
+      var key = img.getAttribute("src").split("/").pop().replace(/\.[a-z]+$/, "");
+      // правило 55: снимки последнего материала, которые одни открыли бы новую полосу, в печать не идут (на сайте они в карусели)
+      if ((new URLSearchParams(location.search).get("hide") || "").split(",").indexOf(key) >= 0) { fg.style.display = "none"; return; }
+      if ((new URLSearchParams(location.search).get("brk") || "").split(",").indexOf(key) >= 0) { var blk = fg.closest(".np-inflow") || fg; blk.style.breakBefore = "column"; blk.style.display = "block"; }  // снимок, который печать резала на границе полос
+      cap.insertAdjacentHTML("afterbegin", '<span class="np-mark">§F' + key + "§</span>");
+      var art = fg.closest("[data-story]"), sid = art ? art.getAttribute("data-story") : lead.id;
+      if (GAPS["a-" + key] >= 30) fg.insertAdjacentHTML("afterend", reserveHtml(sid, GAPS["a-" + key]));
+      if (GAPS[key] >= 30) fg.insertAdjacentHTML("beforebegin", reserveHtml(sid, GAPS[key]));
+    });
+    main.querySelectorAll(".np-flow figure.illus").forEach(function (f) {
+      var cap = f.querySelector("figcaption"); if (cap) cap.insertAdjacentHTML("afterbegin", '<span class="np-mark">§F' + f.getAttribute("data-svg").split("/").pop().replace(/\.[a-z]+$/, "") + "§</span>");
+    });
+    // правило 95: сборщик PDF передаёт ?wide=ключ,... (снимок на две колонки), ?mv=ключ:n (снимок встаёт на n блоков позже, текст закрывает провал),
+    // ?ws=ключ~мм~буквы,... (распорка в соседней колонке перед строкой, начинающейся этими буквами)
+    var QS = new URLSearchParams(location.search);
+    function figBlock(key) {
+      var hit = null;
+      main.querySelectorAll(".np-flow figure img").forEach(function (im) {
+        if (!hit && im.getAttribute("src").split("/").pop().replace(/\.[a-z]+$/, "") === key) { var f = im.closest("figure"); hit = f.closest(".np-inflow") || f; }
+      });
+      if (!hit) main.querySelectorAll(".np-flow figure.illus").forEach(function (f) { if (!hit && f.getAttribute("data-svg").split("/").pop().replace(/\.[a-z]+$/, "") === key) hit = f; });
+      return hit;
+    }
+    (QS.get("mv") || "").split(",").forEach(function (m) {
+      var a = m.split(":"), blk = a[0] && figBlock(a[0]); if (!blk) return;
+      for (var i = 0; i < +a[1]; i++) { var nx = blk.nextElementSibling; if (!nx || nx.tagName === "H4") break; nx.insertAdjacentElement("afterend", blk); }
+    });
+    (QS.get("wide") || "").split(",").forEach(function (k) {
+      var blk = k && figBlock(k); if (blk) blk.classList.add("np-wide");
+    });
+    var norm = function (t) { return t.toLowerCase().replace(/[^0-9a-zа-яё]/g, ""); };
+    (QS.get("ws") || "").split(",").forEach(function (w) {
+      var a = w.split("~"); if (a.length < 3) return;
+      var mm = +a[1], pre = decodeURIComponent(a[2]);
+      var sp = document.createElement("div"); sp.className = "np-ws"; sp.style.height = mm.toFixed(1) + "mm";
+      var from = figBlock(a[0]), started = false, done = false;
+      if (pre.indexOf("F:") === 0) { var b2 = figBlock(pre.slice(2)); if (b2) b2.insertAdjacentElement("beforebegin", sp); return; }
+      main.querySelectorAll(".np-flow p, .np-flow h4, .np-flow h2, .np-flow .np-sec").forEach(function (el) {
+        if (done) return;
+        if (from && !started) { if (from.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING) started = true; else return; }
+        var full = norm(el.textContent), at = full.indexOf(pre); if (at < 0) return;
+        done = true;
+        if (at === 0 || el.tagName !== "P") { var t = el.closest(".np-head") || el; var art = t.classList && t.classList.contains("np-head") ? t.closest("article") : t; (art.previousElementSibling && art.previousElementSibling.classList.contains("np-sec") && art.tagName === "ARTICLE" ? art.previousElementSibling : art).insertAdjacentElement("beforebegin", sp); return; }
+        // абзац делится на две части ровно на нужной строке
+        var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), n, c = 0, node = null, off = 0;
+        while ((n = walker.nextNode())) {
+          for (var i = 0; i < n.data.length; i++) {
+            if (norm(n.data[i])) { if (c === at) { node = n; off = i; break; } c++; }
+          }
+          if (node) break;
+        }
+        if (!node) { el.insertAdjacentElement("beforebegin", sp); return; }
+        var r = document.createRange(); r.setStart(node, off); r.setEndAfter(el.lastChild);
+        var tail = r.extractContents(), p2 = el.cloneNode(false); p2.appendChild(tail);
+        var lastCh = el.textContent.slice(-1), firstCh = p2.textContent.charAt(0);
+        if (norm(lastCh) && norm(firstCh)) el.appendChild(document.createTextNode("-"));
+        el.style.marginBottom = "0"; el.insertAdjacentElement("afterend", sp); sp.insertAdjacentElement("afterend", p2);
+      });
+    });
+    function fitLogo() {
+      var el = document.getElementById("np-logo"), box = el.parentNode.clientWidth, fs = 100;
+      el.style.fontSize = fs + "px";
+      fs = Math.min(fs * box / el.scrollWidth * 0.985, 138); el.style.fontSize = fs + "px";
+    }
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitLogo); else fitLogo();
+    fitLogo();
+    return main;
+  }
+
+  function render(issue) {
+    document.documentElement.style.setProperty("--logo-shadow", issue.logo_shadow || "#4f86d6");
+    stops.forEach(function (f) { f(); }); stops = [];
+    var pages = normalize(issue);
+    PAGEOF = {}; pages.forEach(function (q) { q.stories.forEach(function (st) { PAGEOF[st.id] = q.no; }); });
+    var minutes = Math.max(1, Math.round(wordCount(pages) / 180));
+    document.getElementById("m-no").textContent = "№ " + issue.no + " " + DOT + " " + (issue.weekday ? issue.weekday + ", " : "") + longDate(issue.date);
+    document.getElementById("m-date").textContent = "Выходит по субботам " + DOT + " " + pages.length + " полос " + DOT + " " + minutes + " мин чтения";
+    document.getElementById("pager").innerHTML = pages.map(function (p) { return '<li><a href="#p' + p.no + '" data-jump="p' + p.no + '">' + esc(p.title) + "<b>стр. " + p.no + "</b></a></li>"; }).join("");
+    var main;
+    if (PRINT) { main = renderPrint(issue, pages); }
+    else {
+    main = document.getElementById("issue");
+    main.innerHTML = pages.map(function (p) { return pageHtml(issue, p, pages); }).join("");
+    }
+    document.querySelectorAll("[data-jump]").forEach(function (a) {
+      a.addEventListener("click", function (e) { e.preventDefault(); jumpTo(a.getAttribute("data-jump")); });
+    });
+    // внутренняя ссылка в тексте на материал этого номера: [текст](#id материала)
+    document.querySelectorAll('#issue a[href^="#"]:not([data-jump])').forEach(function (a) {
+      var id = a.getAttribute("href").slice(1);
+      if (/^\d{4}-\d{2}-\d{2}$/.test(id) || !document.getElementById(id)) return;
+      a.addEventListener("click", function (e) { e.preventDefault(); jumpTo(id); });
+    });
+    if (PRINT) main.querySelectorAll("img[loading]").forEach(function (im) { im.loading = "eager"; });
+    setupPdf(issue);
+    // большой материал: колонка с заголовком рядом с высоким снимком добирается первыми абзацами, чтобы под ней не было пустоты
+    function fillFeatures() {
+      if (PRINT || window.innerWidth < 900) return;
+      document.querySelectorAll("article.feature").forEach(function (a) {
+        var top = a.querySelector(".feature-top"), left = top && top.firstElementChild, vis = left && left.nextElementSibling, body = a.querySelector(".body");
+        if (!vis || !body || left.dataset.filled) return;
+        var img = vis.querySelector("img"); if (img && !img.complete) { img.addEventListener("load", fillFeatures, { once: true }); return; }
+        left.dataset.filled = "1";
+        var box = document.createElement("div"); box.className = "feature-lead-text body"; left.appendChild(box);
+        // сначала диаграмма материала встаёт в свободное место под заголовком, затем добор абзацами
+        var dia = body.querySelector(":scope > .fig, :scope > .anim, :scope > figure.anim, :scope > .stats");
+        if (dia) { box.appendChild(dia); if (left.offsetHeight > vis.offsetHeight + 80) { body.insertBefore(dia, body.firstChild.nextSibling); } else dia.classList.add("in-head"); }
+        while (body.firstElementChild && (body.firstElementChild.tagName === "P" || body.firstElementChild.classList.contains("quote")) && left.offsetHeight < vis.offsetHeight - 60) box.insertBefore(body.firstElementChild, dia && dia.parentNode === box ? dia : null);
+        if (left.offsetHeight > vis.offsetHeight + 40 && box.lastElementChild) body.insertBefore(box.lastElementChild, body.firstChild);
+      });
+    }
+    fillFeatures();
+    var il = document.getElementById("issue-link");  // постоянная ссылка на номер на основном адресе газеты
+    if (il) { il.href = "https://svetoproba.com/#" + issue.date; il.textContent = "svetoproba.com/#" + issue.date; }
+    setupCarousels(document);
+    // абзац начинается с числа: буквицей становится всё число целиком («27»), а не первая цифра
+    document.querySelectorAll(".body > p:first-of-type").forEach(function (p) {
+      var m = p.firstChild && p.firstChild.nodeType === 3 && /^(\s*)(\d+)/.exec(p.firstChild.nodeValue);
+      if (!m) return;
+      p.classList.add("nodrop");
+      p.firstChild.nodeValue = p.firstChild.nodeValue.slice(m[0].length);
+      var sp = document.createElement("span"); sp.className = "dropnum dropnum-lead"; sp.textContent = m[2];
+      p.insertBefore(sp, p.firstChild);
+    });
+    main.querySelectorAll("figure.illus[data-svg]").forEach(function (f) {
+      fetch(f.getAttribute("data-svg")).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
+        if (t.indexOf("<svg") === 0) { var slot = f.querySelector(".sketch-slot"); var tmp = document.createElement("div"); tmp.innerHTML = t; var svg = tmp.querySelector("svg"); if (svg && slot) slot.replaceWith(svg); }
+      }).catch(function () {});
+    });
+    main.querySelectorAll(".mice-w").forEach(function (f) {
+      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "mice-w") B = bb; }); }); });
+      var svg = f.querySelector(".mw-c"), r = f.querySelector(".mw-r"), btns = [].slice.call(f.querySelectorAll(".dm-b button")), sel = 0;
+      var X = function (w) { return 90 + w / 165 * 880; }, Y = function (g) { return 480 - (g - 20) / 20 * 440; };
+      var val = function (S, w) { var W = B.weeks, i = 0; while (i < W.length - 2 && W[i + 1] < w) i++; var t = Math.max(0, Math.min(1, (w - W[i]) / (W[i + 1] - W[i]))); return S.v[i] + (S.v[i + 1] - S.v[i]) * t; };
+      var fmt = function (x) { return x.toFixed(1).replace(".", ","); };
+      function paint() { var w = +r.value, h = "";
+        [20, 25, 30, 35, 40].forEach(function (g) { h += '<line x1="90" x2="970" y1="' + Y(g) + '" y2="' + Y(g) + '" stroke="#cfc6b2" stroke-width="1.5"/><text x="78" y="' + (Y(g) + 10) + '" font-size="30" text-anchor="end" fill="#222" font-family="Arial,sans-serif">' + g + "</text>"; });
+        [0, 50, 100, 150].forEach(function (a) { h += '<text x="' + X(a) + '" y="526" font-size="30" text-anchor="middle" fill="#222" font-family="Arial,sans-serif">' + a + "</text>"; });
+        B.series.forEach(function (S, i) { var on = i === sel; h += '<polyline points="' + B.weeks.map(function (a, k) { return X(a) + "," + Y(S.v[k]); }).join(" ") + '" fill="none" stroke="' + S.c + '" stroke-width="' + (on ? 9 : 4) + '" opacity="' + (on ? 1 : .4) + '" stroke-linejoin="round"/>'; });
+        h += '<line x1="' + X(w) + '" x2="' + X(w) + '" y1="30" y2="480" stroke="#222" stroke-width="2" stroke-dasharray="8 6"/>';
+        h += '<text x="96" y="26" font-size="28" fill="#222" font-family="Arial,sans-serif">вес, г</text><text x="965" y="556" font-size="28" text-anchor="end" fill="#222" font-family="Arial,sans-serif">возраст, недели</text>';
+        B.series.forEach(function (S, i) { h += '<circle cx="' + X(w) + '" cy="' + Y(val(S, w)) + '" r="' + (i === sel ? 13 : 8) + '" fill="' + S.c + '" stroke="#fff" stroke-width="3"/>'; });
+        svg.innerHTML = h;
+        var S = B.series[sel];
+        f.querySelector(".mw-l").style.width = (S.t / 26.4 * 50) + "%"; f.querySelector(".mw-d").style.width = (S.t / 26.4 * 50) + "%";
+        f.querySelector(".mw-n").textContent = "Цикл света и темноты: " + S.name + (sel === 1 ? ", как в природе" : sel === 0 ? ", на 10 % короче суток" : ", на 10 % длиннее суток");
+        f.querySelector(".mw-a").textContent = "Возраст мыши: " + w + " нед.";
+        var base = val(B.series[1], w), diff = val(S, w) - base;
+        f.querySelector(".mw-o").innerHTML = "<b>" + fmt(val(S, w)) + " г</b>" + (sel === 1 ? " при обычных сутках" : " при сутках " + esc(S.name) + ", это " + (diff >= 0 ? "на " + fmt(diff) + " г больше" : "на " + fmt(-diff) + " г меньше") + ", чем при 24 часах");
+      }
+      btns.forEach(function (b, i) { b.onclick = function () { sel = i; btns.forEach(function (o, k) { o.setAttribute("aria-pressed", String(k === i)); }); paint(); }; });
+      r.oninput = paint; paint();
+    });
+    main.querySelectorAll(".flavin-mix").forEach(function (f) {
+      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "flavin-mix") B = bb; }); }); });
+      if (!B) return; var sel = B.start.slice();
+      function paint() { var a = B.palette[sel[0]], c = B.palette[sel[1]], r = flavinSvg(a.c, c.c);
+        f.querySelector(".fm-v").innerHTML = r.svg;
+        f.querySelector(".fm-o").innerHTML = (sel[0] === sel[1] ? "Обе трубки " + esc(a.name.toLowerCase()) + "е: угол залит одним цветом." : "Слева " + esc(a.name.toLowerCase()) + ", справа " + esc(c.name.toLowerCase()) + ". Там, где свет обеих трубок ложится на одни и те же плоскости, глаз видит третий цвет: <b>" + esc(r.name) + "</b>.") + " " + esc(B.note || "");
+      }
+      [0, 1].forEach(function (k) { var bs = [].slice.call(f.querySelectorAll(".fm-" + k + " button")); bs.forEach(function (b, i) { b.onclick = function () { sel[k] = i; bs.forEach(function (o, j) { o.setAttribute("aria-pressed", String(j === i)); }); paint(); }; }); });
+      paint();
+    });
+    main.querySelectorAll(".curve-slider").forEach(function (f) {
+      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "curve-slider") B = bb; }); }); });
+      if (!B) return; var r = f.querySelector(".cv-r");
+      var fmt = function (v, n) { return (Math.abs(v) < 0.005 ? 0 : v).toFixed(n).replace(".", ",").replace("-", "−"); };
+      function paint() { var x = +r.value, c = curveSvg(B, x); f.querySelector(".cv-v").innerHTML = c.svg;
+        f.querySelector(".cv-a").textContent = B.xlabel_live.replace("{x}", fmt(x, 1));
+        f.querySelector(".cv-o").innerHTML = B.out.replace("{y}", "<b>" + fmt(c.y, 2) + "</b>") + (x >= (B.plateau || 1e9) ? " " + esc(B.plateau_note || "") : "");
+      }
+      r.oninput = paint; paint();
+    });
+    main.querySelectorAll(".cs-scale").forEach(function (f) {
+      var r = f.querySelector(".cs-r"), box = f.querySelector(".cs-box");
+      function paint() { var v = +r.value / 100, t = Math.min(1, v / .7);
+        f.querySelector(".cs-v").textContent = v.toFixed(2).replace(".", ",").replace(/0$/, "");
+        f.querySelector(".cs-m").textContent = "Мелатонин ночью подавлен на " + Math.round(v * 100) + " % за час";
+        f.querySelector(".cs-s").textContent = v < .1 ? "Ниже порога: циркадная система на такой свет почти не отзывается." : v < .3 ? "Система уже откликается, воздействие пока слабое." : v < .4 ? "От 0,3: в опыте 2017 года утренний свет с таким показателем помогал сотрудникам офисов быстрее засыпать." : v < .5 ? "Около 0,4: такой свет днём получали жители домов престарелых в опыте ниже." : v < .7 ? "Сильное воздействие, но ещё не предел шкалы." : "Насыщение: дальше система уже не отзывается сильнее.";
+        var c1 = [32, 36, 58], c2 = [247, 214, 130], m = c1.map(function (a, i) { return Math.round(a + (c2[i] - a) * t); });
+        box.style.setProperty("background", "rgb(" + m.join(",") + ")", "important"); var tc = t > .5 ? "#17140f" : "#f4ecd9"; box.style.setProperty("color", tc, "important"); [].forEach.call(box.querySelectorAll("div"), function (e) { e.style.setProperty("color", tc, "important"); }); }
+      r.oninput = paint; paint();
+    });
+    main.querySelectorAll(".road-adapt").forEach(function (f) {
+      var rb = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "road-adapt") rb = bb; }); }); });
+      var ps = [].slice.call(f.querySelectorAll(".ra-p")), car = f.querySelector(".ra-car"), range = f.querySelector(".ra-r"), btns = [].slice.call(f.querySelectorAll(".dm-b button")), txt = f.querySelector(".dm-t");
+      var mode = 0, x = 60, raf = 0, auto = !REDUCE, last = 0;
+      function paint() {
+        car.setAttribute("transform", "translate(" + x + " 0)"); car.style.display = mode === 1 ? "none" : "";
+        ps.forEach(function (g) { var px = +g.dataset.x + 22, d = Math.abs(px - x), lvl;
+          if (mode === 2) lvl = 1; else if (mode === 1) lvl = .18; else lvl = d < 110 ? 1 : d < 230 ? 1 - (d - 110) / 120 * .82 : .18;
+          g.querySelector(".ra-c").setAttribute("opacity", (lvl * .42).toFixed(3)); g.querySelector(".ra-l").setAttribute("opacity", (.25 + lvl * .75).toFixed(3)); });
+      }
+      function tick(t) { if (!f.isConnected) return; if (auto && mode === 0) { x += Math.min(40, t - last) * .09; if (x > 830) x = -30; range.value = x; paint(); } last = t; raf = requestAnimationFrame(tick); }
+      btns.forEach(function (b, i) { b.onclick = function () { mode = i; btns.forEach(function (o, k) { o.setAttribute("aria-pressed", String(k === i)); }); txt.textContent = rb.modes[i].text; range.disabled = i !== 0; paint(); }; });
+      range.oninput = function () { auto = false; x = +range.value; if (mode !== 0) btns[0].click(); paint(); };
+      paint(); raf = requestAnimationFrame(tick); stops.push(function () { cancelAnimationFrame(raf); });
+    });
+    main.querySelectorAll(".dark-map").forEach(function (f) {
+      var iss = (issue.pages || []).reduce(function (o, p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "dark-map") o = bb; }); }); return o; }, null);
+      f.querySelectorAll(".dm-b button").forEach(function (btn) { btn.onclick = function () { var i = +btn.dataset.i;
+        f.querySelectorAll(".dm-b button").forEach(function (x, k) { x.setAttribute("aria-pressed", String(k === i)); });
+        f.querySelectorAll(".ov").forEach(function (x) { x.classList.toggle("on", +x.dataset.i === i); });
+        f.querySelector(".dm-t").textContent = iss.levels[i].text; }; });
+    });
+    main.querySelectorAll('[data-anim="lens-aging"]').forEach(function (f) { stops.push(startLens(f)); });
+    main.querySelectorAll("[data-chart]").forEach(wireChart);
+    armMotion(main);
+    updateNav();
+  }
+
+  function armMotion(root) {
+    if (observer) observer.disconnect();
+    var targets = root.querySelectorAll(".motion, [data-count]");
+    if (REDUCE || !("IntersectionObserver" in window)) { root.querySelectorAll(".chip").forEach(function (c) { if (!REDUCE) c.classList.add("run"); }); return; }
+    var vh = window.innerHeight;
+    observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        var el = en.target;
+        el.classList.add("in");
+        if (el.classList.contains("chip")) el.classList.add("run");
+        if (el.hasAttribute("data-count")) el.querySelectorAll(".stat-v").forEach(countUp);
+        observer.unobserve(el);
+      });
+    }, { threshold: 0.25 });
+    targets.forEach(function (el) {
+      var below = el.getBoundingClientRect().top > vh;
+      if (below) el.classList.add("armed");
+      if (below || el.classList.contains("chip")) observer.observe(el);
+    });
+  }
+
+  // переход к началу материала (правило 115): снимки выше цели догружаются и раздвигают страницу, поэтому
+  // положение держим, пока вёрстка меняется; любое действие читателя останавливает удержание
+  var jumpStop = null, flyDest = null;
+  // профиль стрелок: короткий разгон, затем долгое затухание скорости, как у прокрутки с инерцией (правило 116)
+  function flyEase(p) {
+    var a = 0.22, k = 3, v = 1 / (a / 2 + (1 - a) / (k + 1));
+    return p < a ? v * p * p / (2 * a) : 1 - v * (1 - a) / (k + 1) * Math.pow((1 - p) / (1 - a), k + 1);
+  }
+  function jumpTo(id, animate) {
+    var el = document.getElementById(id); if (!el) return;
+    if (jumpStop) jumpStop();
+    var GAP = 16, root = document.documentElement, main = document.getElementById("issue"), ro = null, t = 0, raf = 0, flying = false, EV = ["wheel", "touchmove", "keydown", "mousedown"];
+    root.style.scrollBehavior = "auto"; // Safari не везде понимает behavior: "instant"
+    function place() {
+      if (flying) return;
+      var y = el.getBoundingClientRect().top - GAP;
+      if (Math.abs(y) > 1) window.scrollTo(0, (window.pageYOffset || root.scrollTop) + y);
+    }
+    function loaded(e) { if (e.target && e.target.tagName === "IMG") place(); }
+    function stop() {
+      if (ro) ro.disconnect(); clearTimeout(t);
+      if (raf) cancelAnimationFrame(raf); flying = false;
+      EV.forEach(function (n) { window.removeEventListener(n, stop, true); });
+      document.removeEventListener("load", loaded, true);
+      root.style.scrollBehavior = ""; jumpStop = null;
+    }
+    jumpStop = stop;
+    var dist = Math.abs(el.getBoundingClientRect().top - GAP);
+    if (animate && !REDUCE && dist > 2) {
+      // цель пересчитывается каждый кадр: снимок, догрузившийся по пути, не сбивает точку прибытия
+      var y0 = window.pageYOffset || root.scrollTop, t0 = 0, dur = Math.min(1400, 500 + dist * 0.09);
+      flying = true; flyDest = { id: id, until: Date.now() + dur };
+      raf = requestAnimationFrame(function frame(now) {
+        if (!t0) t0 = now;
+        var p = Math.min(1, (now - t0) / dur), goal = (window.pageYOffset || root.scrollTop) + el.getBoundingClientRect().top - GAP;
+        window.scrollTo(0, y0 + (goal - y0) * flyEase(p));
+        if (p < 1) { raf = requestAnimationFrame(frame); return; }
+        raf = 0; flying = false; flyDest = null; place();
+      });
+    } else {
+      place();
+      requestAnimationFrame(place);
+    }
+    if (window.ResizeObserver && main) { ro = new ResizeObserver(place); ro.observe(main); }
+    document.addEventListener("load", loaded, true);
+    t = setTimeout(stop, 15000);
+    EV.forEach(function (n) { window.addEventListener(n, stop, { capture: true, passive: true }); });
+  }
+  // стрелки: к началу предыдущего и следующего материала (правило 116); материалы рядом в одном ряду идут как один шаг
+  function matTops() {
+    return Array.prototype.map.call(document.querySelectorAll("#issue article[id]"), function (el) { return { id: el.id, top: el.getBoundingClientRect().top }; })
+      .sort(function (a, b) { return a.top - b.top; });
+  }
+  function matStep(dir) {
+    var list = matTops(), hit = null, base = 0, gone = flyDest && Date.now() < flyDest.until ? flyDest.id : null;
+    // нажатие на лету считается от той точки, куда страница уже едет
+    if (gone) list.forEach(function (x) { if (x.id === gone) base = x.top - 16; });
+    flyDest = null;
+    if (dir > 0) hit = list.filter(function (x) { return x.top - base > 24; })[0];
+    else { var u = list.filter(function (x) { return x.top - base < 8; }); hit = u[u.length - 1]; }
+    if (hit) jumpTo(hit.id, true);
+  }
+  function matSync() {
+    var list = matTops(), up = document.getElementById("mat-up"), dn = document.getElementById("mat-down");
+    if (!list.length || !up) return;
+    up.disabled = list[0].top >= 8;
+    dn.disabled = list[list.length - 1].top <= 24;
+  }
+  function matSetup() {
+    var box = document.getElementById("mat-nav");
+    if (PRINT || !box) return;
+    box.hidden = false;
+    document.getElementById("mat-up").addEventListener("click", function () { matStep(-1); });
+    document.getElementById("mat-down").addEventListener("click", function () { matStep(1); });
+    var tick = 0, idle = 0;
+    // на телефоне кнопки лежат поверх текста: видны при прокрутке, скрываются, когда читатель остановился (правило 116)
+    function matWake() { box.classList.remove("idle"); clearTimeout(idle); idle = setTimeout(function () { box.classList.add("idle"); }, 2500); }
+    matWake();
+    window.addEventListener("scroll", function () { matWake(); if (!tick) tick = setTimeout(function () { tick = 0; matSync(); }, 120); }, { passive: true });
+    window.addEventListener("resize", matSync);
+  }
+  // счётчик читателей: без cookie и личных данных, читателю не виден; только на открытом сайте (правило 114)
+  var STAT_TEST = /[?&]stattest\b/.test(location.search);
+  var STAT_ON = false && !PRINT && (/(^|\.)svetoproba\.com$/.test(location.hostname) || STAT_TEST) && !(window.claude && window.claude.use) && (STAT_TEST || !navigator.webdriver);
+  var STAT_NS = STAT_TEST ? "svetoproba-weekly-test" : "svetoproba-weekly";
+  function statHit(key) {
+    if (!STAT_ON) return false;
+    var mark = "sw:" + STAT_NS + ":" + key;
+    try { if (localStorage.getItem(mark)) return false; localStorage.setItem(mark, "1"); } catch (e) {}
+    try { fetch("https://abacus.jasoncameron.dev/hit/" + STAT_NS + "/" + key, { mode: "cors", keepalive: true }).catch(function () {}); } catch (e) {}
+    return true;
+  }
+  function statDevice() {
+    var ua = navigator.userAgent;
+    if (/iPad|Tablet/.test(ua) || (navigator.maxTouchPoints > 1 && /Macintosh/.test(ua)) || (/Android/.test(ua) && !/Mobile/.test(ua))) return "tablet";
+    return /Mobi|iPhone|Android/.test(ua) ? "phone" : "desktop";
+  }
+  function statSource() {
+    if (/[?&]s=tg\b/.test(location.search) || window.TelegramWebviewProxy || window.TelegramWebview || /Telegram/i.test(navigator.userAgent)) return "tg";
+    var host = "";
+    try { host = document.referrer ? new URL(document.referrer).hostname : ""; } catch (e) {}
+    if (!host) return "direct";
+    if (host === location.hostname) return "";
+    if (/(^|\.)(t\.me|telegram\.(org|me))$/.test(host)) return "tg";
+    return /google\.|yandex\.|bing\.|duckduckgo\.|mail\.ru$|ya\.ru$/.test(host) ? "search" : "other";
+  }
+  function statReturning(date) {
+    try {
+      var head = "sw:" + STAT_NS + ":web.";
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf(head) === 0 && k.slice(head.length) < date) return true;
+      }
+    } catch (e) {}
+    return false;
+  }
+  // общий журнал сайта по суткам и часам по Москве (правило 114): посетители, новые, открытия, источник
+  function statNow() { var t = new Date(Date.now() + 3 * 3600000).toISOString(); return { d: t.slice(0, 10), h: t.slice(11, 13) }; }
+  function statRaw(key) {
+    if (!STAT_ON) return;
+    try { fetch("https://abacus.jasoncameron.dev/hit/" + STAT_NS + "/" + key, { mode: "cors", keepalive: true }).catch(function () {}); } catch (e) {}
+  }
+  function statDay(key) { statHit(key + "." + statNow().d); }
+  function statVisit() {
+    if (!STAT_ON) return;
+    var t = statNow(), first = false;
+    try {
+      var fk = "sw:" + STAT_NS + ":first";
+      if (!localStorage.getItem(fk)) {
+        first = !statReturning("9999");
+        localStorage.setItem(fk, t.d);
+      }
+    } catch (e) {}
+    if (first) statHit("n." + t.d);
+    statHit("v." + t.d);
+    statHit("h." + t.d + "." + t.h);
+    var src = statSource(); if (src) statHit("s." + t.d + "." + src);
+  }
+  if (STAT_ON) document.addEventListener("visibilitychange", function () { if (!document.hidden) { var t = statNow(); statHit("v." + t.d); statHit("h." + t.d + "." + t.h); } });
+  var statTimer = 0, statDate = "", statLinks = false;
+  function statIssue(date) {
+    if (!STAT_ON) return;
+    statVisit();
+    statRaw("pv." + statNow().d);
+    statDate = date;
+    if (statReturning(date)) statHit("ret." + date);
+    statHit("web." + date);
+    statHit("dev." + date + "." + statDevice());
+    var src = statSource(); if (src) statHit("src." + date + "." + src);
+    statHit("day." + date + "." + new Date(Date.now() + 3 * 3600000).toISOString().slice(0, 10));
+    if (!statLinks) {
+      statLinks = true;
+      document.addEventListener("click", function (e) {
+        var a = e.target.closest && e.target.closest("#issue a[href]"); if (!a) return;
+        var art = a.closest("article[id]");
+        if (art && a.hostname && a.hostname !== location.hostname) statHit("out." + statDate + "." + art.id);
+      }, true);
+    }
+    clearInterval(statTimer);
+    // считаем только экран, на котором читатель задержался: пролёт ссылкой или стрелкой глубину не даёт
+    var cur = "", sec = 0, active = 0, seen = {}, need = {}, deep = [];
+    statTimer = setInterval(function () {
+      if (document.hidden) return;
+      var mid = window.innerHeight / 2, id = "", main = document.getElementById("issue");
+      active++;
+      if (active === 60) statHit("time." + date + ".1");
+      if (active === 180) { statHit("time." + date + ".3"); statDay("t3"); }
+      if (active === 600) statHit("time." + date + ".10");
+      if (main) {
+        var box = main.getBoundingClientRect();
+        deep.push((window.innerHeight - box.top) / (box.height || 1)); if (deep.length > 3) deep.shift();
+        if (deep.length === 3) {
+          var d = Math.min(deep[0], deep[1], deep[2]);
+          [25, 50, 75, 100].forEach(function (x) { if (d >= (x === 100 ? 0.98 : x / 100)) statHit("dep." + date + "." + x); });
+        }
+      }
+      document.querySelectorAll("#issue section.page[id]").forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.top <= mid && r.bottom > mid) id = el.id;
+      });
+      if (id !== cur) { cur = id; sec = 0; }
+      // полоса считается прочитанной, если стояла посреди экрана не меньше 5 секунд
+      if (cur && ++sec === 5) statHit("page." + date + "." + cur);
+      // материал: увидел за 5 секунд; дочитал, если пробыл половину времени чтения (200 слов в минуту, не меньше 8 секунд)
+      document.querySelectorAll("#issue article[id]").forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (!(r.top <= mid && r.bottom > mid)) return;
+        var k = el.id;
+        if (!need[k]) need[k] = Math.max(8, Math.round((el.textContent || "").trim().split(/\s+/).length * 0.15));
+        seen[k] = (seen[k] || 0) + 1;
+        if (seen[k] === 5) statHit("mat." + date + "." + k);
+        if (seen[k] === need[k]) { if (statHit("read." + date + "." + k)) statRaw("rd." + statNow().d); }
+      });
+    }, 1000);
+  }
+  function setupPdf(issue) {
+    // кнопка вверху у навигации и такая же справа в выходных данных внизу
+    var btns = ["b-pdf", "b-pdf-foot"].map(function (id) { return document.getElementById(id); }).filter(Boolean);
+    function show(on) { btns.forEach(function (b) { b.hidden = !on; }); }
+    if (!issue.pdf || PRINT) { show(false); return; }
+    if (!window.claude || !window.claude.use) {
+      // открытая версия сайта (GitHub Pages, larcorchestra.com): обычная ссылка на файл PDF
+      show(true);
+      btns.forEach(function (b) { b.onclick = function () { if (statHit("pdf." + issue.date)) statRaw("p." + statNow().d); setTimeout(function () { window.location.href = issue.pdf; }, 150); }; });
+      return;
+    }
+    window.claude.use("downloads").then(function (dl) {
+      if (!dl) { show(false); return; }
+      show(true);
+      btns.forEach(function (btn) {
+        btn.onclick = function () {
+          btn.disabled = true; btn.textContent = "Готовлю PDF…";
+          fetch(issue.pdf).then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
+            .then(function (blob) { return dl.save({ filename: "svetoproba-weekly-" + issue.date + ".pdf", data: blob }); })
+            .then(function () { btn.textContent = "PDF сохранён"; })
+            .catch(function (e) { btn.textContent = e && e.code === "declined" ? "Скачать PDF" : "PDF недоступен"; })
+            .then(function () { btn.disabled = false; setTimeout(function () { btn.textContent = "Скачать PDF"; }, 4000); });
+        };
+      });
+    });
+  }
+
+  function updateNav() {
+    var i = issues.findIndex(function (x) { return x.date === current; });
+    document.getElementById("b-prev").disabled = i < 0 || i >= issues.length - 1;
+    document.getElementById("b-next").disabled = i <= 0;
+    var list = document.getElementById("arch-list");
+    list.innerHTML = issues.map(function (it) {
+      return '<li><a href="#' + esc(it.date) + '" data-date="' + esc(it.date) + '"' + (it.date === current ? ' aria-current="page"' : "") + '><span class="arch-no">№ ' + esc(it.no) + '</span><span class="arch-d">' + esc(longDate(it.date)) + "</span><span>" + esc(it.lead || "") + "</span></a></li>";
+    }).join("");
+    list.querySelectorAll("[data-date]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); openIssue(a.getAttribute("data-date"), true); }); });
+  }
+  function openIssue(date, scrollTop) {
+    var meta = issues.find(function (x) { return x.date === date; }) || issues[0];
+    if (!meta) { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Пока нет ни одного вышедшего номера.</p></div>'; return; }
+    current = meta.date;
+    try { history.replaceState(null, "", "#" + meta.date); } catch (e) {}
+    fetch("issues/" + meta.date + ".json", { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (issue) { render(issue); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); matSync(); })
+      .catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Номер за ' + esc(longDate(meta.date)) + " не загрузился. Обновите страницу.</p></div>"; });
+  }
+  function step(dir) { var i = issues.findIndex(function (x) { return x.date === current; }), j = i + dir; if (i >= 0 && j >= 0 && j < issues.length) openIssue(issues[j].date, true); }
+  document.getElementById("b-prev").addEventListener("click", function () { step(1); });
+  document.getElementById("b-next").addEventListener("click", function () { step(-1); });
+  document.getElementById("b-arch").addEventListener("click", function () { document.getElementById("archive").scrollIntoView({ behavior: REDUCE ? "auto" : "smooth" }); });
+  window.addEventListener("hashchange", function () { var h = location.hash.slice(1); if (h && h !== current && issues.some(function (x) { return x.date === h; })) openIssue(h, true); });
+  matSetup();
+  fetch("issues/index.json", { cache: "no-store" }).then(function (r) { return r.json(); }).then(function (idx) {
+    issues = visibleIssues(idx.issues || []);
+    var h = location.hash.slice(1);
+    openIssue(issues.some(function (x) { return x.date === h; }) ? h : (issues[0] && issues[0].date), false);
+  }).catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Список номеров не загрузился. Обновите страницу.</p></div>'; });
+})();
+</script>
+</body></html>
