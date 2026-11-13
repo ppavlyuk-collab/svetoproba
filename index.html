@@ -1,10 +1,10 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>_светопроба weekly</title>
-<meta name="description" content="Перед собором Сен-Морис построена белая галерея высотой 11 м. Она защищает редкую средневековую роспись, поэтому светильники спрятаны внутри и не видны с площади.">
+<meta name="description" content="На втором этаже музея открылась выставка «Dan Flavin: Some Light»: работы от 1960-х до 1980-х годов из обычных люминесцентных ламп заполняют цветом воздух залов Фрэнка Гери.">
 <meta property="og:type" content="article"><meta property="og:site_name" content="_светопроба weekly">
-<meta property="og:title" content="_светопроба weekly № 2: Галерея Кенго Кумы в Анже: освещение, которое бережёт роспись портала XII века"><meta property="og:description" content="Перед собором Сен-Морис построена белая галерея высотой 11 м. Она защищает редкую средневековую роспись, поэтому светильники спрятаны внутри и не видны с площади.">
-<meta property="og:image" content="https://svetoproba.com/cover-2026-11-07.jpg"><meta property="og:url" content="https://svetoproba.com/#2026-11-07">
+<meta property="og:title" content="_светопроба weekly № 3: Дэн Флавин в Бильбао: залы, заполненные цветом люминесцентных ламп"><meta property="og:description" content="На втором этаже музея открылась выставка «Dan Flavin: Some Light»: работы от 1960-х до 1980-х годов из обычных люминесцентных ламп заполняют цветом воздух залов Фрэнка Гери.">
+<meta property="og:image" content="https://svetoproba.com/cover-2026-11-14.jpg"><meta property="og:url" content="https://svetoproba.com/#2026-11-14">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body><script>document.documentElement.lang = "ru";</script>
@@ -435,6 +435,7 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .np-editor::before { content: "Редакция"; display: block; font: 700 6.6pt var(--font-ui); font-style: normal; letter-spacing: .1em; text-transform: uppercase; color: #b35d16; }
 .np-ed-top { border-top: 0 !important; border-bottom: .6pt solid #161411; margin: 2.5mm 0 3mm !important; padding: 0 0 2.5mm !important; column-count: 4; column-gap: 6mm; column-rule: .3pt solid #c3b8a0; font-size: 9pt; line-height: 1.35; }
 .np-ed.np-ed-top small { display: inline; margin: 0 0 0 2mm; white-space: nowrap; }
+.np-ed.np-ed-top { hyphens: manual; -webkit-hyphens: manual; }  /* перенос рвал последнее слово перед подписью, № 3 */
 .np-ed.np-ed-top img { width: 13mm; height: 13mm; }
 .np-side-text p { margin: 0 0 .55em; text-align: left; hyphens: auto; }
 .np-ed { break-inside: avoid; border-top: 3.5pt solid #161411; padding-top: 1.5mm; margin-bottom: 4mm; font-style: italic; }
@@ -708,7 +709,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   /* blocks */
   function block(b) {
     if (b.print_only && !PRINT) return "";  // материалы для заполнения полос PDF в веб-версию не идут
-    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w") return animHtml(b);
+    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w" || b.anim === "flavin-mix" || b.anim === "curve-slider") return animHtml(b);
     if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
     if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
     if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
@@ -881,7 +882,56 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       return '<li><div class="src">' + esc(d.source) + (d.date ? "<span>" + esc(d.date) + "</span>" : "") + '</div><a href="' + esc(safeUrl(d.url)) + '" target="_blank" rel="noopener">' + esc(d.title) + "</a><p>" + rich(d.what) + "</p></li>";
     }).join("") + "</ol>";
   }
+
+  /* № 3: угол комнаты с двумя трубками Флавина и кривая с ползунком; картинка строится строкой, в PDF статичный кадр */
+  function hexRgb(h) { h = h.replace("#", ""); return [parseInt(h.slice(0, 2), 16), parseInt(h.slice(2, 4), 16), parseInt(h.slice(4, 6), 16)]; }
+  function mixName(rgb) {
+    var r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255, mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn, h = 0;
+    if (mx === 0 || d / mx < 0.18) return "почти белый";
+    if (mx === r) h = ((g - b) / d) % 6; else if (mx === g) h = (b - r) / d + 2; else h = (r - g) / d + 4;
+    h = (h * 60 + 360) % 360; var s = d / mx;
+    var n = h < 15 ? "красный" : h < 40 ? "оранжевый" : h < 65 ? "жёлтый" : h < 90 ? "жёлто-зелёный" : h < 150 ? "зелёный" : h < 185 ? "бирюзовый" : h < 215 ? "голубой" : h < 255 ? "синий" : h < 290 ? "фиолетовый" : h < 330 ? "пурпурный" : "розовый";
+    return s < 0.45 ? "бледно-" + n : n;
+  }
+  function flavinSvg(cl, cr) {
+    var L = hexRgb(cl), R = hexRgb(cr), S0 = [L[0] + R[0], L[1] + R[1], L[2] + R[2]], K = 255 / Math.max(1, S0[0], S0[1], S0[2]), M = S0.map(function (v) { return Math.round(v * K); });
+    var mx = "rgb(" + M.join(",") + ")";
+    var s = '<svg viewBox="0 0 1000 600" role="img" style="display:block;width:100%;height:auto" xmlns="http://www.w3.org/2000/svg"><defs>' +
+      '<radialGradient id="fgL" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="' + cl + '" stop-opacity=".95"/><stop offset=".55" stop-color="' + cl + '" stop-opacity=".45"/><stop offset="1" stop-color="' + cl + '" stop-opacity="0"/></radialGradient>' +
+      '<radialGradient id="fgR" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="' + cr + '" stop-opacity=".95"/><stop offset=".55" stop-color="' + cr + '" stop-opacity=".45"/><stop offset="1" stop-color="' + cr + '" stop-opacity="0"/></radialGradient>' +
+      '<clipPath id="fgRoom"><rect x="0" y="0" width="1000" height="600"/></clipPath></defs>' +
+      '<rect width="1000" height="600" fill="#1f1c19"/>' +
+      '<polygon points="40,10 500,70 500,470 40,580" fill="#3a3530"/><polygon points="500,70 960,10 960,580 500,470" fill="#34302b"/><polygon points="40,580 500,470 960,580 1000,600 0,600" fill="#2a2622"/>' +
+      '<g clip-path="url(#fgRoom)" style="isolation:isolate"><ellipse cx="560" cy="290" rx="430" ry="330" fill="url(#fgL)" style="mix-blend-mode:screen"/><ellipse cx="440" cy="290" rx="430" ry="330" fill="url(#fgR)" style="mix-blend-mode:screen"/></g>' +
+      '<line x1="500" y1="70" x2="500" y2="470" stroke="#000" stroke-opacity=".25" stroke-width="2"/>' +
+      '<rect x="452" y="110" width="12" height="330" rx="6" fill="#fff" stroke="' + cl + '" stroke-width="4"/><rect x="536" y="110" width="12" height="330" rx="6" fill="#fff" stroke="' + cr + '" stroke-width="4"/>' +
+      '<rect x="444" y="440" width="28" height="14" fill="#cfcfcf"/><rect x="528" y="440" width="28" height="14" fill="#cfcfcf"/>' +
+      '<g font-family="Arial,sans-serif" font-size="24" fill="#f1ead9"><text x="70" y="70">левая трубка 244 см</text><text x="930" y="70" text-anchor="end">правая трубка 244 см</text>' +
+      '<line x1="458" y1="96" x2="300" y2="80" stroke="#f1ead9" stroke-width="1.5"/><line x1="542" y1="96" x2="700" y2="80" stroke="#f1ead9" stroke-width="1.5"/>' +
+      '<rect x="380" y="510" width="40" height="40" fill="' + mx + '" stroke="#f1ead9" stroke-width="1.5"/><text x="432" y="540">в углу: ' + esc(mixName(M)) + '</text></g></svg>';
+    return { svg: s, name: mixName(M) };
+  }
+  function curveSvg(B, x) {
+    var xs = B.x, ys = B.y, x0 = xs[0], x1 = xs[xs.length - 1], y0 = B.ymin, y1 = B.ymax;
+    var X = function (v) { return 110 + (v - x0) / (x1 - x0) * 840; }, Y = function (v) { return 470 - (v - y0) / (y1 - y0) * 420; };
+    var at = function (v) { var i = 0; while (i < xs.length - 2 && xs[i + 1] < v) i++; var t = Math.max(0, Math.min(1, (v - xs[i]) / (xs[i + 1] - xs[i]))); return ys[i] + (ys[i + 1] - ys[i]) * t; };
+    var h = '<svg viewBox="0 0 1000 560" role="img" style="display:block;width:100%;height:auto;background:#f7f1e3" xmlns="http://www.w3.org/2000/svg"><g font-family="Arial,sans-serif" font-size="26" fill="#222">';
+    (B.yticks || []).forEach(function (g) { h += '<line x1="110" x2="950" y1="' + Y(g) + '" y2="' + Y(g) + '" stroke="#cfc6b2" stroke-width="1.5"/><text x="98" y="' + (Y(g) + 9) + '" text-anchor="end">' + String(g).replace(".", ",").replace("-", "−") + "</text>"; });
+    (B.xticks || []).forEach(function (a) { h += '<text x="' + X(a) + '" y="510" text-anchor="middle">' + String(a).replace(".", ",") + "</text>"; });
+    if (B.band) h += '<rect x="' + X(B.band[0]) + '" y="50" width="' + (X(B.band[1]) - X(B.band[0])) + '" height="420" fill="#8a6a2f" fill-opacity=".10"/><text x="' + ((X(B.band[0]) + X(B.band[1])) / 2) + '" y="76" text-anchor="middle" font-size="22" fill="#8a6a2f">' + esc(B.band_label || "") + "</text>";
+    h += '<polyline points="' + xs.map(function (a, k) { return X(a) + "," + Y(ys[k]); }).join(" ") + '" fill="none" stroke="#8a6a2f" stroke-width="7" stroke-linejoin="round"/>';
+    h += '<line x1="' + X(x) + '" x2="' + X(x) + '" y1="50" y2="470" stroke="#222" stroke-width="2" stroke-dasharray="8 6"/><circle cx="' + X(x) + '" cy="' + Y(at(x)) + '" r="12" fill="#8a6a2f" stroke="#fff" stroke-width="3"/>';
+    h += '<text x="116" y="34" font-size="24">' + esc(B.ylabel) + '</text><text x="950" y="548" font-size="24" text-anchor="end">' + esc(B.xlabel) + "</text></g></svg>";
+    return { svg: h, y: at(x) };
+  }
   function animHtml(b) {
+    if (b.anim === "flavin-mix") {
+      var P0 = b.palette;
+      return '<figure class="fig span anim flavin-mix"><p class="fig-t">' + esc(b.title) + '</p>' + ["Левая", "Правая"].map(function (side, k) { return '<div class="dm-b fm-' + k + '"><span style="font:700 var(--tiny) var(--font-ui);align-self:center;margin-right:4px">' + side + ' трубка:</span>' + P0.map(function (c, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === b.start[k]) + '"><span style="display:inline-block;width:10px;height:10px;margin-right:6px;background:' + esc(c.c) + ';border:1px solid var(--rule)"></span>' + esc(c.name) + "</button>"; }).join("") + "</div>"; }).join("") + '<div class="fm-v">' + flavinSvg(P0[b.start[0]].c, P0[b.start[1]].c).svg + '</div><div class="fm-o" style="font:400 1rem/1.5 var(--font-ui);margin-top:8px"></div><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    if (b.anim === "curve-slider") {
+      return '<figure class="fig span anim curve-slider"><p class="fig-t">' + esc(b.title) + '</p><div class="cv-v">' + curveSvg(b, b.start).svg + '</div><label class="cv-a" style="display:block;font:700 .95rem var(--font-ui);margin:12px 0 2px"></label><input class="cv-r" type="range" min="' + b.x[0] + '" max="' + b.x[b.x.length - 1] + '" step="' + (b.step || 0.5) + '" value="' + b.start + '" aria-label="' + esc(b.xlabel) + '" style="width:100%"><div class="cv-o" style="font:400 1rem/1.5 var(--font-ui);margin-top:6px"></div><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
     if (b.anim === "lens-aging") {
       return '<figure class="fig span anim" data-anim="lens-aging"><p class="fig-t">Что доходит до сетчатки: видимый спектр и возраст</p><canvas aria-hidden="true"></canvas>' +
         '<div class="anim-row"><span>380 нм</span><span class="anim-age">возраст наблюдателя: 20 лет</span><span>780 нм</span></div>' + (b.caption ? "<figcaption>" + esc(b.caption) + "</figcaption>" : "") + "</figure>";
@@ -1067,6 +1117,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       if (b.anim === "road-adapt") return illusHtml(b.illus);
       if (b.anim === "cs-scale") return "";
       if (b.anim === "mice-w") return illusHtml(b.illus);
+      if ((b.anim === "flavin-mix" || b.anim === "curve-slider") && b.print_src) return illusHtml({ src: b.print_src, alt: b.title, caption: b.print_caption || b.caption });
       if (b.anim) return "";
       return block(b);
     }
@@ -1293,6 +1344,26 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
         f.querySelector(".mw-o").innerHTML = "<b>" + fmt(val(S, w)) + " г</b>" + (sel === 1 ? " при обычных сутках" : " при сутках " + esc(S.name) + ", это " + (diff >= 0 ? "на " + fmt(diff) + " г больше" : "на " + fmt(-diff) + " г меньше") + ", чем при 24 часах");
       }
       btns.forEach(function (b, i) { b.onclick = function () { sel = i; btns.forEach(function (o, k) { o.setAttribute("aria-pressed", String(k === i)); }); paint(); }; });
+      r.oninput = paint; paint();
+    });
+    main.querySelectorAll(".flavin-mix").forEach(function (f) {
+      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "flavin-mix") B = bb; }); }); });
+      if (!B) return; var sel = B.start.slice();
+      function paint() { var a = B.palette[sel[0]], c = B.palette[sel[1]], r = flavinSvg(a.c, c.c);
+        f.querySelector(".fm-v").innerHTML = r.svg;
+        f.querySelector(".fm-o").innerHTML = (sel[0] === sel[1] ? "Обе трубки " + esc(a.name.toLowerCase()) + "е: угол залит одним цветом." : "Слева " + esc(a.name.toLowerCase()) + ", справа " + esc(c.name.toLowerCase()) + ". Там, где свет обеих трубок ложится на одни и те же плоскости, глаз видит третий цвет: <b>" + esc(r.name) + "</b>.") + " " + esc(B.note || "");
+      }
+      [0, 1].forEach(function (k) { var bs = [].slice.call(f.querySelectorAll(".fm-" + k + " button")); bs.forEach(function (b, i) { b.onclick = function () { sel[k] = i; bs.forEach(function (o, j) { o.setAttribute("aria-pressed", String(j === i)); }); paint(); }; }); });
+      paint();
+    });
+    main.querySelectorAll(".curve-slider").forEach(function (f) {
+      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "curve-slider") B = bb; }); }); });
+      if (!B) return; var r = f.querySelector(".cv-r");
+      var fmt = function (v, n) { return (Math.abs(v) < 0.005 ? 0 : v).toFixed(n).replace(".", ",").replace("-", "−"); };
+      function paint() { var x = +r.value, c = curveSvg(B, x); f.querySelector(".cv-v").innerHTML = c.svg;
+        f.querySelector(".cv-a").textContent = B.xlabel_live.replace("{x}", fmt(x, 1));
+        f.querySelector(".cv-o").innerHTML = B.out.replace("{y}", "<b>" + fmt(c.y, 2) + "</b>") + (x >= (B.plateau || 1e9) ? " " + esc(B.plateau_note || "") : "");
+      }
       r.oninput = paint; paint();
     });
     main.querySelectorAll(".cs-scale").forEach(function (f) {
