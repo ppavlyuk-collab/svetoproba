@@ -1307,7 +1307,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     stops.forEach(function (f) { f(); }); stops = [];
     var pages = normalize(issue);
     PAGEOF = {}; pages.forEach(function (q) { q.stories.forEach(function (st) { PAGEOF[st.id] = q.no; }); });
-    var minutes = Math.max(1, Math.round(wordCount(pages) / 180));
+    var minutes = readMinutes(issue); // одно число в шапке и в колонке редакции
     document.getElementById("m-no").textContent = "№ " + issue.no + " " + DOT + " " + (issue.weekday ? issue.weekday + ", " : "") + longDate(issue.date);
     document.getElementById("m-date").textContent = "Выходит по субботам " + DOT + " " + pages.length + " полос " + DOT + " " + minutes + " мин чтения";
     document.getElementById("pager").innerHTML = pages.map(function (p) { return '<li><a href="#p' + p.no + '" data-jump="p' + p.no + '">' + esc(p.title) + "<b>стр. " + p.no + "</b></a></li>"; }).join("");
