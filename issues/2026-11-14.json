@@ -697,6 +697,18 @@
       },
       {
        "p": "Работу поддерживают разработчики фотонных чипов SMART Photonics, TNO и PhotonJobs: в таких чипах сигнал передаёт свет, и фестиваль показывает горожанам тот же свет в масштабе башни. Управляющий директор TNO Тон ван Мол сказал об этом так: «Тот же свет, который вызывает восхищение на улицах Эйндховена во время GLOW, меняет то, как информация перемещается по миру»."
+      },
+      {
+       "image": {
+        "src": "img/2026-11-14/digest-triple.webp",
+        "alt": "Визуализация башни Hooghuis ночью: на фасаде синий узор, от земли к башне тянутся лазерные лучи",
+        "caption": "Визуализация работы «Triple Point»: лазерные лучи и завеса тумана на фасаде башни Hooghuis.",
+        "credit": "GLOW / IO+",
+        "credit_url": "https://ioplus.nl/en/posts/from-mist-curtain-to-microchip-glow-brings-photonics-into-view",
+        "w": 1600,
+        "h": 900
+       },
+       "print_only": true
       }
      ],
      "sources": [
@@ -1021,6 +1033,18 @@
         "credit_url": "https://www.dezeen.com/2026/11/12/licht-kunst-licht-cologne-cathedral",
         "w": 1190,
         "h": 1600
+       },
+       "print_only": true
+      },
+      {
+       "image": {
+        "src": "img/2026-11-14/koeln-zapadnyj-portal.webp",
+        "alt": "Западный портал собора ночью: три подсвеченных входа с резными арками",
+        "caption": "Западный портал ночью.",
+        "credit": "HGEsch Photography / Licht Kunst Licht",
+        "credit_url": "https://www.dezeen.com/2026/11/12/licht-kunst-licht-cologne-cathedral",
+        "w": 1600,
+        "h": 1074
        },
        "print_only": true
       }
@@ -1492,6 +1516,18 @@
         "src": "img/2026-11-14/catalina-rest.webp",
         "alt": "Визуализация зала ресторана: линейные подвесные светильники над сервированными столами",
         "caption": "Визуализация: подвесные светильники Catalina в зале ресторана.",
+        "credit": "Extant Lighting",
+        "credit_url": "https://extantlighting.com/catalina-series/",
+        "w": 1600,
+        "h": 900
+       },
+       "print_only": true
+      },
+      {
+       "image": {
+        "src": "img/2026-11-14/catalina-hands.webp",
+        "alt": "Руки показывают образец светильника на столе рядом с образцами отделки",
+        "caption": "Образец светильника с открытой светодиодной платой рядом с образцами отделки.",
         "credit": "Extant Lighting",
         "credit_url": "https://extantlighting.com/catalina-series/",
         "w": 1600,

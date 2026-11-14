@@ -104,6 +104,8 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .ed-note .who { font: 700 var(--tiny)/1.3 var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
 .ed-note p { margin: 0; font-size: 0.98rem; line-height: 1.5; font-style: italic; }
 .ed-note p.who { font-style: normal; }
+.ed-note .sign.rt { margin-top: 2px; }
+.np-ed.np-ed-top small.rt { display: block; margin: 1mm 0 0; }
 .ed-note .sign { font: 400 var(--tiny)/1.3 var(--font-ui); letter-spacing: 0.06em; color: var(--muted); margin-top: 8px; display: block; }
 .index h3 { font: 700 var(--small) var(--font-ui); letter-spacing: 0.1em; text-transform: uppercase; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--rule); padding: 8px 0; margin: 0; }
 .index ol { list-style: none; margin: 0; padding: 0; }
@@ -632,6 +634,23 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 .mat-nav svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
 @media (max-width: 900px) { .mat-nav { transition: opacity .25s; } .mat-nav.idle { opacity: 0; pointer-events: none; } }
 @media print { .mat-nav { display: none !important; } }
+
+/* Просмотр снимков крупно (Павел, 14.11.2026) */
+.body figure img, article > figure img, .feature-top figure img, .carousel figure img, .lead figure img { cursor: zoom-in; }
+.lb { position: fixed; inset: 0; z-index: 9999; background: rgba(12,11,10,.94); display: none; touch-action: none; user-select: none; -webkit-user-select: none; }
+.lb.on { display: block; }
+.lb-stage { position: absolute; inset: 56px 0 96px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.lb-stage img { max-width: 100%; max-height: 100%; object-fit: contain; transform-origin: 0 0; cursor: grab; }
+.lb-stage img.drag { cursor: grabbing; }
+.lb-bar { position: absolute; top: 0; left: 0; right: 0; height: 56px; display: flex; align-items: center; gap: 6px; padding: 0 12px; color: #efe7d6; font: 400 14px/1 var(--font-ui); }
+.lb-n { margin-right: auto; opacity: .8; }
+.lb button { background: rgba(255,255,255,.08); color: #efe7d6; border: 1px solid rgba(255,255,255,.18); border-radius: 50%; width: 40px; height: 40px; font: 400 22px/1 var(--font-ui); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+.lb button:hover { background: rgba(255,255,255,.18); }
+.lb .lb-prev, .lb .lb-next { position: absolute; top: 50%; margin-top: -24px; width: 48px; height: 48px; font-size: 28px; }
+.lb .lb-prev { left: 12px; } .lb .lb-next { right: 12px; }
+.lb-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px 16px; color: #e6dcc8; font: 400 14px/1.45 var(--font-ui); text-align: center; overflow: auto; max-height: 96px; }
+.lb-cap a { color: #e6dcc8; }
+@media (max-width: 600px) { .lb .lb-prev, .lb .lb-next { display: none; } .lb-stage { inset: 56px 0 88px; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
@@ -1088,7 +1107,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
           return '<a class="ix-card" href="#' + esc(st.id) + '" data-jump="' + esc(st.id) + '">' + thumb + '<span class="ix-tx"><span class="ix-k">' + esc(st.rubric || "") + '</span><span class="ix-t">' + esc(st.title) + '</span></span><span class="ix-go" aria-hidden="true">›</span></a>';
         }).join("") + "</li>";
       }).join("") + "</ol></nav>";
-      var ed = '<div class="ed-note"><img src="img/editor.jpg" alt="Павел Яковлев-Павлюк"><div><p class="who">От редакции</p><p>' + esc(issue.editor_note || "") + '</p><span class="sign">Павел Яковлев-Павлюк</span></div></div>';
+      var ed = '<div class="ed-note"><img src="img/editor.jpg" alt="Павел Яковлев-Павлюк"><div><p class="who">От редакции</p><p>' + esc(issue.editor_note || "") + '</p><span class="sign">Павел Яковлев-Павлюк</span><span class="sign rt">' + readLine(issue) + '</span></div></div>';
       var main1 = "<div>" + lead.map(storyHtml).join("") + (rest.length ? '<div class="stories theme-rest">' + rest.map(storyHtml).join("") + "</div>" : "") + "</div>";
       var side = "<aside>" + idx + "</aside>";
       return '<section class="page" id="p1"><div class="wrap">' + folio(issue, p) + (PRINT ? "" : '<div class="ed-top">' + ed + "</div>") + (p.title && p.title !== "Первая полоса" ? '<div class="theme-head">' + esc(p.title) + "</div>" : "") + '<div class="front">' + (PRINT ? side + main1 : main1 + side) + "</div></div></section>";
@@ -1098,6 +1117,20 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       '<div class="sec-head"><h2>' + esc(p.title) + "</h2>" + (p.desc ? "<p>" + esc(p.desc) + "</p>" : "") + "</div>" +
       '<div class="stories">' + big.map(storyHtml).join("") + (notes.length ? '<div class="notes' + (notes.length >= 3 ? " n3" : "") + '">' + notes.map(storyHtml).join("") + "</div>" : "") + "</div></div></section>";
   }
+
+  // Время чтения номера (Павел, 14.11.2026): все тексты материалов, 180 слов в минуту
+  function readMinutes(issue) {
+    var skip = { src: 1, alt: 1, credit: 1, credit_url: 1, url: 1, id: 1, href: 1, anim: 1, kind: 1, rubric: 1, reserve: 1, runs: 1 }, n = 0;
+    function walk(o, k) {
+      if (o == null || skip[k]) return;
+      if (typeof o === "string") { if (!/^https?:/.test(o)) n += (o.replace(/<[^>]+>/g, " ").match(/[A-Za-zА-Яа-яЁё0-9]+/g) || []).length; return; }
+      if (Array.isArray(o)) { o.forEach(function (x) { walk(x, k); }); return; }
+      if (typeof o === "object") for (var key in o) walk(o[key], key);
+    }
+    (issue.pages || []).forEach(function (pg) { walk(pg.stories || [], "stories"); });
+    return Math.max(1, Math.round(n / 180));
+  }
+  function readLine(issue) { return "Время чтения номера: около " + readMinutes(issue) + " мин"; }
 
   function renderPrint(issue, pages) {
     document.body.classList.add("np-mode");
@@ -1136,7 +1169,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     var sideStats = "", leadBody = lead.body.slice();
     var si = leadBody.findIndex(function (b) { return b.stats; });
     if (si >= 0) { sideStats = statsHtml(leadBody[si].stats).replace(" span ", " "); leadBody.splice(si, 1); }
-    var edNote = '<div class="np-ed np-ed-top"><img src="img/editor.jpg" alt=""><b>От редакции</b>' + esc(issue.editor_note || "") + "<small>Павел Яковлев-Павлюк</small></div>";
+    var edNote = '<div class="np-ed np-ed-top"><img src="img/editor.jpg" alt=""><b>От редакции</b>' + esc(issue.editor_note || "") + "<small>Павел Яковлев-Павлюк</small><small class=\"rt\">" + readLine(issue) + "</small></div>";
     // правые две колонки модуля на обложке: текст материала, его подзаголовки и снимок; таблицы и галереи идут в поток
     var sideText = "", rest = [], side = [];
     leadBody.forEach(function (b, i) {
@@ -1683,6 +1716,75 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     var h = location.hash.slice(1);
     openIssue(issues.some(function (x) { return x.date === h; }) ? h : (issues[0] && issues[0].date), false);
   }).catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Список номеров не загрузился. Обновите страницу.</p></div>'; });
+})();
+</script>
+<script>
+/* Просмотр снимков крупно (Павел, 14.11.2026): нажатие на снимок, листание по материалу, увеличение и уменьшение */
+(function () {
+  var SEL = ".body figure img, article > figure img, .feature-top figure img, .carousel figure img, .lead figure img";
+  var lb, im, cap, num, list = [], k = 0, z = 1, tx = 0, ty = 0, pts = {}, start = null;
+  function build() {
+    lb = document.createElement("div"); lb.className = "lb"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Просмотр снимков");
+    lb.innerHTML = '<div class="lb-bar"><span class="lb-n"></span><button class="lb-out" aria-label="Уменьшить">−</button><button class="lb-in" aria-label="Увеличить">+</button><button class="lb-x" aria-label="Выйти из просмотра">×</button></div><div class="lb-stage"><img alt=""></div><button class="lb-prev" aria-label="Предыдущий снимок">‹</button><button class="lb-next" aria-label="Следующий снимок">›</button><div class="lb-cap"></div>';
+    document.body.appendChild(lb); im = lb.querySelector("img"); cap = lb.querySelector(".lb-cap"); num = lb.querySelector(".lb-n");
+    im.draggable = false;
+    lb.querySelector(".lb-x").onclick = close; lb.querySelector(".lb-prev").onclick = function () { go(-1); }; lb.querySelector(".lb-next").onclick = function () { go(1); };
+    lb.querySelector(".lb-in").onclick = function () { zoomAt(z * 1.6, center()); }; lb.querySelector(".lb-out").onclick = function () { zoomAt(z / 1.6, center()); };
+    var st = lb.querySelector(".lb-stage");
+    st.addEventListener("wheel", function (e) { e.preventDefault(); zoomAt(z * Math.exp(-e.deltaY * 0.0022), { x: e.clientX, y: e.clientY }); }, { passive: false });
+    st.addEventListener("dblclick", function (e) { zoomAt(z > 1.05 ? 1 : 2.5, { x: e.clientX, y: e.clientY }); });
+    st.addEventListener("pointerdown", function (e) { st.setPointerCapture(e.pointerId); pts[e.pointerId] = { x: e.clientX, y: e.clientY }; start = snap(); im.classList.add("drag"); });
+    st.addEventListener("pointermove", function (e) {
+      if (!pts[e.pointerId] || !start) return; pts[e.pointerId] = { x: e.clientX, y: e.clientY };
+      var ids = Object.keys(pts);
+      if (ids.length >= 2) {
+        var a = pts[ids[0]], b = pts[ids[1]], d = Math.hypot(a.x - b.x, a.y - b.y), m = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 }, o = base();
+        if (!start.d) { start = snap(); start.d = d; start.m = m; }
+        var nz = clamp(start.z * d / start.d), ox = start.m.x - o.l, oy = start.m.y - o.t;
+        tx = ox - (ox - start.tx) * nz / start.z + (m.x - start.m.x); ty = oy - (oy - start.ty) * nz / start.z + (m.y - start.m.y); z = nz; apply(); return;
+      }
+      var dx = e.clientX - start.px, dy = e.clientY - start.py;
+      if (z > 1.01) { tx = start.tx + dx; ty = start.ty + dy; apply(); } else { im.style.transform = "translateX(" + dx + "px)"; }
+    });
+    function up(e) {
+      var n = Object.keys(pts).length; delete pts[e.pointerId]; im.classList.remove("drag");
+      if (start && n === 1 && !start.d && z <= 1.01) {
+        var dx = e.clientX - start.px; im.style.transform = "";
+        if (Math.abs(dx) > 60) go(dx < 0 ? 1 : -1);
+        else if (Math.abs(dx) < 6 && Math.abs(e.clientY - start.py) < 6 && e.target === st) close();
+      }
+      start = Object.keys(pts).length ? snap() : null;
+    }
+    st.addEventListener("pointerup", up); st.addEventListener("pointercancel", up);
+    document.addEventListener("keydown", function (e) {
+      if (!lb.classList.contains("on")) return;
+      if (e.key === "Escape") close(); else if (e.key === "ArrowRight") go(1); else if (e.key === "ArrowLeft") go(-1);
+      else if (e.key === "+" || e.key === "=") zoomAt(z * 1.6, center()); else if (e.key === "-") zoomAt(z / 1.6, center()); else if (e.key === "0") reset();
+    });
+  }
+  function snap() { var f = Object.values(pts)[0] || { x: 0, y: 0 }; return { z: z, tx: tx, ty: ty, px: f.x, py: f.y }; }
+  function clamp(v) { return Math.max(1, Math.min(8, v)); }
+  function center() { var r = lb.querySelector(".lb-stage").getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; }
+  function base() { var r = im.parentNode.getBoundingClientRect(); return { l: r.left + im.offsetLeft, t: r.top + im.offsetTop }; }
+  function zoomAt(nz, p) { nz = clamp(nz); var b = base(), ox = p.x - b.l, oy = p.y - b.t; tx = ox - (ox - tx) * nz / z; ty = oy - (oy - ty) * nz / z; z = nz; if (z <= 1.001) { tx = ty = 0; } apply(); }
+  function apply() { im.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + z + ")"; }
+  function reset() { z = 1; tx = ty = 0; im.style.transform = ""; }
+  function show() {
+    var it = list[k]; reset(); im.src = it.currentSrc || it.src; im.alt = it.alt || "";
+    var f = it.closest("figure"), fc = f && f.querySelector("figcaption"); cap.innerHTML = fc ? fc.innerHTML : "";
+    num.textContent = list.length > 1 ? (k + 1) + " из " + list.length : "";
+    lb.querySelector(".lb-prev").style.visibility = lb.querySelector(".lb-next").style.visibility = list.length > 1 ? "visible" : "hidden";
+  }
+  function go(d) { if (list.length < 2) return; k = (k + d + list.length) % list.length; show(); }
+  function close() { lb.classList.remove("on"); document.documentElement.style.overflow = ""; reset(); }
+  document.addEventListener("click", function (e) {
+    if (document.body.classList.contains("np-mode")) return;
+    var t = e.target; if (!t || t.tagName !== "IMG" || !t.matches(SEL) || t.closest(".lb, .dm-s, .ix-card, a")) return;
+    if (!lb) build();
+    var scope = t.closest("article") || document;
+    list = Array.prototype.filter.call(scope.querySelectorAll(SEL), function (x) { return (x.offsetWidth > 40 || x.closest(".car-track")) && !x.closest(".dm-s, .ix-card, a"); });
+    k = Math.max(0, list.indexOf(t)); show(); lb.classList.add("on"); document.documentElement.style.overflow = "hidden"; lb.querySelector(".lb-x").focus();
+  });
 })();
 </script>
 </body></html>
