@@ -757,7 +757,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   function figureHtml(im) {
     if (!im || !im.src) return "";
     var credit = im.credit ? ' <span class="credit">Фото: ' + (im.credit_url ? '<a href="' + esc(safeUrl(im.credit_url)) + '" target="_blank" rel="noopener">' + esc(im.credit) + "</a>" : esc(im.credit)) + "</span>" : "";
-    return '<figure><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '"' + (im.w && im.h ? ' width="' + (+im.w) + '" height="' + (+im.h) + '"' : "") + ' loading="lazy" decoding="async"><figcaption>' + esc(im.caption || "") + credit + "</figcaption></figure>";
+    return '<figure><img src="' + esc(im.src) + '" alt="' + esc(im.alt || "") + '"' + (im.tiles && im.tiles.length ? " data-tiles='" + JSON.stringify(im.tiles).replace(/&/g, "&amp;").replace(/'/g, "&#39;").replace(/</g, "&lt;") + "'" : "") + (im.w && im.h ? ' width="' + (+im.w) + '" height="' + (+im.h) + '"' : "") + ' loading="lazy" decoding="async"><figcaption>' + esc(im.caption || "") + credit + "</figcaption></figure>";
   }
   function illusHtml(il) {
     if (!il || !il.src) return "";
@@ -1770,11 +1770,11 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   function apply() { im.style.transform = "translate(" + tx + "px," + ty + "px) scale(" + z + ")"; }
   function reset() { z = 1; tx = ty = 0; im.style.transform = ""; }
   function show() {
-    var it = list[k]; reset(); im.src = it.currentSrc || it.src; im.alt = it.alt || "";
-    var f = it.closest("figure"), fc = f && f.querySelector("figcaption"); cap.innerHTML = fc ? fc.innerHTML : "";
+    var it = list[k]; reset(); im.src = it.src; im.alt = it.alt; cap.innerHTML = it.cap;
     num.textContent = list.length > 1 ? (k + 1) + " из " + list.length : "";
     lb.querySelector(".lb-prev").style.visibility = lb.querySelector(".lb-next").style.visibility = list.length > 1 ? "visible" : "hidden";
   }
+  function escH(v) { return String(v).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function go(d) { if (list.length < 2) return; k = (k + d + list.length) % list.length; show(); }
   function close() { lb.classList.remove("on"); document.documentElement.style.overflow = ""; reset(); }
   document.addEventListener("click", function (e) {
@@ -1782,8 +1782,17 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     var t = e.target; if (!t || t.tagName !== "IMG" || !t.matches(SEL) || t.closest(".lb, .dm-s, .ix-card, a")) return;
     if (!lb) build();
     var scope = t.closest("article") || document;
-    list = Array.prototype.filter.call(scope.querySelectorAll(SEL), function (x) { return (x.offsetWidth > 40 || x.closest(".car-track")) && !x.closest(".dm-s, .ix-card, a"); });
-    k = Math.max(0, list.indexOf(t)); show(); lb.classList.add("on"); document.documentElement.style.overflow = "hidden"; lb.querySelector(".lb-x").focus();
+    // коллаж раскладывается на отдельные кадры: в просмотре они идут по одному (data-tiles, tools/collage_tiles.py)
+    list = []; k = 0;
+    Array.prototype.forEach.call(scope.querySelectorAll(SEL), function (x) {
+      if (!(x.offsetWidth > 40 || x.closest(".car-track")) || x.closest(".dm-s, .ix-card, a")) return;
+      var f = x.closest("figure"), fc = f && f.querySelector("figcaption"), capH = fc ? fc.innerHTML : "";
+      var cr = fc && fc.querySelector(".credit"), crH = cr ? " " + cr.outerHTML : "", tiles = null;
+      try { tiles = JSON.parse(x.getAttribute("data-tiles") || "null"); } catch (e) {}
+      if (x === t) k = list.length;
+      if (tiles && tiles.length) tiles.forEach(function (tl) { list.push({ src: tl.src, alt: x.alt || "", cap: (tl.caption ? escH(tl.caption) : "") + crH }); });
+      else list.push({ src: x.currentSrc || x.src, alt: x.alt || "", cap: capH });
+    }); show(); lb.classList.add("on"); document.documentElement.style.overflow = "hidden"; lb.querySelector(".lb-x").focus();
   });
 })();
 </script>

@@ -32,6 +32,32 @@
        "flavin-belyj-ugol",
        "flavin-belye-vertikali"
       ],
+      "tiles": [
+       {
+        "src": "img/2026-11-14/flavin-kollazh-1.webp",
+        "caption": "«greens crossing greens (to Piet Mondrian who lacked green)», 1966, зал 206.",
+        "w": 1334,
+        "h": 1000
+       },
+       {
+        "src": "img/2026-11-14/flavin-kollazh-2.webp",
+        "caption": "«untitled (to Henri Matisse)», 1964, четыре трубки высотой 244 см, зал 206.",
+        "w": 751,
+        "h": 1000
+       },
+       {
+        "src": "img/2026-11-14/flavin-kollazh-3.webp",
+        "caption": "«monument on the survival of Mrs. Reppin», 1966, зал 205.",
+        "w": 653,
+        "h": 490
+       },
+       {
+        "src": "img/2026-11-14/flavin-kollazh-4.webp",
+        "caption": "«the nominal three (to William of Ockham)», 1963, зал 205.",
+        "w": 653,
+        "h": 490
+       }
+      ],
       "w": 1600,
       "h": 576
      },
