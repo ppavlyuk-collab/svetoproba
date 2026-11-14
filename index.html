@@ -587,7 +587,7 @@ figure img, .video .thumb img, .ed-note img { filter: url(#film); }
   .body > .span + .editor, .body > .span + h4 { border-top: 0 !important; }
   .body > .span:last-child, .body > .span + .sources, .body > .span:has(+ details.sources:last-child) { border-bottom: 0; }
 }
-/* МИНИМУМ ЛИНЕЕК: внутри оглавления, цифр, перечней и таблиц линеек нет, порядок держится воздухом и сеткой */
+/* МИНИМУМ ЛИНЕЕК: внутри оглавления, цифр, перечней и таблиц линеек нет, порядок задают воздух и сетка */
 @media screen {
   .foot-nav { border-bottom: 0 !important; padding-bottom: 0 !important; }
   .footer .wrap > div + div { border: 0 !important; }
@@ -1427,7 +1427,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }
 
   // переход к началу материала (правило 115): снимки выше цели догружаются и раздвигают страницу, поэтому
-  // положение держим, пока вёрстка меняется; любое действие читателя останавливает удержание
+  // положение сохраняем, пока вёрстка меняется; любое действие читателя останавливает удержание
   var jumpStop = null, flyDest = null;
   // профиль стрелок: короткий разгон, затем долгое затухание скорости, как у прокрутки с инерцией (правило 116)
   function flyEase(p) {
