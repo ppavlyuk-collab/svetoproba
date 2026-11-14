@@ -1706,14 +1706,14 @@
    "no": 7,
    "id": "read",
    "title": "Что читать",
-   "desc": "Пресса недели",
+   "desc": "",
    "stories": [
     {
      "id": "digest",
      "kind": "feature",
      "rubric": "Дайджест",
      "why": "Практическая польза",
-     "title": "Что прочитать: три публикации недели",
+     "title": "Три публикации недели",
      "dek": "Юбилейный Amsterdam Light Festival, бюро Mood о свете в парках развлечений и фотоника на фестивале GLOW.",
      "image": {
       "src": "img/2026-11-14/digest-ale.webp",
