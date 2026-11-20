@@ -1,0 +1,532 @@
+[
+ {
+  "file": "stpauls-1.jpg",
+  "object": "Собор Святого Павла, Лондон",
+  "what": "Собор с юга-востока вечером, купол и фасад подсвечены, на переднем плане улица с автобусом",
+  "evening": true,
+  "width": 1800,
+  "height": 1200,
+  "credit": "© ianVisits (Ian Visits), photo of current lighting",
+  "credit_url": "https://www.ianvisits.co.uk/articles/new-lighting-scheme-proposed-for-st-pauls-cathedral-94081/"
+ },
+ {
+  "file": "stpauls-2.jpg",
+  "object": "Собор Святого Павла, Лондон",
+  "what": "Подсветка кустов и дерева на подходе к собору, вдали портик в тени, на переднем плане прожектор",
+  "evening": true,
+  "width": 1800,
+  "height": 1200,
+  "credit": "© ianVisits (Ian Visits)",
+  "credit_url": "https://www.ianvisits.co.uk/articles/new-lighting-scheme-proposed-for-st-pauls-cathedral-94081/"
+ },
+ {
+  "file": "stpauls-3.jpg",
+  "object": "Собор Святого Павла, Лондон",
+  "what": "Южный фасад и купол в тёплой подсветке на фоне тёмно-синего вечернего неба",
+  "evening": true,
+  "width": 1800,
+  "height": 1200,
+  "credit": "© ianVisits (Ian Visits)",
+  "credit_url": "https://www.ianvisits.co.uk/articles/new-lighting-scheme-proposed-for-st-pauls-cathedral-94081/"
+ },
+ {
+  "file": "stpauls-5.jpg",
+  "object": "Собор Святого Павла, Лондон",
+  "what": "Вид с Темзы: подсвеченный купол и пешеходный мост Миллениум в сумерках, огни набережной",
+  "evening": true,
+  "width": 1800,
+  "height": 1200,
+  "credit": "© ianVisits (Ian Visits)",
+  "credit_url": "https://www.ianvisits.co.uk/articles/new-lighting-scheme-proposed-for-st-pauls-cathedral-94081/"
+ },
+ {
+  "file": "stpauls-6.jpg",
+  "object": "Собор Святого Павла, Лондон",
+  "what": "Купол собора в тумане отражается в тёмном бассейне, ночной сад на переднем плане",
+  "evening": true,
+  "width": 1800,
+  "height": 1200,
+  "credit": "© ianVisits (Ian Visits)",
+  "credit_url": "https://www.ianvisits.co.uk/articles/new-lighting-scheme-proposed-for-st-pauls-cathedral-94081/"
+ },
+ {
+  "file": "stpauls-wm-1.jpg",
+  "object": "Собор Святого Павла, Лондон",
+  "what": "Западный фасад с двумя башнями в синий час, световые следы машин на улице",
+  "evening": true,
+  "width": 1800,
+  "height": 1188,
+  "credit": "Julian Herzog, CC BY 4.0 (Wikimedia Commons)",
+  "credit_url": "https://commons.wikimedia.org/wiki/File:St_Paul%27s_Cathedral_West_Facade_Night_2020.jpg"
+ },
+ {
+  "file": "stpauls-wm-2.jpg",
+  "object": "Собор Святого Павла, Лондон",
+  "what": "Купол собора ночью, на переднем плане растения",
+  "evening": true,
+  "width": 1800,
+  "height": 1350,
+  "credit": "Matt Brown, CC BY 2.0 (Wikimedia Commons)",
+  "credit_url": "https://commons.wikimedia.org/wiki/File:St_Paul%27s_Cathedral_at_night_2024-11-06.jpg"
+ },
+ {
+  "file": "melbourne-05.jpg",
+  "object": "Метро Мельбурна, Metro Tunnel",
+  "what": "Платформа станции с большим цилиндрическим светильником над опорой и оранжевыми стальными балками",
+  "evening": false,
+  "width": 1800,
+  "height": 1200,
+  "credit": "Photography: Peter Bennetts (via arc magazine; architect RSHP, lighting Speirs Major)",
+  "credit_url": "https://www.arc-magazine.com/melbourne-metro-tunnel-melbourne-australia/"
+ },
+ {
+  "file": "melbourne-07.jpg",
+  "object": "Метро Мельбурна, Metro Tunnel",
+  "what": "Вертикальные светящиеся элементы вдоль эскалаторов под оранжевыми сводами станции",
+  "evening": false,
+  "width": 1200,
+  "height": 1800,
+  "credit": "Photography: Peter Bennetts (via arc magazine; architect RSHP, lighting Speirs Major)",
+  "credit_url": "https://www.arc-magazine.com/melbourne-metro-tunnel-melbourne-australia/"
+ },
+ {
+  "file": "melbourne-08.jpg",
+  "object": "Метро Мельбурна, Metro Tunnel",
+  "what": "Вестибюль станции с витражным панно, бетонные колонны и потолочные точки света",
+  "evening": false,
+  "width": 1800,
+  "height": 1200,
+  "credit": "Photography: Peter Bennetts (via arc magazine; architect RSHP, lighting Speirs Major)",
+  "credit_url": "https://www.arc-magazine.com/melbourne-metro-tunnel-melbourne-australia/"
+ },
+ {
+  "file": "melbourne-09.jpg",
+  "object": "Метро Мельбурна, Metro Tunnel",
+  "what": "Центральный проход станции с эскалаторами и оранжевыми арками, линия света по оси",
+  "evening": false,
+  "width": 1800,
+  "height": 1200,
+  "credit": "Photography: Peter Bennetts (via arc magazine; architect RSHP, lighting Speirs Major)",
+  "credit_url": "https://www.arc-magazine.com/melbourne-metro-tunnel-melbourne-australia/"
+ },
+ {
+  "file": "melbourne-11.jpg",
+  "object": "Метро Мельбурна, Metro Tunnel",
+  "what": "Длинный переход с облицовкой плиткой и подсвеченным сводом, одна фигура в пальто",
+  "evening": false,
+  "width": 1800,
+  "height": 1200,
+  "credit": "Photography: Peter Bennetts (via arc magazine; architect RSHP, lighting Speirs Major)",
+  "credit_url": "https://www.arc-magazine.com/melbourne-metro-tunnel-melbourne-australia/"
+ },
+ {
+  "file": "herzjesu-52.jpg",
+  "object": "Церковь Херц-Езу, Мюнхен",
+  "what": "Фасад-куб с открытыми боковыми створами и деревянной стеной с распятием, свет у алтаря, сумерки",
+  "evening": true,
+  "width": 1000,
+  "height": 789,
+  "credit": "© ERCO GmbH, www.erco.com, Photography: David Schreyer",
+  "credit_url": "https://press.erco.com/en/press-release/projects/respectful-relighting-for-exceptional-architecture-at-herz-jesu-church-in-munich-erco-led-lighting-replaces-a-high-end-installat"
+ },
+ {
+  "file": "herzjesu-40.jpg",
+  "object": "Церковь Херц-Езу, Мюнхен",
+  "what": "Интерьер: нава с рядами скамей, органная ниша и деревянные стены с точечным светом",
+  "evening": true,
+  "width": 1000,
+  "height": 789,
+  "credit": "© ERCO GmbH, www.erco.com, Photography: David Schreyer",
+  "credit_url": "https://press.erco.com/en/press-release/projects/respectful-relighting-for-exceptional-architecture-at-herz-jesu-church-in-munich-erco-led-lighting-replaces-a-high-end-installat"
+ },
+ {
+  "file": "herzjesu-06.jpg",
+  "object": "Церковь Херц-Езу, Мюнхен",
+  "what": "Интерьер, вид от алтаря вдоль нефа к стеклянной стене, тёплые деревянные плоскости",
+  "evening": false,
+  "width": 1000,
+  "height": 789,
+  "credit": "© ERCO GmbH, www.erco.com, Photography: David Schreyer",
+  "credit_url": "https://press.erco.com/en/press-release/projects/respectful-relighting-for-exceptional-architecture-at-herz-jesu-church-in-munich-erco-led-lighting-replaces-a-high-end-installat"
+ },
+ {
+  "file": "herzjesu-01.jpg",
+  "object": "Церковь Херц-Езу, Мюнхен",
+  "what": "Стеклянный фасад с синим стеклянным крестом и людьми на площади днём",
+  "evening": false,
+  "width": 1000,
+  "height": 789,
+  "credit": "© ERCO GmbH, www.erco.com, Photography: David Schreyer",
+  "credit_url": "https://press.erco.com/en/press-release/projects/respectful-relighting-for-exceptional-architecture-at-herz-jesu-church-in-munich-erco-led-lighting-replaces-a-high-end-installat"
+ },
+ {
+  "file": "herzjesu-26.jpg",
+  "object": "Церковь Херц-Езу, Мюнхен",
+  "what": "Интерьер у алтаря: деревянные стены, стеклянная задняя стена, подсветка алтарной зоны",
+  "evening": true,
+  "width": 1000,
+  "height": 789,
+  "credit": "© ERCO GmbH, www.erco.com, Photography: David Schreyer",
+  "credit_url": "https://press.erco.com/en/press-release/projects/respectful-relighting-for-exceptional-architecture-at-herz-jesu-church-in-munich-erco-led-lighting-replaces-a-high-end-installat"
+ },
+ {
+  "file": "herzjesu-60.jpg",
+  "object": "Церковь Херц-Езу, Мюнхен",
+  "what": "Стеклянный куб снаружи в сумерках, изнутри светятся деревянные стены и потолочные точки",
+  "evening": true,
+  "width": 1000,
+  "height": 789,
+  "credit": "© ERCO GmbH, www.erco.com, Photography: David Schreyer",
+  "credit_url": "https://press.erco.com/en/press-release/projects/respectful-relighting-for-exceptional-architecture-at-herz-jesu-church-in-munich-erco-led-lighting-replaces-a-high-end-installat"
+ },
+ {
+  "file": "herzjesu-56.jpg",
+  "object": "Церковь Херц-Езу, Мюнхен",
+  "what": "Угол стеклянного куба в сумерках, подсвечены деревянные рёбра изнутри, прожекторы на раме",
+  "evening": true,
+  "width": 789,
+  "height": 1000,
+  "credit": "© ERCO GmbH, www.erco.com, Photography: David Schreyer",
+  "credit_url": "https://press.erco.com/en/press-release/projects/respectful-relighting-for-exceptional-architecture-at-herz-jesu-church-in-munich-erco-led-lighting-replaces-a-high-end-installat"
+ },
+ {
+  "file": "lightson-hamburger-bahnhof-1.jpg",
+  "object": "Симпозиум Lights On!, Hamburger Bahnhof, Берлин",
+  "what": "Фасад музея Hamburger Bahnhof днём, в арках зелёный свет инсталляции, предположительно Дэн Флавин untitled (1996)",
+  "evening": false,
+  "width": 1800,
+  "height": 878,
+  "credit": "© Staatliche Museen zu Berlin, Hamburger Bahnhof - Nationalgalerie der Gegenwart / David von Becker (подпись на странице события)",
+  "credit_url": "https://www.smb.museum/en/events/detail/lights-on-sustaining-light-based-art-2026-11-13-083000-159458/"
+ },
+ {
+  "file": "juromenha-f194907.jpg",
+  "object": "Крепость Журоменья, Португалия",
+  "what": "Общий вид крепости на холме ночью, тёплая подсветка стен",
+  "evening": true,
+  "width": 900,
+  "height": 600,
+  "credit": "Helena Martins (Photo), via Luce&Light; light planning Pedro Telhado, Light2Life",
+  "credit_url": "https://lucelight.it/en/progetto.php/194905"
+ },
+ {
+  "file": "juromenha-f194908.jpg",
+  "object": "Крепость Журоменья, Португалия",
+  "what": "Бастион и ворота крепости ночью под звёздным небом, тёплый свет стен",
+  "evening": true,
+  "width": 900,
+  "height": 1200,
+  "credit": "Helena Martins (Photo), via Luce&Light; light planning Pedro Telhado, Light2Life",
+  "credit_url": "https://lucelight.it/en/progetto.php/194905"
+ },
+ {
+  "file": "juromenha-f194910.jpg",
+  "object": "Крепость Журоменья, Португалия",
+  "what": "Косой каменный бастион, подсвеченный снизу тёплым светом, ночь",
+  "evening": true,
+  "width": 900,
+  "height": 600,
+  "credit": "Helena Martins (Photo), via Luce&Light; light planning Pedro Telhado, Light2Life",
+  "credit_url": "https://lucelight.it/en/progetto.php/194905"
+ },
+ {
+  "file": "iguzzini-laser-evo-1.jpg",
+  "object": "iGuzzini Laser Evo",
+  "what": "Потолок с множеством врезных светильников разных типов, вид снизу под углом",
+  "evening": false,
+  "width": 1800,
+  "height": 1273,
+  "credit": "© iGuzzini illuminazione",
+  "credit_url": "https://www.iguzzini.com/en/laser-evo/"
+ },
+ {
+  "file": "iguzzini-laser-evo-2.jpg",
+  "object": "iGuzzini Laser Evo",
+  "what": "Интерьер гостиной с мягким светом, светильники в потолке",
+  "evening": false,
+  "width": 1273,
+  "height": 1800,
+  "credit": "© iGuzzini illuminazione",
+  "credit_url": "https://www.iguzzini.com/en/laser-evo/"
+ },
+ {
+  "file": "iguzzini-newfo-1.jpg",
+  "object": "iGuzzini Newfo InOut",
+  "what": "Два зелёных прожектора на опорах, один с медным кольцом, студийный снимок",
+  "evening": false,
+  "width": 1800,
+  "height": 1012,
+  "credit": "© iGuzzini illuminazione",
+  "credit_url": "https://www.iguzzini.com/en/newfo-inout/"
+ },
+ {
+  "file": "iguzzini-newfo-2.jpg",
+  "object": "iGuzzini Newfo InOut",
+  "what": "Серебристый прожектор на основании, студийный рендер",
+  "evening": false,
+  "width": 960,
+  "height": 960,
+  "credit": "© iGuzzini illuminazione",
+  "credit_url": "https://www.iguzzini.com/en/newfo-inout/"
+ },
+ {
+  "file": "reggiani-lofy-1.jpg",
+  "object": "Reggiani LOFY",
+  "what": "Три врезных светильника LOFY (чёрные и белый) на потолке, студийный снимок",
+  "evening": false,
+  "width": 1800,
+  "height": 797,
+  "credit": "© Reggiani Illuminazione",
+  "credit_url": "https://www.reggiani.net/en/product-systems/lofy/"
+ },
+ {
+  "file": "reggiani-lofy-2.jpg",
+  "object": "Reggiani LOFY",
+  "what": "Коридор жилого интерьера с врезными светильниками LOFY в потолке",
+  "evening": false,
+  "width": 1350,
+  "height": 1800,
+  "credit": "© Reggiani Illuminazione",
+  "credit_url": "https://www.reggiani.net/en/product-systems/lofy/"
+ },
+ {
+  "file": "reggiani-lofy-3.jpg",
+  "object": "Reggiani LOFY",
+  "what": "Два поворотных врезных светильника LOFY на светлом потолке, крупно",
+  "evening": false,
+  "width": 1350,
+  "height": 1800,
+  "credit": "© Reggiani Illuminazione",
+  "credit_url": "https://www.reggiani.net/en/product-systems/lofy/"
+ },
+ {
+  "file": "reggiani-yori-1.jpg",
+  "object": "Reggiani YORI EVO2",
+  "what": "Чёрный трековый прожектор YORI EVO2 на шине, тёмный фон, модуль ILM",
+  "evening": false,
+  "width": 1800,
+  "height": 796,
+  "credit": "© Reggiani Illuminazione",
+  "credit_url": "https://www.reggiani.net/en/news/yori-evo2-48v-brochure-preview-2027/"
+ },
+ {
+  "file": "delta-5.jpg",
+  "object": "Delta Light Entero",
+  "what": "Россыпь светильников семейства Entero (круглые и квадратные, чёрные, белые, латунные), студия. Принадлежность к Entero определена по размещению на странице продукта",
+  "evening": false,
+  "width": 1200,
+  "height": 1200,
+  "credit": "© Deltalight",
+  "credit_url": "https://deltalight.com/en/products/entero"
+ },
+ {
+  "file": "delta-9-1.jpg",
+  "object": "Delta Light Entero",
+  "what": "Чёрный врезной светильник на светлом потолке с плашкой NEW (по странице, вероятно Entero 59)",
+  "evening": false,
+  "width": 1200,
+  "height": 1200,
+  "credit": "© Deltalight",
+  "credit_url": "https://deltalight.com/en/products/entero"
+ },
+ {
+  "file": "delta-project-8.jpg",
+  "object": "Delta Light Entero (проект на странице)",
+  "what": "Вилла вечером с подсвеченной дорожкой и ландшафтом; светильник на снимке не подтверждён",
+  "evening": true,
+  "width": 1137,
+  "height": 1800,
+  "credit": "© Deltalight",
+  "credit_url": "https://deltalight.com/en/products/entero"
+ },
+ {
+  "file": "maris-cover.jpg",
+  "object": "Luce&Light Maris",
+  "what": "Шесть настенных светильников Maris разных отделок со светом вверх и вниз на светлой стене",
+  "evening": true,
+  "width": 900,
+  "height": 675,
+  "credit": "© Luce&Light",
+  "credit_url": "https://www.lucelight.it/en/macrofamiglia.php/201683-maris"
+ },
+ {
+  "file": "maris-detail.jpg",
+  "object": "Luce&Light Maris",
+  "what": "Три настенных светильника Maris, включённые, свет вверх и вниз",
+  "evening": true,
+  "width": 1400,
+  "height": 800,
+  "credit": "© Luce&Light",
+  "credit_url": "https://www.lucelight.it/en/macrofamiglia.php/201683-maris"
+ },
+ {
+  "file": "lyon-fdl2026-og.jpg",
+  "object": "Праздник света в Лионе 2026",
+  "what": "Афиша Fête des Lumières 2026, даты 5, 7, 8 декабря 19:00-23:00 и 6 декабря 18:00-22:00 (это афиша, не фото)",
+  "evening": false,
+  "width": 1200,
+  "height": 675,
+  "credit": "© Ville de Lyon, Fête des Lumières 2026",
+  "credit_url": "https://www.fetedeslumieres.lyon.fr"
+ },
+ {
+  "file": "lyonmag-1.jpg",
+  "object": "Праздник света в Лионе",
+  "what": "Световая проекция на фасадах площади с белым львом и растительным орнаментом, толпа зрителей, ночь",
+  "evening": true,
+  "width": 1280,
+  "height": 720,
+  "credit": "DR (подпись Lyon Mag, автор не указан; предположительно предыдущий выпуск или анонс)",
+  "credit_url": "https://www.lyonmag.com/article/154742/"
+ },
+ {
+  "file": "lyonmag-2.jpg",
+  "object": "Праздник света в Лионе",
+  "what": "Два гигантских надувных светящихся глаза в тёмном парке, силуэт человека",
+  "evening": true,
+  "width": 1000,
+  "height": 1000,
+  "credit": "DR (подпись Lyon Mag, автор не указан)",
+  "credit_url": "https://www.lyonmag.com/article/154742/"
+ },
+ {
+  "file": "lyonmag-3.jpg",
+  "object": "Праздник света в Лионе 2026",
+  "what": "Гигантский Pac-Man в жёлтом свете лучей на площади, толпа",
+  "evening": true,
+  "width": 1000,
+  "height": 563,
+  "credit": "DR (подпись Lyon Mag, автор не указан)",
+  "credit_url": "https://www.lyonmag.com/article/154742/"
+ },
+ {
+  "file": "book-lightwater-cover.jpg",
+  "object": "Книга Light & Water, Dorte Mandrup",
+  "what": "Обложка книги, синий переплёт с ветвями на фоне окна, развёрнутая (корешок и обе стороны)",
+  "evening": false,
+  "width": 1200,
+  "height": 630,
+  "credit": "© Lars Müller Publishers",
+  "credit_url": "https://www.lars-mueller-publishers.com/light-water"
+ },
+ {
+  "file": "book-lightwater-spread.jpg",
+  "object": "Книга Light & Water, Dorte Mandrup",
+  "what": "Разворот с текстом и чёрно-белыми фото",
+  "evening": false,
+  "width": 1243,
+  "height": 889,
+  "credit": "© Lars Müller Publishers / Dorte Mandrup",
+  "credit_url": "https://www.lars-mueller-publishers.com/light-water"
+ },
+ {
+  "file": "book-lightwater-photo.jpg",
+  "object": "Книга Light & Water, Dorte Mandrup",
+  "what": "Страница с фото: заросшее озеро на рассвете в розовом свете",
+  "evening": false,
+  "width": 1084,
+  "height": 874,
+  "credit": "© Lars Müller Publishers / Dorte Mandrup",
+  "credit_url": "https://www.lars-mueller-publishers.com/light-water"
+ },
+ {
+  "file": "book-degraaf-cover.jpg",
+  "object": "Книга Architecture Against Architecture, Reinier de Graaf",
+  "what": "Красная обложка с жёлтым шрифтом, A Manifesto",
+  "evening": false,
+  "width": 1191,
+  "height": 1800,
+  "credit": "Verso Books (via Dezeen)",
+  "credit_url": "https://www.dezeen.com/2026/04/02/reinier-de-graaf-architecture-against-architecture-book-interview/"
+ },
+ {
+  "file": "degraaf-portrait.jpg",
+  "object": "Рейньер де Грааф (OMA)",
+  "what": "Портрет мужчины с бородой на тёмном фоне",
+  "evening": false,
+  "width": 1800,
+  "height": 1800,
+  "credit": "Photo by Adrienne Norman (via Dezeen)",
+  "credit_url": "https://www.dezeen.com/2026/04/02/reinier-de-graaf-architecture-against-architecture-book-interview/"
+ },
+ {
+  "file": "book-steklyannaya-cover.jpg",
+  "object": "Книга Пауль Шеербарт, Стеклянная архитектура (Ad Marginem)",
+  "what": "Белая обложка с вертикальными полосами и крупным названием, фотография книги с тенью",
+  "evening": false,
+  "width": 776,
+  "height": 1245,
+  "credit": "© Ad Marginem",
+  "credit_url": "https://admarginem.ru/product/steklyannaya-arhitektura/"
+ },
+ {
+  "file": "equation-equation.jpg",
+  "object": "Equation Lighting Design",
+  "what": "Портрет двух человек на сером фоне, в чёрном (мужчина в очках и женщина), предположительно Кит Миллер и Майда Хот",
+  "evening": false,
+  "width": 1800,
+  "height": 1200,
+  "credit": "не указан на странице arc magazine",
+  "credit_url": "https://www.arc-magazine.com/equation/"
+ },
+ {
+  "file": "equation-equation-2.jpg",
+  "object": "Equation Lighting Design, Knightsbridge Estate",
+  "what": "Угол улицы Knightsbridge с подсвеченными фасадами универмага и огнями ночью",
+  "evening": true,
+  "width": 1800,
+  "height": 1200,
+  "credit": "James Newton (via arc magazine)",
+  "credit_url": "https://www.arc-magazine.com/equation/"
+ },
+ {
+  "file": "equation-canary-warf.jpg",
+  "object": "Equation Lighting Design, EBRD Canary Wharf",
+  "what": "Лестница с деревом и вертикальными деревянными рёбрами, подсвеченными скрытым светом",
+  "evening": false,
+  "width": 1800,
+  "height": 1200,
+  "credit": "Hufton + Crow (via arc magazine)",
+  "credit_url": "https://www.arc-magazine.com/equation/"
+ },
+ {
+  "file": "equation-tube.jpg",
+  "object": "Equation Lighting Design, станция метро",
+  "what": "Эскалаторный спуск под сводом станции метро с перфорированной облицовкой",
+  "evening": false,
+  "width": 1800,
+  "height": 1200,
+  "credit": "Hufton + Crow (via arc magazine), подпись к этому кадру на странице не однозначна",
+  "credit_url": "https://www.arc-magazine.com/equation/"
+ },
+ {
+  "file": "equation-wardian.jpg",
+  "object": "Equation Lighting Design, The Wardian",
+  "what": "Вестибюль с деревянными рёбрами, линейной подсветкой, ковром с растительным узором",
+  "evening": false,
+  "width": 1800,
+  "height": 1200,
+  "credit": "Hufton + Crow (via arc magazine)",
+  "credit_url": "https://www.arc-magazine.com/equation/"
+ },
+ {
+  "file": "equation-wembley.jpg",
+  "object": "Equation Lighting Design, Wembley Park",
+  "what": "Площадь с фонтаном вечером, подсвеченная стена бассейна, голубая арка Wembley вдали",
+  "evening": true,
+  "width": 1800,
+  "height": 1200,
+  "credit": "Hufton + Crow (via arc magazine)",
+  "credit_url": "https://www.arc-magazine.com/equation/"
+ },
+ {
+  "file": "zinkon.jpg",
+  "object": "Ардра Зинкон (Ardra Zinkon)",
+  "what": "Портрет улыбающейся женщины со светлыми волосами и фиолетовым шарфом",
+  "evening": false,
+  "width": 650,
+  "height": 650,
+  "credit": "не указан на странице inside.lighting",
+  "credit_url": "https://inside.lighting/news/26-03/value-engineering-or-value-erosion"
+ }
+]
