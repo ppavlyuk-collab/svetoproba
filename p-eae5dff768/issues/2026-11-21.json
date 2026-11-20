@@ -283,106 +283,217 @@
        "h": "Как выглядит концепция"
       },
       {
-       "p": "Опубликованные концепции европейских городов устроены одинаково: замеры и анализ существующего освещения, структура города и приоритеты, целевая яркость и цвет света, решения по зонам и фасадам. Ниже страницы из документов Фрайзинга, Мюнстера, Дрездена и Гента."
+       "p": "Опубликованные концепции и стратегии освещения устроены похоже: замеры и анализ существующего освещения, структура города и приоритеты, целевая яркость и цвет света, решения по зонам и фасадам, визуализации. Ниже страницы из открытых документов Европы, Австралии и России, а под ними ссылки на альбомы целиком."
       },
       {
        "anim": "tabs",
-       "title": "Как выглядит концепция освещения: страницы настоящих документов",
+       "title": "Европа и мир: страницы концепций и стратегий освещения",
        "items": [
         {
-         "label": "Замеры",
+         "label": "Лондон, Сити",
+         "src": "img/2026-11-21/concept-london-1.jpg",
+         "alt": "Карта классификации маршрутов (стр. 49): главные дороги жёлтым, боковые улицы оранжевым, пешеходные проходы и переулки розовым пунктиром, набережная голубым; на тёмной подложке, с легендой уровней освещённости.",
+         "text": "Стратегия освещения Сити «Light + Darkness in the City», Speirs Major, 2018: карта классификации маршрутов, главные улицы, переулки, проходы и набережная получают разный свет.",
+         "credit": "Источник: Speirs + Major LLP, 2018"
+        },
+        {
+         "label": "Данди",
+         "src": "img/2026-11-21/concept-dundee-2.jpg",
+         "alt": "Съёмка яркости (стр. 85): HDR-снимки четырёх улиц в ложных цветах от 0 до 30 кд/м2 над обычными ночными фото, с выводами о равномерности и контрасте.",
+         "text": "Стратегия освещения центра Данди, Arup, 2025: замеры яркости улиц в ложных цветах, шкала 0–30 кд/м², основа решения.",
+         "credit": "Источник: Arup, 2025"
+        },
+        {
+         "label": "Сидней",
+         "src": "img/2026-11-21/concept-sydney-1.jpg",
+         "alt": "Стр. 13: слоёная аксонометрическая диаграмма из трёх уровней (акценты, структура города и кварталы, функциональное освещение) на контуре муниципалитета.",
+         "text": "Стратегия освещения в составе кода общественных пространств Сиднея, Steensen Varming, 2015: три слоя, акценты, структура города и кварталы, функциональный свет.",
+         "credit": "Источник: Steensen Varming для City of Sydney, 2015"
+        },
+        {
+         "label": "Фрайзинг",
          "src": "img/2026-11-21/concept-freising-3.jpg",
          "alt": "Измерения существующего освещения: псевдоцветные снимки витрин и фасадов Обере-Хауптштрассе и башен собора по шкале яркости 0,15–1000 кд/м2.",
-         "text": "Анализ начинают с замеров: яркость витрин и фасадов главной улицы и башен собора в псевдоцвете по шкале 0,15–1000 кд/м². Мастер-план освещения Фрайзинга, бюро 3lpi, 2017.",
-         "credit": "Источник: 3lpi Lichtplaner + beratende Ingenieure (Мюнхен), Masterplan Licht Freising: Leitfaden für zukünftige Planungen, 2017"
+         "text": "Мастер-план освещения Фрайзинга, 3lpi, 2017: замеры яркости витрин и фасадов главной улицы и башен собора по шкале 0,15–1000 кд/м².",
+         "credit": "Источник: 3lpi Lichtplaner + beratende Ingenieure (Мюнхен), 2017"
         },
         {
-         "label": "Целевая яркость",
-         "src": "img/2026-11-21/concept-muenster-3.jpg",
-         "alt": "Логарифмическая шкала яркости в кд/м2 от 0,1 до 10 млрд: зелёным отмечена целевая область невысоких яркостей для фасадов, красным диапазон обычных световых систем.",
-         "text": "Шкала яркости в кд/м²: зелёным отмечен диапазон, к которому концепция ведёт фасады старого города, красным яркость обычных световых систем. Концепция освещения старого Мюнстера, Михаэль Батц, 2004.",
-         "credit": "Источник: Michael Batz, Szenografie / Licht, Гамбург, Lichtkonzept Altstadt Münster, 2004"
-        },
-        {
-         "label": "Фасады",
+         "label": "Мюнстер",
          "src": "img/2026-11-21/concept-muenster-4.jpg",
          "alt": "Две фотографии фасадов Принципальмаркта вечером; красные стрелки размечают недосвеченные зоны и пересвеченную арку нижнего этажа.",
-         "text": "Фасады площади Принципальмаркт вечером: стрелки отмечают недосвеченные зоны и пересвеченную арку первого этажа. Это исходные данные для решения по каждому дому.",
-         "credit": "Источник: Michael Batz, Szenografie / Licht, Гамбург, Lichtkonzept Altstadt Münster, 2004"
+         "text": "Концепция освещения старого Мюнстера, Михаэль Батц, 2004: на фасадах Принципальмаркта отмечены недосвеченные зоны и пересвеченная арка.",
+         "credit": "Источник: Michael Batz, Szenografie / Licht, Гамбург, 2004"
         },
         {
-         "label": "Структура центра",
+         "label": "Регенсбург",
+         "src": "img/2026-11-21/concept-regensburg-1.jpg",
+         "alt": "Раздел Hauptbahnhof (стр. 35): план освещения с легендой (магистральное, зелёных зон, объектное, мачты), визуализация вокзала с лучами мачтовых прожекторов и схема подсветки аркады.",
+         "text": "Световой план Регенсбурга, Vehovar & Jauslin, Atelier Derrer, Amstein + Walthert, 2008: раздел о вокзале, план с легендой и визуализация.",
+         "credit": "Источник: Vehovar & Jauslin Architektur, Atelier Derrer, Amstein + Walthert, 2008"
+        },
+        {
+         "label": "Дрезден",
          "src": "img/2026-11-21/concept-dresden-1.jpg",
          "alt": "Карта «Punktuelle Strukturen»: оранжевое кольцо центра, Эльба, мосты, Альтштадт и Нойштадт, розовые треугольники – знаковые здания, с легендой.",
-         "text": "Карта знаковых зданий, мостов и осей центра: из неё вырастают приоритеты освещения. Мастер-план освещения центра Дрездена, Winkels und Partner, 2008.",
-         "credit": "Источник: Winkels und Partner International Light Architects (Дортмунд), ландшафт: Andreas Blume; заказчик Stadtplanungsamt Dresden, Lichtmasterplan Dresden Innenstadt, Gesamtkonzept, 2008"
+         "text": "Мастер-план освещения центра Дрездена, Winkels und Partner, 2008: знаковые здания, мосты и оси центра.",
+         "credit": "Источник: Winkels und Partner International Light Architects (Дортмунд), ландшафт: Andreas Blume; заказчик Stadtplanungsamt Dresden, 2008"
         },
         {
-         "label": "Цвет света",
-         "src": "img/2026-11-21/concept-dresden-4.jpg",
-         "alt": "Раздел «Концепция цвета света»: рекомендация тёплого белого 3200 К для улиц и площадей, текст о замене натриевых ламп; две фотографии розы при разном свете.",
-         "text": "Раздел о цвете света: для улиц и площадей рекомендован тёплый белый 3200 К вместо натриевых ламп. Дрезден, 2008.",
-         "credit": "Источник: Winkels und Partner International Light Architects (Дортмунд), ландшафт: Andreas Blume; заказчик Stadtplanungsamt Dresden, Lichtmasterplan Dresden Innenstadt, Gesamtkonzept, 2008"
+         "label": "Трир",
+         "src": "img/2026-11-21/concept-trier-2.jpg",
+         "alt": "Площадь Паулусплац (стр. 52): схематичная 3D-визуализация с жёлтой подсветкой церкви и косыми лучами на фасады, ниже план площади с двумя точками фасадной подсветки.",
+         "text": "Мастер-план освещения Трира, Licht Raum Stadt Planung, 2014: площадь Паулусплац, схема подсветки церкви и план площади.",
+         "credit": "Источник: Licht Raum Stadt Planung (Uwe Knappschneider), Вупперталь, 2014"
         },
         {
-         "label": "Город целиком",
+         "label": "Мюнхен, Фрайхам",
+         "src": "img/2026-11-21/concept-muenchen-1.jpg",
+         "alt": "Иерархия путей и площадей (стр. 5): цветная схема квартала на чёрном фоне, внизу шкала высот светильников 3,5-14 м с конусами света; нейтральный белый для магистралей, тёплый для жилых улиц.",
+         "text": "Мастер-план освещения квартала Фрайхам-Норд, Day & Light, 2016: иерархия путей и площадей, шкала высот светильников 3,5–14 м.",
+         "credit": "Источник: Day & Light Lichtplanung, Мюнхен, заказчик Baureferat Landeshauptstadt München, 2016"
+        },
+        {
+         "label": "Белфаст",
+         "src": "img/2026-11-21/concept-belfast-2.jpg",
+         "alt": "Библиотека Белфаста (стр. 70-71): фото фасада днём и ночью, рядом контурные схемы текущей и предложенной подсветки окон и арок.",
+         "text": "Стратегия освещения Белфаста «Luminous City», 2020: библиотека днём и ночью и схема предложенной подсветки.",
+         "credit": "Источник: Belfast City Council; по данным заседаний совета, Urban Scale Interventions и Park Hood, 2020"
+        },
+        {
+         "label": "Гент",
          "src": "img/2026-11-21/concept-gent-2.jpg",
          "alt": "Страница брошюры: тёмная карта «Globaal Lichtplan II Gent» на весь город: светящиеся пятна центров районов, цветные линии магистралей, зелёные зоны, воды и порт.",
-         "text": "Мастер-план освещения Гента на весь город: светящиеся центры районов, оси магистралей, вода и порт. Lichtplan II, Atelier Roland Jéol с WVI, 2007–2009.",
-         "credit": "Источник: Atelier Roland Jéol (Лион) и WVI (Lichtplan I); Omgeving и Atelier Jéol (Lichtplan II), Het lichtplan uitgelicht (брошюра Stad Gent о трёх планах освещения Гента), 2007–2009 (Lichtplan II), брошюра около 2017"
-        },
-        {
-         "label": "Россия: Сочи",
-         "src": "img/2026-11-21/concept-ru-sochi-3.jpg",
-         "alt": "Страница альбома: подсветка памятников",
-         "text": "Методические рекомендации к концепции всесезонного светового оформления Сочи, 2021: страница о подсветке памятников. Российские города редко публикуют альбомы концепций; этот документ администрация Сочи выложила открыто.",
-         "credit": "Источник: администрация города-курорта Сочи, департамент архитектуры и градостроительства"
+         "text": "Мастер-план освещения Гента на весь город, Atelier Roland Jéol с WVI, 2007–2009: центры районов, оси, вода и порт.",
+         "credit": "Источник: Atelier Roland Jéol (Лион) и WVI (Lichtplan I); Omgeving и Atelier Jéol (Lichtplan II), 2007–2009 (Lichtplan II), брошюра около 2017"
         }
        ],
-       "caption": "Страницы концепций и мастер-планов освещения, опубликованных городами Германии, Бельгии и России.",
-       "print_src": "img/2026-11-21/concept-dresden-1.jpg",
-       "print_caption": "Мастер-план освещения центра Дрездена (Winkels und Partner, 2008): карта знаковых зданий, мостов и осей центра."
+       "caption": "Документы опубликованы городами в открытом доступе; ссылки на альбомы целиком ниже.",
+       "print_src": "img/2026-11-21/concept-london-1.jpg",
+       "print_caption": "Стратегия освещения Сити Лондона (Speirs Major, 2018): классификация маршрутов."
+      },
+      {
+       "anim": "tabs",
+       "title": "Россия: страницы концепций и дизайн-кодов",
+       "items": [
+        {
+         "label": "Ковдор",
+         "src": "img/2026-11-21/concept-ru-kovdor-1.jpg",
+         "alt": "Лист визуализаций площади Ленина и здания администрации по 8 сезонным сценариям с датами",
+         "text": "«Единая концепция световой среды города Ковдор», LiDS Lighting Design Studio, 2020: площадь Ленина и администрация в восьми сезонных сценариях.",
+         "credit": "Источник: LiDS Lighting Design Studio (Москва), 2020"
+        },
+        {
+         "label": "Якутск",
+         "src": "img/2026-11-21/concept-ru-yakutsk-1.jpg",
+         "alt": "Стр. 130: изометрическая схема подсветки жилого дома (карниз, глухие торцы, входные группы)",
+         "text": "Дизайн-код Якутска, Студия Артемия Лебедева, 2019: изометрическая схема подсветки жилого дома, карниз, глухие торцы, входные группы.",
+         "credit": "Источник: Студия Артемия Лебедева, 2019"
+        },
+        {
+         "label": "Корсаков",
+         "src": "img/2026-11-21/concept-ru-korsakov-2.jpg",
+         "alt": "Стр. 103: схема освещения пешеходных улиц и набережной р. Корсаковки (опоры 5 м, грунтовые светильники, 10 лк)",
+         "text": "Дизайн-код городской среды Корсаковского округа, 2022: разрез освещения пешеходной улицы и набережной, опоры 5 м, 10 лк.",
+         "credit": "Источник: Корсаковский городской округ (разработчик в документе не указан), 2022"
+        },
+        {
+         "label": "Красноярск",
+         "src": "img/2026-11-21/concept-ru-krasnoyarsk-1.jpg",
+         "alt": "Стр. 17: световой туннель, световые потолки (визуализации), фигуры на подвесах (в части примеров фото иных городов)",
+         "text": "Методические рекомендации управления архитектуры Красноярска по праздничному оформлению, раздел о ночном оформлении: световые тоннели и потолки.",
+         "credit": "Источник: Администрация г. Красноярска, управление архитектуры (разработчик не указан), 2023"
+        },
+        {
+         "label": "Сочи",
+         "src": "img/2026-11-21/concept-ru-sochi-3.jpg",
+         "alt": "Страница альбома: подсветка памятников",
+         "text": "Методические рекомендации к концепции всесезонного светового оформления Сочи, 2021: страница о подсветке памятников.",
+         "credit": "Источник: Администрация г. Сочи (департамент архитектуры и градостроительства, совместно с ведомством по благоустройству; авторское бюро в документе не указано), 2021"
+        }
+       ],
+       "caption": "Российские города редко выкладывают альбомы концепций; эти документы открыты.",
+       "print_src": "img/2026-11-21/concept-ru-kovdor-1.jpg",
+       "print_caption": "«Единая концепция световой среды города Ковдор» (LiDS Lighting Design Studio, 2020): сезонные сценарии площади Ленина."
+      },
+      {
+       "image": {
+        "src": "img/2026-11-21/concept-ru-yakutsk-1.jpg",
+        "alt": "Стр. 130: изометрическая схема подсветки жилого дома (карниз, глухие торцы, входные группы)",
+        "caption": "Схема подсветки жилого дома: дизайн-код Якутска (Студия Артемия Лебедева, 2019).",
+        "credit": "Студия Артемия Лебедева",
+        "credit_url": "https://www.artlebedev.ru/yakutsk/design-code/yakutsk-design-code.pdf"
+       },
+       "print_only": true
+      },
+      {
+       "image": {
+        "src": "img/2026-11-21/concept-dundee-2.jpg",
+        "alt": "Съёмка яркости (стр. 85): HDR-снимки четырёх улиц в ложных цветах от 0 до 30 кд/м2 над обычными ночными фото, с выводами о равномерности и контрасте.",
+        "caption": "Замеры яркости улиц в ложных цветах: стратегия освещения центра Данди (Arup, 2025).",
+        "credit": "Arup",
+        "credit_url": "https://www.dundeecity.gov.uk/sites/default/files/dundee_city_lighting_strategy.pdf"
+       },
+       "print_only": true
       },
       {
        "h": "Альбомы целиком: скачать и полистать"
       },
       {
-       "p": "Все документы открываются в PDF на сайтах городов:"
+       "p": "Европа и мир:"
       },
       {
-       "p": "[Гент: Het lichtplan uitgelicht, брошюра о трёх мастер-планах освещения города (Atelier Roland Jéol, WVI)](https://stad.gent/sites/default/files/page/documents/17_00075_Prof%20Brochure%20lichtplan_NL_1.pdf)"
+       "p": "[Лондон, Сити: «Light + Darkness in the City», Speirs Major, 2018](https://www.cityoflondon.gov.uk/assets/Services-Environment/city-of-london-lighting-strategy.pdf)"
       },
       {
-       "p": "[Мюнстер: концепция освещения старого города (Михаэль Батц, 2004)](https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf)"
+       "p": "[Данди: стратегия освещения центра, Arup, 2025](https://www.dundeecity.gov.uk/sites/default/files/dundee_city_lighting_strategy.pdf)"
       },
       {
-       "p": "[Дрезден: мастер-план освещения центра (Winkels und Partner, 2008)](https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/spa_stadtgestaltung_Lichtgestaltung_Lichtmasterplan_gesamtkonzept.pdf)"
+       "p": "[Сидней: стратегия освещения, Steensen Varming, 2015](https://meetings.cityofsydney.nsw.gov.au/Data/Environment%20Committee/201503231401/Agenda/150323_EC_ITEM03_ATTACHMENTB1.pdf)"
       },
       {
-       "p": "[Фрайзинг: мастер-план освещения (3lpi, 2017)](https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf)"
+       "p": "[Белфаст: «Luminous City», 2020](https://minutes.belfastcity.gov.uk/documents/s85917/Appendix%201%20Lighting%20Dressing%20Strategy%20-%20Luminous%20City.pdf)"
       },
       {
-       "p": "[Сочи: методические рекомендации к концепции всесезонного светового оформления (2021)](https://sochi.ru/upload/iblock/efc/sjnjjf14iro46viygoyre77td008zh9r.pdf)"
+       "p": "[Регенсбург: световой план, 2008](https://www.regensburg.de/fm/121/stadtlichtplan-regensburg-handbuch.pdf)"
       },
       {
-       "image": {
-        "src": "img/2026-11-21/concept-freising-3.jpg",
-        "alt": "Измерения существующего освещения: псевдоцветные снимки витрин и фасадов Обере-Хауптштрассе и башен собора по шкале яркости 0,15–1000 кд/м2.",
-        "caption": "Замеры яркости фасадов и витрин в псевдоцвете: страница мастер-плана освещения Фрайзинга (3lpi, 2017).",
-        "credit": "3lpi Lichtplaner + beratende Ingenieure, Masterplan Licht Freising",
-        "credit_url": "https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf"
-       },
-       "print_only": true
+       "p": "[Трир: мастер-план освещения, 2014](https://www.trier.de/media/www.trier.de/org/med_3339/4795_lmp_trier_konzept_2014-04-10_stadtplanungsamt_neu.pdf)"
       },
       {
-       "image": {
-        "src": "img/2026-11-21/concept-muenster-4.jpg",
-        "alt": "Две фотографии фасадов Принципальмаркта вечером; красные стрелки размечают недосвеченные зоны и пересвеченную арку нижнего этажа.",
-        "caption": "Анализ фасадов Принципальмаркта: недосвеченные зоны и пересвеченная арка (концепция освещения старого Мюнстера, Михаэль Батц, 2004).",
-        "credit": "Michael Batz, Lichtkonzept Altstadt Münster",
-        "credit_url": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf"
-       },
-       "print_only": true
+       "p": "[Пассау: мастер-план освещения, 2012](https://www.passau.de/fileadmin/Homepage_Stadt_Passau/2._Rathaus_und_Buergerservice/Rathauswegweiser/5_Stadtentwicklung_und_Mobilitaet/511_Stadtplanung__Stadtgestaltung/2011-10-12Masterplan_Licht_Endfassung_Stand-31.10.2011-mit_Lesez.-fuer_OB_Passau-P-7.2.2012-.pdf)"
+      },
+      {
+       "p": "[Мюнхен, Фрайхам-Норд: мастер-план освещения, Day & Light, 2016](https://stadt.muenchen.de/dam/jcr:cbcf3481-3aa3-4915-8512-58af392eaf58/Anlage%209%20Masterplan%20Licht.pdf)"
+      },
+      {
+       "p": "[Фрайзинг: мастер-план освещения, 3lpi, 2017](https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf)"
+      },
+      {
+       "p": "[Дрезден: мастер-план освещения центра, 2008](https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/spa_stadtgestaltung_Lichtgestaltung_Lichtmasterplan_gesamtkonzept.pdf)"
+      },
+      {
+       "p": "[Мюнстер: концепция освещения старого города, 2004](https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf)"
+      },
+      {
+       "p": "[Гент: брошюра о мастер-планах освещения](https://stad.gent/sites/default/files/page/documents/17_00075_Prof%20Brochure%20lichtplan_NL_1.pdf)"
+      },
+      {
+       "p": "Россия:"
+      },
+      {
+       "p": "[Ковдор: «Единая концепция световой среды», LiDS, 2020 (конкурс RLDC)](https://online.gefera.ru/contest/rldc-2020/works/?work_id=828181)"
+      },
+      {
+       "p": "[Якутск: дизайн-код, раздел об освещении, Студия Артемия Лебедева, 2019](https://www.artlebedev.ru/yakutsk/design-code/yakutsk-design-code.pdf)"
+      },
+      {
+       "p": "[Корсаков: дизайн-код городской среды, 2022](https://service.garant.ru/objects/2023/10/1693d5bab469c929f47209ebb61b8d3b/Prilozhenie__4__Dizainkod_gorodskoi_sredy_postranichno.pdf)"
+      },
+      {
+       "p": "[Красноярск: методические рекомендации по праздничному оформлению](https://www.admkrsk.ru/administration/structure/architectureupr/Documents/23.Рrazdnichnoye_oformleniye.pdf)"
+      },
+      {
+       "p": "[Сочи: методические рекомендации к концепции всесезонного светового оформления, 2021](https://sochi.ru/upload/iblock/efc/sjnjjf14iro46viygoyre77td008zh9r.pdf)"
       },
       {
        "h": "Из чего складывается цена"
@@ -625,27 +736,87 @@
        "date": "21.11.2026"
       },
       {
-       "label": "Stad Gent: Het lichtplan uitgelicht",
-       "url": "https://stad.gent/sites/default/files/page/documents/17_00075_Prof%20Brochure%20lichtplan_NL_1.pdf",
-       "date": ""
+       "label": "Лондон, Сити: «Light + Darkness in the City», Speirs Major, 2018",
+       "url": "https://www.cityoflondon.gov.uk/assets/Services-Environment/city-of-london-lighting-strategy.pdf",
+       "date": "2018"
       },
       {
-       "label": "Stadt Münster: Lichtkonzept Altstadt (Michael Batz, 2004)",
-       "url": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf",
-       "date": "2004"
+       "label": "Данди: стратегия освещения центра, Arup, 2025",
+       "url": "https://www.dundeecity.gov.uk/sites/default/files/dundee_city_lighting_strategy.pdf",
+       "date": "2025"
       },
       {
-       "label": "Landeshauptstadt Dresden: Lichtmasterplan Innenstadt (Winkels und Partner, 2008)",
-       "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/spa_stadtgestaltung_Lichtgestaltung_Lichtmasterplan_gesamtkonzept.pdf",
+       "label": "Сидней: стратегия освещения, Steensen Varming, 2015",
+       "url": "https://meetings.cityofsydney.nsw.gov.au/Data/Environment%20Committee/201503231401/Agenda/150323_EC_ITEM03_ATTACHMENTB1.pdf",
+       "date": "2015"
+      },
+      {
+       "label": "Белфаст: «Luminous City», 2020",
+       "url": "https://minutes.belfastcity.gov.uk/documents/s85917/Appendix%201%20Lighting%20Dressing%20Strategy%20-%20Luminous%20City.pdf",
+       "date": "2020"
+      },
+      {
+       "label": "Регенсбург: световой план, 2008",
+       "url": "https://www.regensburg.de/fm/121/stadtlichtplan-regensburg-handbuch.pdf",
        "date": "2008"
       },
       {
-       "label": "Stadt Freising: Masterplan Licht (3lpi, 2017)",
+       "label": "Трир: мастер-план освещения, 2014",
+       "url": "https://www.trier.de/media/www.trier.de/org/med_3339/4795_lmp_trier_konzept_2014-04-10_stadtplanungsamt_neu.pdf",
+       "date": "2014"
+      },
+      {
+       "label": "Пассау: мастер-план освещения, 2012",
+       "url": "https://www.passau.de/fileadmin/Homepage_Stadt_Passau/2._Rathaus_und_Buergerservice/Rathauswegweiser/5_Stadtentwicklung_und_Mobilitaet/511_Stadtplanung__Stadtgestaltung/2011-10-12Masterplan_Licht_Endfassung_Stand-31.10.2011-mit_Lesez.-fuer_OB_Passau-P-7.2.2012-.pdf",
+       "date": "2012"
+      },
+      {
+       "label": "Мюнхен, Фрайхам-Норд: мастер-план освещения, Day & Light, 2016",
+       "url": "https://stadt.muenchen.de/dam/jcr:cbcf3481-3aa3-4915-8512-58af392eaf58/Anlage%209%20Masterplan%20Licht.pdf",
+       "date": "2016"
+      },
+      {
+       "label": "Фрайзинг: мастер-план освещения, 3lpi, 2017",
        "url": "https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf",
        "date": "2017"
       },
       {
-       "label": "Сочи: методические рекомендации к концепции всесезонного светового оформления",
+       "label": "Дрезден: мастер-план освещения центра, 2008",
+       "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/spa_stadtgestaltung_Lichtgestaltung_Lichtmasterplan_gesamtkonzept.pdf",
+       "date": "2008"
+      },
+      {
+       "label": "Мюнстер: концепция освещения старого города, 2004",
+       "url": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf",
+       "date": "2004"
+      },
+      {
+       "label": "Гент: брошюра о мастер-планах освещения",
+       "url": "https://stad.gent/sites/default/files/page/documents/17_00075_Prof%20Brochure%20lichtplan_NL_1.pdf",
+       "date": "2007–2009 (Lichtplan II), брошюра около 2017"
+      },
+      {
+       "label": "Ковдор: «Единая концепция световой среды», LiDS, 2020 (конкурс RLDC)",
+       "url": "https://online.gefera.ru/contest/rldc-2020/works/?work_id=828181",
+       "date": "2020"
+      },
+      {
+       "label": "Якутск: дизайн-код, раздел об освещении, Студия Артемия Лебедева, 2019",
+       "url": "https://www.artlebedev.ru/yakutsk/design-code/yakutsk-design-code.pdf",
+       "date": "2019"
+      },
+      {
+       "label": "Корсаков: дизайн-код городской среды, 2022",
+       "url": "https://service.garant.ru/objects/2023/10/1693d5bab469c929f47209ebb61b8d3b/Prilozhenie__4__Dizainkod_gorodskoi_sredy_postranichno.pdf",
+       "date": "2022"
+      },
+      {
+       "label": "Красноярск: методические рекомендации по праздничному оформлению",
+       "url": "https://www.admkrsk.ru/administration/structure/architectureupr/Documents/23.Рrazdnichnoye_oformleniye.pdf",
+       "date": "2023"
+      },
+      {
+       "label": "Сочи: методические рекомендации к концепции всесезонного светового оформления, 2021",
        "url": "https://sochi.ru/upload/iblock/efc/sjnjjf14iro46viygoyre77td008zh9r.pdf",
        "date": "2021"
       }
