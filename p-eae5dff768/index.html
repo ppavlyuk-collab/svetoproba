@@ -725,7 +725,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   /* blocks */
   function block(b) {
     if (b.print_only && !PRINT) return "";  // материалы для заполнения полос PDF в веб-версию не идут
-    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w" || b.anim === "flavin-mix" || b.anim === "curve-slider" || b.anim === "compare" || b.anim === "budget") return animHtml(b);
+    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w" || b.anim === "flavin-mix" || b.anim === "curve-slider" || b.anim === "compare" || b.anim === "budget" || b.anim === "tabs" || b.anim === "facade-light") return animHtml(b);
     if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
     if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
     if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
@@ -970,6 +970,17 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     if (b.anim === "compare") {
       return '<figure class="fig span anim compare"><p class="fig-t">' + esc(b.title) + '</p><div class="cmp-s" style="position:relative;overflow:hidden;touch-action:pan-y;user-select:none;aspect-ratio:' + (b.ar || 1.5) + '"><img src="' + esc(b.before.src) + '" alt="' + esc(b.before.alt) + '" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><div class="cmp-a" style="position:absolute;inset:0;clip-path:inset(0 0 0 50%)"><img src="' + esc(b.after.src) + '" alt="' + esc(b.after.alt) + '" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"></div><div class="cmp-h" style="position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.35)"><span style="position:absolute;top:50%;left:50%;width:34px;height:34px;margin:-17px 0 0 -17px;border-radius:50%;background:#fff;color:#222;font:700 15px/34px var(--font-ui);text-align:center;box-shadow:0 1px 4px rgba(0,0,0,.4)">⇆</span></div><span style="position:absolute;left:10px;top:10px;font:700 .8rem var(--font-ui);color:#fff;background:rgba(0,0,0,.55);padding:3px 7px;border-radius:3px">' + esc(b.before.label) + '</span><span style="position:absolute;right:10px;top:10px;font:700 .8rem var(--font-ui);color:#fff;background:rgba(0,0,0,.55);padding:3px 7px;border-radius:3px">' + esc(b.after.label) + '</span></div><input class="cmp-r" type="range" min="0" max="100" value="50" aria-label="Граница между снимками" style="width:100%;margin:8px 0 2px"><figcaption>' + esc(b.caption) + (b.credit ? ' <span class="credit">' + esc(b.credit) + '</span>' : '') + '</figcaption></figure>';
     }
+    /* снимки одного объекта по кнопкам: «сейчас» и «по замыслу» (№ 4, 21.11.2026) */
+    if (b.anim === "tabs") {
+      return '<figure class="fig span anim tabs"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.items.map(function (it, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(it.label) + "</button>"; }).join("") + '</div>' + b.items.map(function (it, i) { return '<div class="tb-v" data-i="' + i + '"' + (i ? " hidden" : "") + '><img src="' + esc(it.src) + '" alt="' + esc(it.alt) + '" loading="lazy" style="display:block;width:100%;height:auto"><p class="dm-t" style="margin-top:8px">' + esc(it.text) + ' <span class="credit">' + esc(it.credit || "") + '</span></p></div>'; }).join("") + '<figcaption>' + esc(b.caption || "") + '</figcaption></figure>';
+    }
+    /* принципы распределения яркости на фасаде: переключатели и ползунок «вечер – ночь» (№ 4, 21.11.2026); уровни не расчётные, только принцип */
+    if (b.anim === "facade-light") {
+      var bands = "", N = 12;
+      for (var bi = 0; bi < N; bi++) bands += '<rect class="fl-b" data-k="' + bi + '" x="230" y="' + (40 + bi * 30) + '" width="340" height="30"/>';
+      var niches = [120, 220, 310].map(function (yy) { return '<rect class="fl-n" x="355" y="' + yy + '" width="90" height="44" rx="2"/>'; }).join("");
+      return '<figure class="fig span anim facade-light"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.modes.map(function (m, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(m.name) + "</button>"; }).join("") + '</div><svg viewBox="0 0 800 440" role="img" aria-label="' + esc(b.alt) + '" style="display:block;width:100%;height:auto;background:#10131a"><rect x="0" y="0" width="800" height="440" fill="#10131a"/>' + bands + niches + '<rect x="230" y="40" width="340" height="360" fill="none" stroke="#8d8676" stroke-width="2"/><text x="590" y="58" fill="#d9d4c7" font-size="16" font-family="sans-serif">верх</text><text x="590" y="398" fill="#d9d4c7" font-size="16" font-family="sans-serif">улица</text><text class="fl-c" x="400" y="428" fill="#d9d4c7" font-size="15" text-anchor="middle" font-family="sans-serif"></text></svg><label class="fl-a" style="display:block;font:700 .95rem var(--font-ui);margin:10px 0 2px">Время вечера</label><input class="fl-r" type="range" min="0" max="100" value="0" aria-label="Время вечера" style="width:100%"><p class="dm-t fl-t">' + esc(b.modes[0].text) + '</p><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
     /* бюджет по частям с переключением видов (№ 4, 21.11.2026) */
     if (b.anim === "budget") {
       var COL = ["#044389", "#3f9fd8", "#fe9f4d", "#8b9099", "#c0573e", "#5aa469", "#b38bd6", "#d9b44a"];
@@ -1159,7 +1170,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       if (b.anim === "road-adapt") return illusHtml(b.illus);
       if (b.anim === "cs-scale") return "";
       if (b.anim === "mice-w") return illusHtml(b.illus);
-      if ((b.anim === "flavin-mix" || b.anim === "curve-slider" || b.anim === "compare" || b.anim === "budget") && b.print_src) return illusHtml({ src: b.print_src, alt: b.title, caption: b.print_caption || b.caption });
+      if ((b.anim === "flavin-mix" || b.anim === "curve-slider" || b.anim === "compare" || b.anim === "budget" || b.anim === "tabs" || b.anim === "facade-light") && b.print_src) return illusHtml({ src: b.print_src, alt: b.title, caption: b.print_caption || b.caption });
       if (b.anim) return "";
       return block(b);
     }
@@ -1374,6 +1385,23 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       st.addEventListener("pointermove", function (e) { if (drag) at(e); });
       st.addEventListener("pointerup", function () { drag = false; }); st.addEventListener("pointercancel", function () { drag = false; });
       r.addEventListener("input", function () { set(+r.value); });
+    });
+    main.querySelectorAll(".tabs").forEach(function (f) {
+      var btns = [].slice.call(f.querySelectorAll(".dm-b button")), vs = [].slice.call(f.querySelectorAll(".tb-v"));
+      btns.forEach(function (bt) { bt.addEventListener("click", function () { var i = +bt.getAttribute("data-i"); btns.forEach(function (x) { x.setAttribute("aria-pressed", x === bt); }); vs.forEach(function (v) { v.hidden = +v.getAttribute("data-i") !== i; }); }); });
+    });
+    main.querySelectorAll(".facade-light").forEach(function (f) {
+      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "facade-light") B = bb; }); }); });
+      var btns = [].slice.call(f.querySelectorAll(".dm-b button")), bands = [].slice.call(f.querySelectorAll(".fl-b")), nis = [].slice.call(f.querySelectorAll(".fl-n")), r = f.querySelector(".fl-r"), t = f.querySelector(".fl-t"), c = f.querySelector(".fl-c"), mode = 0;
+      function draw() {
+        var m = B.modes[mode], ev = +r.value / 100, fade = m.fade ? 1 - 0.55 * ev : 1;
+        bands.forEach(function (el, k) { var top = 1 - k / (bands.length - 1), lev = m.gradient ? 0.35 + 0.65 * top : 0.8; el.setAttribute("fill", "rgba(255,214,140," + (lev * fade).toFixed(3) + ")"); });
+        nis.forEach(function (el) { el.setAttribute("fill", m.niches ? "rgba(255,190,110," + (0.75 * fade).toFixed(3) + ")" : "#1b1d24"); });
+        c.textContent = m.fade ? (ev < 0.05 ? "начало вечера" : ev > 0.95 ? "поздний вечер" : "вечер: яркость медленно снижается") : "яркость не меняется в течение вечера";
+        t.textContent = m.text;
+      }
+      btns.forEach(function (bt) { bt.addEventListener("click", function () { mode = +bt.getAttribute("data-i"); btns.forEach(function (x) { x.setAttribute("aria-pressed", x === bt); }); draw(); }); });
+      r.addEventListener("input", draw); draw();
     });
     main.querySelectorAll(".budget").forEach(function (f) {
       var btns = [].slice.call(f.querySelectorAll(".dm-b button")), vs = [].slice.call(f.querySelectorAll(".bg-v"));
