@@ -455,67 +455,212 @@
        "h": "Альбомы целиком: скачать и полистать"
       },
       {
-       "p": "Европа и мир:"
+       "links": [
+        {
+         "title": "«Light + Darkness in the City», Speirs Major, 2018",
+         "meta": "Лондон, Сити",
+         "url": "https://www.cityoflondon.gov.uk/assets/Services-Environment/city-of-london-lighting-strategy.pdf",
+         "thumb": "img/2026-11-21/concept-london-1.jpg"
+        },
+        {
+         "title": "стратегия освещения центра, Arup, 2025",
+         "meta": "Данди",
+         "url": "https://www.dundeecity.gov.uk/sites/default/files/dundee_city_lighting_strategy.pdf",
+         "thumb": "img/2026-11-21/concept-dundee-1.jpg"
+        },
+        {
+         "title": "стратегия освещения, Steensen Varming, 2015",
+         "meta": "Сидней",
+         "url": "https://meetings.cityofsydney.nsw.gov.au/Data/Environment%20Committee/201503231401/Agenda/150323_EC_ITEM03_ATTACHMENTB1.pdf",
+         "thumb": "img/2026-11-21/concept-sydney-2.jpg"
+        },
+        {
+         "title": "«Luminous City», 2020",
+         "meta": "Белфаст",
+         "url": "https://minutes.belfastcity.gov.uk/documents/s85917/Appendix%201%20Lighting%20Dressing%20Strategy%20-%20Luminous%20City.pdf",
+         "thumb": "img/2026-11-21/concept-belfast-1.jpg"
+        },
+        {
+         "title": "световой план, 2008",
+         "meta": "Регенсбург",
+         "url": "https://www.regensburg.de/fm/121/stadtlichtplan-regensburg-handbuch.pdf",
+         "thumb": "img/2026-11-21/concept-regensburg-2.jpg"
+        },
+        {
+         "title": "мастер-план освещения, 2014",
+         "meta": "Трир",
+         "url": "https://www.trier.de/media/www.trier.de/org/med_3339/4795_lmp_trier_konzept_2014-04-10_stadtplanungsamt_neu.pdf",
+         "thumb": "img/2026-11-21/concept-trier-1.jpg"
+        },
+        {
+         "title": "мастер-план освещения, 2012",
+         "meta": "Пассау",
+         "url": "https://www.passau.de/fileadmin/Homepage_Stadt_Passau/2._Rathaus_und_Buergerservice/Rathauswegweiser/5_Stadtentwicklung_und_Mobilitaet/511_Stadtplanung__Stadtgestaltung/2011-10-12Masterplan_Licht_Endfassung_Stand-31.10.2011-mit_Lesez.-fuer_OB_Passau-P-7.2.2012-.pdf",
+         "thumb": "img/2026-11-21/concept-passau-2.jpg"
+        },
+        {
+         "title": "мастер-план освещения, Day & Light, 2016",
+         "meta": "Мюнхен, Фрайхам-Норд",
+         "url": "https://stadt.muenchen.de/dam/jcr:cbcf3481-3aa3-4915-8512-58af392eaf58/Anlage%209%20Masterplan%20Licht.pdf",
+         "thumb": "img/2026-11-21/concept-muenchen-2.jpg"
+        },
+        {
+         "title": "мастер-план освещения, 3lpi, 2017",
+         "meta": "Фрайзинг",
+         "url": "https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf",
+         "thumb": "img/2026-11-21/concept-freising-2.jpg"
+        },
+        {
+         "title": "мастер-план освещения центра, 2008",
+         "meta": "Дрезден",
+         "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/spa_stadtgestaltung_Lichtgestaltung_Lichtmasterplan_gesamtkonzept.pdf",
+         "thumb": "img/2026-11-21/concept-dresden-2.jpg"
+        },
+        {
+         "title": "концепция освещения старого города, 2004",
+         "meta": "Мюнстер",
+         "url": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf",
+         "thumb": "img/2026-11-21/concept-muenster-4.jpg"
+        },
+        {
+         "title": "брошюра о мастер-планах освещения",
+         "meta": "Гент",
+         "url": "https://stad.gent/sites/default/files/page/documents/17_00075_Prof%20Brochure%20lichtplan_NL_1.pdf",
+         "thumb": "img/2026-11-21/concept-gent-1.jpg"
+        }
+       ],
+       "title": "Европа и мир"
       },
       {
-       "p": "[Лондон, Сити: «Light + Darkness in the City», Speirs Major, 2018](https://www.cityoflondon.gov.uk/assets/Services-Environment/city-of-london-lighting-strategy.pdf)"
+       "links": [
+        {
+         "title": "мастер-план освещения, «МТ Электро» и Институт территориального планирования, 2019, восемь томов",
+         "meta": "Пермь",
+         "url": "https://mtelectro.ru/projects/svetovoj-master-plan-goroda-permi/",
+         "thumb": "img/2026-11-21/concept-ru-perm-3.jpg"
+        },
+        {
+         "title": "мастер-план освещения, «МТ Электро»",
+         "meta": "Верхотурье",
+         "url": "https://mtelectro.ru/projects/master-plan-verhoture/",
+         "thumb": "img/2026-11-21/concept-ru-verhoture-2.jpg"
+        },
+        {
+         "title": "«Единая концепция световой среды», LiDS, 2020 (конкурс RLDC)",
+         "meta": "Ковдор",
+         "url": "https://online.gefera.ru/contest/rldc-2020/works/?work_id=828181",
+         "thumb": "img/2026-11-21/concept-ru-kovdor-2.jpg"
+        },
+        {
+         "title": "дизайн-код, раздел об освещении, Студия Артемия Лебедева, 2019",
+         "meta": "Якутск",
+         "url": "https://www.artlebedev.ru/yakutsk/design-code/yakutsk-design-code.pdf",
+         "thumb": "img/2026-11-21/concept-ru-yakutsk-2.jpg"
+        },
+        {
+         "title": "дизайн-код городской среды, 2022",
+         "meta": "Корсаков",
+         "url": "https://service.garant.ru/objects/2023/10/1693d5bab469c929f47209ebb61b8d3b/Prilozhenie__4__Dizainkod_gorodskoi_sredy_postranichno.pdf",
+         "thumb": "img/2026-11-21/concept-ru-korsakov-1.jpg"
+        },
+        {
+         "title": "методические рекомендации по праздничному оформлению",
+         "meta": "Красноярск",
+         "url": "https://www.admkrsk.ru/administration/structure/architectureupr/Documents/23.Рrazdnichnoye_oformleniye.pdf",
+         "thumb": "img/2026-11-21/concept-ru-krasnoyarsk-2.jpg"
+        },
+        {
+         "title": "методические рекомендации к концепции всесезонного светового оформления, 2021",
+         "meta": "Сочи",
+         "url": "https://sochi.ru/upload/iblock/efc/sjnjjf14iro46viygoyre77td008zh9r.pdf",
+         "thumb": "img/2026-11-21/concept-ru-sochi-2.jpg"
+        }
+       ],
+       "title": "Россия"
       },
       {
-       "p": "[Данди: стратегия освещения центра, Arup, 2025](https://www.dundeecity.gov.uk/sites/default/files/dundee_city_lighting_strategy.pdf)"
+       "p": "Европа и мир:",
+       "print_only": true
       },
       {
-       "p": "[Сидней: стратегия освещения, Steensen Varming, 2015](https://meetings.cityofsydney.nsw.gov.au/Data/Environment%20Committee/201503231401/Agenda/150323_EC_ITEM03_ATTACHMENTB1.pdf)"
+       "p": "[Лондон, Сити: «Light + Darkness in the City», Speirs Major, 2018](https://www.cityoflondon.gov.uk/assets/Services-Environment/city-of-london-lighting-strategy.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Белфаст: «Luminous City», 2020](https://minutes.belfastcity.gov.uk/documents/s85917/Appendix%201%20Lighting%20Dressing%20Strategy%20-%20Luminous%20City.pdf)"
+       "p": "[Данди: стратегия освещения центра, Arup, 2025](https://www.dundeecity.gov.uk/sites/default/files/dundee_city_lighting_strategy.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Регенсбург: световой план, 2008](https://www.regensburg.de/fm/121/stadtlichtplan-regensburg-handbuch.pdf)"
+       "p": "[Сидней: стратегия освещения, Steensen Varming, 2015](https://meetings.cityofsydney.nsw.gov.au/Data/Environment%20Committee/201503231401/Agenda/150323_EC_ITEM03_ATTACHMENTB1.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Трир: мастер-план освещения, 2014](https://www.trier.de/media/www.trier.de/org/med_3339/4795_lmp_trier_konzept_2014-04-10_stadtplanungsamt_neu.pdf)"
+       "p": "[Белфаст: «Luminous City», 2020](https://minutes.belfastcity.gov.uk/documents/s85917/Appendix%201%20Lighting%20Dressing%20Strategy%20-%20Luminous%20City.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Пассау: мастер-план освещения, 2012](https://www.passau.de/fileadmin/Homepage_Stadt_Passau/2._Rathaus_und_Buergerservice/Rathauswegweiser/5_Stadtentwicklung_und_Mobilitaet/511_Stadtplanung__Stadtgestaltung/2011-10-12Masterplan_Licht_Endfassung_Stand-31.10.2011-mit_Lesez.-fuer_OB_Passau-P-7.2.2012-.pdf)"
+       "p": "[Регенсбург: световой план, 2008](https://www.regensburg.de/fm/121/stadtlichtplan-regensburg-handbuch.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Мюнхен, Фрайхам-Норд: мастер-план освещения, Day & Light, 2016](https://stadt.muenchen.de/dam/jcr:cbcf3481-3aa3-4915-8512-58af392eaf58/Anlage%209%20Masterplan%20Licht.pdf)"
+       "p": "[Трир: мастер-план освещения, 2014](https://www.trier.de/media/www.trier.de/org/med_3339/4795_lmp_trier_konzept_2014-04-10_stadtplanungsamt_neu.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Фрайзинг: мастер-план освещения, 3lpi, 2017](https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf)"
+       "p": "[Пассау: мастер-план освещения, 2012](https://www.passau.de/fileadmin/Homepage_Stadt_Passau/2._Rathaus_und_Buergerservice/Rathauswegweiser/5_Stadtentwicklung_und_Mobilitaet/511_Stadtplanung__Stadtgestaltung/2011-10-12Masterplan_Licht_Endfassung_Stand-31.10.2011-mit_Lesez.-fuer_OB_Passau-P-7.2.2012-.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Дрезден: мастер-план освещения центра, 2008](https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/spa_stadtgestaltung_Lichtgestaltung_Lichtmasterplan_gesamtkonzept.pdf)"
+       "p": "[Мюнхен, Фрайхам-Норд: мастер-план освещения, Day & Light, 2016](https://stadt.muenchen.de/dam/jcr:cbcf3481-3aa3-4915-8512-58af392eaf58/Anlage%209%20Masterplan%20Licht.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Мюнстер: концепция освещения старого города, 2004](https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf)"
+       "p": "[Фрайзинг: мастер-план освещения, 3lpi, 2017](https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Гент: брошюра о мастер-планах освещения](https://stad.gent/sites/default/files/page/documents/17_00075_Prof%20Brochure%20lichtplan_NL_1.pdf)"
+       "p": "[Дрезден: мастер-план освещения центра, 2008](https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/spa_stadtgestaltung_Lichtgestaltung_Lichtmasterplan_gesamtkonzept.pdf)",
+       "print_only": true
       },
       {
-       "p": "Россия:"
+       "p": "[Мюнстер: концепция освещения старого города, 2004](https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Пермь: мастер-план освещения, «МТ Электро» и Институт территориального планирования, 2019, восемь томов](https://mtelectro.ru/projects/svetovoj-master-plan-goroda-permi/)"
+       "p": "[Гент: брошюра о мастер-планах освещения](https://stad.gent/sites/default/files/page/documents/17_00075_Prof%20Brochure%20lichtplan_NL_1.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Верхотурье: мастер-план освещения, «МТ Электро»](https://mtelectro.ru/projects/master-plan-verhoture/)"
+       "p": "Россия:",
+       "print_only": true
       },
       {
-       "p": "[Ковдор: «Единая концепция световой среды», LiDS, 2020 (конкурс RLDC)](https://online.gefera.ru/contest/rldc-2020/works/?work_id=828181)"
+       "p": "[Пермь: мастер-план освещения, «МТ Электро» и Институт территориального планирования, 2019, восемь томов](https://mtelectro.ru/projects/svetovoj-master-plan-goroda-permi/)",
+       "print_only": true
       },
       {
-       "p": "[Якутск: дизайн-код, раздел об освещении, Студия Артемия Лебедева, 2019](https://www.artlebedev.ru/yakutsk/design-code/yakutsk-design-code.pdf)"
+       "p": "[Верхотурье: мастер-план освещения, «МТ Электро»](https://mtelectro.ru/projects/master-plan-verhoture/)",
+       "print_only": true
       },
       {
-       "p": "[Корсаков: дизайн-код городской среды, 2022](https://service.garant.ru/objects/2023/10/1693d5bab469c929f47209ebb61b8d3b/Prilozhenie__4__Dizainkod_gorodskoi_sredy_postranichno.pdf)"
+       "p": "[Ковдор: «Единая концепция световой среды», LiDS, 2020 (конкурс RLDC)](https://online.gefera.ru/contest/rldc-2020/works/?work_id=828181)",
+       "print_only": true
       },
       {
-       "p": "[Красноярск: методические рекомендации по праздничному оформлению](https://www.admkrsk.ru/administration/structure/architectureupr/Documents/23.Рrazdnichnoye_oformleniye.pdf)"
+       "p": "[Якутск: дизайн-код, раздел об освещении, Студия Артемия Лебедева, 2019](https://www.artlebedev.ru/yakutsk/design-code/yakutsk-design-code.pdf)",
+       "print_only": true
       },
       {
-       "p": "[Сочи: методические рекомендации к концепции всесезонного светового оформления, 2021](https://sochi.ru/upload/iblock/efc/sjnjjf14iro46viygoyre77td008zh9r.pdf)"
+       "p": "[Корсаков: дизайн-код городской среды, 2022](https://service.garant.ru/objects/2023/10/1693d5bab469c929f47209ebb61b8d3b/Prilozhenie__4__Dizainkod_gorodskoi_sredy_postranichno.pdf)",
+       "print_only": true
+      },
+      {
+       "p": "[Красноярск: методические рекомендации по праздничному оформлению](https://www.admkrsk.ru/administration/structure/architectureupr/Documents/23.Рrazdnichnoye_oformleniye.pdf)",
+       "print_only": true
+      },
+      {
+       "p": "[Сочи: методические рекомендации к концепции всесезонного светового оформления, 2021](https://sochi.ru/upload/iblock/efc/sjnjjf14iro46viygoyre77td008zh9r.pdf)",
+       "print_only": true
       },
       {
        "h": "Из чего складывается цена"
@@ -1808,6 +1953,34 @@
        "h": "Что читать: публикации недели"
       },
       {
+       "links": [
+        {
+         "title": "Третья часть серии о 25 самых влиятельных людях в светотехнике (LIGHTING25, EdisonReport и Pompeo Group)",
+         "meta": "EdisonReport, 12.11.2026",
+         "url": "https://edisonreport.com/2026/11/12/rethinking-the-value-of-lighting-design/",
+         "thumb": "img/2026-11-21/dg-edison.jpg"
+        },
+        {
+         "title": "Lighting design a “strategic economic investment” says Signify’s Sameer Sodhi",
+         "meta": "Dezeen, 30.10.2026",
+         "url": "https://www.dezeen.com/2026/10/30/lighting-design-strategic-economic-signifys-sameer-sodhi/",
+         "thumb": "img/2026-11-21/dg-signify.jpg"
+        },
+        {
+         "title": "Линия Элизабет названа любимым победителем премии Стирлинга за 30 лет в публичном голосовании",
+         "meta": "arc, 28.10.2026",
+         "url": "https://www.arc-magazine.com/equation-lighting-design-celebrates-public-vote-win-for-elizabeth-line/",
+         "thumb": "img/2026-11-21/equation-tube.jpg"
+        },
+        {
+         "title": "Lighting’s hottest new material: cork",
+         "meta": "Recolight, 16.11.2026",
+         "url": "https://www.recolight.co.uk/circular-lighting-report/lightings-hottest-new-material-cork/",
+         "thumb": "img/2026-11-21/dg-cork.jpg"
+        }
+       ]
+      },
+      {
        "digest": [
         {
          "source": "EdisonReport",
@@ -1837,7 +2010,8 @@
          "url": "https://www.recolight.co.uk/circular-lighting-report/lightings-hottest-new-material-cork/",
          "what": "Пробка в корпусах светильников: Corkia от Thorlux и Zemper, подвес Corka Linear шведской Zero Lighting длиной 1250 мм (2410 лм, 19 Вт) и Lucecork из Португалии. Автор указывает вопросы к огнестойкости, долговечности и утилизации и называет заявленное снижение углеродного следа на 115 % требующим проверки."
         }
-       ]
+       ],
+       "print_only": true
       }
      ],
      "sources": [

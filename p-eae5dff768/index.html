@@ -119,6 +119,16 @@ a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px soli
 .ix-tx { min-width: 0; }
 .ix-k { display: block; font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.06em; text-transform: uppercase; color: var(--mark); margin-bottom: 2px; }
 .ix-go { font: 400 1.3rem/1 var(--font-ui); color: var(--muted); }
+
+/* ссылки с миниатюрами, редакция оформления 2 */
+.lk { margin: 0 0 var(--bl); }
+.lk-g { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 22px 18px; }
+.lk-i { display: flex; flex-direction: column; gap: 6px; color: var(--ink); text-decoration: none; }
+.lk-i img { width: 100%; height: auto; display: block; box-shadow: 0 1px 2px rgba(0,0,0,.18), 0 6px 18px -8px rgba(0,0,0,.35); transition: transform .25s ease, box-shadow .25s ease; filter: none !important; }
+.lk-i:hover img, .lk-i:focus-visible img { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(0,0,0,.2), 0 14px 28px -10px rgba(0,0,0,.45); }
+.lk-m { font: 700 var(--tiny)/1.3 var(--font-ui); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.lk-t { font: 700 .95rem/1.3 var(--font-head); color: var(--ink); }
+.lk-i:hover .lk-t, .lk-i:focus-visible .lk-t { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; color: var(--accent); }
 /* Редакция оформления 2 (с № 4, 21.11.2026). Оглавление без плашек: номер, рубрика, заголовок, волосяные линии */
 .index.ix2 h3 { font: 800 var(--small) var(--font-ui); letter-spacing: .14em; border-top: 3px solid var(--ink); border-bottom: 0; padding: 10px 0 4px; }
 .ix2-sec { padding: 6px 0 2px; }
@@ -741,6 +751,11 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   function block(b) {
     if (b.print_only && !PRINT) return "";  // материалы для заполнения полос PDF в веб-версию не идут
     if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w" || b.anim === "flavin-mix" || b.anim === "curve-slider" || b.anim === "compare" || b.anim === "budget" || b.anim === "tabs" || b.anim === "facade-light" || b.anim === "photo-light") return animHtml(b);
+    /* ссылки с миниатюрами: что внутри видно до нажатия (№ 4, 21.11.2026); без рамок и подложек */
+    if (b.links) {
+      if (PRINT) return b.links.map(function (l) { return '<p>' + rich("[" + l.title + "](" + l.url + ")") + "</p>"; }).join("");
+      return '<div class="lk span">' + (b.title ? '<p class="fig-t">' + esc(b.title) + "</p>" : "") + '<div class="lk-g">' + b.links.map(function (l) { return '<a class="lk-i" href="' + esc(safeUrl(l.url)) + '" target="_blank" rel="noopener">' + (l.thumb ? '<img src="' + esc(l.thumb) + '" alt="" loading="lazy">' : "") + '<span class="lk-m">' + esc(l.meta || "") + '</span><span class="lk-t">' + esc(l.title) + "</span></a>"; }).join("") + "</div></div>";
+    }
     if (b.foot != null) return '<p class="foot">' + rich(b.foot) + "</p>";
     if (b.p != null) return b.n ? '<p class="num-p"><span class="dropnum">' + esc(b.n) + "</span>" + rich(b.p) + "</p>" : "<p>" + rich(b.p) + "</p>";
     if (b.h != null) return "<h4>" + (b.url ? cellHtml({ t: b.h, url: b.url }) : esc(b.h)) + "</h4>";
