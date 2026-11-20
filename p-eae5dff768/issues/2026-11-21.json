@@ -280,6 +280,83 @@
        "p": "Концепция освещения – первая стадия проекта освещения. На ней определяют замысел: зоны и их роль вечером, распределение яркости, цветовую температуру и цветопередачу, режимы работы в будни и праздники, вид светильников и опор, места и высоты установки. Результат сдают альбомом: анализ существующего освещения с ночной фотофиксацией, схемы зонирования, визуализации, рекомендации по оборудованию. По концепции дальше разрабатывают рабочий проект и считают бюджет реализации. Так устроены и договор бельгийского Генка, и задание Томска на проспект Ленина."
       },
       {
+       "h": "Как выглядит концепция"
+      },
+      {
+       "p": "Опубликованные концепции европейских городов устроены одинаково: замеры и анализ существующего освещения, структура города и приоритеты, целевая яркость и цвет света, решения по зонам и фасадам. Ниже страницы из документов Фрайзинга, Мюнстера, Дрездена и Гента."
+      },
+      {
+       "anim": "tabs",
+       "title": "Как выглядит концепция освещения: страницы настоящих документов",
+       "items": [
+        {
+         "label": "Замеры",
+         "src": "img/2026-11-21/concept-freising-3.jpg",
+         "alt": "Измерения существующего освещения: псевдоцветные снимки витрин и фасадов Обере-Хауптштрассе и башен собора по шкале яркости 0,15–1000 кд/м2.",
+         "text": "Анализ начинают с замеров: яркость витрин и фасадов главной улицы и башен собора в псевдоцвете по шкале 0,15–1000 кд/м². Мастер-план освещения Фрайзинга, бюро 3lpi, 2017.",
+         "credit": "Источник: 3lpi Lichtplaner + beratende Ingenieure (Мюнхен), Masterplan Licht Freising: Leitfaden für zukünftige Planungen, 2017"
+        },
+        {
+         "label": "Целевая яркость",
+         "src": "img/2026-11-21/concept-muenster-3.jpg",
+         "alt": "Логарифмическая шкала яркости в кд/м2 от 0,1 до 10 млрд: зелёным отмечена целевая область невысоких яркостей для фасадов, красным диапазон обычных световых систем.",
+         "text": "Шкала яркости в кд/м²: зелёным отмечен диапазон, к которому концепция ведёт фасады старого города, красным яркость обычных световых систем. Концепция освещения старого Мюнстера, Михаэль Батц, 2004.",
+         "credit": "Источник: Michael Batz, Szenografie / Licht, Гамбург, Lichtkonzept Altstadt Münster, 2004"
+        },
+        {
+         "label": "Фасады",
+         "src": "img/2026-11-21/concept-muenster-4.jpg",
+         "alt": "Две фотографии фасадов Принципальмаркта вечером; красные стрелки размечают недосвеченные зоны и пересвеченную арку нижнего этажа.",
+         "text": "Фасады площади Принципальмаркт вечером: стрелки отмечают недосвеченные зоны и пересвеченную арку первого этажа. Это исходные данные для решения по каждому дому.",
+         "credit": "Источник: Michael Batz, Szenografie / Licht, Гамбург, Lichtkonzept Altstadt Münster, 2004"
+        },
+        {
+         "label": "Структура центра",
+         "src": "img/2026-11-21/concept-dresden-1.jpg",
+         "alt": "Карта «Punktuelle Strukturen»: оранжевое кольцо центра, Эльба, мосты, Альтштадт и Нойштадт, розовые треугольники – знаковые здания, с легендой.",
+         "text": "Карта знаковых зданий, мостов и осей центра: из неё вырастают приоритеты освещения. Мастер-план освещения центра Дрездена, Winkels und Partner, 2008.",
+         "credit": "Источник: Winkels und Partner International Light Architects (Дортмунд), ландшафт: Andreas Blume; заказчик Stadtplanungsamt Dresden, Lichtmasterplan Dresden Innenstadt, Gesamtkonzept, 2008"
+        },
+        {
+         "label": "Цвет света",
+         "src": "img/2026-11-21/concept-dresden-4.jpg",
+         "alt": "Раздел «Концепция цвета света»: рекомендация тёплого белого 3200 К для улиц и площадей, текст о замене натриевых ламп; две фотографии розы при разном свете.",
+         "text": "Раздел о цвете света: для улиц и площадей рекомендован тёплый белый 3200 К вместо натриевых ламп. Дрезден, 2008.",
+         "credit": "Источник: Winkels und Partner International Light Architects (Дортмунд), ландшафт: Andreas Blume; заказчик Stadtplanungsamt Dresden, Lichtmasterplan Dresden Innenstadt, Gesamtkonzept, 2008"
+        },
+        {
+         "label": "Город целиком",
+         "src": "img/2026-11-21/concept-gent-2.jpg",
+         "alt": "Страница брошюры: тёмная карта «Globaal Lichtplan II Gent» на весь город: светящиеся пятна центров районов, цветные линии магистралей, зелёные зоны, воды и порт.",
+         "text": "Мастер-план освещения Гента на весь город: светящиеся центры районов, оси магистралей, вода и порт. Lichtplan II, Atelier Roland Jéol с WVI, 2007–2009.",
+         "credit": "Источник: Atelier Roland Jéol (Лион) и WVI (Lichtplan I); Omgeving и Atelier Jéol (Lichtplan II), Het lichtplan uitgelicht (брошюра Stad Gent о трёх планах освещения Гента), 2007–2009 (Lichtplan II), брошюра около 2017"
+        }
+       ],
+       "caption": "Страницы концепций и мастер-планов освещения, опубликованных городами Германии и Бельгии.",
+       "print_src": "img/2026-11-21/concept-dresden-1.jpg",
+       "print_caption": "Мастер-план освещения центра Дрездена (Winkels und Partner, 2008): карта знаковых зданий, мостов и осей центра."
+      },
+      {
+       "image": {
+        "src": "img/2026-11-21/concept-freising-3.jpg",
+        "alt": "Измерения существующего освещения: псевдоцветные снимки витрин и фасадов Обере-Хауптштрассе и башен собора по шкале яркости 0,15–1000 кд/м2.",
+        "caption": "Замеры яркости фасадов и витрин в псевдоцвете: страница мастер-плана освещения Фрайзинга (3lpi, 2017).",
+        "credit": "3lpi Lichtplaner + beratende Ingenieure, Masterplan Licht Freising",
+        "credit_url": "https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf"
+       },
+       "print_only": true
+      },
+      {
+       "image": {
+        "src": "img/2026-11-21/concept-muenster-4.jpg",
+        "alt": "Две фотографии фасадов Принципальмаркта вечером; красные стрелки размечают недосвеченные зоны и пересвеченную арку нижнего этажа.",
+        "caption": "Анализ фасадов Принципальмаркта: недосвеченные зоны и пересвеченная арка (концепция освещения старого Мюнстера, Михаэль Батц, 2004).",
+        "credit": "Michael Batz, Lichtkonzept Altstadt Münster",
+        "credit_url": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf"
+       },
+       "print_only": true
+      },
+      {
        "h": "Из чего складывается цена"
       },
       {
@@ -518,6 +595,26 @@
        "label": "Банк России: официальный курс евро на 21.11.2026",
        "url": "https://www.cbr.ru/scripts/XML_daily.asp?date_req=21/11/2026",
        "date": "21.11.2026"
+      },
+      {
+       "label": "Stad Gent: Het lichtplan uitgelicht",
+       "url": "https://stad.gent/sites/default/files/page/documents/17_00075_Prof%20Brochure%20lichtplan_NL_1.pdf",
+       "date": ""
+      },
+      {
+       "label": "Stadt Münster: Lichtkonzept Altstadt (Michael Batz, 2004)",
+       "url": "https://www.stadt-muenster.de/fileadmin/user_upload/stadt-muenster/80_tourismus/pdf/muenster_lichtkonzept_altstadt.pdf",
+       "date": "2004"
+      },
+      {
+       "label": "Landeshauptstadt Dresden: Lichtmasterplan Innenstadt (Winkels und Partner, 2008)",
+       "url": "https://www.dresden.de/media/pdf/stadtplanung/stadtplanung/spa_stadtgestaltung_Lichtgestaltung_Lichtmasterplan_gesamtkonzept.pdf",
+       "date": "2008"
+      },
+      {
+       "label": "Stadt Freising: Masterplan Licht (3lpi, 2017)",
+       "url": "https://innenstadt.freising.de/innenstadt/user_upload/pdf_Neugestaltung/masterplan-licht-innenstadt-neugestaltung-freising.pdf",
+       "date": "2017"
       }
      ],
      "illus": {
