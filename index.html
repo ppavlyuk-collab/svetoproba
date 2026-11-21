@@ -3,7 +3,7 @@
 <title>_светопроба weekly</title>
 <meta name="description" content="За что платит заказчик освещения и как не потерять ценность проекта при экономии: пробы до закупки, обслуживание в задании проекта, ремонт вместо замены, ценность темноты, стоимость концепций в Европе и России.">
 <meta property="og:type" content="article"><meta property="og:site_name" content="_светопроба weekly">
-<meta property="og:title" content="_светопроба weekly № 4: Цена и ценность освещения"><meta property="og:description" content="За что платит заказчик освещения и как не потерять ценность проекта при экономии: пробы до закупки, обслуживание в задании проекта, ремонт вместо замены, ценность темноты, стоимость концепций в Европе и России.">
+<link rel="alternate" type="application/rss+xml" title="_светопроба weekly" href="https://svetoproba.com/feed.xml"><meta property="og:title" content="_светопроба weekly № 4: Цена и ценность освещения"><meta property="og:description" content="За что платит заказчик освещения и как не потерять ценность проекта при экономии: пробы до закупки, обслуживание в задании проекта, ремонт вместо замены, ценность темноты, стоимость концепций в Европе и России.">
 <meta property="og:image" content="https://svetoproba.com/cover-2026-11-21.jpg"><meta property="og:url" content="https://svetoproba.com/#2026-11-21">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -687,6 +687,12 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 .np-front.hero2 .np-side .np-dek, .np-front.hero2 .np-side .stats { column-span: all; }
 .body > .seg > h4:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 .body > .seg { margin: 0; }
+.nav .sub { border-color: var(--accent); color: var(--accent); }
+#sub-pop { position: absolute; z-index: 60; width: 270px; padding: 12px 14px; border: 1px solid var(--rule, #c9bfa8); border-radius: 6px; background: var(--paper, #f4eedd); color: inherit; box-shadow: 0 6px 18px rgba(0,0,0,.12); font: .86rem/1.4 var(--font-ui); }
+#sub-pop p { margin: 0 0 10px; }
+#sub-pop a { display: inline-block; margin-right: 8px; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-weight: 700; }
+#sub-pop .sub-go { background: #c0573e; color: #fff; } #sub-pop .sub-alt { border: 1px solid currentColor; color: inherit; }
+@media print { .nav .sub, #sub-pop { display: none !important; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
@@ -713,6 +719,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       <button id="b-arch" type="button">Архив</button>
       <button id="b-next" type="button">Позже ›</button>
       <button id="b-pdf" class="pdf" type="button" hidden>Скачать PDF</button>
+      <button class="sub" type="button" data-sub>Подписаться</button>
     </nav>
   </div>
 </div>
@@ -725,9 +732,13 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     <ul class="arch-list" id="arch-list"></ul>
   </div>
 </section>
+<div id="sub-pop" role="dialog" aria-label="Подписка на газету" hidden>
+  <p>Анонс каждого номера по субботам, со ссылками на веб-версию и PDF.</p>
+  <a class="sub-go" href="https://t.me/svetoproba" target="_blank" rel="noopener">Telegram-канал</a><a class="sub-alt" href="feed.xml" target="_blank" rel="noopener">RSS</a>
+</div>
 <footer class="footer gut">
   <div class="wrap">
-    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button></nav>
+    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button><button class="sub" type="button" data-sub>Подписаться</button></nav>
     <div>
       <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</p>
     </div>
@@ -882,6 +893,20 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     });
   }
   window.addEventListener("resize", function () { clearTimeout(segCols.t); segCols.t = setTimeout(segCols, 150); });
+  // подписка на газету (Павел, 21.11.2026): маленькая панель под кнопкой только по нажатию; сама не открывается никогда
+  (function () {
+    var pop = document.getElementById("sub-pop"); if (!pop) return;
+    function close() { pop.hidden = true; }
+    document.querySelectorAll("[data-sub]").forEach(function (b) { b.addEventListener("click", function (e) {
+      e.stopPropagation(); if (!pop.hidden) { close(); return; }
+      var r = b.getBoundingClientRect(); pop.hidden = false;
+      var left = Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12);
+      pop.style.left = Math.max(12, left) + "px";
+      pop.style.top = (r.top + scrollY - (r.top > innerHeight / 2 ? pop.offsetHeight + 8 : -r.height - 8)) + "px";
+    }); });
+    document.addEventListener("click", function (e) { if (!pop.hidden && !pop.contains(e.target)) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  })();
   function setupCarousels(root) {
     root.querySelectorAll("[data-carousel]").forEach(function (c) {
       var track = c.querySelector(".car-track"), dots = [].slice.call(c.querySelectorAll(".car-dot")), n = track.children.length, stage = c.querySelector(".car-stage");
