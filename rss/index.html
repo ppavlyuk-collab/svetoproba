@@ -1,0 +1,36 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Подписка через RSS · _светопроба weekly</title><link rel="alternate" type="application/rss+xml" title="_светопроба weekly" href="https://svetoproba.com/feed.xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=PT+Serif:wght@400;700&family=PT+Sans:wght@400;700&display=swap">
+<style>
+:root{--paper:#f1ead9;--paper-2:#e4dbc6;--ink:#161514;--ink-2:#3b3936;--muted:#6a6253;--hair:#c3b8a0;--accent:#044389}
+@media (prefers-color-scheme:dark){:root{--paper:#1f1d1a;--paper-2:#2a2723;--ink:#e9dfca;--ink-2:#d3c9b4;--muted:#a59b88;--hair:#4a453e;--accent:#8fb3e8}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:18px/1.55 "PT Serif",Georgia,serif}
+main{max-width:640px;margin:0 auto;padding:28px 16px 56px}
+.top{font:700 13px/1 "PT Sans",Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase}.top a{color:var(--muted);text-decoration:none}
+.mast{font:900 34px/1.1 "Playfair Display",Georgia,serif;margin:18px 0 4px;padding-bottom:14px;border-bottom:3px double var(--ink)}
+h1{font:700 26px/1.2 "Playfair Display",Georgia,serif;margin:26px 0 10px}h2{font:700 15px/1.2 "PT Sans",Arial,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin:30px 0 10px;color:var(--ink-2)}
+p{margin:0 0 12px}.muted{color:var(--muted);font-size:16px}
+.copy{display:flex;gap:8px;margin:6px 0 4px}.copy input{flex:1;min-width:0;font:15px "PT Sans",Arial,sans-serif;padding:10px 12px;border:1px solid var(--hair);background:var(--paper-2);color:var(--ink);border-radius:4px}
+.btn{display:inline-block;font:700 15px/1 "PT Sans",Arial,sans-serif;padding:12px 16px;border-radius:4px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn.alt{background:transparent;color:var(--ink)}.row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 6px}
+ul{list-style:none;padding:0;margin:0}li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--hair)}
+li a{color:var(--ink);text-decoration:none;font-weight:700}li a:hover{color:var(--accent)}li span{color:var(--muted);font:14px "PT Sans",Arial,sans-serif;white-space:nowrap}
+#ok{font:14px "PT Sans",Arial,sans-serif;color:var(--accent);min-height:20px}
+</style></head><body><main>
+<div class="top"><a href="/">← К газете</a></div>
+<div class="mast">_светопроба weekly</div>
+<h1>Подписка через RSS</h1>
+<p>RSS-лента приносит новые номера газеты в приложение для чтения новостей. В субботу номер появляется там сам, без писем и без регистрации у нас.</p>
+<h2>Адрес ленты</h2>
+<div class="copy"><input id="u" value="https://svetoproba.com/feed.xml" readonly aria-label="Адрес RSS-ленты"><button class="btn" id="c" type="button">Скопировать</button></div>
+<div id="ok" aria-live="polite"></div>
+<p class="muted">В любом приложении для RSS (NetNewsWire, Reeder, Feeder, Inoreader, Feedly) вставьте этот адрес в поле добавления подписки.</p>
+<h2>Подписаться в одно нажатие</h2>
+<div class="row"><a class="btn" href="https://feedly.com/i/subscription/feed/https%3A%2F%2Fsvetoproba.com%2Ffeed.xml" target="_blank" rel="noopener">Feedly</a><a class="btn" href="https://www.inoreader.com/?add_feed=https%3A%2F%2Fsvetoproba.com%2Ffeed.xml" target="_blank" rel="noopener">Inoreader</a><a class="btn alt" href="https://t.me/svetoproba" target="_blank" rel="noopener">Удобнее в Telegram</a></div>
+<h2>Номера в ленте</h2><ul><li><a href="/#2026-11-21">№ 4. Цена и ценность освещения</a><span>21 ноября 2026</span></li><li><a href="/#2026-11-14">№ 3. Дэн Флавин в Бильбао: залы, заполненные цветом люминесцентных ламп</a><span>14 ноября 2026</span></li><li><a href="/#2026-11-07">№ 2. Галерея Кенго Кумы в Анже: освещение, которое бережёт роспись портала XII века</a><span>7 ноября 2026</span></li><li><a href="/#2026-10-31">№ 1. «Золотой Фотон» 2026: Ленинградский вокзал, набережная Камы и Лужники среди победителей</a><span>31 октября 2026</span></li></ul>
+</main><script>
+document.getElementById("c").onclick=function(){var i=document.getElementById("u"),o=document.getElementById("ok");
+function done(){o.textContent="Адрес скопирован"}
+if(navigator.clipboard){navigator.clipboard.writeText(i.value).then(done,function(){i.select();document.execCommand("copy");done()})}else{i.select();document.execCommand("copy");done()}};
+</script></body></html>
