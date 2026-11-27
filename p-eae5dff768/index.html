@@ -670,6 +670,29 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 .lb-cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px 16px; color: #e6dcc8; font: 400 14px/1.45 var(--font-ui); text-align: center; overflow: auto; max-height: 96px; }
 .lb-cap a { color: #e6dcc8; }
 @media (max-width: 600px) { .lb .lb-prev, .lb .lb-next { display: none; } .lb-stage { inset: 56px 0 88px; } }
+.pl-rw { margin: 14px 0 4px; } .pl-lab { display: block; font: 700 .95rem var(--font-ui); margin-bottom: 6px; } .pl-lab b { color: #c0573e; }
+.pl-range { -webkit-appearance: none; appearance: none; width: 100%; height: 10px; border-radius: 5px; background: linear-gradient(90deg, #f2b179, #c0573e); outline: none; cursor: pointer; }
+.pl-range::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; border-radius: 50%; background: #c0573e; border: 4px solid #fff; box-shadow: 0 0 0 2px #c0573e, 0 2px 6px rgba(0,0,0,.35); }
+.pl-range::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: #c0573e; border: 4px solid #fff; box-shadow: 0 0 0 2px #c0573e, 0 2px 6px rgba(0,0,0,.35); }
+.pl-ends { display: flex; justify-content: space-between; font: .8rem var(--font-ui); color: var(--muted, #6b6b6b); margin-top: 4px; }
+.np-front.hero2 .np-hero { grid-column: 1 / 3; } .np-front.hero2 .np-side { grid-column: 3 / 5; column-count: 2; column-gap: 6mm; column-rule: .5pt solid #b9b1a0; }
+.np-front.hero2 .np-side .np-dek, .np-front.hero2 .np-side .stats { column-span: all; }
+.body > .seg > h4:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.body > .seg { margin: 0; }
+.nav .sub { border-color: var(--accent); color: var(--accent); }
+#sub-pop { position: absolute; z-index: 60; width: 270px; padding: 12px 14px; border: 1px solid var(--rule, #c9bfa8); border-radius: 6px; background: var(--paper, #f4eedd); color: inherit; box-shadow: 0 6px 18px rgba(0,0,0,.12); font: .86rem/1.4 var(--font-ui); }
+#sub-pop p { margin: 0 0 10px; }
+#sub-pop a { display: inline-block; margin-right: 8px; padding: 6px 12px; border-radius: 4px; text-decoration: none; font-weight: 700; }
+#sub-pop .sub-go { background: #c0573e; color: #fff; } #sub-pop .sub-alt { border: 1px solid currentColor; color: inherit; }
+/* Перелистывание (Павел, 21.11.2026): нажать = соседний материал; потянуть или удержать = начало или конец номера */
+#jump { position: fixed; right: 14px; bottom: calc(18px + env(safe-area-inset-bottom)); z-index: 55; display: flex; flex-direction: column; gap: 8px; opacity: 0; pointer-events: none; transition: opacity .25s; }
+#jump.on { opacity: 1; pointer-events: auto; }
+#jump button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--hair); background: var(--paper); color: var(--ink); font: 700 15px/1 var(--font-ui); cursor: pointer; touch-action: none; box-shadow: 0 1px 6px rgba(0,0,0,.14); -webkit-tap-highlight-color: transparent; user-select: none; -webkit-user-select: none; }
+#jump button:hover { border-color: var(--ink-2); }
+#jump button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+#jump button.far { background: var(--ink); color: var(--paper); }
+@media print { #jump { display: none !important; } }
+@media print { .nav .sub, #sub-pop { display: none !important; } }
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><filter id="film" color-interpolation-filters="sRGB">
@@ -696,6 +719,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       <button id="b-arch" type="button">Архив</button>
       <button id="b-next" type="button">Позже ›</button>
       <button id="b-pdf" class="pdf" type="button" hidden>Скачать PDF</button>
+      <button class="sub" type="button" data-sub>Подписаться</button>
     </nav>
   </div>
 </div>
@@ -708,9 +732,17 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     <ul class="arch-list" id="arch-list"></ul>
   </div>
 </section>
+<div id="jump" aria-label="Перелистывание">
+  <button type="button" data-dir="-1" aria-label="К началу материала. Потянуть вверх или удержать: к началу номера" title="Нажать: к началу материала. Потянуть вверх или удержать: к началу номера">&#9650;</button>
+  <button type="button" data-dir="1" aria-label="К следующему материалу. Потянуть вниз или удержать: к концу номера" title="Нажать: к следующему материалу. Потянуть вниз или удержать: к концу номера">&#9660;</button>
+</div>
+<div id="sub-pop" role="dialog" aria-label="Подписка на газету" hidden>
+  <p>Анонс каждого номера по субботам, со ссылками на веб-версию и PDF.</p>
+  <a class="sub-go" href="https://t.me/svetoproba" target="_blank" rel="noopener">Telegram-канал</a><a class="sub-alt" href="rss/" target="_blank" rel="noopener">RSS</a>
+</div>
 <footer class="footer gut">
   <div class="wrap">
-    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button></nav>
+    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button><button class="sub" type="button" data-sub>Подписаться</button></nav>
     <div>
       <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</p>
     </div>
@@ -841,6 +873,44 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   window.addEventListener("load", function () { setTimeout(snapGrid, 300); setTimeout(snapGrid, 1500); });
   window.addEventListener("resize", function () { setTimeout(snapGrid, 200); });
   setTimeout(snapGrid, 800);
+  // колонки текста кусками между широкими блоками (таблица, схема, галерея): без разрыва колонок column-span,
+  // на котором Safari обрезал заголовок над таблицей (Павел, 21.11.2026, «Срезается текст в веб версии»)
+  function segCols() {
+    if (PRINT) return;
+    document.querySelectorAll("main .body").forEach(function (b) {
+      if (!b.dataset.seg) {
+        var run = null;
+        [].slice.call(b.children).forEach(function (k) {
+          if (k.classList.contains("span")) { run = null; return; }
+          if (!run) { run = document.createElement("div"); run.className = "seg"; b.insertBefore(run, k); }
+          run.appendChild(k);
+        });
+        b.dataset.seg = "1";
+      }
+      b.style.columnCount = ""; b.style.columnRule = "";
+      var cs = getComputedStyle(b), n = parseInt(cs.columnCount, 10) || 1;
+      [].slice.call(b.children).forEach(function (q) {
+        if (!q.classList.contains("seg")) return;
+        q.style.columnCount = n > 1 ? n : ""; q.style.columnGap = n > 1 ? cs.columnGap : ""; q.style.columnRule = n > 1 ? cs.columnRuleWidth + " " + cs.columnRuleStyle + " " + cs.columnRuleColor : "";
+      });
+      b.style.columnCount = "1"; b.style.columnRule = "none";
+    });
+  }
+  window.addEventListener("resize", function () { clearTimeout(segCols.t); segCols.t = setTimeout(segCols, 150); });
+  // подписка на газету (Павел, 21.11.2026): маленькая панель под кнопкой только по нажатию; сама не открывается никогда
+  (function () {
+    var pop = document.getElementById("sub-pop"); if (!pop) return;
+    function close() { pop.hidden = true; }
+    document.querySelectorAll("[data-sub]").forEach(function (b) { b.addEventListener("click", function (e) {
+      e.stopPropagation(); if (!pop.hidden) { close(); return; }
+      var r = b.getBoundingClientRect(); pop.hidden = false;
+      var left = Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12);
+      pop.style.left = Math.max(12, left) + "px";
+      pop.style.top = (r.top + scrollY - (r.top > innerHeight / 2 ? pop.offsetHeight + 8 : -r.height - 8)) + "px";
+    }); });
+    document.addEventListener("click", function (e) { if (!pop.hidden && !pop.contains(e.target)) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+  })();
   function setupCarousels(root) {
     root.querySelectorAll("[data-carousel]").forEach(function (c) {
       var track = c.querySelector(".car-track"), dots = [].slice.call(c.querySelectorAll(".car-dot")), n = track.children.length, stage = c.querySelector(".car-stage");
@@ -1013,7 +1083,9 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     }
     /* принципы освещения фасада на настоящем снимке: перераспределение яркости по высоте и снижение яркости по временному сценарию (№ 4, 21.11.2026; иллюстрация принципа, не расчёт проекта) */
     if (b.anim === "photo-light") {
-      return '<figure class="fig span anim photo-light"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.modes.map(function (m, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(m.name) + "</button>"; }).join("") + '</div><div class="pl-s" style="position:relative;overflow:hidden;background:#05070b"><img class="pl-a" src="' + esc(b.base.src) + '" alt="' + esc(b.base.alt) + '" style="display:block;width:100%;height:auto;transition:filter .5s"><div class="pl-g" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;background:linear-gradient(to bottom,rgba(255,236,200,.0) 0%,rgba(0,0,0,0) 38%,rgba(0,0,0,.55) 72%,rgba(0,0,0,.82) 100%)"></div><div class="pl-t" style="position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;mix-blend-mode:screen;background:linear-gradient(to bottom,rgba(255,214,150,.38) 0%,rgba(255,214,150,.12) 30%,rgba(0,0,0,0) 45%)"></div><img class="pl-b" src="' + esc(b.after.src) + '" alt="' + esc(b.after.alt) + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#05070b;opacity:0;transition:opacity .6s"><span class="pl-l" style="position:absolute;left:10px;top:10px;font:700 .8rem var(--font-ui);color:#fff;background:rgba(0,0,0,.6);padding:4px 8px;border-radius:3px"></span></div><div class="pl-rw" style="margin:10px 0 2px"><label style="display:block;font:700 .95rem var(--font-ui)">Время вечера: <span class="pl-v">начало вечера</span></label><input class="pl-r" type="range" min="0" max="100" value="0" aria-label="Время вечера" style="width:100%"></div><p class="dm-t pl-x"></p><figcaption>' + esc(b.caption) + '</figcaption></figure>';
+      var sl = function (cls, lab, l0, l1) { return '<div class="pl-rw"><label class="pl-lab">' + lab + ': <b class="' + cls + '-v"></b></label><input class="pl-range ' + cls + '" type="range" min="0" max="100" value="0" aria-label="' + lab + '"><div class="pl-ends"><span>' + l0 + '</span><span>' + l1 + '</span></div></div>'; };
+      return '<figure class="fig span anim photo-light"><p class="fig-t">' + esc(b.title) + '</p><div class="pl-s" style="position:relative;overflow:hidden;background:#05070b"><img class="pl-a" src="' + esc(b.base.src) + '" alt="' + esc(b.base.alt) + '" style="display:block;width:100%;height:auto"><div class="pl-g" style="position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.6) 62%,rgba(0,0,0,.9) 100%)"></div><div class="pl-t" style="position:absolute;inset:0;pointer-events:none;opacity:0;mix-blend-mode:screen;background:linear-gradient(to bottom,rgba(255,226,170,.55) 0%,rgba(255,226,170,.25) 28%,rgba(0,0,0,0) 46%)"></div><div class="pl-d" style="position:absolute;inset:0;pointer-events:none;background:#000;opacity:0"></div><img class="pl-b" src="' + esc(b.after.src) + '" alt="' + esc(b.after.alt) + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0"><span class="pl-l" style="position:absolute;left:10px;top:10px;font:700 .85rem var(--font-ui);color:#fff;background:rgba(0,0,0,.65);padding:5px 9px;border-radius:3px"></span></div>' +
+        sl("pl-h", "Распределение яркости по высоте", "ровно, как сейчас", "ярче купол, темнее у улицы") + sl("pl-r", "Время", "19:00", "полночь") + sl("pl-p", "Сейчас и замысел бюро", "сейчас", "замысел Speirs Major") + '<p class="dm-t pl-x"></p><figcaption>' + esc(b.caption) + '</figcaption></figure>';
     }
     /* бюджет по частям с переключением видов (№ 4, 21.11.2026) */
     if (b.anim === "budget") {
@@ -1236,7 +1308,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       // подзаголовок идёт туда же, куда его блок: перед таблицей или галереей он остаётся в потоке
       var textual = b.p != null || b.foot != null || b.image || (b.h != null && next && (next.p != null || next.image));
       var nP = side.filter(function (q) { return q.p != null; }).length;
-      if ((b.p != null && nP < 2) || (textual && (nP < 1 || (b.foot != null && nP === 1 && !rest.length)))) side.push(b); else rest.push(b);
+      if ((b.p != null && nP < (issue.print_front_paras || 2)) || (textual && (nP < 1 || (b.foot != null && nP === 1 && !rest.length)))) side.push(b); else rest.push(b);
     });
     // снимок в правых колонках обложки ставим после первого абзаца, чтобы он не оставлял пустоту внизу колонки
     var imgs = side.filter(function (b) { return b.image; }), txt = side.filter(function (b) { return !b.image; });
@@ -1260,7 +1332,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       '<div class="np-imprint"><span>№ ' + issue.no + " " + DOT + " " + esc(wd) + ", " + longDate(issue.date) + "</span><span>Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</span><span>Выходит по субботам</span></div>" +
       // содержание с номерами страниц PDF: сборщик передаёт print_toc после вёрстки (Павел, 14.11.2026)
       (issue.print_toc && issue.print_toc.length ? '<div class="np-toc"><b>В номере</b>' + issue.print_toc.map(function (x) { return "<span>" + esc(x.t) + " <i>" + esc(String(x.p)) + "</i></span>"; }).join("") + "</div>" : "") + "</div>" +
-      '<div class="np-lead"><div class="np-top">' + edNote + '<div class="np-top-head"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1></div></div>" + '<div class="np-front"><div class="np-hero">' + visualHtml(lead).replace('loading="lazy"', 'loading="eager"') + '</div><div class="np-side">' + (lead.dek ? '<p class="np-dek">' + esc(lead.dek) + "</p>" : "") + sideStats + '<div class="np-side-text">' + sideText + "</div></div></div></div>" +
+      '<div class="np-lead"><div class="np-top">' + edNote + '<div class="np-top-head"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1></div></div>" + '<div class="np-front' + (issue.print_hero_cols === 2 ? ' hero2' : '') + '"><div class="np-hero">' + (lead.print_image ? figureHtml(lead.print_image) : visualHtml(lead)).replace('loading="lazy"', 'loading="eager"') + '</div><div class="np-side">' + (lead.dek ? '<p class="np-dek">' + esc(lead.dek) + "</p>" : "") + sideStats + '<div class="np-side-text">' + sideText + "</div></div></div></div>" +
       '<div class="np-flow">' + flow + "</div></div>";
     var main = document.getElementById("issue"); main.innerHTML = html;
     main.querySelectorAll("img[loading]").forEach(function (im) { im.loading = "eager"; });
@@ -1435,17 +1507,22 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       btns.forEach(function (bt) { bt.addEventListener("click", function () { var i = +bt.getAttribute("data-i"); btns.forEach(function (x) { x.setAttribute("aria-pressed", x === bt); }); vs.forEach(function (v) { v.hidden = +v.getAttribute("data-i") !== i; }); }); });
     });
     main.querySelectorAll(".photo-light").forEach(function (f) {
-      var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "photo-light") B = bb; }); }); });
-      var btns = [].slice.call(f.querySelectorAll(".dm-b button")), a = f.querySelector(".pl-a"), g = f.querySelector(".pl-g"), t = f.querySelector(".pl-t"), bimg = f.querySelector(".pl-b"), l = f.querySelector(".pl-l"), r = f.querySelector(".pl-r"), rw = f.querySelector(".pl-rw"), v = f.querySelector(".pl-v"), x = f.querySelector(".pl-x"), mode = 0;
+      var q = function (c) { return f.querySelector(c); }, a = q(".pl-a"), g = q(".pl-g"), t = q(".pl-t"), dk = q(".pl-d"), bimg = q(".pl-b"), l = q(".pl-l"), h = q(".pl-h"), r = q(".pl-r"), pp = q(".pl-p"), x = q(".pl-x");
       function draw() {
-        var m = B.modes[mode], ev = +r.value / 100;
-        g.style.opacity = m.gradient ? 1 : 0; t.style.opacity = 0; bimg.style.opacity = m.after ? 1 : 0;
-        var br = (m.gradient ? 1.15 : 1) * (m.fade ? 1 - 0.6 * ev : 1); a.style.filter = br !== 1 ? "brightness(" + br.toFixed(2) + ")" : "none";
-        rw.style.display = m.fade ? "" : "none"; v.textContent = ev < 0.05 ? "начало вечера" : ev > 0.95 ? "поздний вечер" : "яркость снижается";
-        l.textContent = m.label; x.textContent = m.text;
+        var hv = +h.value / 100, ev = +r.value / 100, pv = +pp.value / 100;
+        g.style.opacity = hv.toFixed(2); t.style.opacity = hv.toFixed(2);
+        dk.style.opacity = (0.62 * ev).toFixed(2);  // к полуночи яркость снижается примерно втрое
+        bimg.style.opacity = pv.toFixed(2);
+        var mins = Math.round(19 * 60 + ev * 300), hh = Math.floor(mins / 60) % 24, mm = mins % 60;
+        q(".pl-h-v").textContent = hv < 0.05 ? "ровная заливка" : hv > 0.95 ? "ярче вверху" : Math.round(hv * 100) + " %";
+        q(".pl-r-v").textContent = (hh < 10 ? "0" : "") + hh + ":" + (mm < 10 ? "0" : "") + mm;
+        q(".pl-p-v").textContent = pv < 0.05 ? "сейчас" : pv > 0.95 ? "замысел бюро" : "переход";
+        l.textContent = pv > 0.5 ? "Замысел Speirs Major" : hv < 0.05 && ev < 0.05 ? "Сейчас: ровная заливка" : "Нынешний снимок с принципами проекта";
+        x.textContent = pv > 0.5 ? "Изображение Speirs Major: ярче купол и верхние ярусы, мягче нижние, освещены углублённые части фасада и портики." :
+          (hv >= 0.05 ? "Принцип 1: яркость выше на куполе и верхних ярусах и ниже у улицы. " : "Галогенные прожекторы 1989 года освещают купол и нижние ярусы одинаково ярко. ") +
+          (ev >= 0.05 ? "Принцип 2: по временному сценарию яркость плавно снижается в течение вечера." : "Сдвиньте ползунок времени, чтобы увидеть снижение яркости к ночи.");
       }
-      btns.forEach(function (bt) { bt.addEventListener("click", function () { mode = +bt.getAttribute("data-i"); btns.forEach(function (y) { y.setAttribute("aria-pressed", y === bt); }); draw(); }); });
-      r.addEventListener("input", draw); draw();
+      [h, r, pp].forEach(function (el) { el.addEventListener("input", draw); }); draw();
     });
     main.querySelectorAll(".facade-light").forEach(function (f) {
       var B = null; (issue.pages || []).forEach(function (p) { (p.stories || []).forEach(function (st) { (st.body || []).forEach(function (bb) { if (bb.anim === "facade-light") B = bb; }); }); });
@@ -1806,7 +1883,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     current = meta.date;
     try { history.replaceState(null, "", "#" + meta.date); } catch (e) {}
     fetch("issues/" + meta.date + ".json", { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (issue) { render(issue); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); matSync(); })
+      .then(function (issue) { render(issue); segCols(); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); matSync(); })
       .catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Номер за ' + esc(longDate(meta.date)) + " не загрузился. Обновите страницу.</p></div>"; });
   }
   function step(dir) { var i = issues.findIndex(function (x) { return x.date === current; }), j = i + dir; if (i >= 0 && j >= 0 && j < issues.length) openIssue(issues[j].date, true); }
@@ -1959,5 +2036,73 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     fill(); k = at; im = slides[k].img; reset(); info();
     lb.classList.add("on"); document.documentElement.style.overflow = "hidden"; setPos(home(), 0); lb.querySelector(".lb-x").focus();
   });
+})();
+</script>
+<script>
+(function () {
+  var box = document.getElementById("jump"); if (!box) return;
+  var SEL = "#issue article.lead, #issue article.feature, #issue article.note, #issue .np-story, #archive";
+  var smooth = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth";
+  var pend = null;
+  function go(y, el) {
+    pend = el || null;
+    window.scrollTo({ top: Math.max(0, y), behavior: smooth });
+  }
+  // Снимки ниже подгружаются по ходу прокрутки и сдвигают материалы: по окончании прокрутки доводим до начала материала
+  window.addEventListener("scrollend", function () {
+    if (!pend) return; var el = pend; pend = null;
+    var d = el.getBoundingClientRect().top - 8;
+    if (Math.abs(d) > 2) window.scrollTo({ top: window.scrollY + d, behavior: "auto" });
+  });
+  function marks() {
+    var out = [];
+    document.querySelectorAll(SEL).forEach(function (el) {
+      if (!el.getClientRects().length) return;
+      out.push({ y: el.getBoundingClientRect().top + window.scrollY, el: el });
+    });
+    out.sort(function (a, b) { return a.y - b.y; });
+    return out.filter(function (m, i) { return i === 0 || m.y - out[i - 1].y > 40; });
+  }
+  function step(dir) {
+    var off = 8, now = window.scrollY + off, m = marks(), i;
+    if (dir < 0) {
+      for (i = m.length - 1; i >= 0; i--) if (m[i].y < now - 12) return go(m[i].y - off, m[i].el);
+      return go(0);
+    }
+    for (i = 0; i < m.length; i++) if (m[i].y > now + 12) return go(m[i].y - off, m[i].el);
+    far(1);
+  }
+  // Начало и конец номера: сразу, без плавной прокрутки через весь номер
+  function far(dir) {
+    pend = null;
+    var html = document.documentElement;
+    function jump() { window.scrollTo({ top: dir < 0 ? 0 : html.scrollHeight, behavior: "instant" }); }
+    jump(); setTimeout(jump, 150); setTimeout(jump, 450);
+  }
+  box.querySelectorAll("button").forEach(function (b) {
+    var dir = +b.dataset.dir, y0 = null, t = null, done = false;
+    function clear() { clearTimeout(t); t = null; y0 = null; setTimeout(function () { b.classList.remove("far"); }, 300); }
+    b.addEventListener("pointerdown", function (e) {
+      y0 = e.clientY; done = false; try { b.setPointerCapture(e.pointerId); } catch (_) {}
+      t = setTimeout(function () { done = true; b.classList.add("far"); far(dir); }, 450);
+    });
+    b.addEventListener("pointermove", function (e) {
+      if (y0 === null || done) return;
+      var dy = e.clientY - y0;
+      if (dir * dy > 16) { done = true; clearTimeout(t); b.classList.add("far"); far(dir); }
+      else if (Math.abs(dy) > 16) clearTimeout(t);
+    });
+    b.addEventListener("pointerup", function (e) {
+      var had = y0 !== null, d = done || (had && dir * (e.clientY - y0) > 16);
+      if (d && !done) far(dir);
+      var moved = had && Math.abs(e.clientY - y0) > 16;
+      clear(); if (had && !d && !moved) step(dir);
+    });
+    b.addEventListener("pointercancel", clear);
+    b.addEventListener("click", function (e) { if (e.detail === 0) step(dir); });
+    b.addEventListener("contextmenu", function (e) { e.preventDefault(); });
+  });
+  function vis() { box.classList.toggle("on", window.scrollY > 300); }
+  window.addEventListener("scroll", vis, { passive: true }); vis();
 })();
 </script>
