@@ -214,9 +214,11 @@ figcaption, .sources, .digest p, .video .vs { overflow-wrap: anywhere; }
 .notes { display: grid; grid-template-columns: 1fr; gap: 64px 0; }
 /* 27.11.2026 (Павел: «очень много пустых полей»): короткие материалы раньше стояли сеткой парами и растягивались до высоты соседа;
    теперь газетные колонки: материалы идут друг под другом, колонки выравниваются по высоте, между колонками линейка */
-@media (min-width: 760px) { .notes { display: block; column-count: 2; column-gap: 64px; column-rule: 1px solid var(--rule); } .notes > article { break-inside: avoid; display: block; margin: 0 0 64px; } }
+/* Safari раскладывал CSS-колонки по-своему (пустая колонка на полстраницы, Павел 27.11.2026): материалы раскладывает скрипт masonry() в две колонки, каждый в более короткую */
+.notes > article { margin: 0 0 64px; }
+@media (min-width: 760px) { .notes.mz { display: flex; gap: 0; align-items: flex-start; } .notes.mz > .mz-c { flex: 1 1 0; min-width: 0; } .notes.mz > .mz-c:first-child { padding-right: 32px; } .notes.mz > .mz-c + .mz-c { border-left: 1px solid var(--rule); padding-left: 32px; } }
 /* материал один в разделе: на всю ширину, текст в две колонки; заголовок, вводка и первый снимок над колонками */
-@media (min-width: 760px) { .notes:has(> article:only-child) { column-count: 1; column-rule: 0; } .notes > article:only-child { column-count: 2; column-gap: 64px; column-rule: 1px solid var(--rule); }
+@media (min-width: 760px) { .notes > article:only-child { column-count: 2; column-gap: 64px; column-rule: 1px solid var(--rule); }
   .notes > article:only-child > :is(.kicker, h2, h3, .dek, .dateline, figure:first-of-type, .fig:first-of-type) { column-span: all; } .notes > article:only-child > * { break-inside: avoid-column; } }
 .anim.facade-lum svg, .anim.cct .cc-s { max-width: 760px; margin-left: auto; margin-right: auto; }
 
@@ -329,6 +331,17 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .archive { padding-block: 40px 20px; }
 .archive h2 { font: 900 2rem var(--font-head); margin: 0 0 12px; border-top: 5px solid var(--ink); padding-top: 12px; }
 .arch-list { list-style: none; margin: 0; padding: 0; }
+/* архив лентой: карточки номеров листаются пальцем, колесом и стрелками, текущий номер выделен (Павел, 27.11.2026) */
+.arch-wrap { position: relative; display: flex; align-items: center; gap: 8px; }
+.arch-roll { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 6px 2px 16px; flex: 1 1 auto; min-width: 0; scrollbar-width: thin; }
+.arch-card { flex: 0 0 230px; scroll-snap-align: start; display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; text-decoration: none; color: var(--ink); background: var(--paper-2, transparent); transition: transform .2s, box-shadow .2s; }
+.arch-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.arch-card .ac-i { width: 100%; height: 150px; object-fit: contain; display: block; background: #15171c; }  /* снимок целиком, без обрезки */
+.arch-card .ac-b { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; font-family: var(--font-ui); }
+.arch-card .ac-n { font: 700 1.5rem/1 var(--font-head, serif); } .arch-card .ac-d { font-size: var(--small); color: var(--muted); } .arch-card .ac-t { font-size: .92rem; line-height: 1.35; }
+.arch-card[aria-current="page"] { border-color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
+.arch-nav { flex: 0 0 36px; height: 36px; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); font-size: 1.4rem; line-height: 1; cursor: pointer; }
+@media (max-width: 560px) { .arch-nav { display: none; } .arch-card { flex-basis: 70vw; } }
 .arch-list a { display: grid; grid-template-columns: 4.5em 10em minmax(0, 1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); font-family: var(--font-ui); }
 .arch-list a[aria-current="page"] { color: var(--accent); }
 .arch-no, .arch-d { font-size: var(--small); color: var(--muted); }
@@ -739,7 +752,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 <section class="archive gut" id="archive" aria-labelledby="arch-h">
   <div class="wrap">
     <h2 id="arch-h">Архив номеров</h2>
-    <ul class="arch-list" id="arch-list"></ul>
+    <div class="arch-wrap"><button type="button" class="arch-nav" data-d="-1" aria-label="Листать назад">‹</button><div class="arch-roll" id="arch-list" role="list"></div><button type="button" class="arch-nav" data-d="1" aria-label="Листать вперёд">›</button></div>
   </div>
 </section>
 <div id="jump" aria-label="Перелистывание">
@@ -887,6 +900,21 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   setTimeout(snapGrid, 800);
   // колонки текста кусками между широкими блоками (таблица, схема, галерея): без разрыва колонок column-span,
   // на котором Safari обрезал заголовок над таблицей (Павел, 21.11.2026, «Срезается текст в веб версии»)
+  // короткие материалы в две колонки: каждый следующий в более короткую колонку (замена CSS-колонок, 27.11.2026)
+  function masonry() {
+    if (PRINT) return;
+    document.querySelectorAll("main .notes").forEach(function (n) {
+      var arts = n._arts || (n._arts = [].slice.call(n.querySelectorAll(":scope > article, :scope > .mz-c > article")));
+      if (arts.length < 2 || window.innerWidth < 760) { if (n.classList.contains("mz")) { arts.forEach(function (a) { n.appendChild(a); }); n.querySelectorAll(":scope > .mz-c").forEach(function (c) { c.remove(); }); n.classList.remove("mz"); } return; }
+      n.classList.add("mz"); var c1 = n.querySelector(":scope > .mz-c:nth-child(1)"), c2 = n.querySelector(":scope > .mz-c:nth-child(2)");
+      if (!c1) { c1 = document.createElement("div"); c1.className = "mz-c"; c2 = document.createElement("div"); c2.className = "mz-c"; n.appendChild(c1); n.appendChild(c2); }
+      arts.forEach(function (a) { n.appendChild(a); });
+      arts.forEach(function (a) { (c1.offsetHeight <= c2.offsetHeight ? c1 : c2).appendChild(a); });
+    });
+  }
+  window.addEventListener("resize", function () { clearTimeout(masonry.t); masonry.t = setTimeout(masonry, 200); });
+  window.addEventListener("load", function () { setTimeout(masonry, 400); });
+  document.addEventListener("load", function (e) { if (e.target.tagName === "IMG" && e.target.closest(".notes")) { clearTimeout(masonry.t); masonry.t = setTimeout(masonry, 300); } }, true);
   function segCols() {
     if (PRINT) return;
     document.querySelectorAll("main .body").forEach(function (b) {
@@ -1971,8 +1999,10 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     document.getElementById("b-next").disabled = i <= 0;
     var list = document.getElementById("arch-list");
     list.innerHTML = issues.map(function (it) {
-      return '<li><a href="#' + esc(it.date) + '" data-date="' + esc(it.date) + '"' + (it.date === current ? ' aria-current="page"' : "") + '><span class="arch-no">№ ' + esc(it.no) + '</span><span class="arch-d">' + esc(longDate(it.date)) + "</span><span>" + esc(it.lead || "") + "</span></a></li>";
+      return '<a class="arch-card" role="listitem" href="#' + esc(it.date) + '" data-date="' + esc(it.date) + '"' + (it.date === current ? ' aria-current="page"' : "") + '>' + (it.cover ? '<img class="ac-i" src="' + esc(it.cover) + '" alt="" loading="lazy">' : "") + '<span class="ac-b"><span class="ac-n">№ ' + esc(it.no) + '</span><span class="ac-d">' + esc(longDate(it.date)) + '</span><span class="ac-t">' + esc(it.theme || it.lead || "") + "</span></span></a>";
     }).join("");
+    var cur_ = list.querySelector('[aria-current="page"]'); if (cur_) list.scrollLeft = Math.max(0, cur_.offsetLeft - list.offsetLeft - 40);
+    document.querySelectorAll(".arch-nav").forEach(function (bt) { bt.onclick = function () { list.scrollBy({ left: +bt.getAttribute("data-d") * Math.max(240, list.clientWidth * 0.8), behavior: "smooth" }); }; });
     list.querySelectorAll("[data-date]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); openIssue(a.getAttribute("data-date"), true); }); });
   }
   function openIssue(date, scrollTop) {
@@ -1981,7 +2011,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     current = meta.date;
     try { history.replaceState(null, "", "#" + meta.date); } catch (e) {}
     fetch("issues/" + meta.date + ".json", { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (issue) { render(issue); segCols(); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); matSync(); })
+      .then(function (issue) { render(issue); segCols(); masonry(); setTimeout(masonry, 1200); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); matSync(); })
       .catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Номер за ' + esc(longDate(meta.date)) + " не загрузился. Обновите страницу.</p></div>"; });
   }
   function step(dir) { var i = issues.findIndex(function (x) { return x.date === current; }), j = i + dir; if (i >= 0 && j >= 0 && j < issues.length) openIssue(issues[j].date, true); }

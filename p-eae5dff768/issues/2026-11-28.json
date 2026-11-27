@@ -1672,20 +1672,34 @@
          "meta": "D5 Mag, 20.11.2026",
          "url": "https://d5mag.com/boconcepts-aw26-lamps-bring-scandinavian-layered-light-into-the-home/",
          "thumb": "",
-         "what": "По данным производителя, осенняя коллекция BoConcept состоит из шести типов светильников, в большинстве с тканевыми плафонами и мягким рассеянным светом. Основа замысла – скандинавская привычка освещать комнату несколькими небольшими лампами тёплого света; настольный KAKU имеет два источника, в основании и в плафоне."
+         "what": "По данным производителя, осенняя коллекция BoConcept состоит из шести типов светильников, в большинстве с тканевыми плафонами и мягким рассеянным светом. Основа замысла – скандинавская привычка освещать комнату несколькими небольшими лампами тёплого света."
         }
        ]
       },
       {
-       "p": "Dezeen, 24.11.2026: [Dezeen reports from New York’s new November design week](https://www.dezeen.com/2026/11/24/new-york-design-events-november-2026/). Обзор ноябрьской недели дизайна в Нью-Йорке. Среди светильников: торшер из фрезерованного алюминия Джордана Мориса на стенде Dudd Haus, лампы монреальского коллектива Ensemble в студии Yabu Pushelberg, лампы из ясеня с целлюлозными плафонами Natural Urbano и Polybion.",
-       "print_only": true
-      },
-      {
-       "p": "GeekWire, 06.11.2026: [Let there be LEDs: Tech upgrade helps James Turrell’s Skyspace shine again at UW art museum](https://www.geekwire.com/2026/seeing-the-light-tech-upgrade-helps-james-turrells-skyspace-shine-again-at-uw-art-museum/). Скайспейс «Light Reign» в галерее Генри Вашингтонского университета в Сиэтле получил около 840 светодиодных светильников (710 снаружи, 130 внутри) и систему управления, связанную с солнцем: наружная программа начинается за полчаса до рассвета и заката. Скайспейс открыт заново 14 ноября.",
-       "print_only": true
-      },
-      {
-       "p": "D5 Mag, 20.11.2026: [BoConcept’s AW26 Lamps Bring Scandinavian Layered Light Into the Home](https://d5mag.com/boconcepts-aw26-lamps-bring-scandinavian-layered-light-into-the-home/). По данным производителя, осенняя коллекция BoConcept состоит из шести типов светильников, в большинстве с тканевыми плафонами и мягким рассеянным светом. Основа замысла – скандинавская привычка освещать комнату несколькими небольшими лампами тёплого света; настольный KAKU имеет два источника, в основании и в плафоне.",
+       "digest": [
+        {
+         "source": "Dezeen",
+         "date": "24.11.2026",
+         "title": "Dezeen reports from New York’s new November design week",
+         "url": "https://www.dezeen.com/2026/11/24/new-york-design-events-november-2026/",
+         "what": "Обзор ноябрьской недели дизайна в Нью-Йорке. Среди светильников: торшер из фрезерованного алюминия Джордана Мориса на стенде Dudd Haus, лампы монреальского коллектива Ensemble в студии Yabu Pushelberg, лампы из ясеня с целлюлозными плафонами Natural Urbano и Polybion."
+        },
+        {
+         "source": "GeekWire",
+         "date": "06.11.2026",
+         "title": "Let there be LEDs: Tech upgrade helps James Turrell’s Skyspace shine again at UW art museum",
+         "url": "https://www.geekwire.com/2026/seeing-the-light-tech-upgrade-helps-james-turrells-skyspace-shine-again-at-uw-art-museum/",
+         "what": "Скайспейс «Light Reign» в галерее Генри Вашингтонского университета в Сиэтле получил около 840 светодиодных светильников (710 снаружи, 130 внутри) и систему управления, связанную с солнцем: наружная программа начинается за полчаса до рассвета и заката. Скайспейс открыт заново 14 ноября."
+        },
+        {
+         "source": "D5 Mag",
+         "date": "20.11.2026",
+         "title": "BoConcept’s AW26 Lamps Bring Scandinavian Layered Light Into the Home",
+         "url": "https://d5mag.com/boconcepts-aw26-lamps-bring-scandinavian-layered-light-into-the-home/",
+         "what": "По данным производителя, осенняя коллекция BoConcept состоит из шести типов светильников, в большинстве с тканевыми плафонами и мягким рассеянным светом. Основа замысла – скандинавская привычка освещать комнату несколькими небольшими лампами тёплого света."
+        }
+       ],
        "print_only": true
       }
      ],
