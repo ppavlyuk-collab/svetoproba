@@ -742,7 +742,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       <button id="b-prev" type="button">‹ Раньше</button>
       <button id="b-arch" type="button">Архив</button>
       <button id="b-next" type="button">Позже ›</button>
-      <button id="b-pdf" class="pdf" type="button" hidden>Скачать PDF</button>
+      <button id="b-pdf" class="pdf" type="button" hidden>Читать PDF</button>
       <button class="sub" type="button" data-sub>Подписаться</button>
     </nav>
   </div>
@@ -766,7 +766,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 </div>
 <footer class="footer gut">
   <div class="wrap">
-    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button><button class="sub" type="button" data-sub>Подписаться</button></nav>
+    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Читать PDF</button><button class="sub" type="button" data-sub>Подписаться</button></nav>
     <div>
       <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</p>
     </div>
@@ -1983,7 +1983,9 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     if (!window.claude || !window.claude.use) {
       // открытая версия сайта (GitHub Pages, larcorchestra.com): обычная ссылка на файл PDF
       show(true);
-      btns.forEach(function (b) { b.onclick = function () { if (statHit("pdf." + issue.date)) statRaw("p." + statNow().d); setTimeout(function () { window.location.href = issue.pdf; }, 150); }; });
+      // «Читать PDF» (Павел, 27.11.2026): номер открывается в новой вкладке просмотрщиком браузера, а не скачивается;
+      // вкладка открывается сразу по нажатию, иначе браузер её блокирует
+      btns.forEach(function (b) { b.onclick = function () { var w = window.open(issue.pdf, "_blank"); if (w) { try { w.opener = null; } catch (e) {} } else window.location.href = issue.pdf; if (statHit("pdf." + issue.date)) statRaw("p." + statNow().d); }; });
       return;
     }
     window.claude.use("downloads").then(function (dl) {
@@ -1995,8 +1997,8 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
           fetch(issue.pdf).then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
             .then(function (blob) { return dl.save({ filename: "svetoproba-weekly-" + issue.date + ".pdf", data: blob }); })
             .then(function () { btn.textContent = "PDF сохранён"; })
-            .catch(function (e) { btn.textContent = e && e.code === "declined" ? "Скачать PDF" : "PDF недоступен"; })
-            .then(function () { btn.disabled = false; setTimeout(function () { btn.textContent = "Скачать PDF"; }, 4000); });
+            .catch(function (e) { btn.textContent = e && e.code === "declined" ? "Читать PDF" : "PDF недоступен"; })
+            .then(function () { btn.disabled = false; setTimeout(function () { btn.textContent = "Читать PDF"; }, 4000); });
         };
       });
     });
