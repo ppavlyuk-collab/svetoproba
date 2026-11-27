@@ -2011,7 +2011,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     document.getElementById("b-next").disabled = i <= 0;
     var list = document.getElementById("arch-list");
     list.innerHTML = issues.map(function (it) {
-      return '<a class="arch-card" role="listitem" href="' + (it.url ? esc(it.url) + '" target="_blank" rel="noopener' : "#" + esc(it.date)) + '"' + (it.url ? "" : ' data-date="' + esc(it.date) + '"') + (it.date === current ? ' aria-current="page"' : "") + '>' + + (it.cover ? '<img class="ac-i" src="' + esc(it.cover) + '" alt="" loading="lazy">' : "") + '<span class="ac-b"><span class="ac-n">№ ' + esc(it.no) + '</span><span class="ac-d">' + esc(longDate(it.date)) + '</span><span class="ac-t">' + esc(it.theme || it.lead || "") + "</span></span></a>";
+      return '<a class="arch-card" role="listitem" href="' + (it.url ? esc(it.url) + '" target="_blank" rel="noopener' : "#" + esc(it.date)) + '"' + (it.url ? "" : ' data-date="' + esc(it.date) + '"') + (it.date === current ? ' aria-current="page"' : "") + '>' + (it.cover ? '<img class="ac-i" src="' + esc(it.cover) + '" alt="" loading="lazy">' : "") + '<span class="ac-b"><span class="ac-n">№ ' + esc(it.no) + '</span><span class="ac-d">' + esc(longDate(it.date)) + '</span><span class="ac-t">' + esc(it.theme || it.lead || "") + "</span></span></a>";
     }).join("");
     // лента архива (Павел, 27.11.2026: «не работает прокрутка»): стрелки только когда лента не помещается, гаснут на краях;
     // колесо мыши листает вбок; текущий номер в поле зрения после загрузки обложек
