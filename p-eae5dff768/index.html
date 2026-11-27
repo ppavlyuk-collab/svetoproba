@@ -1145,8 +1145,10 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   var SERIES = ["#044389", "#3f9fd8", "#fe9f4d", "#8b9099"];
   function daylightHtml(b) {
     var W = 640, H = 280, L = 34, R = 12, T = 10, B = 26, a = ymd(b.from), z = ymd(b.to), days = Math.round((z - a) / 864e5);
-    var ymax = 10, x = function (i) { return L + i / days * (W - L - R); }, y = function (h) { return T + (1 - h / ymax) * (H - T - B); };
-    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(b.title) + '">';
+    // шкала по данным: до № 5 график был только зимний и шкала стояла 0–10 ч; летний день 17 ч выходил за поле на текст (Павел, 27.11.2026)
+    var dmax = 0; b.cities.forEach(function (c) { for (var i = 0; i <= days; i += 3) dmax = Math.max(dmax, dayLength(c.lat, new Date(a.getTime() + i * 864e5))); });
+    var ymax = Math.max(10, Math.ceil(dmax / 2) * 2), x = function (i) { return L + i / days * (W - L - R); }, y = function (h) { return T + (1 - h / ymax) * (H - T - B); };
+    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(b.title) + '" style="overflow:hidden">';
     for (var h = 0; h <= ymax; h += 2) svg += '<line class="ax" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(h) + '" y2="' + y(h) + '"/><text class="tk" x="' + (L - 6) + '" y="' + (y(h) + 4) + '" text-anchor="end">' + h + "</text>";
     var d = new Date(a.getTime());
     while (d <= z) { if (d.getUTCDate() === 1) { var xi = x(Math.round((d - a) / 864e5)); svg += '<line class="ax" x1="' + xi + '" x2="' + xi + '" y1="' + T + '" y2="' + (H - B) + '"/><text class="tk" x="' + (xi + 4) + '" y="' + (H - 8) + '">' + MS[d.getUTCMonth()] + "</text>"; } d = new Date(d.getTime() + 864e5); }
