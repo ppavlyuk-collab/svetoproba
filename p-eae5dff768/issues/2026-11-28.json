@@ -1652,31 +1652,6 @@
      },
      "body": [
       {
-       "links": [
-        {
-         "title": "Dezeen reports from New York’s new November design week",
-         "meta": "Dezeen, 24.11.2026",
-         "url": "https://www.dezeen.com/2026/11/24/new-york-design-events-november-2026/",
-         "thumb": "",
-         "what": "Обзор ноябрьской недели дизайна в Нью-Йорке. Среди светильников: торшер из фрезерованного алюминия Джордана Мориса на стенде Dudd Haus, лампы монреальского коллектива Ensemble в студии Yabu Pushelberg, лампы из ясеня с целлюлозными плафонами Natural Urbano и Polybion."
-        },
-        {
-         "title": "Let there be LEDs: Tech upgrade helps James Turrell’s Skyspace shine again at UW art museum",
-         "meta": "GeekWire, 06.11.2026",
-         "url": "https://www.geekwire.com/2026/seeing-the-light-tech-upgrade-helps-james-turrells-skyspace-shine-again-at-uw-art-museum/",
-         "thumb": "",
-         "what": "Скайспейс «Light Reign» в галерее Генри Вашингтонского университета в Сиэтле получил около 840 светодиодных светильников (710 снаружи, 130 внутри) и систему управления, связанную с солнцем: наружная программа начинается за полчаса до рассвета и заката. Скайспейс открыт заново 14 ноября."
-        },
-        {
-         "title": "BoConcept’s AW26 Lamps Bring Scandinavian Layered Light Into the Home",
-         "meta": "D5 Mag, 20.11.2026",
-         "url": "https://d5mag.com/boconcepts-aw26-lamps-bring-scandinavian-layered-light-into-the-home/",
-         "thumb": "",
-         "what": "По данным производителя, осенняя коллекция BoConcept состоит из шести типов светильников, в большинстве с тканевыми плафонами и мягким рассеянным светом. Основа замысла – скандинавская привычка освещать комнату несколькими небольшими лампами тёплого света."
-        }
-       ]
-      },
-      {
        "digest": [
         {
          "source": "Dezeen",
@@ -1699,8 +1674,7 @@
          "url": "https://d5mag.com/boconcepts-aw26-lamps-bring-scandinavian-layered-light-into-the-home/",
          "what": "По данным производителя, осенняя коллекция BoConcept состоит из шести типов светильников, в большинстве с тканевыми плафонами и мягким рассеянным светом. Основа замысла – скандинавская привычка освещать комнату несколькими небольшими лампами тёплого света."
         }
-       ],
-       "print_only": true
+       ]
       }
      ],
      "sources": [
