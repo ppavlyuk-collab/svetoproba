@@ -334,13 +334,14 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .arch-list { list-style: none; margin: 0; padding: 0; }
 /* архив лентой: карточки номеров листаются пальцем, колесом и стрелками, текущий номер выделен (Павел, 27.11.2026) */
 .arch-wrap { position: relative; display: flex; align-items: center; gap: 8px; }
-.arch-roll { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; padding: 6px 2px 16px; flex: 1 1 auto; min-width: 0; scrollbar-width: thin; }
-.arch-card { flex: 0 0 230px; scroll-snap-align: start; display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; text-decoration: none; color: var(--ink); background: var(--paper-2, transparent); transition: transform .2s, box-shadow .2s; }
+.arch-roll { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; padding: 6px 2px 16px; flex: 1 1 auto; min-width: 0; scrollbar-width: thin; overscroll-behavior-x: contain; }
+.arch-card { flex: 1 0 230px; max-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; text-decoration: none; color: var(--ink); background: var(--paper-2, transparent); transition: transform .2s, box-shadow .2s; }
 .arch-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
 .arch-card .ac-i { width: 100%; height: 150px; object-fit: contain; display: block; background: #15171c; }  /* снимок целиком, без обрезки */
 .arch-card .ac-b { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; font-family: var(--font-ui); }
 .arch-card .ac-n { font: 700 1.5rem/1 var(--font-head, serif); } .arch-card .ac-d { font-size: var(--small); color: var(--muted); } .arch-card .ac-t { font-size: .92rem; line-height: 1.35; }
 .arch-card[aria-current="page"] { border-color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
+.arch-nav[hidden] { display: none; } .arch-nav:disabled { opacity: .3; cursor: default; }
 .arch-nav { flex: 0 0 36px; height: 36px; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); font-size: 1.4rem; line-height: 1; cursor: pointer; }
 @media (max-width: 560px) { .arch-nav { display: none; } .arch-card { flex-basis: 70vw; } }
 .arch-list a { display: grid; grid-template-columns: 4.5em 10em minmax(0, 1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); font-family: var(--font-ui); }
@@ -2012,8 +2013,25 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     list.innerHTML = issues.map(function (it) {
       return '<a class="arch-card" role="listitem" href="#' + esc(it.date) + '" data-date="' + esc(it.date) + '"' + (it.date === current ? ' aria-current="page"' : "") + '>' + (it.cover ? '<img class="ac-i" src="' + esc(it.cover) + '" alt="" loading="lazy">' : "") + '<span class="ac-b"><span class="ac-n">№ ' + esc(it.no) + '</span><span class="ac-d">' + esc(longDate(it.date)) + '</span><span class="ac-t">' + esc(it.theme || it.lead || "") + "</span></span></a>";
     }).join("");
-    var cur_ = list.querySelector('[aria-current="page"]'); if (cur_) list.scrollLeft = Math.max(0, cur_.offsetLeft - list.offsetLeft - 40);
-    document.querySelectorAll(".arch-nav").forEach(function (bt) { bt.onclick = function () { list.scrollBy({ left: +bt.getAttribute("data-d") * Math.max(240, list.clientWidth * 0.8), behavior: "smooth" }); }; });
+    // лента архива (Павел, 27.11.2026: «не работает прокрутка»): стрелки только когда лента не помещается, гаснут на краях;
+    // колесо мыши листает вбок; текущий номер в поле зрения после загрузки обложек
+    var navs = [].slice.call(document.querySelectorAll(".arch-nav"));
+    function navUpd() {
+      var over = list.scrollWidth > list.clientWidth + 2;
+      navs.forEach(function (bt) { bt.hidden = !over; var d = +bt.getAttribute("data-d"); bt.disabled = d < 0 ? list.scrollLeft <= 2 : list.scrollLeft + list.clientWidth >= list.scrollWidth - 2; });
+    }
+    function toCur() { var c = list.querySelector('[aria-current="page"]'); if (c) list.scrollLeft = Math.max(0, c.offsetLeft - list.offsetLeft - 40); navUpd(); }
+    function glide(to) {  // своя плавная прокрутка: scrollBy с behavior smooth вместе с привязкой карточек в Chromium не двигал ленту
+      to = Math.max(0, Math.min(list.scrollWidth - list.clientWidth, to)); var from = list.scrollLeft, t0 = null, snap = list.style.scrollSnapType;
+      list.style.scrollSnapType = "none";
+      function step() { var ts = Date.now(); if (t0 === null) t0 = ts; var k = Math.min(1, (ts - t0) / 320), e = 1 - Math.pow(1 - k, 3); list.scrollLeft = from + (to - from) * e; if (k < 1) setTimeout(step, 16); else { list.style.scrollSnapType = snap; navUpd(); } }
+      if (REDUCE) { list.scrollLeft = to; navUpd(); } else step();
+    }
+    navs.forEach(function (bt) { bt.onclick = function () { glide(list.scrollLeft + (+bt.getAttribute("data-d")) * Math.max(246, Math.floor(list.clientWidth * 0.8))); }; });
+    list.onscroll = function () { clearTimeout(navUpd.t); navUpd.t = setTimeout(navUpd, 60); };
+    list.onwheel = function (e) { if (list.scrollWidth <= list.clientWidth + 2 || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; var at0 = list.scrollLeft <= 0 && e.deltaY < 0, atE = list.scrollLeft + list.clientWidth >= list.scrollWidth - 1 && e.deltaY > 0; if (at0 || atE) return; e.preventDefault(); list.scrollLeft += e.deltaY; };
+    list.querySelectorAll("img").forEach(function (im) { im.addEventListener("load", toCur, { once: true }); });
+    toCur(); setTimeout(toCur, 600); window.addEventListener("resize", navUpd);
     list.querySelectorAll("[data-date]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); openIssue(a.getAttribute("data-date"), true); }); });
   }
   function openIssue(date, scrollTop) {
