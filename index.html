@@ -1,10 +1,10 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>_светопроба weekly</title>
-<meta name="description" content="За что платит заказчик освещения и как не потерять ценность проекта при экономии: пробы до закупки, обслуживание в задании проекта, ремонт вместо замены, ценность темноты, стоимость концепций в Европе и России.">
+<meta name="description" content="Каким делают вечерний свет дома и в городе: рассеянным, тёплым, приглушённым к ночи, и что о ночном свете говорит наука.">
 <meta property="og:type" content="article"><meta property="og:site_name" content="_светопроба weekly">
-<link rel="alternate" type="application/rss+xml" title="_светопроба weekly" href="https://svetoproba.com/feed.xml"><meta property="og:title" content="_светопроба weekly № 4: Цена и ценность освещения"><meta property="og:description" content="За что платит заказчик освещения и как не потерять ценность проекта при экономии: пробы до закупки, обслуживание в задании проекта, ремонт вместо замены, ценность темноты, стоимость концепций в Европе и России.">
-<meta property="og:image" content="https://svetoproba.com/cover-2026-11-21.jpg"><meta property="og:url" content="https://svetoproba.com/#2026-11-21">
+<link rel="alternate" type="application/rss+xml" title="_светопроба weekly" href="https://svetoproba.com/feed.xml"><meta property="og:title" content="_светопроба weekly № 5: Свет долгих вечеров"><meta property="og:description" content="Каким делают вечерний свет дома и в городе: рассеянным, тёплым, приглушённым к ночи, и что о ночном свете говорит наука.">
+<meta property="og:image" content="https://svetoproba.com/cover-2026-11-28.jpg"><meta property="og:url" content="https://svetoproba.com/#2026-11-28">
 <meta name="twitter:card" content="summary_large_image">
 <style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head><body><script>document.documentElement.lang = "ru";</script>
@@ -159,6 +159,7 @@ article { min-width: 0; }
 .rubric { color: var(--mark); }
 .why { color: var(--muted); font-weight: 400; }
 .why::before { content: "/"; margin-right: 12px; color: var(--rule); }
+.kicker .why:first-child::before { content: none; }  /* без рубрики черта не нужна (27.11.2026) */
 article h3.hl { font-family: var(--font-head); font-weight: 900; line-height: 1.05; letter-spacing: -0.01em; text-wrap: balance; margin: 8px 0 12px; }
 .lead h3.hl { font-size: clamp(2.2rem, 5.6vw, 4.2rem); }
 .feature h3.hl { font-size: clamp(1.9rem, 4.4vw, 3.1rem); max-width: 22ch; }
@@ -219,8 +220,13 @@ figcaption, .sources, .digest p, .video .vs { overflow-wrap: anywhere; }
 .theme-rest { margin-top: 88px; border-top: 1px solid var(--hair); padding-top: 56px; }
 .stories > article + article, .stories > article + .notes { border-top: 1px solid var(--hair); padding-top: 56px; }
 .notes { display: grid; grid-template-columns: 1fr; gap: 64px 0; }
-@media (min-width: 760px) { .notes { grid-template-columns: repeat(2, minmax(0, 1fr)); } .notes > article:nth-child(2n) { border-left: 1px solid var(--rule); padding-left: 32px; } .notes > article:nth-child(2n+1) { padding-right: 32px; } }
-@media (min-width: 1150px) { .notes.n3 { grid-template-columns: repeat(3, minmax(0, 1fr)); } .notes.n3 > article { border-left: 0; padding: 0 26px; } .notes.n3 > article + article { border-left: 1px solid var(--rule); } .notes.n3 > article:first-child { padding-left: 0; } }
+/* 27.11.2026 (Павел: «очень много пустых полей»): короткие материалы раньше стояли сеткой парами и растягивались до высоты соседа;
+   теперь газетные колонки: материалы идут друг под другом, колонки выравниваются по высоте, между колонками линейка */
+/* Safari раскладывал CSS-колонки по-своему (пустая колонка на полстраницы, Павел 27.11.2026): материалы раскладывает скрипт masonry() в две колонки, каждый в более короткую */
+.notes > article { margin: 0 0 64px; }
+@media (min-width: 760px) { .notes.mz { display: flex; gap: 0; align-items: flex-start; } .notes.mz > .mz-c { flex: 1 1 0; min-width: 0; } .notes.mz > .mz-c:first-child { padding-right: 32px; } .notes.mz > .mz-c + .mz-c { border-left: 1px solid var(--rule); padding-left: 32px; } }
+/* материал один в разделе показывается раскладкой большого материала (render: kind feature), 27.11.2026 */
+.anim.facade-lum svg, .anim.cct .cc-s { max-width: 760px; margin-left: auto; margin-right: auto; }
 
 /* Infographics */
 .fig { padding: 14px 0; border-top: 1px solid var(--hair); border-bottom: 1px solid var(--rule); margin: 10px 0 28px; break-inside: avoid; }
@@ -311,8 +317,10 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .gallery figure { margin: 0 0 18px; break-inside: avoid; }
 .gallery img { height: auto; }
 .digest { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 0; }
-@media (min-width: 900px) { .digest { display: block; columns: 2; column-gap: 40px; column-rule: 1px solid var(--rule); } .digest li { break-inside: avoid; } }
+/* 27.11.2026: сетка вместо CSS-колонок (Safari); цифры-буквицы задаёт правило «перечень, названный в заголовке числом» */
+@media (min-width: 900px) { .digest { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); column-gap: 36px; } }
 .digest li { border-top: 1px solid var(--rule); padding: 20px 0 24px; break-inside: avoid; }
+.feature-lead-text .digest { grid-template-columns: 1fr; }
 .digest .src { font: 700 var(--tiny) var(--font-ui); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mark); }
 .digest .src span { color: var(--muted); font-weight: 400; margin-left: 8px; }
 .digest a { display: block; font: 700 1.08rem/1.3 var(--font-head); color: var(--ink); text-decoration: none; margin: 4px 0; }
@@ -331,6 +339,18 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .archive { padding-block: 40px 20px; }
 .archive h2 { font: 900 2rem var(--font-head); margin: 0 0 12px; border-top: 5px solid var(--ink); padding-top: 12px; }
 .arch-list { list-style: none; margin: 0; padding: 0; }
+/* архив лентой: карточки номеров листаются пальцем, колесом и стрелками, текущий номер выделен (Павел, 27.11.2026) */
+.arch-wrap { position: relative; display: flex; align-items: center; gap: 8px; }
+.arch-roll { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x proximity; padding: 6px 2px 16px; flex: 1 1 auto; min-width: 0; scrollbar-width: thin; overscroll-behavior-x: contain; }
+.arch-card { flex: 1 0 230px; max-width: 320px; scroll-snap-align: start; display: flex; flex-direction: column; border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; text-decoration: none; color: var(--ink); background: var(--paper-2, transparent); transition: transform .2s, box-shadow .2s; }
+.arch-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+.arch-card .ac-i { width: 100%; height: 150px; object-fit: contain; display: block; background: #15171c; }  /* снимок целиком, без обрезки */
+.arch-card .ac-b { padding: 10px 12px 12px; display: flex; flex-direction: column; gap: 4px; font-family: var(--font-ui); }
+.arch-card .ac-n { font: 700 1.5rem/1 var(--font-head, serif); } .arch-card .ac-d { font-size: var(--small); color: var(--muted); } .arch-card .ac-t { font-size: .92rem; line-height: 1.35; }
+.arch-card[aria-current="page"] { border-color: var(--accent); box-shadow: inset 0 0 0 2px var(--accent); }
+.arch-nav[hidden] { display: none; } .arch-nav:disabled { opacity: .3; cursor: default; }
+.arch-nav { flex: 0 0 36px; height: 36px; border: 1px solid var(--rule); border-radius: 50%; background: transparent; color: var(--ink); font-size: 1.4rem; line-height: 1; cursor: pointer; }
+@media (max-width: 560px) { .arch-nav { display: none; } .arch-card { flex-basis: 70vw; } }
 .arch-list a { display: grid; grid-template-columns: 4.5em 10em minmax(0, 1fr); gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink); font-family: var(--font-ui); }
 .arch-list a[aria-current="page"] { color: var(--accent); }
 .arch-no, .arch-d { font-size: var(--small); color: var(--muted); }
@@ -435,6 +455,10 @@ td:first-child { font-weight: 700; white-space: nowrap; }
 .np figcaption .credit { text-transform: uppercase; letter-spacing: .03em; font-size: 6.2pt; }
 .np-front { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 6mm; align-items: start; margin-bottom: 4mm; }
 .np-front .np-hero { grid-column: 1 / 4; } .np-front .np-side { grid-column: 4 / 5; }
+.np-front-text { grid-column: 1 / 4; grid-row: 2; column-count: 3; column-gap: 6mm; column-rule: .5pt solid #b9b1a0; column-fill: balance; font-size: 8.8pt; line-height: 1.28; margin: 0; padding-top: 1.5mm; border-top: .5pt solid #b9b1a0; }
+.np-front:has(.np-front-text) .np-side { grid-row: 1 / 3; } .np-front:has(.np-front-text) .np-hero { grid-row: 1; }
+.np-front-text p { margin: 0 0 .55em; text-align: left; hyphens: auto; } .np-front-text h4 { break-after: avoid; margin: 0; }
+.np-flow.np-newpage { break-before: page; }
 .np-front .np-side .stats { column-gap: 6mm; }
 .np-side-text { font-size: 8.8pt; line-height: 1.28; }
 .np-side-text h4 { break-after: avoid; }
@@ -726,7 +750,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       <button id="b-prev" type="button">‹ Раньше</button>
       <button id="b-arch" type="button">Архив</button>
       <button id="b-next" type="button">Позже ›</button>
-      <button id="b-pdf" class="pdf" type="button" hidden>Скачать PDF</button>
+      <button id="b-pdf" class="pdf" type="button" hidden>Читать PDF</button>
       <button class="sub" type="button" data-sub>Подписаться</button>
     </nav>
   </div>
@@ -737,7 +761,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 <section class="archive gut" id="archive" aria-labelledby="arch-h">
   <div class="wrap">
     <h2 id="arch-h">Архив номеров</h2>
-    <ul class="arch-list" id="arch-list"></ul>
+    <div class="arch-wrap"><button type="button" class="arch-nav" data-d="-1" aria-label="Листать назад">‹</button><div class="arch-roll" id="arch-list" role="list"></div><button type="button" class="arch-nav" data-d="1" aria-label="Листать вперёд">›</button></div>
   </div>
 </section>
 <div id="jump" aria-label="Перелистывание">
@@ -750,7 +774,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
 </div>
 <footer class="footer gut">
   <div class="wrap">
-    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Скачать PDF</button><button class="sub" type="button" data-sub>Подписаться</button></nav>
+    <nav class="nav foot-nav" aria-label="PDF номера"><button id="b-pdf-foot" class="pdf" type="button" hidden>Читать PDF</button><button class="sub" type="button" data-sub>Подписаться</button></nav>
     <div>
       <p>Все права не защищены. Перепечатывайте, копируйте, распространяйте, печатайте и пересылайте сколько хотите. Ссылка на газету приятна, но не обязательна. Фотографии принадлежат их авторам и указанным в подписях источникам, обложки видео принадлежат каналам.</p>
     </div>
@@ -790,7 +814,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   /* blocks */
   function block(b) {
     if (b.print_only && !PRINT) return "";  // материалы для заполнения полос PDF в веб-версию не идут
-    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w" || b.anim === "flavin-mix" || b.anim === "curve-slider" || b.anim === "compare" || b.anim === "budget" || b.anim === "tabs" || b.anim === "facade-light" || b.anim === "photo-light") return animHtml(b);
+    if (b.anim === "dark-map" || b.anim === "road-adapt" || b.anim === "cs-scale" || b.anim === "mice-w" || b.anim === "flavin-mix" || b.anim === "curve-slider" || b.anim === "compare" || b.anim === "budget" || b.anim === "tabs" || b.anim === "facade-light" || b.anim === "photo-light" || b.anim === "lumen-calc" || b.anim === "cct" || b.anim === "facade-lum") return animHtml(b);
     /* ссылки с миниатюрами: что внутри видно до нажатия (№ 4, 21.11.2026); без рамок и подложек */
     if (b.links) {
       if (PRINT) return b.links.map(function (l) { return '<p>' + rich("[" + l.title + "](" + l.url + ")") + "</p>"; }).join("");
@@ -825,7 +849,9 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   }
   function illusHtml(il) {
     if (!il || !il.src) return "";
-    return '<figure class="illus" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '"><div class="sketch-slot" style="aspect-ratio:' + (+il.ar > 0 ? +il.ar : 1.5) + '"></div><figcaption>' + esc(il.caption || "") + "</figcaption></figure>";
+    // № 5: слои схемы включаются кнопками (il.layers: имя и цвет заливки), схема «загорается» при прокрутке (il.motion = "light-up"); только на сайте
+    var lay = (!PRINT && il.layers) ? '<div class="dm-b il-lay">' + il.layers.map(function (l) { return '<button type="button" data-fill="' + esc(l.fill) + '" aria-pressed="true">' + esc(l.name) + "</button>"; }).join("") + "</div>" : "";
+    return '<figure class="illus' + (!PRINT && il.motion ? " il-" + esc(il.motion) : "") + '" data-svg="' + esc(il.src) + '" role="img" aria-label="' + esc(il.alt || "") + '">' + lay + '<div class="sketch-slot" style="aspect-ratio:' + (+il.ar > 0 ? +il.ar : 1.5) + '"></div><figcaption>' + esc(il.caption || "") + "</figcaption></figure>";
   }
   // снимки, добавленные в PDF к материалу (резерв, галереи и снимки «только для печати»), на сайте листаются каруселью у главного снимка;
   // если листать нечего, стоит один снимок, как раньше
@@ -883,6 +909,21 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   setTimeout(snapGrid, 800);
   // колонки текста кусками между широкими блоками (таблица, схема, галерея): без разрыва колонок column-span,
   // на котором Safari обрезал заголовок над таблицей (Павел, 21.11.2026, «Срезается текст в веб версии»)
+  // короткие материалы в две колонки: каждый следующий в более короткую колонку (замена CSS-колонок, 27.11.2026)
+  function masonry() {
+    if (PRINT) return;
+    document.querySelectorAll("main .notes").forEach(function (n) {
+      var arts = n._arts || (n._arts = [].slice.call(n.querySelectorAll(":scope > article, :scope > .mz-c > article")));
+      if (arts.length < 2 || window.innerWidth < 760) { if (n.classList.contains("mz")) { arts.forEach(function (a) { n.appendChild(a); }); n.querySelectorAll(":scope > .mz-c").forEach(function (c) { c.remove(); }); n.classList.remove("mz"); } return; }
+      n.classList.add("mz"); var c1 = n.querySelector(":scope > .mz-c:nth-child(1)"), c2 = n.querySelector(":scope > .mz-c:nth-child(2)");
+      if (!c1) { c1 = document.createElement("div"); c1.className = "mz-c"; c2 = document.createElement("div"); c2.className = "mz-c"; n.appendChild(c1); n.appendChild(c2); }
+      arts.forEach(function (a) { n.appendChild(a); });
+      arts.forEach(function (a) { (c1.offsetHeight <= c2.offsetHeight ? c1 : c2).appendChild(a); });
+    });
+  }
+  window.addEventListener("resize", function () { clearTimeout(masonry.t); masonry.t = setTimeout(masonry, 200); });
+  window.addEventListener("load", function () { setTimeout(masonry, 400); });
+  document.addEventListener("load", function (e) { if (e.target.tagName === "IMG" && e.target.closest(".notes")) { clearTimeout(masonry.t); masonry.t = setTimeout(masonry, 300); } }, true);
   function segCols() {
     if (PRINT) return;
     document.querySelectorAll("main .body").forEach(function (b) {
@@ -1049,6 +1090,28 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     return { svg: h, y: at(x) };
   }
   function animHtml(b) {
+    /* № 5, 27.11.2026: калькулятор света комнаты по таблице Л.1 СП 52.13330.2016, упрощённо: Ф = E·S / 0,5 */
+    if (b.anim === "lumen-calc") {
+      return '<figure class="fig span anim lumen-calc"><p class="fig-t">' + esc(b.title) + '</p><div class="dm-b">' + b.rooms.map(function (r, i) { return '<button type="button" data-i="' + i + '" data-e="' + r.e + '" aria-pressed="' + (i === 0) + '">' + esc(r.name) + "</button>"; }).join("") +
+        '</div><label class="lc-l" style="display:block;font:700 .95rem var(--font-ui);margin:12px 0 2px">Площадь: <b class="lc-a"></b></label><input class="lc-r" type="range" min="2" max="40" step="1" value="15" aria-label="Площадь комнаты, м²" style="width:100%">' +
+        '<div class="lc-o" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin:14px 0 6px;font-family:var(--font-ui)"><div><div class="lc-v lc-lm" style="font:700 2rem/1.1 var(--font-head,serif)"></div><div class="muted">люменов от всех светильников</div></div><div><div class="lc-v lc-n" style="font:700 2rem/1.1 var(--font-head,serif)"></div><div class="muted">ламп по 806 лм</div></div><div><div class="lc-v lc-w" style="font:700 2rem/1.1 var(--font-head,serif)"></div><div class="muted">ватт светодиодов, около</div></div></div>' +
+        '<div class="lc-bulbs" style="display:flex;flex-wrap:wrap;gap:6px;min-height:34px;margin:8px 0"></div><p class="dm-t lc-t"></p><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    /* цветовая температура на снимке интерьера: оттенок по кривой абсолютно чёрного тела, приближение */
+    if (b.anim === "cct") {
+      return '<figure class="fig span anim cct"><p class="fig-t">' + esc(b.title) + '</p><div class="cc-s" style="position:relative;overflow:hidden;border-radius:2px"><img src="' + esc(b.image.src) + '" alt="' + esc(b.image.alt) + '" style="display:block;width:100%;height:auto;filter:grayscale(.85) brightness(1.05)"><div class="cc-o" style="position:absolute;inset:0;mix-blend-mode:multiply;pointer-events:none;transition:background-color .25s"></div></div>' +
+        '<label style="display:block;font:700 .95rem var(--font-ui);margin:12px 0 2px">Цветовая температура: <b class="cc-v"></b></label><input class="cc-r" type="range" min="2200" max="6500" step="100" value="2700" aria-label="Цветовая температура, К" style="width:100%"><div class="pl-ends" style="display:flex;justify-content:space-between;font:400 .8rem var(--font-ui);color:var(--muted)"><span>2200 К, тёплый</span><span>6500 К, холодный</span></div>' +
+        '<p class="dm-t cc-t" data-tips="' + esc(JSON.stringify(b.tips)) + '"></p><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
+    /* яркость фасада: ползунок 1–30 кд/м², категория по таблице 7.23 СП 52.13330.2016 и освещённость E = π·L/ρ */
+    if (b.anim === "facade-lum") {
+      var win = ""; for (var fy = 0; fy < 4; fy++) for (var fx = 0; fx < 4; fx++) win += '<rect x="' + (318 + fx * 44) + '" y="' + (120 + fy * 62) + '" width="22" height="32" fill="none" stroke="#1d2330" stroke-width="2"/>';
+      return '<figure class="fig span anim facade-lum"><p class="fig-t">' + esc(b.title) + '</p><svg viewBox="0 0 800 420" role="img" aria-label="' + esc(b.alt) + '" style="display:block;width:100%;height:auto;background:#151b2b"><rect width="800" height="420" fill="#151b2b"/><rect x="0" y="380" width="800" height="40" fill="#0d1018"/>' +
+        '<defs><filter id="fd-glow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="14"/></filter></defs><rect class="fd-m fd-halo" x="300" y="90" width="200" height="290" fill="#ffcf73" filter="url(#fd-glow)"/><rect class="fd-n1" x="110" y="200" width="160" height="180" fill="#ffd98a"/><rect class="fd-n2" x="530" y="230" width="170" height="150" fill="#ffd98a"/><rect class="fd-m" x="300" y="90" width="200" height="290" fill="#ffe3a3"/>' + win +
+        '<text class="fd-l" x="400" y="72" fill="#f3e9d6" font-size="22" text-anchor="middle" font-family="sans-serif"></text></svg>' +
+        '<label style="display:block;font:700 .95rem var(--font-ui);margin:12px 0 2px">Яркость фасада: <b class="fd-v"></b></label><input class="fd-r" type="range" min="0" max="100" value="62" aria-label="Яркость фасада, кд/м²" style="width:100%">' +
+        '<p class="dm-t fd-t" data-cats="' + esc(JSON.stringify(b.cats)) + '"></p><figcaption>' + esc(b.caption) + "</figcaption></figure>";
+    }
     if (b.anim === "flavin-mix") {
       var P0 = b.palette;
       return '<figure class="fig span anim flavin-mix"><p class="fig-t">' + esc(b.title) + '</p>' + ["Левая", "Правая"].map(function (side, k) { return '<div class="dm-b fm-' + k + '"><span style="font:700 var(--tiny) var(--font-ui);align-self:center;margin-right:4px">' + side + ' трубка:</span>' + P0.map(function (c, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === b.start[k]) + '"><span style="display:inline-block;width:10px;height:10px;margin-right:6px;background:' + esc(c.c) + ';border:1px solid var(--rule)"></span>' + esc(c.name) + "</button>"; }).join("") + "</div>"; }).join("") + '<div class="fm-v">' + flavinSvg(P0[b.start[0]].c, P0[b.start[1]].c).svg + '</div><div class="fm-o" style="font:400 1rem/1.5 var(--font-ui);margin-top:8px"></div><figcaption>' + esc(b.caption) + "</figcaption></figure>";
@@ -1119,8 +1182,10 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
   var SERIES = ["#044389", "#3f9fd8", "#fe9f4d", "#8b9099"];
   function daylightHtml(b) {
     var W = 640, H = 280, L = 34, R = 12, T = 10, B = 26, a = ymd(b.from), z = ymd(b.to), days = Math.round((z - a) / 864e5);
-    var ymax = 10, x = function (i) { return L + i / days * (W - L - R); }, y = function (h) { return T + (1 - h / ymax) * (H - T - B); };
-    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(b.title) + '">';
+    // шкала по данным: до № 5 график был только зимний и шкала стояла 0–10 ч; летний день 17 ч выходил за поле на текст (Павел, 27.11.2026)
+    var dmax = 0; b.cities.forEach(function (c) { for (var i = 0; i <= days; i += 3) dmax = Math.max(dmax, dayLength(c.lat, new Date(a.getTime() + i * 864e5))); });
+    var ymax = Math.max(10, Math.ceil(dmax / 2) * 2), x = function (i) { return L + i / days * (W - L - R); }, y = function (h) { return T + (1 - h / ymax) * (H - T - B); };
+    var svg = '<svg viewBox="0 0 ' + W + " " + H + '" role="img" aria-label="' + esc(b.title) + '" style="overflow:hidden">';
     for (var h = 0; h <= ymax; h += 2) svg += '<line class="ax" x1="' + L + '" x2="' + (W - R) + '" y1="' + y(h) + '" y2="' + y(h) + '"/><text class="tk" x="' + (L - 6) + '" y="' + (y(h) + 4) + '" text-anchor="end">' + h + "</text>";
     var d = new Date(a.getTime());
     while (d <= z) { if (d.getUTCDate() === 1) { var xi = x(Math.round((d - a) / 864e5)); svg += '<line class="ax" x1="' + xi + '" x2="' + xi + '" y1="' + T + '" y2="' + (H - B) + '"/><text class="tk" x="' + (xi + 4) + '" y="' + (H - 8) + '">' + MS[d.getUTCMonth()] + "</text>"; } d = new Date(d.getTime() + 864e5); }
@@ -1203,7 +1268,12 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     }).join("") + "</ol></details>";
   }
   function head(s) {
-    return '<div class="kicker"><span class="rubric">' + esc(s.rubric) + '</span>' + (s.why ? '<span class="why">' + esc(s.why) + "</span>" : "") + "</div>" +
+    var ru = s.rubric || "", wh = s.why || "", sec = (s._sec || "").toLowerCase();
+    if (ru && sec && sec.indexOf(ru.toLowerCase()) >= 0) ru = "";  // правило 176: рубрика не повторяет название раздела
+    var kk = ru + "|" + wh, kick = "";
+    if (!(s._sec && head.last && head.last[s._sec] === kk)) { if (s._sec) { head.last = head.last || {}; head.last[s._sec] = kk; }
+      kick = (ru || wh) ? '<div class="kicker">' + (ru ? '<span class="rubric">' + esc(ru) + "</span>" : "") + (wh ? '<span class="why">' + esc(wh) + "</span>" : "") + "</div>" : ""; }
+    return kick +
       '<h3 class="hl">' + esc(s.title) + "</h3>" + (s.dek ? '<p class="dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + (s.dateline ? '<p class="dateline">' + esc(s.dateline) + "</p>" : "");
   }
   function bodyHtml(s) { return '<div class="body">' + s.body.map(block).join("") + sourcesHtml(s.sources) + "</div>"; }
@@ -1251,7 +1321,10 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var side = "<aside>" + idx + "</aside>";
       return '<section class="page" id="p1"><div class="wrap">' + folio(issue, p) + (PRINT ? "" : '<div class="ed-top">' + ed + "</div>") + (p.title && p.title !== "Первая полоса" ? '<div class="theme-head">' + esc(p.title) + "</div>" : "") + '<div class="front">' + (PRINT ? side + main1 : main1 + side) + "</div></div></section>";
     }
+    p.stories.forEach(function (s) { s._sec = p.title || ""; });
     var big = p.stories.filter(function (s) { return s.kind !== "note"; }), notes = p.stories.filter(function (s) { return s.kind === "note"; });
+    // одна заметка в разделе: раскладка большого материала (заголовок и снимок рядом, текст в две колонки), без пустой половины (Павел, 27.11.2026)
+    if (notes.length === 1 && !PRINT) { big = big.concat([Object.assign({}, notes[0], { kind: "feature" })]); notes = []; }
     return '<section class="page ' + esc(p.id) + '" id="p' + p.no + '"><div class="wrap">' + folio(issue, p) +
       '<div class="sec-head"><h2>' + esc(p.title) + "</h2>" + (p.desc ? "<p>" + esc(p.desc) + "</p>" : "") + "</div>" +
       '<div class="stories">' + big.map(storyHtml).join("") + (notes.length ? '<div class="notes' + (notes.length >= 3 ? " n3" : "") + '">' + notes.map(storyHtml).join("") + "</div>" : "") + "</div></div></section>";
@@ -1322,6 +1395,18 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     var imgs = side.filter(function (b) { return b.image; }), txt = side.filter(function (b) { return !b.image; });
     side = txt.slice(0, 1).concat(imgs, txt.slice(1));
     side.forEach(function (b) { sideText += blockP(b, lead); });
+    // print_front_flow: ещё N целых абзацев главного материала на первой полосе, блоком в четыре колонки под снимком;
+    // продолжение на листе 2 начинается со следующего абзаца (Павел, 27.11.2026: обрывок «электриче-» внизу полосы и пустоты)
+    var frontText = "";
+    if (issue.print_front_flow > 0) {
+      var nF = 0, keep = [];
+      rest.forEach(function (b, i) {
+        var nx = rest[i + 1];
+        if (nF < issue.print_front_flow && (b.p != null || b.foot != null || (b.h != null && nx && nx.p != null))) { frontText += blockP(b, lead); if (b.p != null) nF++; }
+        else keep.push(b);
+      });
+      rest = keep;
+    }
     leadBody = rest;
     flow += leadBody.map(function (b) { return blockP(b, lead); }).join("");
     pages[0].stories.filter(function (s) { return s !== lead; }).forEach(function (s) { flow += storyP(s); });
@@ -1340,8 +1425,8 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       '<div class="np-imprint"><span>№ ' + issue.no + " " + DOT + " " + esc(wd) + ", " + longDate(issue.date) + "</span><span>Личная газета Павла Яковлева-Павлюка, архитектора по свету, преподавателя, продюсера, консультанта</span><span>Выходит по субботам</span></div>" +
       // содержание с номерами страниц PDF: сборщик передаёт print_toc после вёрстки (Павел, 14.11.2026)
       (issue.print_toc && issue.print_toc.length ? '<div class="np-toc"><b>В номере</b>' + issue.print_toc.map(function (x) { return "<span>" + esc(x.t) + " <i>" + esc(String(x.p)) + "</i></span>"; }).join("") + "</div>" : "") + "</div>" +
-      '<div class="np-lead"><div class="np-top">' + edNote + '<div class="np-top-head"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1></div></div>" + '<div class="np-front' + (issue.print_hero_cols === 2 ? ' hero2' : '') + '"><div class="np-hero">' + (lead.print_image ? figureHtml(lead.print_image) : visualHtml(lead)).replace('loading="lazy"', 'loading="eager"') + '</div><div class="np-side">' + (lead.dek ? '<p class="np-dek">' + esc(lead.dek) + "</p>" : "") + sideStats + '<div class="np-side-text">' + sideText + "</div></div></div></div>" +
-      '<div class="np-flow">' + flow + "</div></div>";
+      '<div class="np-lead"><div class="np-top">' + edNote + '<div class="np-top-head"><div class="np-kicker">' + esc(pages[0].id === "front" && pages[0].title !== "Первая полоса" ? pages[0].title : lead.rubric) + "<span>" + esc(lead.rubric) + "</span></div><h1>" + esc(lead.title) + "</h1></div></div>" + '<div class="np-front' + (issue.print_hero_cols === 2 ? ' hero2' : '') + '"><div class="np-hero">' + (lead.print_image ? figureHtml(lead.print_image) : visualHtml(lead)).replace('loading="lazy"', 'loading="eager"') + '</div><div class="np-side">' + (lead.dek ? '<p class="np-dek">' + esc(lead.dek) + "</p>" : "") + sideStats + '<div class="np-side-text">' + sideText + "</div></div>" + (frontText ? '<div class="np-front-text">' + frontText + "</div>" : "") + "</div></div>" +
+      '<div class="np-flow' + (frontText ? ' np-newpage' : '') + '">' + flow + "</div></div>";
     var main = document.getElementById("issue"); main.innerHTML = html;
     main.querySelectorAll("img[loading]").forEach(function (im) { im.loading = "eager"; });
     // добивка провалов: сборщик PDF передаёт ?gaps=ключ:мм,...; в провал встаёт другой снимок того же материала из резерва (reserve),
@@ -1477,10 +1562,10 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
         left.dataset.filled = "1";
         var box = document.createElement("div"); box.className = "feature-lead-text body"; left.appendChild(box);
         // сначала диаграмма материала встаёт в свободное место под заголовком, затем добор абзацами
-        var dia = body.querySelector(":scope > .fig, :scope > .anim, :scope > figure.anim, :scope > .stats");
-        if (dia) { box.appendChild(dia); if (left.offsetHeight > vis.offsetHeight + 80) { body.insertBefore(dia, body.firstChild.nextSibling); } else dia.classList.add("in-head"); }
+        var dia = body.querySelector(":scope > .fig, :scope > .anim, :scope > figure.anim, :scope > .stats, :scope > .digest");
+        if (dia) { box.appendChild(dia); if (left.offsetHeight > vis.offsetHeight + (dia.classList.contains("digest") ? 250 : 80)) { body.insertBefore(dia, body.firstChild ? body.firstChild.nextSibling : null); } else dia.classList.add("in-head"); }  // перечень можно длиннее снимка на 250 px: иначе пустое поле рядом со снимком (27.11.2026)
         while (body.firstElementChild && (body.firstElementChild.tagName === "P" || body.firstElementChild.classList.contains("quote")) && left.offsetHeight < vis.offsetHeight - 60) box.insertBefore(body.firstElementChild, dia && dia.parentNode === box ? dia : null);
-        if (left.offsetHeight > vis.offsetHeight + 40 && box.lastElementChild) body.insertBefore(box.lastElementChild, body.firstChild);
+        if (left.offsetHeight > vis.offsetHeight + (box.lastElementChild && box.lastElementChild.classList.contains("digest") ? 250 : 40) && box.lastElementChild) body.insertBefore(box.lastElementChild, body.firstChild);
       });
     }
     fillFeatures();
@@ -1498,8 +1583,58 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     });
     main.querySelectorAll("figure.illus[data-svg]").forEach(function (f) {
       fetch(f.getAttribute("data-svg")).then(function (r) { return r.ok ? r.text() : ""; }).then(function (t) {
-        if (t.indexOf("<svg") === 0) { var slot = f.querySelector(".sketch-slot"); var tmp = document.createElement("div"); tmp.innerHTML = t; var svg = tmp.querySelector("svg"); if (svg && slot) slot.replaceWith(svg); }
+        if (t.indexOf("<svg") === 0) { var slot = f.querySelector(".sketch-slot"); var tmp = document.createElement("div"); tmp.innerHTML = t; var svg = tmp.querySelector("svg"); if (svg && slot) slot.replaceWith(svg); if (svg) wireIllus(f, svg); }
       }).catch(function () {});
+    });
+    function wireIllus(f, svg) {
+      // кнопки слоёв: заливки нужного цвета прячутся и показываются
+      f.querySelectorAll(".il-lay button").forEach(function (bt) {
+        bt.addEventListener("click", function () {
+          var on = bt.getAttribute("aria-pressed") !== "true"; bt.setAttribute("aria-pressed", on);
+          svg.querySelectorAll('path[fill="' + bt.getAttribute("data-fill") + '"]').forEach(function (p) { var bb = p.getBBox(); if (bb.x < 160 && bb.y > 840) return; /* легенда схемы остаётся */ p.style.transition = "opacity .35s"; p.style.opacity = on ? "" : "0"; });
+        });
+      });
+      // дома загораются по очереди, когда схема входит в экран
+      if (f.classList.contains("il-light-up") && !REDUCE && "IntersectionObserver" in window) {
+        var ps = [].slice.call(svg.querySelectorAll('.wash path[fill="#ffd84d"]'));
+        ps.forEach(function (p) { p.dataset.o = p.getAttribute("fill-opacity") || "1"; p.setAttribute("fill-opacity", "0"); p.style.transition = "fill-opacity 1.2s ease"; });
+        var io = new IntersectionObserver(function (en) { en.forEach(function (e) { if (e.isIntersecting) { ps.forEach(function (p, k) { setTimeout(function () { p.setAttribute("fill-opacity", p.dataset.o); }, 250 + k * 380); }); io.disconnect(); } }); }, { threshold: 0.35 });
+        io.observe(f);
+      }
+    }
+    main.querySelectorAll(".lumen-calc").forEach(function (f) {
+      var bt = [].slice.call(f.querySelectorAll(".dm-b button")), r = f.querySelector(".lc-r"), E = +bt[0].getAttribute("data-e"), nm = bt[0].textContent;
+      function fmt(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, "\u2009"); }
+      function draw() {
+        var A = +r.value, lm = Math.round(E * A / 0.5 / 50) * 50, n = Math.ceil(lm / 806), w = Math.round(lm / 100);
+        f.querySelector(".lc-a").textContent = A + " м²"; f.querySelector(".lc-lm").textContent = fmt(lm); f.querySelector(".lc-n").textContent = n; f.querySelector(".lc-w").textContent = w;
+        f.querySelector(".lc-bulbs").innerHTML = new Array(Math.min(n, 40) + 1).join('<i style="width:22px;height:30px;border-radius:50% 50% 40% 40%;background:radial-gradient(circle at 50% 40%,#fff6c8,#ffd84d 60%,#e0a92b);box-shadow:0 0 10px rgba(255,200,80,.55)"></i>');
+        f.querySelector(".lc-t").textContent = nm + ", " + A + " м²: норма " + E + " лк на полу (таблица Л.1 СП 52.13330.2016). Нужно около " + fmt(lm) + " лм от всех светильников вместе, это " + n + " ламп по 806 лм или примерно " + w + " Вт светодиодов. Расчёт упрощённый: коэффициент использования 0,5.";
+      }
+      bt.forEach(function (b) { b.addEventListener("click", function () { bt.forEach(function (x) { x.setAttribute("aria-pressed", x === b); }); E = +b.getAttribute("data-e"); nm = b.textContent; draw(); }); });
+      r.addEventListener("input", draw); draw();
+    });
+    main.querySelectorAll(".cct").forEach(function (f) {
+      var r = f.querySelector(".cc-r"), o = f.querySelector(".cc-o"), tips = JSON.parse(f.querySelector(".cc-t").getAttribute("data-tips"));
+      function rgb(K) { var t = K / 100, R, G, B;  // приближение цвета излучения абсолютно чёрного тела (Т. Хелланд)
+        R = t <= 66 ? 255 : 329.698727446 * Math.pow(t - 60, -0.1332047592); G = t <= 66 ? 99.4708025861 * Math.log(t) - 161.1195681661 : 288.1221695283 * Math.pow(t - 60, -0.0755148492);
+        B = t >= 66 ? 255 : t <= 19 ? 0 : 138.5177312231 * Math.log(t - 10) - 305.0447927307; var c = function (v) { return Math.max(0, Math.min(255, Math.round(v))); }; return "rgb(" + c(R) + "," + c(G) + "," + c(B) + ")"; }
+      function draw() { var K = +r.value; o.style.backgroundColor = rgb(K); f.querySelector(".cc-v").textContent = K + " К"; var tp = tips.filter(function (x) { return K <= x.max; })[0] || tips[tips.length - 1]; f.querySelector(".cc-t").textContent = tp.text; }
+      r.addEventListener("input", draw); draw();
+    });
+    main.querySelectorAll(".facade-lum").forEach(function (f) {
+      var r = f.querySelector(".fd-r"), cats = JSON.parse(f.querySelector(".fd-t").getAttribute("data-cats"));
+      function draw() {
+        var L = Math.round(Math.exp(Math.log(1) + (+r.value / 100) * Math.log(30)) * 10) / 10; if (L >= 3) L = Math.round(L);
+        var k = Math.min(1, Math.log(1 + L) / Math.log(31));
+        f.querySelectorAll(".fd-m").forEach(function (m) { m.setAttribute("opacity", (0.1 + 0.9 * k).toFixed(2)); });
+        [".fd-n1", ".fd-n2"].forEach(function (c) { f.querySelector(c).setAttribute("opacity", (0.08 + 0.88 * k * 0.45).toFixed(2)); });
+        var cat = cats.filter(function (c) { return L >= c.min; }).pop() || cats[0];
+        f.querySelector(".fd-v").textContent = String(L).replace(".", ",") + " кд/м²"; f.querySelector(".fd-l").textContent = cat.name;
+        var e1 = Math.round(Math.PI * L / 0.6), e2 = Math.round(Math.PI * L / 0.2);
+        f.querySelector(".fd-t").textContent = cat.text + " Светлому камню (отражает около 60 % света) для такой яркости нужно около " + e1 + " лк, тёмному кирпичу (около 20 %) около " + e2 + " лк. Соседние дома темнее главного на две ступени (п. 7.5.6.6). Расчёт редакции: освещённость равна яркости, умноженной на 3,14 и делённой на коэффициент отражения.";
+      }
+      r.addEventListener("input", draw); draw();
     });
     main.querySelectorAll(".compare").forEach(function (f) {
       var st = f.querySelector(".cmp-s"), a = f.querySelector(".cmp-a"), h = f.querySelector(".cmp-h"), r = f.querySelector(".cmp-r"), drag = false;
@@ -1856,7 +1991,9 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     if (!window.claude || !window.claude.use) {
       // открытая версия сайта (GitHub Pages, larcorchestra.com): обычная ссылка на файл PDF
       show(true);
-      btns.forEach(function (b) { b.onclick = function () { if (statHit("pdf." + issue.date)) statRaw("p." + statNow().d); setTimeout(function () { window.location.href = issue.pdf; }, 150); }; });
+      // «Читать PDF» (Павел, 27.11.2026): номер открывается в новой вкладке просмотрщиком браузера, а не скачивается;
+      // вкладка открывается сразу по нажатию, иначе браузер её блокирует
+      btns.forEach(function (b) { b.onclick = function () { var w = window.open(issue.pdf, "_blank"); if (w) { try { w.opener = null; } catch (e) {} } else window.location.href = issue.pdf; if (statHit("pdf." + issue.date)) statRaw("p." + statNow().d); }; });
       return;
     }
     window.claude.use("downloads").then(function (dl) {
@@ -1868,8 +2005,8 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
           fetch(issue.pdf).then(function (r) { if (!r.ok) throw new Error(r.status); return r.blob(); })
             .then(function (blob) { return dl.save({ filename: "svetoproba-weekly-" + issue.date + ".pdf", data: blob }); })
             .then(function () { btn.textContent = "PDF сохранён"; })
-            .catch(function (e) { btn.textContent = e && e.code === "declined" ? "Скачать PDF" : "PDF недоступен"; })
-            .then(function () { btn.disabled = false; setTimeout(function () { btn.textContent = "Скачать PDF"; }, 4000); });
+            .catch(function (e) { btn.textContent = e && e.code === "declined" ? "Читать PDF" : "PDF недоступен"; })
+            .then(function () { btn.disabled = false; setTimeout(function () { btn.textContent = "Читать PDF"; }, 4000); });
         };
       });
     });
@@ -1881,8 +2018,27 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     document.getElementById("b-next").disabled = i <= 0;
     var list = document.getElementById("arch-list");
     list.innerHTML = issues.map(function (it) {
-      return '<li><a href="#' + esc(it.date) + '" data-date="' + esc(it.date) + '"' + (it.date === current ? ' aria-current="page"' : "") + '><span class="arch-no">№ ' + esc(it.no) + '</span><span class="arch-d">' + esc(longDate(it.date)) + "</span><span>" + esc(it.lead || "") + "</span></a></li>";
+      return '<a class="arch-card" role="listitem" href="' + (it.url ? esc(it.url) + '" target="_blank" rel="noopener' : "#" + esc(it.date)) + '"' + (it.url ? "" : ' data-date="' + esc(it.date) + '"') + (it.date === current ? ' aria-current="page"' : "") + '>' + + (it.cover ? '<img class="ac-i" src="' + esc(it.cover) + '" alt="" loading="lazy">' : "") + '<span class="ac-b"><span class="ac-n">№ ' + esc(it.no) + '</span><span class="ac-d">' + esc(longDate(it.date)) + '</span><span class="ac-t">' + esc(it.theme || it.lead || "") + "</span></span></a>";
     }).join("");
+    // лента архива (Павел, 27.11.2026: «не работает прокрутка»): стрелки только когда лента не помещается, гаснут на краях;
+    // колесо мыши листает вбок; текущий номер в поле зрения после загрузки обложек
+    var navs = [].slice.call(document.querySelectorAll(".arch-nav"));
+    function navUpd() {
+      var over = list.scrollWidth > list.clientWidth + 2;
+      navs.forEach(function (bt) { bt.hidden = !over; var d = +bt.getAttribute("data-d"); bt.disabled = d < 0 ? list.scrollLeft <= 2 : list.scrollLeft + list.clientWidth >= list.scrollWidth - 2; });
+    }
+    function toCur() { var c = list.querySelector('[aria-current="page"]'); if (c) list.scrollLeft = Math.max(0, c.offsetLeft - list.offsetLeft - 40); navUpd(); }
+    function glide(to) {  // своя плавная прокрутка: scrollBy с behavior smooth вместе с привязкой карточек в Chromium не двигал ленту
+      to = Math.max(0, Math.min(list.scrollWidth - list.clientWidth, to)); var from = list.scrollLeft, t0 = null, snap = list.style.scrollSnapType;
+      list.style.scrollSnapType = "none";
+      function step() { var ts = Date.now(); if (t0 === null) t0 = ts; var k = Math.min(1, (ts - t0) / 320), e = 1 - Math.pow(1 - k, 3); list.scrollLeft = from + (to - from) * e; if (k < 1) setTimeout(step, 16); else { list.style.scrollSnapType = snap; navUpd(); } }
+      if (REDUCE) { list.scrollLeft = to; navUpd(); } else step();
+    }
+    navs.forEach(function (bt) { bt.onclick = function () { glide(list.scrollLeft + (+bt.getAttribute("data-d")) * Math.max(246, Math.floor(list.clientWidth * 0.8))); }; });
+    list.onscroll = function () { clearTimeout(navUpd.t); navUpd.t = setTimeout(navUpd, 60); };
+    list.onwheel = function (e) { if (list.scrollWidth <= list.clientWidth + 2 || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; var at0 = list.scrollLeft <= 0 && e.deltaY < 0, atE = list.scrollLeft + list.clientWidth >= list.scrollWidth - 1 && e.deltaY > 0; if (at0 || atE) return; e.preventDefault(); list.scrollLeft += e.deltaY; };
+    list.querySelectorAll("img").forEach(function (im) { im.addEventListener("load", toCur, { once: true }); });
+    toCur(); setTimeout(toCur, 600); window.addEventListener("resize", navUpd);
     list.querySelectorAll("[data-date]").forEach(function (a) { a.addEventListener("click", function (e) { e.preventDefault(); openIssue(a.getAttribute("data-date"), true); }); });
   }
   function openIssue(date, scrollTop) {
@@ -1891,10 +2047,10 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     current = meta.date;
     try { history.replaceState(null, "", "#" + meta.date); } catch (e) {}
     fetch("issues/" + meta.date + ".json", { cache: "no-store" }).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-      .then(function (issue) { render(issue); segCols(); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); matSync(); })
+      .then(function (issue) { render(issue); segCols(); masonry(); setTimeout(masonry, 1200); if (scrollTop) window.scrollTo({ top: 0 }); statIssue(issue.date); matSync(); })
       .catch(function () { document.getElementById("issue").innerHTML = '<div class="wrap"><p class="state">Номер за ' + esc(longDate(meta.date)) + " не загрузился. Обновите страницу.</p></div>"; });
   }
-  function step(dir) { var i = issues.findIndex(function (x) { return x.date === current; }), j = i + dir; if (i >= 0 && j >= 0 && j < issues.length) openIssue(issues[j].date, true); }
+  function step(dir) { var i = issues.findIndex(function (x) { return x.date === current; }), j = i + dir; if (i >= 0 && j >= 0 && j < issues.length) { if (issues[j].url) { window.location.href = issues[j].url; return; } openIssue(issues[j].date, true); } }
   document.getElementById("b-prev").addEventListener("click", function () { step(1); });
   document.getElementById("b-next").addEventListener("click", function () { step(-1); });
   document.getElementById("b-arch").addEventListener("click", function () { document.getElementById("archive").scrollIntoView({ behavior: REDUCE ? "auto" : "smooth" }); });

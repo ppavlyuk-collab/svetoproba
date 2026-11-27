@@ -137,7 +137,17 @@
       "alt": "Два зала выставки Akari: световые стены из бумажных панелей и пирамида над татами",
       "caption": "Выставка «No Ordinary Light: Akari at 75»: световые стены из бумажных панелей и пирамидальный подвес над татами.",
       "credit": "Photo: Nicholas Knight, ©INFGM / ARS",
-      "credit_url": "https://www.noguchi.org/museum/exhibitions/view/no-ordinary-light-akari-at-75/"
+      "credit_url": "https://www.noguchi.org/museum/exhibitions/view/no-ordinary-light-akari-at-75/",
+      "tiles": [
+       {
+        "src": "img/2026-11-28/akari-kollazh-1.jpg",
+        "caption": "Две световые стены из бумажных панелей Akari в зале выставки. Photo: Nicholas Knight, ©INFGM / ARS."
+       },
+       {
+        "src": "img/2026-11-28/akari-kollazh-2.jpg",
+        "caption": "Пирамидальный подвес Akari над татами-платформой. Photo: Nicholas Knight, ©INFGM / ARS."
+       }
+      ]
      },
      "reserve": [
       {
