@@ -872,6 +872,7 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
     return ex;
   }
   function visualHtml(s) {
+    if (s.leadTabs && !PRINT) return animHtml(s.leadTabs);
     var main = s.illus ? illusHtml(s.illus) : figureHtml(s.image), ex = PRINT ? [] : extrasOf(s);
     if (!ex.length) return main;  // листать нечего: один снимок без карусели
     var n = ex.length + 1, dots = "";
@@ -1277,7 +1278,28 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       '<h3 class="hl">' + esc(s.title) + "</h3>" + (s.dek ? '<p class="dek' + (s.dates ? ' dates-frame' : '') + '">' + esc(s.dek) + "</p>" : "") + (s.dateline ? '<p class="dateline">' + esc(s.dateline) + "</p>" : "");
   }
   function bodyHtml(s) { return '<div class="body">' + s.body.map(block).join("") + sourcesHtml(s.sources) + "</div>"; }
+  // веб-версия без задвоений (Павел, 28.11.2026): снимок, который уже стоит в материале (главный, во вкладках или выше в тексте),
+  // второй раз не показывается; если главный снимок повторяет вкладку, вкладки встают на место главного снимка
+  function webDedup(s) {
+    if (PRINT || !s || !s.body) return s;
+    var tabs = null, tabSrc = {};
+    s.body.forEach(function (b) { if (b && b.anim === "tabs" && !tabs) { tabs = b; b.items.forEach(function (it) { tabSrc[it.src] = 1; }); } });
+    var t = Object.assign({}, s), seen = {};
+    if (tabs && s.image && tabSrc[s.image.src] && !s.illus) { t.leadTabs = tabs; }
+    if (s.image && s.image.src && !t.leadTabs) seen[s.image.src] = 1;
+    t.body = s.body.filter(function (b) {
+      if (!b || typeof b !== "object") return true;
+      if (t.leadTabs && b === tabs) return false;
+      if (b.image && !b.print_only && b.image.src) {
+        if (tabSrc[b.image.src] || seen[b.image.src]) return false;
+        seen[b.image.src] = 1;
+      }
+      return true;
+    });
+    return t;
+  }
   function storyHtml(s) {
+    s = webDedup(s);
     if (s.kind === "lead") { var vis = visualHtml(s).replace('loading="lazy"', 'loading="eager" fetchpriority="high"'); return '<article class="lead" id="' + esc(s.id) + '">' + (PRINT || s.head_first ? head(s) + vis : vis + head(s)) + bodyHtml(s) + "</article>"; }
     if (s.kind === "feature") return '<article class="feature" id="' + esc(s.id) + '"><div class="feature-top"><div>' + head(s) + "</div>" + visualHtml(s) + "</div>" + bodyHtml(s) + "</article>";
     return '<article class="note" id="' + esc(s.id) + '">' + (s.head_first ? head(s) + visualHtml(s) : visualHtml(s) + head(s)) + bodyHtml(s) + "</article>";
