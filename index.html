@@ -1195,6 +1195,14 @@ tbody tr:first-child > td { border-top: 1px solid var(--hair); }
       var dd = arr.map(function (v, i) { return (i ? "L" : "M") + x(i).toFixed(1) + "," + y(v).toFixed(1); }).join("");
       svg += '<path class="ln" d="' + dd + '" stroke="' + SERIES[k % 4] + '"/>';
     });
+    // подписи прямо на линиях в точке самого короткого дня: по одной легенде цвета путаются (Павел, 28.11.2026: «в Нью-Йорке день меньше, чем в Москве?»)
+    var i0 = 0; data[0].forEach(function (v, i) { if (v < data[0][i0]) i0 = i; });  // одна точка для всех: самый короткий день первого города (21 декабря)
+    var order = data.map(function (arr, k) { return k; }).sort(function (p, q) { return data[p][i0] - data[q][i0]; });
+    order.forEach(function (k, j) {
+      var i = i0, v = data[k][i], hh = Math.floor(v), mm = Math.round((v - hh) * 60); if (mm === 60) { hh += 1; mm = 0; }
+      var below = j === 0, ty = below ? y(v) + 15 : y(v) - 7;
+      svg += '<text class="dl-lb" x="' + x(i).toFixed(1) + '" y="' + ty.toFixed(1) + '" text-anchor="middle" fill="' + SERIES[k % 4] + '" style="font:600 11px PT Sans,sans-serif;paint-order:stroke;stroke:#f1ead9;stroke-width:3px">' + esc(b.cities[k].name) + ": " + hh + " ч" + (mm ? " " + mm + " мин" : "") + "</text>";
+    });
     svg += '<line class="cur" x1="0" x2="0" y1="' + T + '" y2="' + (H - B) + '" style="display:none"/><text class="readout" x="0" y="' + (T + 12) + '" style="display:none"></text></svg>';
     var legend = '<div class="legend">' + b.cities.map(function (c, k) { return '<span><i style="background:' + SERIES[k % 4] + '"></i>' + esc(c.name) + "</span>"; }).join("") + "</div>";
     var cfg = esc(JSON.stringify({ from: b.from, days: days, L: L, R: R, W: W, cities: b.cities }));
